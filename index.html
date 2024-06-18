@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Data Portal Example</title>
+    
+
+    <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.4.1/dist/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/twbs/bootstrap@v4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/FezVrasta/popper.js@v1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/twbs/bootstrap@v4.5.2/dist/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/ee3848f0f5.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id = "header" class = "row">
+        <img id = "nisra-logo" src = "img/TechLab logo monochrome.svg">
+        <div>Data Portal Demo
+            <form id = "top-menu" class = "row">
+                <button id = "graph-btn" name = "tab" value = "graph" class = "selected"><i class="fa-solid fa-chart-column"></i> Graph Example</button>
+                <button id = "map-btn" name = "tab" value = "map"><i class="fa-solid fa-earth-europe"></i> Map Example</button>
+            </form>
+        </div>
+    </div>
+
+    <div id = "content-centre">
+
+        <div id = "main-container">
+
+            <div id = "graph-scrn" class = "scrn" style = "display: block">
+                <h2>Graph Example</h2>
+                <p>The code in this example will produce a time-series graph for one variable and one geography, as defined in <strong>config.js</strong></p>
+                <h3 id = "graph-title"></h3>
+                <p id = "graph-var"></p>
+                <div class = "canvas-container">
+                    <canvas id = "line-chart"></canvas>
+                </div>
+                <p id = "graph-updated"></p>
+                <p id = "graph-commentary"></p>
+            </div>
+
+            <div id = "map-scrn" class = "scrn" style = "display: none">
+                <h2>Map Example</h2>
+                <p>The code in this example will produce a map comparing results by selected geography, for the most recent year, as defined in <strong>config.js</strong></p>
+                <h3 id = "map-title"></h3>
+                <p id = "map-var"></p>
+                <img id = "map-loading" src = "img/TechLab Loading.gif">
+                <div id = "map-container"></div>
+                <p id = "map-updated"></p>
+                <p id = "map-commentary"></p>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
+
+
+<script src = "config.js"></script>
+<script src = "map/ni_map.js"></script>
+<script src = "functions.js"></script>

@@ -1,0 +1,179 @@
+---
+title: "Data Portal RMarkdown Demo"
+lang: "en"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+    toc_depth: 3
+    css: md.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%")
+
+matrix <- "OTPCLGD"
+statistic <- "TPC"
+geog_type <- "LGD2014"
+geog_code <- "N09000002"
+
+if (!require("pacman")) install.packages("pacman")
+library(pacman)
+
+p_load("jsonlite", "dplyr", "plotly", "tmap", "sf", "htmltools")
+
+```
+
+```{r page banner}
+
+div(style = "width: 100%; background-color: #00205b; padding: 10px; class: row; display: flex; margin-left: 0px; margin-right: 0px; align-items: center",
+    img(src = "img/TechLab logo monochrome.svg"),
+    h1(class = "toc-ignore", style = "color: white; margin-left: 20px;", rmarkdown::metadata$title))
+
+```
+
+## Graph Example
+
+```{r read data for graph}
+json_data <- fromJSON(URLencode(paste0('https://ws-data.nisra.gov.uk/public/api.jsonrpc?data={"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":["STATISTIC","',
+        geog_type, '"],"dimension":{"STATISTIC":{"category":{"index":["',
+        statistic, '"]}},"', geog_type, '":{"category":{"index":["', geog_code, 
+        '"]}}},"extension":{"pivot":null,"codes":false,"language":{"code":"en"},"format":{"type":"JSON-stat","version":"2.0"},"matrix":"', 
+        matrix, '"},"version":"2.0"}}')))$result
+
+time_var <- json_data$id[grepl("TLIST", json_data$id)]
+
+graph_data <- data.frame(x = json_data$dimension[[time_var]]$category$index,
+                         y = json_data$value)
+
+unit <- json_data$dimension$STATISTIC$category$unit[[statistic]]$label
+
+year <- tail(json_data$dimension[[time_var]]$category$index, 1)
+
+variable <- json_data$dimension$STATISTIC$category$label[[statistic]]
+
+area <- json_data$dimension[[geog_type]]$category$label[[geog_code]]
+
+updated <- paste(substr(json_data$updated, 9, 10), substr(json_data$updated, 6, 7), substr(json_data$updated, 1, 4), sep = "/")
+
+```
+
+### `r json_data$label`
+
+Variable: __`r variable`__
+
+```{r plot chart}
+plot_ly(graph_data,
+        type = "scatter",
+        mode = "lines+markers",
+        x = ~x,
+        y = ~y,
+        name = area,
+        line = list(color = "#3878c5", width = 4),
+        hovertext = ~paste0(y, " (", unit, ")"),
+        hoverinfo = "x+text") %>%
+  layout(showlegend = TRUE,
+         legend = list(orientation = "h",
+                       yanchor = "bottom",     
+                       y = 1,
+                       xanchor = "center",     
+                       x = 0.5),
+         xaxis = list(title = "",              
+                      showgrid = FALSE,
+                      linewidth = 1),
+         yaxis = list(title = "",
+                      showline = TRUE,
+                      linewidth = 1,
+                      tickformat = ",d"),
+         font = list(family = "Helvetica", size = 14),
+         hovermode = "x unified")  %>%
+    config(displaylogo = FALSE)
+```
+
+Last updated: __`r updated`__
+
+```{r graph commentary}
+
+this_year_val <- tail(graph_data$y, 1)
+last_year_val <- tail(graph_data$y, 2)[1]
+last_year <- tail(graph_data$x, 2)[1]
+
+if (this_year_val == last_year_val) {
+  graph_comment <- "remained the same"
+} else {
+  if (this_year_val > last_year_val) {
+    graph_comment <- "increased"
+  } else {
+    graph_comment <- "decreased"
+  }
+  graph_comment <- paste(graph_comment, "by", prettyNum(abs(this_year_val - last_year_val), big.mark = ","))
+}
+
+
+```
+
+The `r unit` of `r variable` in `r area` has `r graph_comment` between `r last_year` and `r year`.
+
+## Map Example
+
+```{r map data}
+json_data <- fromJSON(URLencode(paste0('https://ws-data.nisra.gov.uk/public/api.jsonrpc?data={"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":["STATISTIC","',
+        time_var, '"],"dimension":{"STATISTIC":{"category":{"index":["',
+        statistic, '"]}},"', time_var, '":{"category":{"index":["', year,
+        '"]}}},"extension":{"pivot":null,"codes":false,"language":{"code":"en"},"format":{"type":"JSON-stat","version":"2.0"},"matrix":"',
+        matrix, '"},"version":"2.0"}}')))$result
+
+map_data <- st_read("map/OSNI Map Loughs Removed.shp", quiet = TRUE) %>%
+  left_join(data.frame(LGDCode= json_data$dimension[[geog_type]]$category$index,
+                       value = json_data$value) %>%
+              filter(LGDCode != "N92000002"),
+            by = "LGDCode")
+
+names(map_data)[names(map_data) == "value"] <- unit
+
+```
+
+### `r json_data$label` (`r year`)
+
+Variable: __`r variable`__
+
+```{r plot Map}
+tm_shape(map_data) +
+  tm_basemap("OpenStreetMap.HOT") +
+  tm_polygons(col = unit,
+              n = 5,
+              style = "equal",
+              palette = "Greens",
+              alpha = 0.8,
+              labels = c(floor(min(map_data[[unit]])), rep("", 3), ceiling(max(map_data[[unit]])))) +
+  tmap_mode("view") + 
+  tm_view(view.legend.position = c("left", "bottom"),  
+            control.position = c("right","top"),        
+            leaflet.options = c(zoomControl  = FALSE,  
+                                dragging = FALSE,
+                                keyboard = FALSE,
+                                boxZoom = FALSE,
+                                doubleClickZoom = FALSE,
+                                scrollWheelZoom = FALSE,
+                                tap = FALSE,
+                                touchZoom = FALSE,
+                                zoom = 8,
+                                minZoom = 8,
+                                maxZoom = 8,
+                                attributionControl = FALSE))
+```
+
+Last updated: __`r updated`__
+
+```{r map commentary}
+highest_val <- max(map_data[[unit]])
+lowest_val <- min(map_data[[unit]])
+
+highest_area <- map_data$LGDNAME[map_data[[unit]] == highest_val][1]
+lowest_area <- map_data$LGDNAME[map_data[[unit]] == lowest_val][1]
+
+highest_val <- prettyNum(highest_val, big.mark = ",")
+lowest_val <- prettyNum(lowest_val, big.mark = ",")
+```
+
+In `r year`, `r highest_area` had the highest `r unit` of `r variable` (`r highest_val`) while `r lowest_area` had the lowest (`r lowest_val`).
