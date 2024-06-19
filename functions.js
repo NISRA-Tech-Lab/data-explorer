@@ -153,6 +153,13 @@ async function plotMap (matrix, statistic, geog_type) {
         delete result.dimension[geog_type].category.label["0"];
     }
 
+    if (result.dimension[geog_type].category.index.includes("Unknown")) {
+        u_position = result.dimension[geog_type].category.index.indexOf("Unknown")
+        result.value.splice(u_position, 1);
+        result.dimension[geog_type].category.index.splice(u_position, 1);
+        delete result.dimension[geog_type].category.label["Unknown"];
+    }
+
     let data = result.value;
     let unit = result.dimension.STATISTIC.category.unit[statistic].label;
 

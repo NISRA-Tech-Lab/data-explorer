@@ -1,6 +1,6 @@
 let config = {
-    matrix: "OTPCLGD",
-    statistic: "TPC",
+    matrix: "FCLGD",
+    statistic: "F",
     geog_type: "LGD2014",
-    geog_code: "N09000002"
+    geog_code: "N92000002"
 }

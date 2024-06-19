@@ -12,10 +12,10 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%")
 
-matrix <- "OTPCLGD"
-statistic <- "TPC"
+matrix <- "FCLGD"
+statistic <- "F"
 geog_type <- "LGD2014"
-geog_code <- "N09000002"
+geog_code <- "N92000002"
 
 if (!require("pacman")) install.packages("pacman")
 library(pacman)
