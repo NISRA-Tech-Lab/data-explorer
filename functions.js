@@ -1,30 +1,4 @@
 let top_menu = document.getElementById("top-menu");
-let buttons = top_menu.getElementsByTagName("button");
-let scrns = document.getElementsByClassName("scrn");
-
-let current_tab = window.location.search.replace("?tab=", "");
-
-if (current_tab == "") {
-    current_tab = "graph"
-}
-
-for (let i = 0; i < buttons.length; i ++) {
-
-    if (buttons[i].id == current_tab + "-btn") {
-        buttons[i].classList.add("selected");
-    } else {
-        buttons[i].classList.remove("selected");
-    }
-
-}
-
-for (let i = 0; i < scrns.length; i ++) {
-    if (scrns[i].id == current_tab + "-scrn") {
-        scrns[i].style.display = "block";
-    } else {
-        scrns[i].style.display = "none";
-    }
-}
 
 async function getData (string) {
     let api_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
@@ -326,9 +300,5 @@ async function plotMap (matrix, statistic, geog_type) {
 }
 
 window.onload = function() {
-    if (current_tab == "graph") {
-        barChart(config.matrix, config.statistic, config.geog_type, config.geog_code);
-    } else if (current_tab == "map") {
-        plotMap(config.matrix, config.statistic, config.geog_type, config.year);
-    }
+    plotMap(config.matrix, config.statistic, config.geog_type, config.year);
 }

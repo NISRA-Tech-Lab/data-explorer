@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Data Portal Example</title>
+    <title>Data Portal Maps</title>
     
 
     <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -25,44 +25,26 @@
 
     <div id = "header" class = "row">
         <img id = "nisra-logo" src = "img/TechLab logo monochrome.svg">
-        <div>Data Portal Demo
-            <form id = "top-menu" class = "row">
-                <button id = "graph-btn" name = "tab" value = "graph" class = "selected"><i class="fa-solid fa-chart-column"></i> Graph Example</button>
-                <button id = "map-btn" name = "tab" value = "map"><i class="fa-solid fa-earth-europe"></i> Map Example</button>
-            </form>
-        </div>
+        <div>Data Portal Maps</div>
     </div>
 
-    <div id = "content-centre">
+    <div class = "container">
 
-        <div id = "main-container">
+        
 
-            <div id = "graph-scrn" class = "scrn" style = "display: block">
-                <h2>Graph Example</h2>
-                <p>The code in this example will produce a time-series graph for one variable and one geography, as defined in <strong>config.js</strong></p>
-                <h3 id = "graph-title"></h3>
-                <p id = "graph-var"></p>
-                <div class = "canvas-container">
-                    <canvas id = "line-chart"></canvas>
-                </div>
-                <p id = "graph-updated"></p>
-                <p id = "graph-commentary"></p>
-            </div>
-
-            <div id = "map-scrn" class = "scrn" style = "display: none">
-                <h2>Map Example</h2>
-                <p>The code in this example will produce a map comparing results by selected geography, for the most recent year, as defined in <strong>config.js</strong></p>
-                <h3 id = "map-title"></h3>
-                <p id = "map-var"></p>
-                <img id = "map-loading" src = "img/TechLab Loading.gif">
-                <div id = "map-container"></div>
-                <p id = "map-updated"></p>
-                <p id = "map-commentary"></p>
-            </div>
-
-
-
+        <div id = "map-scrn" class = "scrn" style = "display: block">
+            <h2>Maps</h2>
+            <p>The code in this example will produce a map comparing results by selected geography, for the most recent year.</p>
+            <h3 id = "map-title"></h3>
+            <p id = "map-var"></p>
+            <img id = "map-loading" src = "img/TechLab Loading.gif">
+            <div id = "map-container"></div>
+            <p id = "map-updated"></p>
+            <p id = "map-commentary"></p>
         </div>
+
+
+
 
     </div>
     
