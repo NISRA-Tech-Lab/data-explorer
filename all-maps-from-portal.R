@@ -30,11 +30,16 @@ for (i in 1:length(data_portal$label)) {
       if (fetch_error) print(paste0("Error fetching ", matrices[i], ". Trying again..."))
 
     }
+    
+    if (matrix == "FCLGD") {
+      FCLGD <- json_data
+    }
 
     tables[[data_portal$extension$matrix[i]]] <- list(
       name = data_portal$label[i],
       updated = as.Date(substr(data_portal$updated[i], 1, 10)),
       categories = unlist(data_portal$id[i]),
+      statistics = json_data$result$dimension$STATISTIC$category$label,
       time = time_var,
       time_series = time_series,
       product = json_data$result$extension$product$value,

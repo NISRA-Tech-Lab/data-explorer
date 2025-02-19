@@ -3,6 +3,9 @@
     "name": "Type of long-term condition: Long-term pain or discomfort by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_LONG_TERM_PAIN", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -12,6 +15,18 @@
     "name": "Benefit Statistics",
     "updated": "2024-09-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "IS": "Income Support",
+      "JSA": "Jobseekers Allowance",
+      "RP": "Retirement Pension",
+      "PC": "Pension Credit",
+      "AA": "Attendance Allowance",
+      "CA": "Carer's Allowance",
+      "DLA": "Disability Living Allowance",
+      "ESA": "Employment & Support Allowance",
+      "UC": "Universal Credit",
+      "PIP": "Personal Independence Payment"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Benefits",
@@ -21,6 +36,9 @@
     "name": "Type of long-term condition: Blindness or partial sight loss by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_BLIND", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -30,6 +48,9 @@
     "name": "Indicator - Children's social care",
     "updated": "2024-09-04",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDCHSC": "Percentage of care leavers who, aged 19, were in education, training or employment"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2020/21", "2019/20-2021/22", "2020/21-2022/23"],
     "product": "Children's social care",
@@ -39,6 +60,9 @@
     "name": "Indicator - Children's social care",
     "updated": "2024-09-04",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDCHSC": "Percentage of care leavers who, aged 19, were in education, training or employment"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2020/21", "2019/20-2021/22", "2020/21-2022/23"],
     "product": "Children's social care",
@@ -48,6 +72,9 @@
     "name": "Road Safety Partnership detections by camera type",
     "updated": "2024-09-17",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "CAMERA_TYPE"],
+    "statistics": {
+      "RSP": "Road Safety Partnership detections"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Driving Offences",
@@ -57,6 +84,9 @@
     "name": "Indicator - Outdoor recreation",
     "updated": "2024-09-17",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDOUTREC": "Percentage of households with accessible natural space within 400 metres"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2023", "2024"],
     "product": "Outdoor recreation",
@@ -66,6 +96,9 @@
     "name": "Indicator - Outdoor recreation",
     "updated": "2024-09-17",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDOUTREC": "Percentage of households with accessible natural space within 400 metres"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2023", "2024"],
     "product": "Outdoor recreation",
@@ -75,6 +108,9 @@
     "name": "Road Safety Partnership detections by sex",
     "updated": "2024-09-19",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "OffenderSex"],
+    "statistics": {
+      "RSP": "Road Safety Partnership detections"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Driving Offences",
@@ -84,6 +120,9 @@
     "name": "Road Safety Partnership detections by age",
     "updated": "2024-09-19",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "AgeGroup"],
+    "statistics": {
+      "RSP": "Road Safety Partnership detections"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Driving Offences",
@@ -93,6 +132,9 @@
     "name": "Long-term health problem or disability by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "DISABILITY", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -102,6 +144,9 @@
     "name": "Type of long-term condition: Mobility or dexterity difficulty that requires the use of a wheelchair by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_MOBILITY_WHEELCHAIR", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -111,6 +156,9 @@
     "name": "Number of dependent children - households",
     "updated": "2024-10-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HH_DEPENDENT_CHILDREN_AGG11"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Housing and Accommodation",
@@ -120,6 +168,9 @@
     "name": "Ethnic group",
     "updated": "2024-10-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "ETHNIC_GROUP_INTERMEDIATE"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -129,6 +180,9 @@
     "name": "Sexual orientation - basic detail",
     "updated": "2024-10-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEXUAL_ORIENTATION_BASIC"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Demography",
@@ -138,6 +192,9 @@
     "name": "General health",
     "updated": "2024-10-07",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "GENERAL_HEALTH"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -147,6 +204,9 @@
     "name": "Long-term health problem or disability",
     "updated": "2024-10-07",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "DISABILITY"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -156,6 +216,11 @@
     "name": "Standardised Prescription Rate, by type",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "SPRAntihyp": "Persons prescribed antihypertensive medication per 1,000 population",
+      "SPRMA": "Persons prescribed mood and anxiety medication per 1,000 population",
+      "SPRStatin": "Persons prescribed statin medication per 1,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Additional Indicators",
@@ -165,6 +230,11 @@
     "name": "Standardised Prescription Rate, by type",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SPRAntihyp": "Persons prescribed antihypertensive medication per 1,000 population",
+      "SPRMA": "Persons prescribed mood and anxiety medication per 1,000 population",
+      "SPRStatin": "Persons prescribed statin medication per 1,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Additional Indicators",
@@ -174,6 +244,9 @@
     "name": "Standardised Death Rate – Smoking Attributable Causes",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "SDRSmoke": "Deaths from smoking attributable causes per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2009-13", "2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Alcohol, Smoking and Drugs",
@@ -183,6 +256,9 @@
     "name": "Standardised Death Rate – Smoking Attributable Causes",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SDRSmoke": "Deaths from smoking attributable causes per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2009-13", "2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Alcohol, Smoking and Drugs",
@@ -192,6 +268,12 @@
     "name": "Childhood BMI",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "P1BMIOb": "Proportion of P1 children who are obese",
+      "P1BMIOwOb": "Proportion of P1 children who are overweight or obese",
+      "Y8BMIOb": "Proportion of Y8 children who are obese",
+      "Y8BMIOwOb": "Proportion of Y8 children who are overweight or obese"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Diet and Dental Health",
@@ -201,6 +283,12 @@
     "name": "Standardised Admission Rate, by type",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SARAll": "All hospital admissions per 100,000 population",
+      "SARDaycase": "Day case admissions per 100,000 population",
+      "SARElec": "Elective inpatient admissions per 100,000 population",
+      "SAREmerg": "Emergency admissions per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Hospital Activity",
@@ -210,6 +298,11 @@
     "name": "Standardised Admission Rate, by Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SARAlc": "Alcohol-related admissions per 100,000 population",
+      "SARCirc": "Circulatory disease admissions per 100,000 population",
+      "SARResp": "Respiratory disease admissions per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09-2010/11", "2009/10-2011/12", "2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2020/21", "2019/20-2021/22", "2020/21-2022/23"],
     "product": "Hospital Activity",
@@ -219,6 +312,12 @@
     "name": "Standardised Admission Rate, by type",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "SARAll": "All hospital admissions per 100,000 population",
+      "SARDaycase": "Day case admissions per 100,000 population",
+      "SARElec": "Elective inpatient admissions per 100,000 population",
+      "SAREmerg": "Emergency admissions per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Hospital Activity",
@@ -228,6 +327,11 @@
     "name": "Standardised Admission Rate, by Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "SARAlc": "Alcohol-related admissions per 100,000 population",
+      "SARCirc": "Circulatory disease admissions per 100,000 population",
+      "SARResp": "Respiratory disease admissions per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09-2010/11", "2009/10-2011/12", "2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2020/21", "2019/20-2021/22", "2020/21-2022/23"],
     "product": "Hospital Activity",
@@ -237,6 +341,9 @@
     "name": "Standardised Attendance Rate – Emergency Attendances",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "EDAttend": "Emergency department attendances per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Hospital Activity",
@@ -246,6 +353,9 @@
     "name": "Standardised Attendance Rate – Emergency Attendances",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "EDAttend": "Emergency department attendances per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Hospital Activity",
@@ -255,6 +365,9 @@
     "name": "Standardised Death Rate – All Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SDRAAACM": "Deaths from any cause per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
     "product": "Life Expectancy and General Health",
@@ -264,6 +377,9 @@
     "name": "Standardised Death Rate – All Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "SDRAAACM": "Deaths from any cause per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
     "product": "Life Expectancy and General Health",
@@ -273,6 +389,9 @@
     "name": "Life expectancy at birth",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "LEbirth": "Life expectancy at birth"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008-10", "2009-11", "2010-12", "2011-13", "2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
     "product": "Life Expectancy and General Health",
@@ -282,6 +401,9 @@
     "name": "Life expectancy at birth",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "LEbirth": "Life expectancy at birth"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008-10", "2009-11", "2010-12", "2011-13", "2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
     "product": "Life Expectancy and General Health",
@@ -291,6 +413,9 @@
     "name": "Standardised Admission Rate – Self-Harm Admissions",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "SARSelfHarm": "Self-harm related admissions per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2006/07-2010/11", "2007/08-2011/12", "2008/09-2012/13", "2009/10-2013/14", "2010/11-2014/15", "2011/12-2015/16", "2012/13-2016/17", "2013/14-2017/18", "2014/15-2018/19", "2015/16-2019/20", "2016/17-2020/21", "2017/18-2021/22", "2018/19-2022/23"],
     "product": "Mental Health",
@@ -300,6 +425,9 @@
     "name": "Standardised Admission Rate – Self-Harm Admissions",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SARSelfHarm": "Self-harm related admissions per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2006/07-2010/11", "2007/08-2011/12", "2008/09-2012/13", "2009/10-2013/14", "2010/11-2014/15", "2011/12-2015/16", "2012/13-2016/17", "2013/14-2017/18", "2014/15-2018/19", "2015/16-2019/20", "2016/17-2020/21", "2017/18-2021/22", "2018/19-2022/23"],
     "product": "Mental Health",
@@ -309,6 +437,11 @@
     "name": "Standardised Death rate for Avoidable, Treatable and Preventable Causes",
     "updated": "2024-10-23",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "SDRAvoid": "Avoidable deaths per 100,000 population",
+      "SDRPrev": "Preventable deaths per 100,000 population",
+      "SDRTreat": "Treatable deaths per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Premature Mortality",
@@ -318,6 +451,11 @@
     "name": "Standardised Death rate for Avoidable, Treatable and Preventable Causes",
     "updated": "2024-10-23",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SDRAvoid": "Avoidable deaths per 100,000 population",
+      "SDRPrev": "Preventable deaths per 100,000 population",
+      "SDRTreat": "Treatable deaths per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Premature Mortality",
@@ -327,6 +465,11 @@
     "name": "Standardised Death rate, Under 75, by cause",
     "updated": "2024-10-23",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "SDRCancU75": "Deaths from cancer in persons aged under 75 per 100,000 population",
+      "SDRCircU75": "Deaths from circulatory disease in persons aged under 75 per 100,000 population",
+      "SDRRespU75": "Deaths from respiratory disease in persons aged under 75 per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2004-08", "2005-09", "2006-10", "2007-11", "2008-12", "2009-13", "2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Premature Mortality",
@@ -336,6 +479,11 @@
     "name": "Standardised Death rate, Under 75, by cause",
     "updated": "2024-10-23",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SDRCancU75": "Deaths from cancer in persons aged under 75 per 100,000 population",
+      "SDRCircU75": "Deaths from circulatory disease in persons aged under 75 per 100,000 population",
+      "SDRRespU75": "Deaths from respiratory disease in persons aged under 75 per 100,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2004-08", "2005-09", "2006-10", "2007-11", "2008-12", "2009-13", "2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Premature Mortality",
@@ -345,6 +493,9 @@
     "name": "Potential Years of Life Lost",
     "updated": "2024-10-23",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
+    "statistics": {
+      "PYLL": "Potential Years of Life Lost"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008-10", "2009-11", "2010-12", "2011-13", "2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
     "product": "Premature Mortality",
@@ -354,6 +505,9 @@
     "name": "Potential Years of Life Lost",
     "updated": "2024-10-23",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "PYLL": "Potential Years of Life Lost"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008-10", "2009-11", "2010-12", "2011-13", "2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
     "product": "Premature Mortality",
@@ -363,6 +517,11 @@
     "name": "Gross Annual Pay",
     "updated": "2024-10-29",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "WP", "Sex"],
+    "statistics": {
+      "All": "Number of Jobs (Thousands)",
+      "Median": "Median Wage",
+      "Mean": "Mean Wage"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Earnings",
@@ -372,6 +531,11 @@
     "name": "Gross Annual Pay",
     "updated": "2024-10-29",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "WP", "Sex"],
+    "statistics": {
+      "All": "Number of Jobs (Thousands)",
+      "Median": "Median Wage",
+      "Mean": "Mean Wage"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Earnings",
@@ -381,6 +545,11 @@
     "name": "Gross Hourly (excluding overtime) and Weekly Pay",
     "updated": "2024-10-29",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "PR", "WP", "Sex"],
+    "statistics": {
+      "All": "Number of Jobs (Thousands)",
+      "Median": "Median Wage",
+      "Mean": "Mean Wage"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Earnings",
@@ -390,6 +559,11 @@
     "name": "Total Weekly Paid Hours Worked",
     "updated": "2024-10-29",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "WP", "Sex"],
+    "statistics": {
+      "1": "Number of Jobs (Thousands)",
+      "2": "Median Hours Worked",
+      "3": "Mean Hours Worked"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Hours Worked",
@@ -399,6 +573,11 @@
     "name": "Gross Hourly (excluding overtime) and Weekly Pay",
     "updated": "2024-11-13",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "PR", "WP", "Sex"],
+    "statistics": {
+      "All": "Number of Jobs (Thousands)",
+      "Median": "Median Wage",
+      "Mean": "Mean Wage"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Earnings",
@@ -408,6 +587,11 @@
     "name": "Total Weekly Paid Hours Worked",
     "updated": "2024-11-13",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "WP", "Sex"],
+    "statistics": {
+      "1": "Number of Jobs (Thousands)",
+      "2": "Median Hours Worked",
+      "3": "Mean Hours Worked"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Hours Worked",
@@ -417,6 +601,11 @@
     "name": "Condition of Roads by Roads Class",
     "updated": "2024-11-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "CLASS"],
+    "statistics": {
+      "GOOD": "Good",
+      "AVERAGE": "Average",
+      "POOR": "Poor"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Road Condition",
@@ -426,6 +615,9 @@
     "name": "Surface Defects Repaired",
     "updated": "2024-11-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "SDRLGD": "Surface Defects Repaired"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Surface Defects",
@@ -435,6 +627,9 @@
     "name": "Surface Defects Instructed",
     "updated": "2024-11-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "SDI": "Surface Defects Instructed"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Surface Defects",
@@ -444,6 +639,10 @@
     "name": "House Price Index and Standardised Price",
     "updated": "2024-11-22",
     "categories": ["TLIST(Q1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "SP": "Standardised Price",
+      "HPI": "House Price Index (Q1 2015=100)"
+    },
     "time": "TLIST(Q1)",
     "time_series": ["2005Q1", "2005Q2", "2005Q3", "2005Q4", "2006Q1", "2006Q2", "2006Q3", "2006Q4", "2007Q1", "2007Q2", "2007Q3", "2007Q4", "2008Q1", "2008Q2", "2008Q3", "2008Q4", "2009Q1", "2009Q2", "2009Q3", "2009Q4", "2010Q1", "2010Q2", "2010Q3", "2010Q4", "2011Q1", "2011Q2", "2011Q3", "2011Q4", "2012Q1", "2012Q2", "2012Q3", "2012Q4", "2013Q1", "2013Q2", "2013Q3", "2013Q4", "2014Q1", "2014Q2", "2014Q3", "2014Q4", "2015Q1", "2015Q2", "2015Q3", "2015Q4", "2016Q1", "2016Q2", "2016Q3", "2016Q4", "2017Q1", "2017Q2", "2017Q3", "2017Q4", "2018Q1", "2018Q2", "2018Q3", "2018Q4", "2019Q1", "2019Q2", "2019Q3", "2019Q4", "2020Q1", "2020Q2", "2020Q3", "2020Q4", "2021Q1", "2021Q2", "2021Q3", "2021Q4", "2022Q1", "2022Q2", "2022Q3", "2022Q4", "2023Q1", "2023Q2", "2023Q3", "2023Q4", "2024Q1", "2024Q2", "2024Q3"],
     "product": "NI House Price Index",
@@ -453,6 +652,10 @@
     "name": "Civil Servants by Home and Work Location",
     "updated": "2024-11-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CSEAPHL": "Civil Servants per 1,000 Economically Active Population (Home location)",
+      "CSEAPWL": "Civil Servants per 1,000 Economically Active Population (Work location)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Personnel Statistics",
@@ -462,6 +665,10 @@
     "name": "Road Lengths by Class",
     "updated": "2024-12-06",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "CLASS"],
+    "statistics": {
+      "LNGTHKM": "Total length of roads",
+      "PCTLGTH": "Percentage of total length of road class"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Road Lengths",
@@ -471,6 +678,9 @@
     "name": "Employment vacancies notified to DfC",
     "updated": "2024-12-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "EMPVAC": "Employment vacancies notified to DfC"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Employment Vacancies",
@@ -480,6 +690,9 @@
     "name": "Employment vacancies notified to DfC",
     "updated": "2024-12-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "EMPVAC": "Employment vacancies notified to DfC"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Employment Vacancies",
@@ -489,6 +702,9 @@
     "name": "Indicator - Economic inactivity",
     "updated": "2024-12-20",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDECONINACT": "Percentage who are inactive for any reason other than being a student (aged 16 to 64)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019"],
     "product": "Economic inactivity",
@@ -498,6 +714,9 @@
     "name": "Indicator - Economic inactivity",
     "updated": "2024-12-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDECONINACT": "Percentage who are inactive for any reason other than being a student (aged 16 to 64)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Economic inactivity",
@@ -507,6 +726,9 @@
     "name": "Indicator - Employment rate",
     "updated": "2024-12-20",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDEMPRATE": "Percentage in employment aged 16 to 64"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Employment rate",
@@ -516,6 +738,9 @@
     "name": "Indicator - Employment rate",
     "updated": "2024-12-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDEMPRATE": "Percentage in employment aged 16 to 64"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Employment rate",
@@ -525,6 +750,9 @@
     "name": "Indicator - External sales rate",
     "updated": "2024-12-23",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDEXSALE": "Proportion of all survey eligible businesses that sell outside Northern Ireland"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "External sales rate",
@@ -534,6 +762,9 @@
     "name": "Indicator - Skills",
     "updated": "2025-01-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDSKILLS": "Proportion of the population aged 16 to 64 with qualifications at Level 2 and above"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Skills",
@@ -543,6 +774,13 @@
     "name": "Road Traffic Collision Casualties by Severity of Injury aged 60 and over",
     "updated": "2025-02-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "1": "Killed",
+      "2": "Seriously Injured",
+      "3": "Killed or Seriously Injured",
+      "4": "Slightly Injured",
+      "5": "All Casualties"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
     "product": "Road Traffic Collisions",
@@ -552,6 +790,16 @@
     "name": "Road Traffic Collision Casualties by Severity of Injury",
     "updated": "2025-02-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "All": "Collisions",
+      "1": "Fatal Collision",
+      "2": "Serious Collision",
+      "3": "Slight Collision",
+      "4": "Killed",
+      "5": "Seriously injured",
+      "6": "Slightly injured",
+      "7": "Casualties"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
     "product": "Road Traffic Collisions",
@@ -561,6 +809,16 @@
     "name": "Road Traffic Collision Casualties by Severity of Injury",
     "updated": "2025-02-07",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "All": "Collisions",
+      "1": "Fatal Collision",
+      "2": "Serious Collision",
+      "3": "Slight Collision",
+      "4": "Killed",
+      "5": "Seriously injured",
+      "6": "Slightly injured",
+      "7": "Casualties"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
     "product": "Road Traffic Collisions",
@@ -570,6 +828,16 @@
     "name": "Greenhouse Gas Emissions (Rates) - Full dataset",
     "updated": "2025-01-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CO2AREA": "Carbon Dioxide Emissions per km2",
+      "CO2CAPITA": "Carbon Dioxide Per Capita Emissions",
+      "CH4AREA": "Methane Emissions per km2",
+      "CH4CAPITA": "Methane Per Capita Emissions",
+      "N2OAREA": "Nitrous Oxide Emissions per km2",
+      "N2OCAPITA": "Nitrous Oxide Per Capita Emissions",
+      "GHGALLAREA": "Total GHG Emissions per km2",
+      "GHGALLCAPITA": "Total GHG Per Capita Emissions"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Greenhouse Gas Emissions",
@@ -579,6 +847,9 @@
     "name": "Greenhouse Gas Emissions - Subset dataset",
     "updated": "2025-01-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "GHGSECTOR"],
+    "statistics": {
+      "CO2": "Carbon Dioxide"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Greenhouse Gas Emissions",
@@ -588,6 +859,10 @@
     "name": "Greenhouse Gas Emissions (Rates) - Subset dataset",
     "updated": "2025-01-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CO2AREA": "Carbon Dioxide Emissions per km2",
+      "CO2CAPITA": "Carbon Dioxide Per Capita Emissions"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Greenhouse Gas Emissions",
@@ -597,6 +872,12 @@
     "name": "Greenhouse Gas Emissions - Full dataset",
     "updated": "2025-01-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "GHGSECTOR"],
+    "statistics": {
+      "CO2": "Carbon Dioxide",
+      "CH4": "Methane",
+      "N2O": "Nitrous Oxide",
+      "GHGALL": "Total GHG"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Greenhouse Gas Emissions",
@@ -606,6 +887,10 @@
     "name": "Claimant Count Annual Averages",
     "updated": "2025-01-21",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "N": "Claimant Count Annual Averages",
+      "RT": "Percentage Claimant Count Annual Averages"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Claimant Count",
@@ -615,6 +900,10 @@
     "name": "Claimant Count Annual Averages",
     "updated": "2025-01-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "N": "Claimant Count Annual Averages",
+      "RT": "Percentage Claimant Count Annual Averages"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Claimant Count",
@@ -624,6 +913,9 @@
     "name": "Redundancies Confirmed",
     "updated": "2025-02-04",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CR": "Confirmed Redundancies"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Confirmed Redundancies",
@@ -633,6 +925,9 @@
     "name": "Redundancies Confirmed",
     "updated": "2025-02-04",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "CR": "Confirmed Redundancies"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Confirmed Redundancies",
@@ -642,6 +937,14 @@
     "name": "Labour Market Status",
     "updated": "2025-02-04",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "EMPN": "Employment number (aged 16 and over)",
+      "EMPR": "Employment rate (aged 16 to 64)",
+      "UNEMPN": "Unemployment number (aged 16 and over)",
+      "UNEMPR": "Unemployment rate (aged 16 and over)",
+      "INACTN": "Economic inactivity number (aged 16 and over)",
+      "INACTR": "Economic inactivity rate (aged 16 to 64)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Labour Market Status",
@@ -651,6 +954,9 @@
     "name": "Indicator - Life satisfaction among young people",
     "updated": "2025-01-30",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDLIFESATYP": "Average life satisfaction score (from 0 to 10) for Year 9-12 pupils"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2016", "2019", "2022"],
     "product": "Life satisfaction among young people",
@@ -660,6 +966,9 @@
     "name": "Indicator - Self-efficacy among young people",
     "updated": "2025-01-30",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDSEYP": "Percentage of Year 9-12 pupils with low self-efficacy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2016", "2019", "2022"],
     "product": "Self-efficacy among young people",
@@ -669,6 +978,9 @@
     "name": "Indicator - Arts and cultural activties",
     "updated": "2025-02-06",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDARTCUL": "Percentage engaging in arts/cultural activities"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2021/22", "2022/23", "2023/24"],
     "product": "Arts and cultural activities",
@@ -678,6 +990,9 @@
     "name": "Indicator - Sport and physical activity",
     "updated": "2025-02-06",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDSPORTS": "Percentage participating in sport and physical activity"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Sport and physical activity",
@@ -687,6 +1002,9 @@
     "name": "Mid-year population estimates",
     "updated": "2025-02-11",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "rounded_unrounded"],
+    "statistics": {
+      "MYE": "Mid-year population estimate"
+    },
     "time": "TLIST(A1)",
     "time_series": "2022",
     "product": "Mid Year Population Estimates",
@@ -696,6 +1014,9 @@
     "name": "Indicator - Availability of suitable housing",
     "updated": "2025-02-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDSUITHOUS": "Proportion of households who report being either 'very satisfied' or 'fairly satisfied' with their house or flat"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2021/22", "2022/23", "2023/24"],
     "product": "Availability of suitable housing",
@@ -705,6 +1026,9 @@
     "name": "Indicator - Homelessness",
     "updated": "2025-02-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDHOMELN": "Number of households who are homeless"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Homelessness",
@@ -714,6 +1038,9 @@
     "name": "Indicator - Housing stress",
     "updated": "2025-02-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDHOUSTRS": "Number of households in housing stress"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Housing stress",
@@ -723,6 +1050,9 @@
     "name": "Mid-year population estimates",
     "updated": "2025-02-17",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age", "Sex"],
+    "statistics": {
+      "MYE": "Mid-year population estimate"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mid Year Population Estimates",
@@ -732,6 +1062,9 @@
     "name": "Indicator - Good jobs",
     "updated": "2025-02-17",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDGOODJOBS": "Percentage of employees in NI (aged 16-64) meeting three good jobs criteria"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "Good jobs",
@@ -741,6 +1074,10 @@
     "name": "Claimant Count Monthly Data",
     "updated": "2025-02-19",
     "categories": ["TLIST(M1)", "STATISTIC", "AA"],
+    "statistics": {
+      "CCN": "Claimant Count",
+      "CCP": "Percentage Claimant Count"
+    },
     "time": "TLIST(M1)",
     "time_series": ["2005M01", "2005M02", "2005M03", "2005M04", "2005M05", "2005M06", "2005M07", "2005M08", "2005M09", "2005M10", "2005M11", "2005M12", "2006M01", "2006M02", "2006M03", "2006M04", "2006M05", "2006M06", "2006M07", "2006M08", "2006M09", "2006M10", "2006M11", "2006M12", "2007M01", "2007M02", "2007M03", "2007M04", "2007M05", "2007M06", "2007M07", "2007M08", "2007M09", "2007M10", "2007M11", "2007M12", "2008M01", "2008M02", "2008M03", "2008M04", "2008M05", "2008M06", "2008M07", "2008M08", "2008M09", "2008M10", "2008M11", "2008M12", "2009M01", "2009M02", "2009M03", "2009M04", "2009M05", "2009M06", "2009M07", "2009M08", "2009M09", "2009M10", "2009M11", "2009M12", "2010M01", "2010M02", "2010M03", "2010M04", "2010M05", "2010M06", "2010M07", "2010M08", "2010M09", "2010M10", "2010M11", "2010M12", "2011M01", "2011M02", "2011M03", "2011M04", "2011M05", "2011M06", "2011M07", "2011M08", "2011M09", "2011M10", "2011M11", "2011M12", "2012M01", "2012M02", "2012M03", "2012M04", "2012M05", "2012M06", "2012M07", "2012M08", "2012M09", "2012M10", "2012M11", "2012M12", "2013M01", "2013M02", "2013M03", "2013M04", "2013M05", "2013M06", "2013M07", "2013M08", "2013M09", "2013M10", "2013M11", "2013M12", "2014M01", "2014M02", "2014M03", "2014M04", "2014M05", "2014M06", "2014M07", "2014M08", "2014M09", "2014M10", "2014M11", "2014M12", "2015M01", "2015M02", "2015M03", "2015M04", "2015M05", "2015M06", "2015M07", "2015M08", "2015M09", "2015M10", "2015M11", "2015M12", "2016M01", "2016M02", "2016M03", "2016M04", "2016M05", "2016M06", "2016M07", "2016M08", "2016M09", "2016M10", "2016M11", "2016M12", "2017M01", "2017M02", "2017M03", "2017M04", "2017M05", "2017M06", "2017M07", "2017M08", "2017M09", "2017M10", "2017M11", "2017M12", "2018M01", "2018M02", "2018M03", "2018M04", "2018M05", "2018M06", "2018M07", "2018M08", "2018M09", "2018M10", "2018M11", "2018M12", "2019M01", "2019M02", "2019M03", "2019M04", "2019M05", "2019M06", "2019M07", "2019M08", "2019M09", "2019M10", "2019M11", "2019M12", "2020M01", "2020M02", "2020M03", "2020M04", "2020M05", "2020M06", "2020M07", "2020M08", "2020M09", "2020M10", "2020M11", "2020M12", "2021M01", "2021M02", "2021M03", "2021M04", "2021M05", "2021M06", "2021M07", "2021M08", "2021M09", "2021M10", "2021M11", "2021M12", "2022M01", "2022M02", "2022M03", "2022M04", "2022M05", "2022M06", "2022M07", "2022M08", "2022M09", "2022M10", "2022M11", "2022M12", "2023M01", "2023M02", "2023M03", "2023M04", "2023M05", "2023M06", "2023M07", "2023M08", "2023M09", "2023M10", "2023M11", "2023M12", "2024M01", "2024M02", "2024M03", "2024M04", "2024M05", "2024M06", "2024M07", "2024M08", "2024M09", "2024M10", "2024M11", "2024M12", "2025M01"],
     "product": "Claimant Count",
@@ -750,6 +1087,10 @@
     "name": "Claimant Count Monthly Data",
     "updated": "2025-02-19",
     "categories": ["TLIST(M1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CCN": "Claimant Count",
+      "CCP": "Percentage Claimant Count"
+    },
     "time": "TLIST(M1)",
     "time_series": ["2005M01", "2005M02", "2005M03", "2005M04", "2005M05", "2005M06", "2005M07", "2005M08", "2005M09", "2005M10", "2005M11", "2005M12", "2006M01", "2006M02", "2006M03", "2006M04", "2006M05", "2006M06", "2006M07", "2006M08", "2006M09", "2006M10", "2006M11", "2006M12", "2007M01", "2007M02", "2007M03", "2007M04", "2007M05", "2007M06", "2007M07", "2007M08", "2007M09", "2007M10", "2007M11", "2007M12", "2008M01", "2008M02", "2008M03", "2008M04", "2008M05", "2008M06", "2008M07", "2008M08", "2008M09", "2008M10", "2008M11", "2008M12", "2009M01", "2009M02", "2009M03", "2009M04", "2009M05", "2009M06", "2009M07", "2009M08", "2009M09", "2009M10", "2009M11", "2009M12", "2010M01", "2010M02", "2010M03", "2010M04", "2010M05", "2010M06", "2010M07", "2010M08", "2010M09", "2010M10", "2010M11", "2010M12", "2011M01", "2011M02", "2011M03", "2011M04", "2011M05", "2011M06", "2011M07", "2011M08", "2011M09", "2011M10", "2011M11", "2011M12", "2012M01", "2012M02", "2012M03", "2012M04", "2012M05", "2012M06", "2012M07", "2012M08", "2012M09", "2012M10", "2012M11", "2012M12", "2013M01", "2013M02", "2013M03", "2013M04", "2013M05", "2013M06", "2013M07", "2013M08", "2013M09", "2013M10", "2013M11", "2013M12", "2014M01", "2014M02", "2014M03", "2014M04", "2014M05", "2014M06", "2014M07", "2014M08", "2014M09", "2014M10", "2014M11", "2014M12", "2015M01", "2015M02", "2015M03", "2015M04", "2015M05", "2015M06", "2015M07", "2015M08", "2015M09", "2015M10", "2015M11", "2015M12", "2016M01", "2016M02", "2016M03", "2016M04", "2016M05", "2016M06", "2016M07", "2016M08", "2016M09", "2016M10", "2016M11", "2016M12", "2017M01", "2017M02", "2017M03", "2017M04", "2017M05", "2017M06", "2017M07", "2017M08", "2017M09", "2017M10", "2017M11", "2017M12", "2018M01", "2018M02", "2018M03", "2018M04", "2018M05", "2018M06", "2018M07", "2018M08", "2018M09", "2018M10", "2018M11", "2018M12", "2019M01", "2019M02", "2019M03", "2019M04", "2019M05", "2019M06", "2019M07", "2019M08", "2019M09", "2019M10", "2019M11", "2019M12", "2020M01", "2020M02", "2020M03", "2020M04", "2020M05", "2020M06", "2020M07", "2020M08", "2020M09", "2020M10", "2020M11", "2020M12", "2021M01", "2021M02", "2021M03", "2021M04", "2021M05", "2021M06", "2021M07", "2021M08", "2021M09", "2021M10", "2021M11", "2021M12", "2022M01", "2022M02", "2022M03", "2022M04", "2022M05", "2022M06", "2022M07", "2022M08", "2022M09", "2022M10", "2022M11", "2022M12", "2023M01", "2023M02", "2023M03", "2023M04", "2023M05", "2023M06", "2023M07", "2023M08", "2023M09", "2023M10", "2023M11", "2023M12", "2024M01", "2024M02", "2024M03", "2024M04", "2024M05", "2024M06", "2024M07", "2024M08", "2024M09", "2024M10", "2024M11", "2024M12", "2025M01"],
     "product": "Claimant Count",
@@ -759,6 +1100,45 @@
     "name": "Northern Ireland Multiple Deprivation Measure Indicators",
     "updated": "2023-03-24",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
+      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
+      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
+      "4": "Proportion of the working age population who are employment deprived",
+      "5": "Standardised preventable death ratio (excluding Suicides)",
+      "6": "Standardised physical health-related benefit ratio",
+      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
+      "8": "Standardised emergency admission ratio (NI = 100)",
+      "9": "Proportion of Singleton Births with Low Birth Weight",
+      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
+      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
+      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
+      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
+      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
+      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
+      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
+      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
+      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
+      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
+      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
+      "21": "Proportion of properties with broadband speed below 10Mb/s",
+      "22": "Proportion of domestic dwellings that are unfit",
+      "23": "Proportion of domestic dwellings in a state of disrepair",
+      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
+      "25": "Rate of Household overcrowding",
+      "26": "Proportion of population with disability without adaptations to dwelling",
+      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
+      "28": "Standardised ratio of road defects (NI = 100)",
+      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
+      "30": "Proportion of properties in flood risk area",
+      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
+      "32": "Rate of Burglary (per 1,000 population)",
+      "33": "Rate of Theft (per 1,000 population)",
+      "34": "Rate of Vehicle Crime (per 1,000 population)",
+      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
+      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
+      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
+    },
     "time": "TLIST(A1)",
     "time_series": "2017",
     "product": "NIMDM2017",
@@ -768,6 +1148,45 @@
     "name": "Northern Ireland Multiple Deprivation Measure Indicators",
     "updated": "2023-03-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
+      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
+      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
+      "4": "Proportion of the working age population who are employment deprived",
+      "5": "Standardised preventable death ratio (excluding Suicides)",
+      "6": "Standardised physical health-related benefit ratio",
+      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
+      "8": "Standardised emergency admission ratio (NI = 100)",
+      "9": "Proportion of Singleton Births with Low Birth Weight",
+      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
+      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
+      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
+      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
+      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
+      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
+      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
+      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
+      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
+      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
+      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
+      "21": "Proportion of properties with broadband speed below 10Mb/s",
+      "22": "Proportion of domestic dwellings that are unfit",
+      "23": "Proportion of domestic dwellings in a state of disrepair",
+      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
+      "25": "Rate of Household overcrowding",
+      "26": "Proportion of population with disability without adaptations to dwelling",
+      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
+      "28": "Standardised ratio of road defects (NI = 100)",
+      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
+      "30": "Proportion of properties in flood risk area",
+      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
+      "32": "Rate of Burglary (per 1,000 population)",
+      "33": "Rate of Theft (per 1,000 population)",
+      "34": "Rate of Vehicle Crime (per 1,000 population)",
+      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
+      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
+      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
+    },
     "time": "TLIST(A1)",
     "time_series": "2017",
     "product": "NIMDM2017",
@@ -777,6 +1196,14 @@
     "name": "Estimated Overnight Trips, Nights and Expenditure",
     "updated": "2023-04-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "OTN": "Number of Overnight Trips",
+      "OTP": "Proportion of Overnight Trips",
+      "NSN": "Number of Nights Stayed per Trip",
+      "NSP": "Proportion of Nights Stayed per Trip",
+      "ETN": "Expenditure per Trip (£)",
+      "ETP": "Proportion of Expenditure per Trip (£)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
     "product": "Tourism",
@@ -786,6 +1213,9 @@
     "name": "Employee Jobs",
     "updated": "2023-04-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "EMJOBS"],
+    "statistics": {
+      "EMJOBS": "Employee Jobs"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2013", "2015", "2017", "2019"],
     "product": "Tourism",
@@ -795,6 +1225,14 @@
     "name": "Certified Accommodation Occupancy",
     "updated": "2023-04-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HROR": "Hotel Room Occupancy Rate",
+      "HBOR": "Hotel Bed-Space Occupancy Rate",
+      "BBGGROR": "Bed & Breakfast, Guesthouses and Guest Accommodation Occupancy Rate",
+      "BBGGBOR": "Bed & Breakfast, Guesthouses and Guest Accommodation Bed-Space Occupancy Rate",
+      "SCUOAR": "Self-Catering Unit Occupancy Annual Rate",
+      "SCUOPR": "Self-Catering Unit Occupancy Peak Rate"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
     "product": "Tourism",
@@ -804,6 +1242,9 @@
     "name": "Estimated Overnight Trips by Place of Origin - 3 year rolling average.",
     "updated": "2023-04-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Origin"],
+    "statistics": {
+      "EOT": "Number of Estimated Overnight Trips"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011-2013", "2012-2014", "2013-2015", "2014-2016", "2015-2017", "2016-2018", "2017-2019"],
     "product": "Tourism",
@@ -813,6 +1254,9 @@
     "name": "Estimated Overnight Trips by Reason for Visit - 3 year rolling average",
     "updated": "2023-04-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "RFV"],
+    "statistics": {
+      "NOV": "Number of Visits"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011-2013", "2012-2014", "2013-2015", "2014-2016", "2015-2017", "2016-2018", "2017-2019"],
     "product": "Tourism",
@@ -822,6 +1266,10 @@
     "name": "Overnight Trips per Capita",
     "updated": "2023-04-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ONT": "Overnight Trips",
+      "TPC": "Trips Per Capita"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015", "2016", "2017", "2018", "2019"],
     "product": "Tourism",
@@ -831,6 +1279,12 @@
     "name": "Certified Accommodation Stock",
     "updated": "2023-04-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Estb"],
+    "statistics": {
+      "All": "Number of Establishments",
+      "Rooms": "Number of Rooms",
+      "Beds": "Number of Bed Spaces",
+      "Units": "Number of Units"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
     "product": "Tourism",
@@ -840,6 +1294,9 @@
     "name": "Youth Justice Agency Workload",
     "updated": "2023-05-23",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "YJS"],
+    "statistics": {
+      "YJAW": "Workload"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Youth Justice Agency Services",
@@ -849,6 +1306,23 @@
     "name": "School Census - Primary",
     "updated": "2023-05-31",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Nursery": "Nursery pupils",
+      "Reception": "Reception pupils",
+      "Year1": "Year 1 pupils",
+      "Year2": "Year 2 pupils",
+      "Year3": "Year 3 pupils",
+      "Year4": "Year 4 pupils",
+      "Year5": "Year 5 pupils",
+      "Year6": "Year 6 pupils",
+      "Year7": "Year 7 pupils",
+      "All": "All"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Census",
@@ -858,6 +1332,21 @@
     "name": "School Census - Post Primary",
     "updated": "2023-05-31",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Year8": "Year 8 pupils",
+      "Year9": "Year 9 pupils",
+      "Year10": "Year 10 pupils",
+      "Year11": "Year 11 pupils",
+      "Year12": "Year 12 pupils",
+      "Year13": "Year 13 pupils",
+      "Year14": "Year 14 pupils",
+      "All": "All"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Census",
@@ -867,6 +1356,31 @@
     "name": "School Census - Special Schools",
     "updated": "2023-05-31",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Nursery": "Nursery pupils",
+      "Reception": "Reception pupils",
+      "Year1": "Year 1 pupils",
+      "Year2": "Year 2 pupils",
+      "Year3": "Year 3 pupils",
+      "Year4": "Year 4 pupils",
+      "Year5": "Year 5 pupils",
+      "Year6": "Year 6 pupils",
+      "Year7": "Year 7 pupils",
+      "Year8": "Year 8 pupils",
+      "Year9": "Year 9 pupils",
+      "Year10": "Year 10 pupils",
+      "Year11": "Year 11 pupils",
+      "Year12": "Year 12 pupils",
+      "Year13": "Year 13 pupils",
+      "Year14": "Year 14 pupils",
+      "Year15": "Year 15 pupils",
+      "All": "All"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Census",
@@ -876,6 +1390,9 @@
     "name": "ApprenticeshipsNI",
     "updated": "2023-06-14",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "Level"],
+    "statistics": {
+      "APPSNI": "ApprenticeshipsNI Occupancy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019", "2020", "2021"],
     "product": "ApprenticeshipsNI",
@@ -885,6 +1402,9 @@
     "name": "ApprenticeshipsNI",
     "updated": "2023-06-14",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Level"],
+    "statistics": {
+      "APPSNI": "ApprenticeshipsNI Occupancy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019", "2020", "2021"],
     "product": "ApprenticeshipsNI",
@@ -894,6 +1414,9 @@
     "name": "Training for Success",
     "updated": "2023-06-14",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "Level"],
+    "statistics": {
+      "TfS": "Training for Success Occupancy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019", "2020", "2021"],
     "product": "Training for Success",
@@ -903,6 +1426,9 @@
     "name": "Training for Success",
     "updated": "2023-06-14",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Level"],
+    "statistics": {
+      "TfS": "Training for Success Occupancy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019", "2020", "2021"],
     "product": "Training for Success",
@@ -912,6 +1438,9 @@
     "name": "Skills for Life and Work",
     "updated": "2023-06-14",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "SLW": "Skills for Life and Work Occupancy"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Skills for Life and Work",
@@ -921,6 +1450,9 @@
     "name": "Skills for Life and Work",
     "updated": "2023-06-14",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "SLW": "Skills for Life and Work Occupancy"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Skills for Life and Work",
@@ -930,6 +1462,9 @@
     "name": "Health Card Registrations from Outside the UK",
     "updated": "2023-06-15",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Reason"],
+    "statistics": {
+      "REGNONUK": "Total Non-UK Registrations"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "General Medical Services",
@@ -939,6 +1474,9 @@
     "name": "Enrolments at Higher Education Institutions",
     "updated": "2023-06-21",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "HEENROLn": "Number of enrolments"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Higher Education Statistics",
@@ -948,6 +1486,9 @@
     "name": "Qualifications at Higher Education Institutions",
     "updated": "2023-06-21",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "HEQUALn": "Number of students gaining qualifications"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Higher Education Statistics",
@@ -957,6 +1498,9 @@
     "name": "Enrolments at Higher Education Institutions",
     "updated": "2023-06-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HEENROLn": "Number of enrolments"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Higher Education Statistics",
@@ -966,6 +1510,9 @@
     "name": "Qualifications at Higher Education Institutions",
     "updated": "2023-06-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HEQUALn": "Number of students gaining qualifications"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Higher Education Statistics",
@@ -975,6 +1522,9 @@
     "name": "Complaints received by the Office of the Police Ombudsman for Northern Ireland",
     "updated": "2023-06-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "OPONICOMPFACT"],
+    "statistics": {
+      "OPONICOMP": "Complaints received"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Complaints",
@@ -984,6 +1534,9 @@
     "name": "Full-Time Equivalent Teachers in Northern Ireland",
     "updated": "2023-06-29",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "TNschooltype"],
+    "statistics": {
+      "TeacherFTE": "Full-Time Equivalent"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Workforce",
@@ -993,6 +1546,9 @@
     "name": "Pupil Teacher Ratios in Northern Ireland",
     "updated": "2023-06-29",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "TNschooltype"],
+    "statistics": {
+      "PTR": "Pupil:Teacher Ratio"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Workforce",
@@ -1002,6 +1558,9 @@
     "name": "Allegations received by the Police Ombudsman's Office",
     "updated": "2023-06-30",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "OPONIALLEGTYPE"],
+    "statistics": {
+      "OPONIALLEG": "Allegations received"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Allegations",
@@ -1011,6 +1570,9 @@
     "name": "Bankruptcies participants disposed",
     "updated": "2023-07-14",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "BNKRDIS"],
+    "statistics": {
+      "BNKRDIS": "Participants disposed of in bankruptcies cases"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Bankruptcy Cases Disposed",
@@ -1020,6 +1582,9 @@
     "name": "Bankruptcies participants disposed",
     "updated": "2023-07-14",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "BNKRDIS"],
+    "statistics": {
+      "BNKRDIS": "Participants disposed of in bankruptcies cases"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Bankruptcy Cases Disposed",
@@ -1029,6 +1594,10 @@
     "name": "Mortgages cases received and disposed",
     "updated": "2023-07-14",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "MORTCASEREC": "Mortgages cases received",
+      "MORTCASEDIS": "Mortgages cases disposed"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mortgage Cases Disposed",
@@ -1038,6 +1607,10 @@
     "name": "Mortgages cases received and disposed",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "MORTCASEREC": "Mortgages cases received",
+      "MORTCASEDIS": "Mortgages cases disposed"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mortgage Cases Disposed",
@@ -1047,6 +1620,9 @@
     "name": "Mortgages cases disposed orders made",
     "updated": "2023-07-14",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "MORTDISORD"],
+    "statistics": {
+      "MORTDISORD": "Final orders made against mortgages cases disposed"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mortgage Cases Disposed",
@@ -1056,6 +1632,9 @@
     "name": "Mortgages cases disposed orders made",
     "updated": "2023-07-14",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "MORTDISORD"],
+    "statistics": {
+      "MORTDISORD": "Final orders made against mortgages cases disposed"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mortgage Cases Disposed",
@@ -1065,6 +1644,9 @@
     "name": "Repossessions completed",
     "updated": "2023-07-14",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "POSSCOMP": "Repossessions completed"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Property Repossessions",
@@ -1074,6 +1656,9 @@
     "name": "Repossessions completed",
     "updated": "2023-07-14",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "POSSCOMP": "Repossessions completed"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Property Repossessions",
@@ -1083,6 +1668,18 @@
     "name": "Benefit Statistics",
     "updated": "2023-07-11",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "IS": "Income Support",
+      "JSA": "Jobseekers Allowance",
+      "RP": "Retirement Pension",
+      "PC": "Pension Credit",
+      "AA": "Attendance Allowance",
+      "CA": "Carer's Allowance",
+      "DLA": "Disability Living Allowance",
+      "ESA": "Employment & Support Allowance",
+      "UC": "Universal Credit",
+      "PIP": "Personal Independence Payment"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Benefits",
@@ -1092,6 +1689,31 @@
     "name": "School Census - Special Schools",
     "updated": "2023-07-26",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Nursery": "Nursery pupils",
+      "Reception": "Reception pupils",
+      "Year1": "Year 1 pupils",
+      "Year2": "Year 2 pupils",
+      "Year3": "Year 3 pupils",
+      "Year4": "Year 4 pupils",
+      "Year5": "Year 5 pupils",
+      "Year6": "Year 6 pupils",
+      "Year7": "Year 7 pupils",
+      "Year8": "Year 8 pupils",
+      "Year9": "Year 9 pupils",
+      "Year10": "Year 10 pupils",
+      "Year11": "Year 11 pupils",
+      "Year12": "Year 12 pupils",
+      "Year13": "Year 13 pupils",
+      "Year14": "Year 14 pupils",
+      "Year15": "Year 15 pupils",
+      "All": "All"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Census",
@@ -1101,6 +1723,21 @@
     "name": "School Census - Post Primary",
     "updated": "2023-07-26",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Year8": "Year 8 pupils",
+      "Year9": "Year 9 pupils",
+      "Year10": "Year 10 pupils",
+      "Year11": "Year 11 pupils",
+      "Year12": "Year 12 pupils",
+      "Year13": "Year 13 pupils",
+      "Year14": "Year 14 pupils",
+      "All": "All"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Census",
@@ -1110,6 +1747,23 @@
     "name": "School Census - Primary",
     "updated": "2023-07-26",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Nursery": "Nursery pupils",
+      "Reception": "Reception pupils",
+      "Year1": "Year 1 pupils",
+      "Year2": "Year 2 pupils",
+      "Year3": "Year 3 pupils",
+      "Year4": "Year 4 pupils",
+      "Year5": "Year 5 pupils",
+      "Year6": "Year 6 pupils",
+      "Year7": "Year 7 pupils",
+      "All": "All"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Census",
@@ -1119,6 +1773,16 @@
     "name": "Teachers in Northern Ireland",
     "updated": "2023-07-26",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "Allteach": "All teachers",
+      "teach29under": "Teachers aged 29 and under",
+      "teach30to59": "Teachers aged 30-59",
+      "teach60over": "Teachers aged 60 and over",
+      "Maleteach": "Male Teachers",
+      "Femaleteach": "Female Teachers",
+      "FTteach": "Full-time Teachers",
+      "PTteach": "Part-time Teachers"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Workforce",
@@ -1128,6 +1792,12 @@
     "name": "Pupil Attendance",
     "updated": "2023-08-03",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "TYPE"],
+    "statistics": {
+      "pcattend": "Percentage attendance",
+      "pcabsence": "Percentage total absence",
+      "pcautabsence": "Percentage authorised absence",
+      "pcunautabsence": "Percentage unauthorised absence"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Pupil Attendance",
@@ -1137,6 +1807,12 @@
     "name": "Pupil Attendance",
     "updated": "2023-08-03",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "Type"],
+    "statistics": {
+      "pcattend": "Percentage attendance",
+      "pcabsence": "Percentage total absence",
+      "pcautabsence": "Percentage authorised absence",
+      "pcunautabsence": "Percentage unauthorised absence"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Pupil Attendance",
@@ -1146,6 +1822,9 @@
     "name": "Population totals",
     "updated": "2023-09-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "rounded_unrounded"],
+    "statistics": {
+      "PopTot": "Population totals"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mid Year Population Estimates",
@@ -1155,6 +1834,9 @@
     "name": "Components of population change",
     "updated": "2023-09-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "comchange"],
+    "statistics": {
+      "COPC": "Components of population change"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mid Year Population Estimates",
@@ -1164,6 +1846,9 @@
     "name": "Median age",
     "updated": "2023-09-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Sex"],
+    "statistics": {
+      "MedAge": "Median age"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mid Year Population Estimates",
@@ -1173,6 +1858,9 @@
     "name": "Population densities",
     "updated": "2023-09-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "PopDen": "Population density"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mid Year Population Estimates",
@@ -1182,6 +1870,50 @@
     "name": "Planning Applications, Decisions, and Enforcement",
     "updated": "2023-10-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "1": "Applications Received",
+      "2": "Applications Decided",
+      "3": "Applications Approved",
+      "4": "Proportion of Applications Approved",
+      "5": "Applications Withdrawn",
+      "6": "Live planning applications 0 - 6 months old",
+      "7": "Live planning applications 6 - 12 months old",
+      "8": "Live planning applications 1 year old +",
+      "9": "Live planning applications",
+      "10": "Proportion of Live planning applications 1 year old +",
+      "11": "Major Planning Applications Received",
+      "12": "Major Planning Applications Decided",
+      "13": "Major Planning Applications Approved",
+      "14": "Proportion of Major Planning Applications Approved",
+      "15": "Major Planning Applications Withdrawn",
+      "16": "Local Planning Applications Received",
+      "17": "Local Planning Applications Decided",
+      "18": "Local Planning Applications Approved",
+      "19": "Proportion of Local Planning Applications Approved",
+      "20": "Local Planning Applications Withdrawn",
+      "21": "Residential Planning Applications Received",
+      "22": "Residential Planning Applications Decided",
+      "23": "Residential Planning Applications Approved",
+      "24": "Proportion of Residential Planning Applications Approved",
+      "25": "Residential Planning Applications Withdrawn",
+      "26": "Enforcement cases opened",
+      "27": "Enforcement cases closed",
+      "28": "Enforcement cases concluded",
+      "29": "Prosecutions",
+      "30": "Convictions",
+      "31": "Live enforcement cases <1 year old",
+      "32": "Live enforcement cases 1 - 2 years old",
+      "33": "Live enforcement cases 2 - 3 years old",
+      "34": "Live enforcement cases 3 - 5 years old",
+      "35": "Live enforcement cases 5 years old +",
+      "36": "Live enforcement cases",
+      "37": "Proportion of live enforcement cases 2 years old +",
+      "38": "Renewable Energy Planning Applications Received",
+      "39": "Renewable Energy Planning Applications Decided",
+      "40": "Renewable Energy Planning Applications Approved",
+      "41": "Proportion of Renewable Energy Planning Applications Approved",
+      "42": "Renewable Energy Planning Applications Withdrawn"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Planning Applications",
@@ -1191,6 +1923,13 @@
     "name": "Planning Applications and Decisions by Assembly Area",
     "updated": "2023-10-12",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "1": "Applications Received",
+      "2": "Applications Decided",
+      "3": "Applications Approved",
+      "4": "Proportion of Applications Approved",
+      "5": "Applications Withdrawn"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Planning Applications",
@@ -1200,6 +1939,9 @@
     "name": "Religion - 2011 and 2021 TS013",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "RELIGION_AGG8"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Ethnicity, Identity, Language and Religion",
@@ -1209,6 +1951,9 @@
     "name": "Journeys made by walking, cycling and public transport",
     "updated": "2023-10-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "JWCPT": "Journeys made by walking/cycling/public transport"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19"],
     "product": "Active and Sustainable Travel",
@@ -1218,6 +1963,9 @@
     "name": "Sex - 2011 and 2021 TS006",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX_TS"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Demography",
@@ -1227,6 +1975,9 @@
     "name": "Marital and civil partnership status - 2011 and 2021 TS020",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "MAR_CP_STATUS"],
+    "statistics": {
+      "UR_POP_16+": "All usual residents aged 16 and over"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Demography",
@@ -1236,6 +1987,9 @@
     "name": "Broad age bands - 2011 and 2021 TS005",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "AGE_BAND_BROAD"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Demography",
@@ -1245,6 +1999,9 @@
     "name": "Usual resident population - 2011 and 2021 TS004",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Demography",
@@ -1254,6 +2011,9 @@
     "name": "Ethnic group - 2011 and 2021 TS015",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "ETHNIC_GROUP_AGG5"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Ethnicity, Identity, Language and Religion",
@@ -1263,6 +2023,9 @@
     "name": "Religion or religion brought up in - 2011 and 2021 TS014",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "RELIGION_OR_RELIGION_BROUGHT_UP_IN"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Ethnicity, Identity, Language and Religion",
@@ -1272,6 +2035,9 @@
     "name": "Knowledge of Ulster-Scots - 2011 and 2021 TS012",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "ULSTER_SCOTS_SKILLS_AGG6"],
+    "statistics": {
+      "UR_POP_3+": "All usual residents aged 3 and over"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Ethnicity, Identity, Language and Religion",
@@ -1281,6 +2047,9 @@
     "name": "Knowledge of Irish - 2011 and 2021 TS011",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "IRISH_SKILLS_AGG6"],
+    "statistics": {
+      "UR_POP_3+": "All usual residents aged 3 and over"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Ethnicity, Identity, Language and Religion",
@@ -1290,6 +2059,9 @@
     "name": "National identity - 2011 and 2021 TS009",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "NAT_ID_BASIC"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Ethnicity, Identity, Language and Religion",
@@ -1299,6 +2071,9 @@
     "name": "Passports held - 2011 and 2021 TS008",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "PASSPORT_HELD_AGG5"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Demography",
@@ -1308,6 +2083,9 @@
     "name": "Country of birth - 2011 and 2021 TS007",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "COB_AGG6"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Demography",
@@ -1317,6 +2095,9 @@
     "name": "Number of long-term health conditions - 2011 and 2021 TS019",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_NUM_TC5"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Health",
@@ -1326,6 +2107,9 @@
     "name": "Provision of unpaid care - 2011 and 2021 TS018",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "UNPAID_CARE_AGG4"],
+    "statistics": {
+      "UR_POP_5+": "All usual residents aged 5 and over"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Health",
@@ -1335,6 +2119,9 @@
     "name": "Long-term health problem or disability - 2011 and 2021 TS017",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "DISABILITY"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Health",
@@ -1344,6 +2131,9 @@
     "name": "General health - 2011 and 2021 TS016",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_IN_GENERAL"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Health",
@@ -1353,6 +2143,9 @@
     "name": "Industry of employment - 2011 and 2021 TS024",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "INDUSTRY_AGG8"],
+    "statistics": {
+      "UR_POP_16+_IN_EMPLOYMENT": "All usual residents aged 16 and over in employment"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Labour Market",
@@ -1362,6 +2155,9 @@
     "name": "Hours worked - 2011 and 2021 TS023",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HOURS_WORKED"],
+    "statistics": {
+      "UR_POP_16+_IN_EMPLOYMENT": "All usual residents aged 16 and over in employment"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Labour Market",
@@ -1371,6 +2167,9 @@
     "name": "Economic activity - 2011 and 2021 TS022",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "ECONOMIC_ACTIVITY"],
+    "statistics": {
+      "UR_POP_16+": "All usual residents aged 16 and over"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Labour Market",
@@ -1380,6 +2179,9 @@
     "name": "Highest level of qualification - 2011 and 2021 TS021",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HIGHEST_QUALIFICATION"],
+    "statistics": {
+      "UR_POP_16+": "All usual residents aged 16 and over"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Qualifications",
@@ -1389,6 +2191,9 @@
     "name": "Household composition - 2011 and 2021 TS034",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HH_FAMILY_COMPOSITION_AGG6"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1398,6 +2203,9 @@
     "name": "Number and age of dependent children in household - 2011 and 2021 TS032",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HH_DEPENDENT_CHILDREN_AGG10"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1407,6 +2215,9 @@
     "name": "Car or van availability - 2011 and 2021 TS032",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HH_CAR_VAN_TC5"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1416,6 +2227,9 @@
     "name": "Tenure - 2011 and 2021 TS031",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HH_TENURE_AGG8"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1425,6 +2239,9 @@
     "name": "Central heating - 2011 and 2021 TS030",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HH_CENTRAL_HEATING_AGG4"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1434,6 +2251,9 @@
     "name": "Number of adaptations to accommodation - 2011 and 2021 TS029",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HH_ADAPTED_NUM_TC4"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1443,6 +2263,9 @@
     "name": "Accommodation type - 2011 and 2021 TS028",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "ACCOMMODATION_TYPE"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1452,6 +2275,9 @@
     "name": "Household size - 2011 and 2021 TS027",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HH_SIZE_TC6"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1461,6 +2287,9 @@
     "name": "Households - 2011 and 2021 TS026",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HH": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1470,6 +2299,9 @@
     "name": "Address one year ago - 2011 and 2021 TS025",
     "updated": "2023-11-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "ADDRESS_ONE_YEAR_AGO_AGG3"],
+    "statistics": {
+      "UR_POP_1+": "All usual residents aged 1 and over"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Housing and Accommodation",
@@ -1479,6 +2311,14 @@
     "name": "NISCTS: Worry about Crime and Personal Safety",
     "updated": "2024-10-09",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "WorryC1": "High level of Worry: Car Crime",
+      "WorryC2": "High level of Worry: Crime overall",
+      "WorryC3": "High level of Worry: Burglary",
+      "WorryC4": "High level of Worry: Violent crime",
+      "WorryC5": "Feeling Very Unsafe: Walking alone in area after dark",
+      "WorryC6": "Feeling Very Unsafe: Home alone at night"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2020/21", "2021/22"],
     "product": "Northern Ireland Safe Community Telephone Survey",
@@ -1488,6 +2328,16 @@
     "name": "NISCTS: Perceptions of Anti-Social Behaviour",
     "updated": "2024-10-09",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ASB1": "Very or fairly big problem: Abandoned/burnt-out cars",
+      "ASB2": "Very or fairly big problem: Noisy neighbours/loud parties",
+      "ASB3": "Very or fairly big problem: People being drunk/rowdy in public places",
+      "ASB4": "Very or fairly big problem: People using/dealing drugs",
+      "ASB5": "Very or fairly big problem: Teenagers hanging around on streets",
+      "ASB6": "Very or fairly big problem: Rubbish/litter lying around",
+      "ASB7": "Very or fairly big problem: Vandalism/graffitti/deliberate damage to property",
+      "ASB8": "Perceived high level of anti-social behaviour"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2020/21", "2021/22"],
     "product": "Northern Ireland Safe Community Telephone Survey",
@@ -1497,6 +2347,11 @@
     "name": "NISCTS: Fear of Crime",
     "updated": "2024-10-09",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "FearC1": "Effect of 'fear of crime' on quality of life - Minimal",
+      "FearC2": "Effect of 'fear of crime' on quality of life - Moderate",
+      "FearC3": "Effect of 'fear of crime' on quality of life - Great"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2020/21", "2021/22"],
     "product": "Northern Ireland Safe Community Telephone Survey",
@@ -1506,6 +2361,16 @@
     "name": "NISCTS: Confidence in Policing",
     "updated": "2024-10-09",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ConPol1": "They provide an ordinary day-to-day service for all",
+      "ConPol2": "They do a fairly/very good job",
+      "ConPol3": "They treat Catholics and Protestants equally",
+      "ConPol4": "The Policing Board is independent of the police",
+      "ConPol5": "The Policing Board helps police to do a good job",
+      "ConPol6": "The Police Ombudsman is independent of the police",
+      "ConPol7": "The Police Ombudsman helps the police to do a good job",
+      "ConPol8": "Overall confidence in policing"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2020/21", "2021/22"],
     "product": "Northern Ireland Safe Community Telephone Survey",
@@ -1515,6 +2380,10 @@
     "name": "Steps 2 Success",
     "updated": "2023-12-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "S2SReferrals": "S2S Referrals",
+      "S2SStarts": "S2S Starts"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020"],
     "product": "Steps 2 Success",
@@ -1524,6 +2393,10 @@
     "name": "Steps 2 Success",
     "updated": "2023-12-11",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "S2SReferrals": "S2S Referrals",
+      "S2SStarts": "S2S Starts"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020"],
     "product": "Steps 2 Success",
@@ -1533,6 +2406,12 @@
     "name": "Social Housing Allocations",
     "updated": "2023-12-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ATA": "Allocations to Applicants",
+      "ATNIHET": "Allocations to NIHE Transfers",
+      "ATHAT": "Allocations to Housing Association Transfers",
+      "TA": "Total Allocations"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Social Housing Allocations",
@@ -1542,6 +2421,20 @@
     "name": "Engagement in culture, arts, heritage and sport",
     "updated": "2023-12-15",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CAHS": "Engaged in culture, arts heritage, and sport",
+      "CAS": "Engaged in culture, arts and sport",
+      "CA": "Engaged in culture and arts",
+      "SPORT": "Participated in sport",
+      "ARTS": "Engaged in the arts",
+      "ARTSACTS": "Participated in arts activities",
+      "ARTSEVENTS": "Attended an arts event",
+      "LIBRARY": "Used the public library service",
+      "MUSEUM": "Visited a museum or science centre",
+      "PRONI": "Used PRONI services",
+      "HERITAGE": "Visited any heritage site",
+      "VOL": "Carried out any voluntary work"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021/22",
     "product": "Engagement in culture, arts, heritage and sport",
@@ -1551,6 +2444,14 @@
     "name": "Deaths Registered",
     "updated": "2023-12-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "DTHCOUNT": "Deaths",
+      "DTHMALE": "Male Deaths",
+      "DTHFEMALE": "Female Deaths",
+      "DTHU75": "Deaths to Under 75s",
+      "DTHU75PERC": "Proportion of Deaths to Under 75s",
+      "DTHMEDAGE": "Median Age at Death"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Deaths Registered",
@@ -1560,6 +2461,9 @@
     "name": "Civil Partnerships",
     "updated": "2024-01-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CPCOUNT": "Civil Partnerships"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008-13", "2009-14", "2010-15", "2011-16", "2012-17", "2013-18", "2014-19", "2015-20", "2016-21", "2017-22"],
     "product": "Marriages and Civil Partnerships",
@@ -1569,6 +2473,11 @@
     "name": "Divorces",
     "updated": "2024-01-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "DVCECOUNT": "Divorcees",
+      "DVCECOUNTMALE": "Male Divorcees",
+      "DVCECOUNTFEMALE": "Female Divorcees"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Marriages and Civil Partnerships",
@@ -1578,6 +2487,9 @@
     "name": "Mid-2018 based Population Projections - Components of population change",
     "updated": "2024-02-15",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "comchange"],
+    "statistics": {
+      "COPC": "Components of population change"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043"],
     "product": "Sub-National Population Projections",
@@ -1587,6 +2499,9 @@
     "name": "Mid-2018 based Population Projections",
     "updated": "2024-02-15",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "5yrage", "Sex"],
+    "statistics": {
+      "MYP": "Mid-year population projection"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043"],
     "product": "Sub-National Population Projections",
@@ -1596,6 +2511,9 @@
     "name": "Mid-2018 based Population Projections",
     "updated": "2024-02-15",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age", "Sex"],
+    "statistics": {
+      "MYP": "Mid-year population projection"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043"],
     "product": "Sub-National Population Projections",
@@ -1605,6 +2523,9 @@
     "name": "Mid-2018 based Population Projection totals",
     "updated": "2024-02-16",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Sex"],
+    "statistics": {
+      "PopTot": "Population totals"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043"],
     "product": "Sub-National Population Projections",
@@ -1614,6 +2535,20 @@
     "name": "Continuous Household Survey: Environmental phrases heard of",
     "updated": "2024-02-16",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "SUSDEV": "Sustainable Development",
+      "RESEFF": "Resource Efficiency",
+      "BIODIV": "Biodiversity",
+      "RETWAS": "Rethink Waste",
+      "LOFOHW": "Love food Hate waste",
+      "RERERE": "Reduce Reuse Recycle",
+      "WASPRE": "Waste Prevention",
+      "ENREFW": "Energy recovery from waste",
+      "LANDIV": "Landfill Diversion",
+      "ZERWAS": "Zero Waste",
+      "CIRECO": "Circular Economy",
+      "NONE": "None"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Public Attitudes",
@@ -1623,6 +2558,16 @@
     "name": "Continuous Household Survey: Environmental Information Source",
     "updated": "2024-02-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "LOCCOU": "Local council",
+      "NIEA": "Northern Ireland Envrionment Agency",
+      "DAERA": "Department of Agriculture, Envrionment and Rural Affairs",
+      "INTER": "Internet",
+      "NONGOV": "Environmental Non-Gov Organsation",
+      "NIDIR": "NI Direct",
+      "OTHER": "Other",
+      "NONE": "NONE"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Public Attitudes",
@@ -1632,6 +2577,10 @@
     "name": "Continuous Household Survey: Concern about the environment",
     "updated": "2024-02-23",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CONENVI": "Households concerned for Environment",
+      "NOTCONEVI": "Households not concerned for Environment"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Public Attitudes",
@@ -1641,6 +2590,39 @@
     "name": "Continuous Household Survey: Actions taken for a positive impact on the environment",
     "updated": "2024-02-23",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CDELGA": "Cut down on use of electricity or gas",
+      "CDWATE": "Cut down on use of water",
+      "PTWACY": "Deliberately used public transport\\walked\\cycle",
+      "CDCASJ": "Cut down on car for short journeys",
+      "WILGAR": "Encouraged wildlife in garden",
+      "BOREMA": "Bought items made from recycled material",
+      "DNBPPR": "Decided not to buy a particular product",
+      "BOORFO": "Bought organically produced food",
+      "LEBUHO": "Used low energy light bulbs in the home",
+      "AVFOWA": "Avoided food waste",
+      "REJUMA": "Reduced the junk mail you receive",
+      "AVPRTH": "Avoided buying products you throw away",
+      "DOUNCH": "Donated unwanted used items to charity",
+      "REPLBA": "Reused plastic bags",
+      "USREBA": "Used rechargable batteries",
+      "USTHSE": "Used the kerbside collection service",
+      "BOCLSH": "Bought clothes and items in charity shop",
+      "USONIT": "Used online services to reuse items",
+      "COORWO": "Composted or used a wormery",
+      "USRENA": "Used real nappies",
+      "REWAEX": "Reduced waste by giving a gift experience",
+      "HITOFR": "Hired tools or borrowed from friends",
+      "BUECBR": "Buy eco-friendly products and brands",
+      "MEMORG": "Member of environmental org",
+      "VOTOEN": "Volunteer to care for environment",
+      "SIACPE": "Signed a conservation petition",
+      "BRBAME": "Brought back unused medicines",
+      "BRBACH": "Brought back unused garden chemicals",
+      "IAHWRE": "Increased the amount of household waste recycled",
+      "OTHER": "Other action",
+      "NONE": "None of these"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Public Attitudes",
@@ -1650,6 +2632,28 @@
     "name": "Continuous Household Survey: Environmental problems considered most important",
     "updated": "2024-02-23",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "POLRIVER": "Pollution in rivers",
+      "POLBWB": "Pollution in bathing waters and beaches",
+      "TREXUS": "Traffic exhaust and urban smog",
+      "LOSSPA": "Loss of plants and animals in NI",
+      "OZLADE": "Ozone layer depletion",
+      "TRFODE": "Tropical forest destruction",
+      "CLICHA": "Climate change",
+      "LOSSTH": "Loss of trees and hedgerows in NI",
+      "FUMSMO": "Fumes and smoke from factories",
+      "TRACON": "Traffic congestion",
+      "PESFER": "Use of pesticides and fertilisers",
+      "ACIRAI": "Acid rain",
+      "WASLAN": "Waste send to landfill",
+      "ILDUWA": "Illegal dumping of waste",
+      "NOISE": "Noise",
+      "FRACK": "Fracking",
+      "LITTER": "Litter",
+      "RENORE": "Recyclable waste not being recycled",
+      "OTHER": "Other",
+      "NONE": "None of these"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Public Attitudes",
@@ -1659,6 +2663,13 @@
     "name": "Northern Ireland Local Authority Collected Waste Statistics",
     "updated": "2024-02-26",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "LACMWR": "Local authority collected municipal waste recycling rate",
+      "LACMWL": "Local authority collected municipal waste landfill rate",
+      "LACMWER": "Local authority collected municipal waste energy recovery rate",
+      "HHWREC": "Household waste recycling rate",
+      "HHWLAF": "Household waste landfill rate"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2004/05", "2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Waste",
@@ -1668,6 +2679,9 @@
     "name": "Small for Gestational Age",
     "updated": "2024-04-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "SGA": "Small for Gestational Age"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019", "2020", "2021", "2022"],
     "product": "Pregnancy and Early Years",
@@ -1677,6 +2691,9 @@
     "name": "Small for Gestational Age",
     "updated": "2024-04-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "SGA": "Small for Gestational Age"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019", "2020", "2021", "2022"],
     "product": "Pregnancy and Early Years",
@@ -1686,6 +2703,9 @@
     "name": "Breastfeeding on discharge",
     "updated": "2024-04-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "Bfeed": "Breastfeeding on discharge"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Pregnancy and Early Years",
@@ -1695,6 +2715,9 @@
     "name": "Alcohol Specific Deaths",
     "updated": "2024-03-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "DTHCOUNT": "Deaths"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Deaths Registered",
@@ -1704,6 +2727,9 @@
     "name": "Deaths due to Obesity",
     "updated": "2024-03-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "DTHCOUNT": "Deaths"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2003-07", "2004-08", "2005-09", "2006-10", "2007-11", "2008-12", "2009-13", "2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Deaths Registered",
@@ -1713,6 +2739,10 @@
     "name": "Drug-Related Deaths",
     "updated": "2024-03-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "DRDCOUNT": "Drug-related deaths",
+      "MISUSECOUNT": "Deaths due to drug misuse"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Deaths Registered",
@@ -1722,6 +2752,9 @@
     "name": "Number of Businesses: Activity, Size and Location",
     "updated": "2024-03-19",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "BIG", "EMPBAND", "TOBAND"],
+    "statistics": {
+      "BCOUNTS": "Number of Businesses"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Inter Departmental Business Register",
@@ -1731,6 +2764,9 @@
     "name": "Employee Jobs",
     "updated": "2024-03-19",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "GENWP", "HEADLINE"],
+    "statistics": {
+      "EJOBS": "Employee Jobs"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Business Register and Employment Survey",
@@ -1740,6 +2776,10 @@
     "name": "Business Births",
     "updated": "2024-03-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "BBIRTHCOUNTS": "Number of business births",
+      "BBIRTHRATES": "Business birth rate"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Inter Departmental Business Register",
@@ -1749,6 +2789,10 @@
     "name": "Business Deaths",
     "updated": "2024-03-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "BDEATHCOUNTS": "Number of business deaths",
+      "BDEATHRATES": "Business death rate"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Inter Departmental Business Register",
@@ -1758,6 +2802,9 @@
     "name": "Number of Businesses",
     "updated": "2024-03-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "BIG"],
+    "statistics": {
+      "BCOUNTS": "Number of Businesses"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Inter Departmental Business Register",
@@ -1767,6 +2814,9 @@
     "name": "Births Registered",
     "updated": "2024-04-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "BRTHCOUNT": "Births"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Births Registered",
@@ -1776,6 +2826,9 @@
     "name": "Mid-year population estimates",
     "updated": "2024-04-11",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "broadage4", "Sex"],
+    "statistics": {
+      "MYE": "Mid-year population estimate"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mid Year Population Estimates",
@@ -1785,6 +2838,9 @@
     "name": "Breastfeeding on discharge",
     "updated": "2024-04-11",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "Bfeed": "Breastfeeding on discharge"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Pregnancy and Early Years",
@@ -1794,6 +2850,10 @@
     "name": "Teenage Birth Rates",
     "updated": "2024-04-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "U17BR": "Births registered to mothers aged under 17 per 1,000 population",
+      "U20BR": "Births registered to mothers aged under 20 per 1,000 population"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008-10", "2009-11", "2010-12", "2011-13", "2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
     "product": "Pregnancy and Early Years",
@@ -1803,6 +2863,9 @@
     "name": "Low birth weight",
     "updated": "2024-04-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "LBW": "Proportion of all live births with weight less than 2,500g"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Pregnancy and Early Years",
@@ -1812,6 +2875,9 @@
     "name": "Low birth weight",
     "updated": "2024-04-12",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "LBW": "Proportion of all live births with weight less than 2,500g"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Pregnancy and Early Years",
@@ -1821,6 +2887,9 @@
     "name": "Smoking During Pregnancy",
     "updated": "2024-04-16",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "SmokePreg": "Proportion of all live births that were to mothers that reported smoking during pregnancy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Pregnancy and Early Years",
@@ -1830,6 +2899,9 @@
     "name": "Smoking During Pregnancy",
     "updated": "2024-04-16",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "SmokePreg": "Proportion of all live births that were to mothers that reported smoking during pregnancy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Pregnancy and Early Years",
@@ -1839,6 +2911,13 @@
     "name": "NISCTS: Experience of Crime",
     "updated": "2024-10-09",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ExpC1": "Households victims of burglary",
+      "ExpC2": "Vehicle-owning households victims of vehicle-related theft",
+      "ExpC3": "Households victims of vandalism",
+      "ExpC4": "Adult victims of violent crime",
+      "ExpC5": "Any NISCTS crime"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2020/21", "2021/22"],
     "product": "Northern Ireland Safe Community Telephone Survey",
@@ -1848,6 +2927,10 @@
     "name": "NISCTS: Confidence in the Criminal Justice System",
     "updated": "2024-10-09",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ConCJS1": "The criminal justice system as a whole is fair",
+      "ConCJS2": "The criminal justice system as a whole is effective"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2020/21", "2021/22"],
     "product": "Northern Ireland Safe Community Telephone Survey",
@@ -1857,6 +2940,9 @@
     "name": "Main language - 2011 and 2021 TS010",
     "updated": "2024-04-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "MAIN_LANGUAGE_AGG2"],
+    "statistics": {
+      "UR_POP_3+": "All usual residents aged 3 and over"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2021"],
     "product": "Ethnicity, Identity, Language and Religion",
@@ -1866,6 +2952,9 @@
     "name": "Employment Rate by Religion",
     "updated": "2024-04-30",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "REL"],
+    "statistics": {
+      "ER": "Employment Rate"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Employment Rate",
@@ -1875,6 +2964,9 @@
     "name": "Poverty Rates",
     "updated": "2024-06-06",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDRELPOV": "Individual Relative Poverty"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2007-10", "2008-11", "2009-12", "2010-13", "2011-14", "2012-15", "2013-16", "2014-17", "2015-18", "2016-19", "2017-20", "2018-22", "2019-23"],
     "product": "Poverty",
@@ -1884,6 +2976,9 @@
     "name": "Indicator - Self-efficacy",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDSELFEFF": "Percentage with low self-efficacy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Self-efficacy",
@@ -1893,6 +2988,9 @@
     "name": "Indicator - Self-efficacy",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDSELFEFF": "Percentage with low self-efficacy"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Self-efficacy",
@@ -1902,6 +3000,9 @@
     "name": "Country of birth - basic detail",
     "updated": "2024-05-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "COB_BASIC"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Demography",
@@ -1911,6 +3012,9 @@
     "name": "Single year of age and sex",
     "updated": "2024-05-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "AGE_SYOA", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Demography",
@@ -1920,6 +3024,9 @@
     "name": "Usual resident population",
     "updated": "2024-05-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Demography",
@@ -1929,6 +3036,9 @@
     "name": "Indicator - Life satisfaction",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDLIFESAT": "Average life satisfaction score (from 0 to 10)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Life satisfaction",
@@ -1938,6 +3048,9 @@
     "name": "Indicator - Life satisfaction",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDLIFESAT": "Average life satisfaction score (from 0 to 10)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Life satisfaction",
@@ -1947,6 +3060,9 @@
     "name": "Indicator - Loneliness",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDLONE": "Percentage who were lonely 'often/always' or 'some of the time'"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Loneliness",
@@ -1956,6 +3072,9 @@
     "name": "Indicator - Loneliness",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDLONE": "Percentage who were lonely 'often/always' or 'some of the time'"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Loneliness",
@@ -1965,6 +3084,9 @@
     "name": "Indicator - Crime prevalence rate",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDCRIME": "Percentage who were victims of any NI safe community survey crime"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Crime prevalence rate",
@@ -1974,6 +3096,9 @@
     "name": "Indicator - Crime prevalence rate",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDCRIME": "Percentage who were victims of any NI safe community survey crime"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Crime prevalence rate",
@@ -1983,6 +3108,9 @@
     "name": "Indicator - Volunteering",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDVOL": "Percentage volunteering"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Volunteering",
@@ -1992,6 +3120,9 @@
     "name": "Indicator - Recycled waste",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDRECWSTE": "Percentage of household waste reused, recycled or composted"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Recycled waste",
@@ -2001,6 +3132,9 @@
     "name": "Indicator - Income inequality",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDINCIEQ": "Percentage living in relative poverty (before housing costs)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2002/03-2004/05", "2003/04-2005/06", "2004/05-2006/07", "2005/06-2007/08", "2006/07-2008/09", "2007/08-2009/10", "2008/09-2010/11", "2009/10-2011/12", "2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2021/22", "2019/20-2022/23"],
     "product": "Income inequality",
@@ -2010,6 +3144,9 @@
     "name": "Indicator - Income deprivation",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDINCDP": "Percentage living in absolute poverty (before housing costs)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2002/03-2004/05", "2003/04-2005/06", "2004/05-2006/07", "2005/06-2007/08", "2006/07-2008/09", "2007/08-2009/10", "2008/09-2010/11", "2009/10-2011/12", "2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2021/22", "2019/20-2022/23"],
     "product": "Income deprivation",
@@ -2019,6 +3156,9 @@
     "name": "Indicator - Preventable deaths",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDPREVDTH": "Age standardised death rate (per 100,000 population) for causes considered preventable"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001-05", "2002-06", "2003-07", "2004-08", "2005-09", "2006-10", "2007-11", "2008-12", "2009-13", "2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Preventable deaths",
@@ -2028,6 +3168,10 @@
     "name": "Raw disease prevalence",
     "updated": "2024-05-24",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "DIS"],
+    "statistics": {
+      "Numreg": "Number of patients on the register",
+      "Rawprevalence1000": "Raw disease prevalence per 1,000 patients"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Prevalence Statistics",
@@ -2037,6 +3181,10 @@
     "name": "Raw disease prevalence",
     "updated": "2024-05-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "DIS"],
+    "statistics": {
+      "Numreg": "Number of patients on the register",
+      "Rawprevalence1000": "Raw disease prevalence per 1,000 patients"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Prevalence Statistics",
@@ -2046,6 +3194,12 @@
     "name": "Continuous Household Survey: Home Internet and Broadband Access",
     "updated": "2024-06-07",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HHIAY": "Households with Home Internet Access: Yes",
+      "HHIAN": "Households with Home Internet Access: No",
+      "HHBAY": "Households with Home Broadband Access: Yes",
+      "HHBAN": "Households with Home Broadband Access: No"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Continuous Household Survey",
@@ -2055,6 +3209,9 @@
     "name": "Indicator - Housing costs as a proportion of household income",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDHOUSCT": "Proportion of households spending 30% or more of household income on housing costs"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2009/10 - 2011/12", "2010/11 - 2012/13", "2011/12 - 2013/14", "2012/13 - 2014/15", "2013/14 - 2015/16", "2014/15 - 2016/17", "2015/16 - 2017/18", "2016/17 - 2018/19", "2017/18 - 2019/20", "2018/19 - 2021/22", "2019/20 - 2022/23"],
     "product": "Housing costs as a proportion of household income",
@@ -2064,6 +3221,12 @@
     "name": "Continuous Household Survey: Household Tenure",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HHTPOWO": "Properties owned outright",
+      "HHTPOMG": "Properties owned with mortgage",
+      "HHTPRHE": "Properties rented from NIHE",
+      "HHTPROT": "Properties rented from other"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Continuous Household Survey",
@@ -2073,6 +3236,10 @@
     "name": "Continuous Household Survey: Car Ownership Access",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CARACCY": "Households with access to 1 or more cars",
+      "CARACCN": "Households with no access to cars"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
     "product": "Continuous Household Survey",
@@ -2082,6 +3249,16 @@
     "name": "NISCS: Confidence in Policing",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ConPol1": "They provide an ordinary day-to-day service for all",
+      "ConPol2": "They do a fairly/very good job",
+      "ConPol3": "They treat Catholics and Protestants equally",
+      "ConPol4": "The Policing Board is independent of the police",
+      "ConPol5": "The Policing Board helps police to do a good job",
+      "ConPol6": "The Police Ombudsman is independent of the police",
+      "ConPol7": "The Police Ombudsman helps the police to do a good job",
+      "ConPol8": "Overall confidence in policing"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Northern Ireland Safe Community Survey",
@@ -2091,6 +3268,10 @@
     "name": "NISCS: Confidence in the Criminal Justice System",
     "updated": "2024-07-17",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ConCJS1": "The criminal justice system as a whole is fair",
+      "ConCJS2": "The criminal justice system as a whole is effective"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Northern Ireland Safe Community Survey",
@@ -2100,6 +3281,13 @@
     "name": "NISCS: Experience of Crime",
     "updated": "2024-07-17",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ExpC1": "Households victims of burglary",
+      "ExpC2": "Vehicle-owning households victims of vehicle-related theft",
+      "ExpC3": "Households victims of vandalism",
+      "ExpC4": "Adult victims of violent crime",
+      "ExpC5": "Any NISCS Crime"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Northern Ireland Safe Community Survey",
@@ -2109,6 +3297,11 @@
     "name": "NISCS: Fear of Crime",
     "updated": "2024-07-17",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "FearC1": "Effect of 'fear of crime' on quality of life - Minimal",
+      "FearC2": "Effect of 'fear of crime' on quality of life - Moderate",
+      "FearC3": "Effect of 'fear of crime' on quality of life - Great"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Northern Ireland Safe Community Survey",
@@ -2118,6 +3311,9 @@
     "name": "Indicator - Preventable deaths",
     "updated": "2024-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDPREVDTH": "Age standardised death rate (per 100,000 population) for causes considered preventable"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001-05", "2002-06", "2003-07", "2004-08", "2005-09", "2006-10", "2007-11", "2008-12", "2009-13", "2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
     "product": "Preventable deaths",
@@ -2127,6 +3323,16 @@
     "name": "NISCS: Perceptions of Anti-Social Behaviour",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ASB1": "Very or fairly big problem: Abandoned/burnt-out cars",
+      "ASB2": "Very or fairly big problem: Noisy neighbours/loud parties",
+      "ASB3": "Very or fairly big problem: People being drunk/rowdy in public places",
+      "ASB4": "Very or fairly big problem: People using/dealing drugs",
+      "ASB5": "Very or fairly big problem: Teenagers hanging around on streets",
+      "ASB6": "Very or fairly big problem: Rubbish/litter lying around",
+      "ASB7": "Very or fairly big problem: Vandalism/graffitti/deliberate damage to property",
+      "ASB8": "Perceived high level of anti-social behaviour"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Northern Ireland Safe Community Survey",
@@ -2136,6 +3342,11 @@
     "name": "NISCS: Risk of Victimisation",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "RiskVic1": "Feeling very/fairly likely - Burglary",
+      "RiskVic2": "Feeling very/fairly likely - Vehicle related theft",
+      "RiskVic3": "Feeling very/fairly likely - Violent crime"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18"],
     "product": "Northern Ireland Safe Community Survey",
@@ -2145,6 +3356,14 @@
     "name": "NISCS: Worry about Crime and Personal Safety",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "WorryC1": "High level of Worry: Car Crime",
+      "WorryC2": "High level of Worry: Crime overall",
+      "WorryC3": "High level of Worry: Burglary",
+      "WorryC4": "High level of Worry: Violent crime",
+      "WorryC5": "Feeling Very Unsafe: Walking alone in area after dark",
+      "WorryC6": "Feeling Very Unsafe: Home alone at night"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20"],
     "product": "Northern Ireland Safe Community Survey",
@@ -2154,6 +3373,9 @@
     "name": "Health Card Deregistrations To Outside the UK",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "DEREGNONUK": "Total Non-UK Deregistrations"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "General Medical Services",
@@ -2163,6 +3385,9 @@
     "name": "Health Card Registrations From Outside the UK",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Reason"],
+    "statistics": {
+      "REGNONUK": "Total Non-UK Registrations"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "General Medical Services",
@@ -2172,6 +3397,12 @@
     "name": "Personal Wellbeing",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "WBANX": "Average Anxiety score out of 10 for people aged 16+",
+      "WBHAP": "Average Happiness score out of 10 for people aged 16+",
+      "WBLIFE": "Average Life satisfaction score out of 10 for people aged 16+",
+      "WBWORTH": "Average Worthwhile score out of 10 for people aged 16+"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Personal Wellbeing",
@@ -2181,6 +3412,12 @@
     "name": "Personal Wellbeing",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "WBWORTH": "Average Worthwhile score out of 10 for people aged 16+",
+      "WBLIFE": "Average Life satisfaction score out of 10 for people aged 16+",
+      "WBHAP": "Average Happiness score out of 10 for people aged 16+",
+      "WBANX": "Average Anxiety score out of 10 for people aged 16+"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Personal Wellbeing",
@@ -2190,6 +3427,9 @@
     "name": "Wellbeing - Loneliness",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "WBLON": "Percentage of people aged 16+ who were lonely 'often/always' or 'some of the time'"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Loneliness",
@@ -2199,6 +3439,9 @@
     "name": "Wellbeing - Loneliness",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "WBLON": "Percentage of people aged 16+ who were lonely 'often/always' or 'some of the time'"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Loneliness",
@@ -2208,6 +3451,10 @@
     "name": "Wellbeing - Self-efficacy",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "WBLOWSE": "Percentage with low self-efficacy for people aged 16+",
+      "WBAVGSE": "Average Self-Efficacy score for people aged 16+ (min 5 max 25)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Self-efficacy",
@@ -2217,6 +3464,10 @@
     "name": "Wellbeing - Self-efficacy",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "WBLOWSE": "Percentage with low self-efficacy for people aged 16+",
+      "WBAVGSE": "Average Self-Efficacy score for people aged 16+ (min 5 max 25)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Self-efficacy",
@@ -2226,6 +3477,9 @@
     "name": "Wellbeing - Locus of Control",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "WBLOC": "Average Locus of Control score for people aged 16+ (min 5 max 25)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Locus of Control",
@@ -2235,6 +3489,9 @@
     "name": "Wellbeing - Locus of Control",
     "updated": "2024-06-12",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "WBLOC": "Average Locus of Control score for people aged 16+ (min 5 max 25)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Locus of Control",
@@ -2244,6 +3501,9 @@
     "name": "GP Registrations",
     "updated": "2024-06-19",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "Age Group"],
+    "statistics": {
+      "GPREG": "GP Registrations"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "General Medical Services",
@@ -2253,6 +3513,9 @@
     "name": "GP Registrations",
     "updated": "2024-06-19",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age Group"],
+    "statistics": {
+      "GPREG": "GP Registraions"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "General Medical Services",
@@ -2262,6 +3525,14 @@
     "name": "GPs Practices and Registered Patients",
     "updated": "2024-06-19",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "PRACS": "Total Practices",
+      "GPS": "Total GPs",
+      "RESPAT": "Total Resident Patients",
+      "REGPAT": "Total Registered Patients",
+      "PRACLIST": "Average Practice List Size",
+      "GPLIST": "Average GP List Size"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "General Medical Services",
@@ -2271,6 +3542,14 @@
     "name": "GPs Practices and Registered Patients",
     "updated": "2024-06-19",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "PRACS": "Total Practices",
+      "GPS": "Total GPs",
+      "RESPAT": "Total Resident Patients",
+      "REGPAT": "Total Registered Patients",
+      "PRACLIST": "Average Practice List Size",
+      "GPLIST": "Average GP List Size"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "product": "General Medical Services",
@@ -2280,6 +3559,28 @@
     "name": "Farm Census",
     "updated": "2024-08-26",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "F": "Number of Farms",
+      "LFAF": "LFA farms",
+      "NLFAF": "Non LFA farms",
+      "AFH": "Area farmed in hectares",
+      "AVGSOF": "Average SO/farm",
+      "CH": "Crops in hectares",
+      "GH": "Grass in hectares",
+      "C": "Cattle",
+      "S": "Sheep",
+      "P": "Pigs",
+      "PO": "Poultry",
+      "FA": "Farmers",
+      "SE": "Self employed",
+      "SP": "Spouses",
+      "OW": "Other workers",
+      "AL": "Agricultural labour",
+      "VSF": "Very Small farms",
+      "SF": "Small farms",
+      "MF": "Medium farms",
+      "LF": "Large farms"
+    },
     "time": "TLIST(A1)",
     "time_series": ["1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Farm Census",
@@ -2289,6 +3590,9 @@
     "name": "General Dental Services Dental Registrations",
     "updated": "2024-07-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "Age"],
+    "statistics": {
+      "Dental_Registrations": "Dental Registrations"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Dental Services",
@@ -2298,6 +3602,9 @@
     "name": "General Dental Services Dental Registrations",
     "updated": "2024-07-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age"],
+    "statistics": {
+      "Dental_Registrations": "Dental Registrations"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Dental Services",
@@ -2307,6 +3614,12 @@
     "name": "General Dental Services Dental Treatments",
     "updated": "2024-07-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "GDSDTF": "Fillings",
+      "GDSDTE": "Extractions",
+      "GDSDTC": "Crowns",
+      "GDSDTX": "XRays"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Dental Services",
@@ -2316,6 +3629,12 @@
     "name": "General Dental Services Dental Treatments",
     "updated": "2024-07-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "GDSDTF": "Fillings",
+      "GDSDTE": "Extractions",
+      "GDSDTC": "Crowns",
+      "GDSDTX": "XRays"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Dental Services",
@@ -2325,6 +3644,10 @@
     "name": "General Dental Services Dentists and Surgeries",
     "updated": "2024-07-10",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "GDSDSDentists": "Dentists",
+      "GDSDSSurgeries": "Dental Surgeries"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Dental Services",
@@ -2334,6 +3657,10 @@
     "name": "General Dental Services Dentists and Surgeries",
     "updated": "2024-07-10",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "GDSDSDentists": "Dentists",
+      "GDSDSSurgeries": "Dental Surgeries"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Dental Services",
@@ -2343,6 +3670,19 @@
     "name": "School Leavers Survey - Attainment",
     "updated": "2024-06-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "FSME"],
+    "statistics": {
+      "SchoolLeavers": "School Leavers",
+      "fivegcseatoc": "Number of School Leavers achieving at least 5 GCSEs at grades A*-C (incl. equivalent qualifications)",
+      "fivegcseatocpct": "% of School Leavers achieving at least 5 GCSEs at grades A*-C (incl. equivalent qualifications)",
+      "fivegcseatocincengmath": "Number of School Leavers achieving at least 5 GCSEs at grades A*-C (incl. equivalent qualifications) including GCSE English and maths",
+      "fivegcseatocincengmathpct": "% of School Leavers achieving at least 5 GCSEs at grades A*-C (incl. equivalent qualifications) including GCSE English and maths",
+      "ThreealevAtoC": "Number of School Leavers achieving at least 3 A-levels at grades A*-C (incl. equivalent qualifications)",
+      "ThreealevAtoCpct": "% of School Leavers achieving at least 3 A-levels at grades A*-C (incl. equivalent qualifications)",
+      "ThreeALevels": "Number of School Leavers achieving at least 3 A-levels at grades A*-E (incl. equivalent qualifications)",
+      "ThreeALevelspct": "% of School Leavers achieving at least 3 A-levels at grades A*-E (incl. equivalent qualifications)",
+      "TwoALevels": "Number of School Leavers achieving at least 2 A-levels at grades A*-E (incl. equivalent qualifications)",
+      "TwoALevelspct": "% of School Leavers achieving at least 2 A-levels at grades A*-E (incl. equivalent qualifications)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Leavers",
@@ -2352,6 +3692,19 @@
     "name": "School Leavers Survey - Attainment",
     "updated": "2024-06-27",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "FSME"],
+    "statistics": {
+      "SchoolLeavers": "School Leavers",
+      "fivegcseatoc": "Number of School Leavers achieving at least 5 GCSEs at grades A*-C (incl. equivalent qualifications)",
+      "fivegcseatocpct": "% of School Leavers achieving at least 5 GCSEs at grades A*-C (incl. equivalent qualifications)",
+      "fivegcseatocincengmath": "Number of School Leavers achieving at least 5 GCSEs at grades A*-C (incl. equivalent qualifications) including GCSE English and maths",
+      "fivegcseatocincengmathpct": "% of School Leavers achieving at least 5 GCSEs at grades A*-C (incl. equivalent qualifications) including GCSE English and maths",
+      "ThreealevAtoC": "Number of School Leavers achieving at least 3 A-levels at grades A*-C (incl. equivalent qualifications)",
+      "ThreealevAtoCpct": "% of School Leavers achieving at least 3 A-levels at grades A*-C (incl. equivalent qualifications)",
+      "ThreeALevels": "Number of School Leavers achieving at least 3 A-levels at grades A*-E (incl. equivalent qualifications)",
+      "ThreeALevelspct": "% of School Leavers achieving at least 3 A-levels at grades A*-E (incl. equivalent qualifications)",
+      "TwoALevels": "Number of School Leavers achieving at least 2 A-levels at grades A*-E (incl. equivalent qualifications)",
+      "TwoALevelspct": "% of School Leavers achieving at least 2 A-levels at grades A*-E (incl. equivalent qualifications)"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Leavers",
@@ -2361,6 +3714,19 @@
     "name": "School Leavers Survey - Destination",
     "updated": "2024-06-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "FSME"],
+    "statistics": {
+      "SchoolLeavers": "School Leavers",
+      "destHE": "Number of School Leavers with Destination: Higher Education",
+      "destHEpct": "% of School Leavers with Destination: Higher Education",
+      "destFE": "Number of School Leavers with Destination: Further Education",
+      "destFEpct": "% of School Leavers with Destination: Further Education",
+      "destEmploy": "Number of School Leavers with Destination: Employment",
+      "destEmploypct": "% of School Leavers with Destination: Employment",
+      "destTrain": "Number of School Leavers with Destination: Training",
+      "destTrainpct": "% of School Leavers with Destination: Training",
+      "destUnempUnk": "Number of School Leavers with Destination: Unemployed / Unknown",
+      "destUnempUnkpct": "% of School Leavers with Destination: Unemployed / Unknown"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Leavers",
@@ -2370,6 +3736,19 @@
     "name": "School Leavers Survey - Destination",
     "updated": "2024-06-27",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "FSME"],
+    "statistics": {
+      "SchoolLeavers": "School Leavers",
+      "destHE": "Number of School Leavers with Destination: Higher Education",
+      "destHEpct": "% of School Leavers with Destination: Higher Education",
+      "destFE": "Number of School Leavers with Destination: Further Education",
+      "destFEpct": "% of School Leavers with Destination: Further Education",
+      "destEmploy": "Number of School Leavers with Destination: Employment",
+      "destEmploypct": "% of School Leavers with Destination: Employment",
+      "destTrain": "Number of School Leavers with Destination: Training",
+      "destTrainpct": "% of School Leavers with Destination: Training",
+      "destUnempUnk": "Number of School Leavers with Destination: Unemployed / Unknown",
+      "destUnempUnkpct": "% of School Leavers with Destination: Unemployed / Unknown"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School Leavers",
@@ -2379,6 +3758,9 @@
     "name": "Fixed Penalties and Speed Awareness by offence group",
     "updated": "2024-07-03",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "OffenceGroup"],
+    "statistics": {
+      "FPNSAC": "Fixed Penalties and Speed Awareness Courses"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Driving Offences",
@@ -2388,6 +3770,21 @@
     "name": "Security Related Incidents",
     "updated": "2024-07-03",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "DEA": "Security related deaths",
+      "SHO": "Shooting incidents",
+      "BOM": "Bombing incidents",
+      "INC": "Incendiary incidents",
+      "ASL": "Casualties of paramilitary style assaults (Loyalist)",
+      "ASR": "Casualties of paramilitary style assaults (Republican)",
+      "SHL": "Casualties of paramilitary style shootings (Loyalist)",
+      "SHR": "Casualties of paramilitary style shootings (Republican)",
+      "FIR": "Firearms found",
+      "AMM": "Rounds of ammunition found",
+      "EXP": "Quantity of explosives found (kg)",
+      "ARR": "Persons arrested under S41 of the Terrorism Act 2000",
+      "CHA": "Persons subsequently charged"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Security Related Incidents",
@@ -2397,6 +3794,9 @@
     "name": "Fixed Penalties and Speed Awareness by age group",
     "updated": "2024-07-03",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "AgeGroup"],
+    "statistics": {
+      "FPNSAC": "Fixed Penalties or Speed Awareness"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Driving Offences",
@@ -2406,6 +3806,9 @@
     "name": "Fixed Penalties and Speed Awareness Courses by sex",
     "updated": "2024-07-03",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "OffenderSex"],
+    "statistics": {
+      "FPNSAC": "Fixed Penalties or Speed Awareness Courses"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Driving Offences",
@@ -2415,6 +3818,9 @@
     "name": "Stop and Search",
     "updated": "2024-07-04",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Arrested"],
+    "statistics": {
+      "ALLPERSS": "Persons stopped and searched"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Stop and Search Statistics",
@@ -2424,6 +3830,9 @@
     "name": "Stop and Search",
     "updated": "2024-07-04",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Legislation"],
+    "statistics": {
+      "ALLPERSS": "Persons stopped and searched"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Stop and Search Statistics",
@@ -2433,6 +3842,9 @@
     "name": "Mid-year population estimates",
     "updated": "2024-07-05",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "5yrage", "Sex"],
+    "statistics": {
+      "MYE": "Mid-year population estimate"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "product": "Mid Year Population Estimates",
@@ -2442,6 +3854,9 @@
     "name": "Indicator - School leavers attainment gap",
     "updated": "2024-07-09",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "INDSLATTGAP": "Gap between the percentage of non-free school meal entitled (non-FSME) school leavers and the percentage of FSME school leavers achieving at level 2 or above including GCSE English and maths"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School leavers attainment gap",
@@ -2451,6 +3866,9 @@
     "name": "Indicator - School leavers attainment gap",
     "updated": "2024-07-09",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDSLATTGAP": "Gap between the percentage of non-free school meal entitled (non-FSME) school leavers and the percentage of FSME school leavers achieving at level 2 or above including GCSE English and maths"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "School leavers attainment gap",
@@ -2460,6 +3878,9 @@
     "name": "General Ophthalmic Services Ophthalmic Practices",
     "updated": "2024-07-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "GOSOPRAC": "Ophthalmic Practices"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Ophthalmic Services",
@@ -2469,6 +3890,9 @@
     "name": "Anti-Social Behaviour Incidents",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "allasbinc": "All Anti-Social Behaviour Incidents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Anti-Social Behaviour Statistics",
@@ -2478,6 +3902,12 @@
     "name": "General Ophthalmic Services Ophthalmic Activity",
     "updated": "2024-07-12",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "GOSOTS": "Sight Tests",
+      "GOSOTD": "Domiciliary Sight Tests",
+      "GOSOTV": "Vouchers",
+      "GOSOTR": "Repairs & Replacements"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Ophthalmic Services",
@@ -2487,6 +3917,12 @@
     "name": "General Ophthalmic Services Ophthalmic Activity",
     "updated": "2024-07-12",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "GOSOTS": "Sight Tests",
+      "GOSOTD": "Domiciliary Sight Tests",
+      "GOSOTV": "Vouchers",
+      "GOSOTR": "Repairs & Replacements"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Ophthalmic Services",
@@ -2496,6 +3932,9 @@
     "name": "Anti-Social Behaviour Incidents",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "allasbinc": "All Anti-Social Behaviour Incidents"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Anti-Social Behaviour Statistics",
@@ -2505,6 +3944,9 @@
     "name": "Domestic Abuse Crimes",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "alldacrm": "All Domestic Abuse Crimes"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Domestic Abuse Statistics",
@@ -2514,6 +3956,10 @@
     "name": "Domestic Abuse Incidents and Crimes",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "alldainc": "All Domestic Abuse Incidents",
+      "alldacrm": "All Domestic Abuse Crimes"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Domestic Abuse Statistics",
@@ -2523,6 +3969,11 @@
     "name": "Hate Motivated Crimes",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "allsocrm": "All Crimes with a Sexual Orientation Motivation",
+      "allraccrm": "All Crimes with a Racist Motivation",
+      "allsectcrm": "All Crimes with a Sectarian Motivation"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2004/05", "2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Hate Motivated Crimes and Incidents",
@@ -2532,6 +3983,14 @@
     "name": "Hate Motivated Incidents and Crimes",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "allsoinc": "All Incidents with a Sexual Orientation Motivation",
+      "allsocrm": "All Crimes with a Sexual Orientation Motivation",
+      "allracinc": "All Incidents with a Racist Motivation",
+      "allraccrm": "All Crimes with a Racist Motivation",
+      "allsectinc": "All Incidents with a Sectarian Motivation",
+      "allsectcrm": "All Crimes with a Sectarian Motivation"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2004/05", "2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Hate Motivated Crimes and Incidents",
@@ -2541,6 +4000,9 @@
     "name": "General Ophthalmic Services Ophthalmic Practices",
     "updated": "2024-07-17",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "GOSOPRAC": "Ophthalmic Practices"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "General Ophthalmic Services",
@@ -2550,6 +4012,9 @@
     "name": "Police Recorded Crime",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "crmclass"],
+    "statistics": {
+      "allcrime": "All Crimes Recorded by the Police"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001/02", "2002/03", "2003/04", "2004/05", "2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Police Recorded Crime",
@@ -2559,6 +4024,9 @@
     "name": "Police Recorded Crime",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "crmclass"],
+    "statistics": {
+      "allcrime": "All Crimes Recorded by the Police"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2001/02", "2002/03", "2003/04", "2004/05", "2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
     "product": "Police Recorded Crime",
@@ -2568,6 +4036,9 @@
     "name": "Age - 5 Year",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age_5_year_90+"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Demography",
@@ -2577,6 +4048,9 @@
     "name": "Marital and Civil Partnership Status",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Marital_and_Civil_Partnership_Status"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Demography",
@@ -2586,6 +4060,9 @@
     "name": "Age Structure",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age_strucuture_90+"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Demography",
@@ -2595,6 +4072,9 @@
     "name": "Usual Resident Population",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Usual_resident_population"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Demography",
@@ -2604,6 +4084,9 @@
     "name": "Age - Single Year",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age_single_year_100+"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Demography",
@@ -2613,6 +4096,9 @@
     "name": "Country of Birth - Basic Detail",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Country_of_birth_17_cat"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -2622,6 +4108,9 @@
     "name": "Country of Birth",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Country_of_birth_8_cat"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -2631,6 +4120,9 @@
     "name": "National Identity (Classification 2)",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "National_identity_classification_2"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -2640,6 +4132,9 @@
     "name": "National Identity (Classification 1)",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "National_identity_classification_1"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -2649,6 +4144,9 @@
     "name": "Country of Birth - Intermediate Detail",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Country_of_birth_55_cat"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -2658,6 +4156,9 @@
     "name": "Religion or Religion Brought Up In",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Religion_or_religion_brought_up_in"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -2667,6 +4168,9 @@
     "name": "Ethnic Group",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Ethnic_Group_12_cat"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -2676,6 +4180,9 @@
     "name": "Religion",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Religion_8_cat"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Ethnicity, Identity, Language and Religion",
@@ -2685,6 +4192,9 @@
     "name": "Living Arrangements",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Living_arrangements"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Housing and Accommodation",
@@ -2694,6 +4204,9 @@
     "name": "Lone Parent Households with Dependent Children",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Sex_Census_2011", "Lone_parent_households_with_dependent_children"],
+    "statistics": {
+      "All_households": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Housing and Accommodation",
@@ -2703,6 +4216,9 @@
     "name": "Accommodation Type - Households",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Accommodation_type_8_cat"],
+    "statistics": {
+      "All_households": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Housing and Accommodation",
@@ -2712,6 +4228,9 @@
     "name": "Tenure - Households",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Tenure_10_cat"],
+    "statistics": {
+      "All_households": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Housing and Accommodation",
@@ -2721,6 +4240,9 @@
     "name": "Household Composition",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Household_Composition_15_cat"],
+    "statistics": {
+      "All_households": "All households"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Housing and Accommodation",
@@ -2730,6 +4252,9 @@
     "name": "Industry of Employment by Sex",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Sex_Census_2011", "Industry_18_cat"],
+    "statistics": {
+      "All_usual_residents_employment_16_74_years": "All usual residents in employment: Aged 16-74 years"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Labour Market",
@@ -2739,6 +4264,9 @@
     "name": "Occupation by Sex",
     "updated": "2024-07-25",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Sex_Census_2011", "Occupation_2010_9_cat"],
+    "statistics": {
+      "All_usual_residents_employment_16_74_years": "All usual residents in employment: Aged 16-74 years"
+    },
     "time": "TLIST(A1)",
     "time_series": "2011",
     "product": "Labour Market",
@@ -2748,6 +4276,9 @@
     "name": "General health by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "GENERAL_HEALTH", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2757,6 +4288,9 @@
     "name": "Number of long-term conditions by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_NUM_TC5", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2766,6 +4300,9 @@
     "name": "Type of long-term condition: Autism or Asperger syndrome by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_AUTISM", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2775,6 +4312,9 @@
     "name": "Type of long-term condition: Shortness of breath or difficulty breathing by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_BREATHING", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2784,6 +4324,9 @@
     "name": "Type of long-term condition: Emotional, psychological or mental health condition by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_MENTAL_HEALTH", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2793,6 +4336,9 @@
     "name": "Type of long-term condition: Deafness or partial hearing loss by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_DEAF", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2802,6 +4348,9 @@
     "name": "Type of long-term condition: Intellectual or learning disability by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_INTELLECTUAL_LEARNING_DISABILITY", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2811,6 +4360,10 @@
     "name": "Continuous Household Survey: Concern about the environment",
     "updated": "2024-08-20",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CONCERNENVI": "Households concerned for Environment",
+      "NOTCONCERNENVI": "Households not concerned for Environment"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2021/22", "2022/23", "2023/24"],
     "product": "Public Attitudes",
@@ -2820,6 +4373,17 @@
     "name": "Continuous Household Survey: Actions taken for a positive impact on the environment",
     "updated": "2024-08-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "REDCON": "Reduced consumption of household utilities",
+      "ENVORG": "Joined or donated to an environment group/organisation",
+      "RECYCL": "Reused, Recycled and disposed of waste products appropriately",
+      "PWBIOD": "Encouraged plant and wildlife biodiversity",
+      "RFOOWA": "Reduced food waste",
+      "ORSUPRO": "Bought organic or sustainable products",
+      "REDCAR": "Reduced the number of car journeys",
+      "OTHER": "Other",
+      "NONE": "None"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2021/22", "2022/23", "2023/24"],
     "product": "Public Attitudes",
@@ -2829,6 +4393,15 @@
     "name": "Continuous Household Survey: Environmental problems considered most important",
     "updated": "2024-08-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ILLWAS": "Illegal dumping of waste",
+      "POLLAWS": "Pollution of air water and soil",
+      "LOSSWB": "Loss of plant and wildlife biodiversity",
+      "CLICHAO": "Climate change and Ozone layer depletion",
+      "WASMAN": "Waste management",
+      "OTHER": "Other",
+      "NONE": "None of these"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2021/22", "2022/23", "2023/24"],
     "product": "Public Attitudes",
@@ -2838,6 +4411,9 @@
     "name": "Achievements in Further Education Colleges",
     "updated": "2024-08-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "FEACHMn": "Number of achievements"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Further Education Statistics",
@@ -2847,6 +4423,9 @@
     "name": "Achievements in Further Education Colleges",
     "updated": "2024-08-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "FEACHMn": "Number of achievements"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Further Education Statistics",
@@ -2856,6 +4435,9 @@
     "name": "Regulated enrolments at Further Education Colleges",
     "updated": "2024-08-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "FEENROLn": "Number of enrolments"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Further Education Statistics",
@@ -2865,6 +4447,9 @@
     "name": "Regulated enrolments at Further Education Colleges",
     "updated": "2024-08-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "FEENROLn": "Number of enrolments"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
     "product": "Further Education Statistics",
@@ -2874,6 +4459,13 @@
     "name": "Continuous Household Survey: Considered greatest threat to biodiversity",
     "updated": "2024-08-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "POLLALW": "Pollution (air, land and water)",
+      "HABLOSS": "Habitat loss by human activity",
+      "CLCHAN": "Climate Change",
+      "NNINVS": "Non-native invasive species",
+      "OTHER": "Other"
+    },
     "time": "TLIST(A1)",
     "time_series": ["2021/22", "2022/23", "2023/24"],
     "product": "Public Attitudes",
@@ -2883,6 +4475,28 @@
     "name": "Farm Census",
     "updated": "2024-08-26",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "F": "Number of Farms",
+      "LFAF": "LFA farms",
+      "NLFAF": "Non LFA farms",
+      "AFH": "Area farmed in hectares",
+      "AVGSOF": "Average SO/farm",
+      "CH": "Crops in hectares",
+      "GH": "Grass in hectares",
+      "C": "Cattle",
+      "S": "Sheep",
+      "P": "Pigs",
+      "PO": "Poultry",
+      "FA": "Farmers",
+      "SE": "Self employed",
+      "SP": "Spouses",
+      "OW": "Other workers",
+      "AL": "Agricultural labour",
+      "VSF": "Very Small farms",
+      "SF": "Small farms",
+      "MF": "Medium farms",
+      "LF": "Large farms"
+    },
     "time": "TLIST(A1)",
     "time_series": ["1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "product": "Farm Census",
@@ -2892,6 +4506,9 @@
     "name": "Type of long-term condition: Learning difficulty by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_LEARNING_DIFFICULTY", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2901,6 +4518,9 @@
     "name": "Type of long-term condition: Frequent periods of confusion or memory loss by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_CONFUSION_MEMORY_LOSS", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2910,6 +4530,9 @@
     "name": "Type of long-term condition: Mobility or dexterity difficulty that limits basic physical activities by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_MOBILITY_PHYSICAL", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",
@@ -2919,6 +4542,9 @@
     "name": "Type of long-term condition: Other condition by age and sex",
     "updated": "2024-09-27",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "HEALTH_CONDITION_OTHER", "AGE_BAND_AGG8", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
     "time": "TLIST(A1)",
     "time_series": "2021",
     "product": "Health",

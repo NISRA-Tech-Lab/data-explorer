@@ -1,99 +1,78 @@
-let top_menu = document.getElementById("top-menu");
 
-async function getData (string) {
-    let api_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
-        encodeURIComponent(string);
-
-    const response = await fetch(api_url);
-    const {result} = await response.json();
-
-    return result;
+window.onload = function() {
+    createMenus();
 }
 
-async function barChart(matrix, statistic, geog_type, geog_code) {   
 
-    let api_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
-        encodeURIComponent('{"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":["STATISTIC","' +
-            geog_type + '"],"dimension":{"STATISTIC":{"category":{"index":["' +
-            statistic + '"]}},"' + geog_type + '":{"category":{"index":["' + geog_code + 
-            '"]}}},"extension":{"pivot":null,"codes":false,"language":{"code":"en"},"format":{"type":"JSON-stat","version":"2.0"},"matrix":"'
-            + matrix + '"},"version":"2.0"}}');
+let products_menu = document.getElementById("product");
+let subjects_menu = document.getElementById("subject");
+let names_menu = document.getElementById("name");
+let geo_menu = document.getElementById("geo");
+let stats_menu = document.getElementById("stat");
 
-    const response = await fetch(api_url);
-    const {result} = await response.json();
-
-    let variable = result.dimension.STATISTIC.category.label[statistic];
-    let unit = result.dimension.STATISTIC.category.unit[statistic].label;
-    let decimals = result.dimension.STATISTIC.category.unit[statistic].decimals;
-
-    document.getElementById("graph-title").innerHTML = result.label;
-    document.getElementById("graph-var").innerHTML = "Variable: <strong>" + variable + "</strong>";
-    document.getElementById("graph-updated").innerHTML = "Last updated: <strong>" + result.updated.substr(8, 2) + "/" + result.updated.substr(5, 2) + "/" + result.updated.substr(0, 4) + "</strong>";
-
-    let time_var = result.id.filter(function (x) {return x.includes("TLIST")});
-
-    let this_value = result.value.slice(-1)[0];
-    let last_value = result.value.slice(-2)[0];
-
-    let area = result.dimension[geog_type].category.label[geog_code];
-
-    if (result.dimension[time_var].category.index.length > 1) {
-
-        this_year = result.dimension[time_var].category.index.slice(-1)[0];
-        last_year = result.dimension[time_var].category.index.slice(-2)[0];
-    
-        let graph_comment;
-        if (this_value == last_value) {
-            graph_comment = "remained the same";
-        } else {
-            if (this_value > last_value) {
-                graph_comment = "increased";
-            } else {
-                graph_comment = "decreased";
-            }
-            graph_comment += " by " + Math.abs(this_value - last_value).toFixed(decimals);
-        }  
-    
-        document.getElementById("graph-commentary").innerHTML = "The " + unit + " of " + variable + " in " + area +
-            " has " + graph_comment  + " betweeen " + last_year + " and " + this_year + "."
-
+async function createMenus () {
+    try {
+        const response = await fetch("data-portal-maps.json");
+        const responseData = await response.json();
+        tables = responseData;
+    } catch (error) {
+        
     }
 
-    const labels = result.dimension[time_var].category.index;
+    let subjects = [];
 
+    for (let i = 0; i < Object.keys(tables).length; i ++) {
+        subject = tables[Object.keys(tables)[i]].subject;
+        if (!subjects.includes(subject)) {
+            subjects.push(subject);
+        }
+    }
+
+    subjects.sort();
     
 
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: area,
-            data: result.value,
-            fill: false,
-            borderColor: '#3878c5',
-            backgroundColor: '#3878c5',
-            tension: 0.3
-        }]
-    };
+    for (let i = 0; i < subjects.length; i ++) {
+        option = document.createElement("option");
+        option.value = subjects[i];
+        option.textContent = subjects[i];
+        subjects_menu.appendChild(option);
+    }
 
-    const config = {
-        type: 'line',
-        data: data,
-        options: {
-            scales: {
-                x: {
-                    grid: {
-                        display: false
-                    }
-                }
-            }
-        }
-      };  
+    fillProductsMenu();
+    fillNamesMenu();
+    fillGeoMenu();
+    fillStatMenu();
 
-    new Chart("line-chart", config);
+    subjects_menu.onchange = function() {
+        fillProductsMenu()
+        fillNamesMenu();
+        fillGeoMenu();
+        fillStatMenu();
+    }
+
+    products_menu.onchange = function () {
+        fillNamesMenu();
+        fillGeoMenu();
+        fillStatMenu();
+    }
+
+    names_menu.onchange = function () {
+        fillGeoMenu();
+        fillStatMenu();
+    }
+
+    geo_menu.onchange = mapSelections;
+
+    stats_menu.onchange = mapSelections;
 
 }
 
 async function plotMap (matrix, statistic, geog_type) {
+
+    let map_container = document.getElementById("map-container");
+    while (map_container.firstChild) {
+        map_container.removeChild(map_container.firstChild);
+    }    
 
     let restful_url = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/" + matrix + "/JSON-stat/2.0/en";
 
@@ -135,6 +114,7 @@ async function plotMap (matrix, statistic, geog_type) {
     }
 
     let data = result.value;
+    data = data.map(item => item === '-' ? null : item);
     let unit = result.dimension.STATISTIC.category.unit[statistic].label;
 
     // Create a div for map to sit in
@@ -142,7 +122,7 @@ async function plotMap (matrix, statistic, geog_type) {
     map_div.id = matrix + "-map";
     map_div.classList.add("map");
 
-    let map_container = document.getElementById("map-container");
+    
     document.getElementById("map-loading").style.display = "none";
     map_container.style.display = "block";
     map_container.appendChild(map_div);
@@ -299,6 +279,115 @@ async function plotMap (matrix, statistic, geog_type) {
 
 }
 
-window.onload = function() {
-    plotMap(config.matrix, config.statistic, config.geog_type, config.year);
+
+
+function fillProductsMenu () {
+
+    while(products_menu.firstChild) {
+        products_menu.removeChild(products_menu.firstChild);
+    }
+
+    let products = [];
+
+    for (let i = 0; i < Object.keys(tables).length; i ++) {
+        subject = tables[Object.keys(tables)[i]].subject;
+        product = tables[Object.keys(tables)[i]].product;
+        if (subject == subjects_menu.value & !products.includes(product)) {
+            products.push(product);
+        }
+    }
+
+    products.sort();
+
+    for (let i = 0; i < products.length; i ++) {
+        option = document.createElement("option");
+        option.value = products[i];
+        option.textContent = products[i];
+        products_menu.appendChild(option);
+    }
+
+}
+
+function fillNamesMenu () {
+
+    while(names_menu.firstChild) {
+        names_menu.removeChild(names_menu.firstChild);
+    }
+
+    let names = [];
+
+    for (let i = 0; i < Object.keys(tables).length; i ++) {
+        subject = tables[Object.keys(tables)[i]].subject;
+        product = tables[Object.keys(tables)[i]].product;
+        title = tables[Object.keys(tables)[i]].name;
+        if (subject == subjects_menu.value & product == products_menu.value & !names.includes(title)) {
+            names.push(title);
+        }
+    }
+
+    names.sort();
+
+    for (let i = 0; i < names.length; i ++) {
+        option = document.createElement("option");
+        option.value = names[i];
+        option.textContent = names[i];
+        names_menu.appendChild(option);
+    }
+
+}
+
+function fillGeoMenu () {
+
+    while(geo_menu.firstChild) {
+        geo_menu.removeChild(geo_menu.firstChild);
+    }
+
+    for (let i = 0; i < Object.keys(tables).length; i ++) {
+        title = tables[Object.keys(tables)[i]].name;
+        categories = tables[Object.keys(tables)[i]].categories;
+        if (title == names_menu.value) {
+            option = document.createElement("option");
+            option.value = Object.keys(tables)[i];
+            if (categories.includes("AA")) {
+                option.textContent = "Assembly Area";
+            } else if (categories.includes("LGD2014")) {
+                option.textContent = "Local Government District";
+            }
+            geo_menu.appendChild(option);
+        }
+    }
+
+}
+
+function fillStatMenu () {
+
+    while(stats_menu.firstChild) {
+        stats_menu.removeChild(stats_menu.firstChild);
+    }
+
+    statistics = tables[geo_menu.value].statistics;
+
+    for (let i = 0; i < Object.keys(statistics).length; i ++) {
+        option = document.createElement("option");
+        option.value = Object.keys(statistics)[i];
+        option.textContent = Object.values(statistics)[i];
+        stats_menu.appendChild(option);
+    }
+
+    
+    mapSelections();
+
+}
+
+function mapSelections () {
+
+    categories = tables[geo_menu.value].categories;
+    
+    if (categories.includes("LGD2014")) {
+        geog_type = "LGD2014";
+    } else if (categories.includes("AA")) {
+        geog_type = "AA";
+    }
+
+    plotMap(geo_menu.value, stats_menu.value, geog_type);
 }
