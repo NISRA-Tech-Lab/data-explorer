@@ -79,15 +79,33 @@ async function plotMap (matrix, statistic, geog_type) {
     const restful = await fetch(restful_url);
     const fetched_restful = await restful.json();
 
-    let time_var = fetched_restful.id.filter(function (x) {return x.includes("TLIST")});
+    let time_var = fetched_restful.id.filter(function (x) {return x.includes("TLIST")})[0];
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
+    let other_vars = tables[matrix].categories;
+    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA"].includes(x));
+
+    let id_vars = `["STATISTIC", "${time_var}"`;
+    let select_all = "";
+
+    if (other_vars.length > 0) {
+        for (let i = 0; i < other_vars.length; i ++) {
+            id_vars += `, "${other_vars[i]}", `;
+            select_all += `,"${other_vars[i]}":{"category":{"index":["All"]}}`;
+        }
+    }
+    
+    id_vars += `]`;   
+    
+
     let api_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
-        encodeURIComponent('{"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":["STATISTIC","' +
-            time_var + '"],"dimension":{"STATISTIC":{"category":{"index":["' +
+        encodeURIComponent('{"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":' +
+            id_vars + ',"dimension":{"STATISTIC":{"category":{"index":["' +
             statistic + '"]}},"' + time_var + '":{"category":{"index":["' + year +
-            '"]}}},"extension":{"pivot":null,"codes":false,"language":{"code":"en"},"format":{"type":"JSON-stat","version":"2.0"},"matrix":"' +
+            '"]}}' + select_all + '},"extension":{"pivot":null,"codes":false,"language":{"code":"en"},"format":{"type":"JSON-stat","version":"2.0"},"matrix":"' +
             matrix + '"},"version":"2.0"}}');
+
+            console.log(api_url)
 
     const response = await fetch(api_url);
     const {result} = await response.json();
@@ -275,7 +293,8 @@ async function plotMap (matrix, statistic, geog_type) {
         document.getElementById("map-commentary").innerHTML = "In " + year + ", " + highest_area + " had the highest " + unit +  " of " + stat +
             " (" + Math.max(...data).toLocaleString() + ") while " + lowest_area + " had the lowest (" + Math.min(...data).toLocaleString() + ").";
 
-        
+        document.getElementById("dp-link").innerHTML = `<a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">See on NISRA Data Portal</a>`
+
 
 }
 

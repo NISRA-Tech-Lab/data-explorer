@@ -27,13 +27,10 @@ for (i in 1:length(data_portal$label)) {
 
       fetch_error <- "error" %in% names(json_data)
 
-      if (fetch_error) print(paste0("Error fetching ", matrices[i], ". Trying again..."))
+      if (fetch_error) print(paste0("Error fetching ", data_portal$label[i], ". Trying again..."))
 
     }
     
-    if (matrix == "FCLGD") {
-      FCLGD <- json_data
-    }
 
     tables[[data_portal$extension$matrix[i]]] <- list(
       name = data_portal$label[i],
