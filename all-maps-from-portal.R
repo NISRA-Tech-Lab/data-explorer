@@ -3,6 +3,34 @@ library(dplyr)
 
 api_key <- "801aaca4bcf0030599c019f4efa8b89032e5e6aa1de4a629a7f7e9a86db7fb8c"
 
+# Get themes from data portal ####
+
+data_portal_nav <- jsonlite::fromJSON("https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.System.Navigation.Navigation_API.Read%22,%22params%22:%7B%22LngIsoCode%22:%22en%22%7D,%22id%22:1%7D")
+
+data_portal_structure <- data.frame(
+  Theme = character(),
+  Subject = character()
+)
+
+themes <- data_portal_nav$result$ThmValue
+
+for (i in seq_along(themes)) {
+  
+  subjects <- data_portal_nav$result$subject[[i]]$SbjValue
+  
+  for (j in seq_along(subjects)) {
+
+    data_portal_structure <- data_portal_structure %>% 
+      bind_rows(
+        data.frame(Theme = themes[i],
+                   Subject = subjects[j])
+      )
+    
+  }
+}
+
+# Get list of tables from data portal ####
+
 data_portal <- jsonlite::fromJSON(txt = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadCollection")$link$item
 
 tables <- list()
@@ -31,6 +59,10 @@ for (i in 1:length(data_portal$label)) {
 
     }
     
+    subject <- json_data$result$extension$subject$value
+    theme <- data_portal_structure %>% 
+      filter(Subject == subject) %>% 
+      pull("Theme")
 
     tables[[data_portal$extension$matrix[i]]] <- list(
       name = data_portal$label[i],
@@ -39,8 +71,9 @@ for (i in 1:length(data_portal$label)) {
       statistics = json_data$result$dimension$STATISTIC$category$label,
       time = time_var,
       time_series = time_series,
-      product = json_data$result$extension$product$value,
-      subject = json_data$result$extension$subject$value
+      theme = theme,
+      subject = subject,
+      product = json_data$result$extension$product$value
     )
   }
 }
