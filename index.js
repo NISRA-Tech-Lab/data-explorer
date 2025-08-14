@@ -9,6 +9,7 @@ let subjects_menu = document.getElementById("subject");
 let names_menu = document.getElementById("name");
 let geo_menu = document.getElementById("geo");
 let stats_menu = document.getElementById("stat");
+let other_menu = document.getElementById("other-vars");
 
 async function createMenus () {
     try {
@@ -49,6 +50,7 @@ async function createMenus () {
         fillNamesMenu();
         fillGeoMenu();
         fillStatMenu();
+        clearOtherMenus();
     }
 
     subjects_menu.onchange = function() {
@@ -56,26 +58,35 @@ async function createMenus () {
         fillNamesMenu();
         fillGeoMenu();
         fillStatMenu();
+        clearOtherMenus();
     }
 
     products_menu.onchange = function () {
         fillNamesMenu();
         fillGeoMenu();
         fillStatMenu();
+        clearOtherMenus();
     }
 
     names_menu.onchange = function () {
         fillGeoMenu();
         fillStatMenu();
+        clearOtherMenus();
     }
 
-    geo_menu.onchange = mapSelections;
+    geo_menu.onchange = function () {
+        mapSelections();
+        clearOtherMenus();
+    }
 
-    stats_menu.onchange = mapSelections;
+    stats_menu.onchange = function () {
+        mapSelections();
+        clearOtherMenus();
+    }
 
 }
 
-async function plotMap (matrix, statistic, geog_type) {
+async function plotMap (matrix, statistic, geog_type, other = "") {
 
     let map_container = document.getElementById("map-container");
     while (map_container.firstChild) {
@@ -89,35 +100,69 @@ async function plotMap (matrix, statistic, geog_type) {
 
     let time_var = fetched_restful.id.filter(function (x) {return x.includes("TLIST")})[0];
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
+    console.log(year)
 
     let other_vars = tables[matrix].categories;
     other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA"].includes(x));
 
     let id_vars = `["STATISTIC", "${time_var}"`;
-    let select_all = "";
+    let other_selections = "";
 
     if (other_vars.length > 0) {
-        
         for (let i = 0; i < other_vars.length; i ++) {
-            console.log(other_vars[i])
+            
+            id_vars += `, "${other_vars[i]}"`;
+
+            new_menu = document.createElement("div");
+            if (i == 0) {
+                new_menu.style = "margin-top: 20px; margin-bottom: 10px;";
+            } else {
+                new_menu.style = "margin-bottom: 10px;"
+            }
+
+            if (other == "") {
+                new_menu.innerHTML = `<label for = "${other_vars[i]}">${fetched_restful.dimension[other_vars[i]].label}:</label><select id = "${other_vars[i]}" name = "${other_vars[i]}"></select>`
+
+                options = Object.keys(fetched_restful.dimension[other_vars[i]].category.label);
+                labels = Object.values(fetched_restful.dimension[other_vars[i]].category.label);
+
+                other_menu.appendChild(new_menu);
+
+                for (let j = 0; j < labels.length; j ++) {
+                    option = document.createElement("option");
+                    option.value = options[j];
+                    option.textContent = labels[j];
+                    document.getElementById(other_vars[i]).appendChild(option);
+                }
+
+                new_menu.onchange = function () {
+                    plotMap (matrix, statistic, geog_type, other = document.getElementById(other_vars[i]).value)
+                }
+            }
+
+            other_selections += `,"${other_vars[i]}":{"category":{"index":["${document.getElementById(other_vars[i]).value}"]}}`;
+            
             
         }
+        console.log(other_selections)
     }
+
+
     
     
     
     
     id_vars += `]`;   
+    console.log(id_vars)
     
 
     let api_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
         encodeURIComponent('{"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":' +
             id_vars + ',"dimension":{"STATISTIC":{"category":{"index":["' +
             statistic + '"]}},"' + time_var + '":{"category":{"index":["' + year +
-            '"]}}},"extension":{"pivot":null,"codes":false,"language":{"code":"en"},"format":{"type":"JSON-stat","version":"2.0"},"matrix":"' +
+            '"]}}' + other_selections + '},"extension":{"pivot":null,"codes":false,"language":{"code":"en"},"format":{"type":"JSON-stat","version":"2.0"},"matrix":"' +
             matrix + '"},"version":"2.0"}}');
-
-            
+   
 
     const response = await fetch(api_url);
     const {result} = await response.json();
@@ -448,4 +493,10 @@ function mapSelections () {
     }
 
     plotMap(geo_menu.value, stats_menu.value, geog_type);
+}
+
+function clearOtherMenus () {
+    while (other_menu.firstChild) {
+        other_menu.removeChild(other_menu.firstChild);
+    } 
 }
