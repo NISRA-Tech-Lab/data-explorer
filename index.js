@@ -11,6 +11,7 @@ let geo_menu = document.getElementById("geo");
 let stats_menu = document.getElementById("stat");
 let other_menu = document.getElementById("other-vars");
 let window_title = document.getElementsByTagName("title")[0];
+let chart_container = document.getElementById("chart-container");
 
 let search = window.location.search.replace("?", "").split("&");
 
@@ -106,7 +107,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let other_vars = tables[matrix].categories;
     other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT"].includes(x));
 
-    let id_vars = `["STATISTIC", "${time_var}"`;
+    let id_vars = `["STATISTIC", "${time_var}", "${geog_type}"`;
     let other_selections = "";
 
     if (other_vars.length > 0) {
@@ -163,10 +164,75 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     const {result} = await response.json();
 
     if (result.dimension[geog_type].category.index.includes("N92000002")) {
-        NI_position = result.dimension[geog_type].category.index.indexOf("N92000002")
+        NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
         result.value.splice(NI_position, 1);
         result.dimension[geog_type].category.index.splice(NI_position, 1);
         delete result.dimension[geog_type].category.label["N92000002"];
+
+        while(chart_container.firstChild) {
+            chart_container.removeChild(chart_container.firstChild)
+        }
+
+        let ni_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
+        encodeURIComponent('{"jsonrpc": "2.0", "method": "PxStat.Data.Cube_API.ReadDataset", "params": {"class": "query", "id": ' + id_vars + ', "dimension": { "STATISTIC": {"category": {"index": ["' + statistic +
+            '"]}}, "' + geog_type + 
+            '": {"category": {"index": ["N92000002"]}}' + other_selections + '},"extension": {"pivot": null,"codes": false,"language": {"code":"en"},"format":{"type": "JSON-stat","version": "2.0"},"matrix": "'+
+            matrix + '"},"version": "2.0"}}');   
+
+        const ni_response = await fetch(ni_url);
+        const ni_result = await ni_response.json();
+
+        const data_series = ni_result.result.value;
+        // Make sure values are numbers
+        const values = data_series.map(v => (v === null || v === undefined ? null : Number(v)));
+
+        const time_series = ni_result.result.dimension[time_var].category.index;
+
+        const chart_data = {
+        labels: time_series,
+        datasets: [{
+            label: 'Northern Ireland',
+            data: values,
+            borderColor: "#000000",
+            backgroundColor: "#000000",
+            fill: false,
+            pointBackgroundColor: "#000000",
+            tension: 0 // optional: straight lines
+        }]
+        };
+
+        // Chart configuration
+        const chart_config = {
+        type: 'line',
+        data: chart_data, // <-- was `chart_data,` before (wrong key)
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+            x: {
+                grid: { lineWidth: 0, drawTicks: true, tickWidth: 1 },
+                ticks: { minRotation: 0, maxRotation: 0 }
+            },
+            y: {
+                beginAtZero: true,
+                ticks: { minRotation: 0, maxRotation: 0 }
+            }
+            },
+            interaction: { intersect: false, mode: "index" }
+        },
+        plugins: []
+        };
+
+        // Create a new canvas and render
+        const chart_canvas = document.createElement("canvas");
+        chart_canvas.id = "line-canvas";
+        chart_container.appendChild(chart_canvas);
+
+        // Prefer element or 2D context, not just the id string
+        const ctx = chart_canvas.getContext('2d');
+        new Chart(ctx, chart_config);
+
+
     }
 
     if (result.dimension[geog_type].category.index.includes("0")) {
@@ -402,10 +468,11 @@ function fillProductsMenu () {
     let products = {};
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
+        theme = tables[Object.keys(tables)[i]].theme_code;
         subject = tables[Object.keys(tables)[i]].subject_code;
         product = tables[Object.keys(tables)[i]].product;
         product_code = tables[Object.keys(tables)[i]].product_code;
-        if (subject == subjects_menu.value & !Object.keys(products).includes(product)) {
+        if (theme == themes_menu.value & subject == subjects_menu.value & !Object.keys(products).includes(product)) {
             products[product] = {"code": product_code};
         }
     }
@@ -481,9 +548,11 @@ function fillGeoMenu () {
     }
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
+        theme = tables[Object.keys(tables)[i]].theme_code;
+        subject = tables[Object.keys(tables)[i]].subject_code;
         title = tables[Object.keys(tables)[i]].name.replaceAll(" ", "-");
         categories = tables[Object.keys(tables)[i]].categories;
-        if (title == names_menu.value) {
+        if (theme == themes_menu.value & subject == subjects_menu.value & title == names_menu.value) {
             option = document.createElement("option");
             option.value = Object.keys(tables)[i];
             if (categories.includes("AA")) {
