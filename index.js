@@ -399,31 +399,32 @@ function fillProductsMenu () {
         products_menu.removeChild(products_menu.firstChild);
     }
 
-    let products = [];
+    let products = {};
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
         subject = tables[Object.keys(tables)[i]].subject_code;
         product = tables[Object.keys(tables)[i]].product;
-        if (subject == subjects_menu.value & !products.includes(product)) {
-            products.push(product);
+        product_code = tables[Object.keys(tables)[i]].product_code;
+        if (subject == subjects_menu.value & !Object.keys(products).includes(product)) {
+            products[product] = {"code": product_code};
         }
     }
 
-    products.sort();
+    products = sortObject(products);
 
-    for (let i = 0; i < products.length; i ++) {
+    for (let i = 0; i < Object.keys(products).length; i ++) {
         option = document.createElement("option");
-        option.value = products[i];
-        option.textContent = products[i];
+        option.value = products[Object.keys(products)[i]].code;
+        option.textContent = Object.keys(products)[i];
         products_menu.appendChild(option);
     }
 
-    let selected_product = products[0];
+    let selected_product = products[Object.keys(products)[0]].code;
 
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("product=")) {
             search_split = search[i].split("=");
-            selected_product = search_split[1].replaceAll("%20", " ");
+            selected_product = search_split[1];
             break;
         }
     }
@@ -441,10 +442,11 @@ function fillNamesMenu () {
     let names = [];
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
+        theme = tables[Object.keys(tables)[i]].theme_code;
         subject = tables[Object.keys(tables)[i]].subject_code;
-        product = tables[Object.keys(tables)[i]].product;
+        product = tables[Object.keys(tables)[i]].product_code;
         title = tables[Object.keys(tables)[i]].name;
-        if (subject == subjects_menu.value & product == products_menu.value & !names.includes(title)) {
+        if (theme == themes_menu.value & subject == subjects_menu.value & product == products_menu.value & !names.includes(title)) {
             names.push(title);
         }
     }
@@ -453,17 +455,17 @@ function fillNamesMenu () {
 
     for (let i = 0; i < names.length; i ++) {
         option = document.createElement("option");
-        option.value = names[i];
+        option.value = names[i].replaceAll(" ", "-");
         option.textContent = names[i];
         names_menu.appendChild(option);
     }
 
-    let selected_name = names[0];
+    let selected_name = names[0].replaceAll(" ", "-");
 
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("name=")) {
             search_split = search[i].split("=");
-            selected_name = search_split[1].replaceAll("%20", " ");
+            selected_name = search_split[1];
             break;
         }
     }
@@ -479,7 +481,7 @@ function fillGeoMenu () {
     }
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
-        title = tables[Object.keys(tables)[i]].name;
+        title = tables[Object.keys(tables)[i]].name.replaceAll(" ", "-");
         categories = tables[Object.keys(tables)[i]].categories;
         if (title == names_menu.value) {
             option = document.createElement("option");

@@ -10,11 +10,10 @@ data_portal_nav <- jsonlite::fromJSON(
   )
 
 data_portal_structure <- data.frame(
-  Theme = character(),
-  `Theme Code` = numeric(),
+  theme = character(),
+  theme_code = numeric(),
   Subject = character(),
-  `Subject Code` = numeric(),
-  check.names = FALSE
+  subject_code = numeric()
 )
 
 themes <- data_portal_nav$result$ThmValue
@@ -30,11 +29,10 @@ for (i in seq_along(themes)) {
     data_portal_structure <- data_portal_structure %>% 
       bind_rows(
         data.frame(
-          Theme = themes[i],
-          `Theme Code` = theme_codes[i],
+          theme = themes[i],
+          theme_code = theme_codes[i],
           Subject = subjects[j],
-          `Subject Code` = subject_codes[j],
-          check.names = FALSE
+          subject_code = subject_codes[j]
           )
       )
     
@@ -85,11 +83,12 @@ for (i in 1:length(data_portal$label)) {
       statistics = json_data$result$dimension$STATISTIC$category$label,
       time = time_var,
       time_series = time_series,
-      theme = theme$Theme,
-      theme_code = theme$`Theme Code`,
+      theme = theme$theme,
+      theme_code = theme$theme_code,
       subject = subject,
-      subject_code = theme$`Subject Code`,
-      product = json_data$result$extension$product$value
+      subject_code = theme$subject_code,
+      product = json_data$result$extension$product$value,
+      product_code = json_data$result$extension$product$code
     )
   }
 }
