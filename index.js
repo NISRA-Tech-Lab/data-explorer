@@ -10,6 +10,7 @@ let names_menu = document.getElementById("name");
 let geo_menu = document.getElementById("geo");
 let stats_menu = document.getElementById("stat");
 let other_menu = document.getElementById("other-vars");
+let window_title = document.getElementsByTagName("title")[0];
 
 let search = window.location.search.replace("?", "").split("&");
 
@@ -101,7 +102,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
     let other_vars = tables[matrix].categories;
-    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA"].includes(x));
+    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT"].includes(x));
 
     let id_vars = `["STATISTIC", "${time_var}"`;
     let other_selections = "";
@@ -157,8 +158,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     const response = await fetch(api_url);
     const {result} = await response.json();
-
-    
 
     if (result.dimension[geog_type].category.index.includes("N92000002")) {
         NI_position = result.dimension[geog_type].category.index.indexOf("N92000002")
@@ -238,16 +237,17 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     // Variable name to use if geo data is LGD or AA
     if (geog_type.includes("LGD")) {
-        area_var = "LGDNAME"
+        area_var = "LGDNAME";
     } else if (geog_type == "AA") {
-        area_var = "PC_NAME"
+        area_var = "PC_NAME";
+    } if (geog_type == "HSCT") {
+        area_var = "TrustName";
     }
 
          // Function to add tool tip to each layer
          function enhanceLayer(f, l){
 
             if (f.properties){
-                  
                   if (data[f.properties['OBJECTID'] - 1] != null) {
                      l.bindTooltip(f.properties[area_var] + " (" + year + "): <b>" + data[f.properties['OBJECTID'] - 1].toLocaleString("en-GB") + "</b> (" + unit + ")");
                   } else {
@@ -289,6 +289,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                shapes = L.geoJSON(LGD_map, {onEachFeature:enhanceLayer}).addTo(map);
          } else if (geog_type == "AA") {
                shapes = L.geoJSON(AA_map, {onEachFeature:enhanceLayer}).addTo(map);
+         } else if (geog_type == "HSCT") {
+                shapes = L.geoJSON(HSCT_map, {onEachFeature:enhanceLayer}).addTo(map);
          }
 
          if (!document.getElementById(matrix + "-legend")) {
@@ -479,10 +481,23 @@ function fillGeoMenu () {
                 option.textContent = "Assembly Area";
             } else if (categories.includes("LGD2014")) {
                 option.textContent = "Local Government District";
+            } else if (categories.includes("HSCT")) {
+                option.textContent = "Health and Social Care Trust";
             }
             geo_menu.appendChild(option);
         }
     }
+
+    let selected_geo = geo_menu.options[0].value;
+
+    for (let i = 0; i < search.length; i ++) {
+        if (search[i].includes("geo=")) {
+            search_split = search[i].split("=");
+            selected_geo = search_split[1];
+        }
+    }
+
+    geo_menu.value = selected_geo; 
 
 }
 
@@ -524,6 +539,8 @@ function mapSelections () {
         geog_type = "LGD2014";
     } else if (categories.includes("AA")) {
         geog_type = "AA";
+    } else if (categories.includes("HSCT")) {
+        geog_type = "HSCT";
     }
 
     plotMap(geo_menu.value, stats_menu.value, geog_type);
