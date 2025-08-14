@@ -29,11 +29,14 @@
         </div>
     </div>
 
-    <div class = "container">
+    <div class = "container-fluid">
         
 
-        <div class = "row">
-            <div class = "col-6">
+    <div class = "row">
+
+      <div class = "col-3">
+
+        
                 <div style = "margin-top: 20px; margin-bottom: 10px;">
                     <label for = "theme">Choose a theme:</label>
                     <select id = "theme" name = "theme"></select>
@@ -58,27 +61,27 @@
                     <label for = "stat">Choose a statistic:</label>
                     <select id = "stat" name = "stat"></select>
                 </div>
-            </div>
-            <div id = "other-vars" class = "col-6">
-                
-            </div>
+            
+            <div id = "other-vars">
+            </div>        
+            
         </div>
 
-
-        <div id = "map-scrn" >
+      <div id = "map-div" class = "col-9">
+        
             <h2 id = "map-title"></h3>
-            <p id = "map-var"></p>
             <img id = "map-loading" src = "img/TechLab Loading.gif">
             <div id = "map-container"></div>
             <p id = "map-updated"></p>
             <p id = "map-commentary"></p>
             <p id = "dp-link"></p>
-        </div>
+        
 
-
-
+        </div> 
+    </div>
 
     </div>
+
     
 </body>
 </html>

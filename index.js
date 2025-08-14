@@ -137,7 +137,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                 }
 
                 new_menu.onchange = function () {
-                    plotMap (matrix, statistic, geog_type, other = document.getElementById(other_vars[i]).value)
+                    plotMap(matrix, statistic, geog_type, other = document.getElementById(other_vars[i]).value);
+
                 }
             }
 
@@ -339,7 +340,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         let stat = result.dimension.STATISTIC.category.label[statistic];
 
         document.getElementById("map-title").innerHTML = result.label + " (" + year + ")" ;
-        document.getElementById("map-var").innerHTML = "Variable: <strong>" + stat + "</strong>";
         document.getElementById("map-updated").innerHTML = "Last updated: <strong>" + result.updated.substr(8, 2) + "/" + result.updated.substr(5, 2) + "/" + result.updated.substr(0, 4) + "</strong>";
 
         highest_area = result.dimension[geog_type].category.label[result.dimension[geog_type].category.index[data.indexOf(Math.max(...data))]];

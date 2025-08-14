@@ -118,10 +118,10 @@ h2, h3 {
     outline: none;
 }
 
-label {
-    width: 500px;
+label, select {
+    width: 100%;
 }
 
-select {
-    width: 500px;
+#map-div {
+    padding: 20px;
 }
