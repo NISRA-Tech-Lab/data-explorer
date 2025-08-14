@@ -223,6 +223,12 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         plugins: []
         };
 
+        chart_title = document.createElement("h2");
+
+        chart_title.innerHTML = `${result.label} in Northern Ireland<br>${time_series[0]} - ${time_series.pop()}`;
+
+        chart_container.appendChild(chart_title);
+
         // Create a new canvas and render
         const chart_canvas = document.createElement("canvas");
         chart_canvas.id = "line-canvas";
@@ -405,7 +411,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         let stat = result.dimension.STATISTIC.category.label[statistic];
 
-        document.getElementById("map-title").innerHTML = result.label + " (" + year + ")" ;
+        
+
+        document.getElementById("map-title").innerHTML = result.label + " by " + result.dimension[geog_type].label + " (" + year + ")" ;
         document.getElementById("map-updated").innerHTML = "Last updated: <strong>" + result.updated.substr(8, 2) + "/" + result.updated.substr(5, 2) + "/" + result.updated.substr(0, 4) + "</strong>";
 
         highest_area = result.dimension[geog_type].category.label[result.dimension[geog_type].category.index[data.indexOf(Math.max(...data))]];
