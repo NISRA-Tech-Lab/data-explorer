@@ -5,7 +5,9 @@ api_key <- "801aaca4bcf0030599c019f4efa8b89032e5e6aa1de4a629a7f7e9a86db7fb8c"
 
 # Get themes from data portal ####
 
-data_portal_nav <- jsonlite::fromJSON("https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.System.Navigation.Navigation_API.Read%22,%22params%22:%7B%22LngIsoCode%22:%22en%22%7D,%22id%22:1%7D")
+data_portal_nav <- jsonlite::fromJSON(
+  "https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.System.Navigation.Navigation_API.Read%22,%22params%22:%7B%22LngIsoCode%22:%22en%22%7D,%22id%22:1%7D"
+  )
 
 data_portal_structure <- data.frame(
   Theme = character(),
@@ -60,6 +62,9 @@ for (i in 1:length(data_portal$label)) {
     }
     
     subject <- json_data$result$extension$subject$value
+    
+    if (subject == "Crime") subject <- "Recorded crime"
+    
     theme <- data_portal_structure %>% 
       filter(Subject == subject) %>% 
       pull("Theme")
