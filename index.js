@@ -248,6 +248,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
          function enhanceLayer(f, l){
 
             if (f.properties){
+                console.log(f.properties['OBJECTID'])
                   if (data[f.properties['OBJECTID'] - 1] != null) {
                      l.bindTooltip(f.properties[area_var] + " (" + year + "): <b>" + data[f.properties['OBJECTID'] - 1].toLocaleString("en-GB") + "</b> (" + unit + ")");
                   } else {
