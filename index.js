@@ -11,7 +11,10 @@ let geo_menu = document.getElementById("geo");
 let stats_menu = document.getElementById("stat");
 let other_menu = document.getElementById("other-vars");
 
+let search = window.location.search.replace("?", "").split("&");
+
 async function createMenus () {
+
     try {
         const response = await fetch("data-portal-maps.json");
         const responseData = await response.json();
@@ -29,7 +32,7 @@ async function createMenus () {
         }
     }
 
-    themes.sort();    
+    themes.sort();
 
     for (let i = 0; i < themes.length; i ++) {
         option = document.createElement("option");
@@ -38,50 +41,46 @@ async function createMenus () {
         themes_menu.appendChild(option);
     }
 
+    let selected_theme = themes[0];
+
+    for (let i = 0; i < search.length; i ++) {
+        if (search[i].includes("theme")) {
+            search_split = search[i].split("=");
+            selected_theme = search_split[1].replaceAll("%20", " ");
+        }
+    }
+
+    themes_menu.value = selected_theme;
+
     fillSubjectsMenu();
     fillProductsMenu();
     fillNamesMenu();
     fillGeoMenu();
     fillStatMenu();
+    clearOtherMenus();
 
     themes_menu.onchange = function () {
-        fillSubjectsMenu();
-        fillProductsMenu();
-        fillNamesMenu();
-        fillGeoMenu();
-        fillStatMenu();
-        clearOtherMenus();
+        window.location.search = `?theme=${themes_menu.value}`;
     }
 
     subjects_menu.onchange = function() {
-        fillProductsMenu()
-        fillNamesMenu();
-        fillGeoMenu();
-        fillStatMenu();
-        clearOtherMenus();
+        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}`;
     }
 
     products_menu.onchange = function () {
-        fillNamesMenu();
-        fillGeoMenu();
-        fillStatMenu();
-        clearOtherMenus();
+        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}`;
     }
 
     names_menu.onchange = function () {
-        fillGeoMenu();
-        fillStatMenu();
-        clearOtherMenus();
+        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}`;
     }
 
     geo_menu.onchange = function () {
-        mapSelections();
-        clearOtherMenus();
+        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}&geo=${geo_menu.value}`;
     }
 
     stats_menu.onchange = function () {
-        mapSelections();
-        clearOtherMenus();
+        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}&geo=${geo_menu.value}&stat=${stats_menu.value}`;
     }
 
 }
@@ -100,7 +99,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     let time_var = fetched_restful.id.filter(function (x) {return x.includes("TLIST")})[0];
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
-    console.log(year)
 
     let other_vars = tables[matrix].categories;
     other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA"].includes(x));
@@ -144,17 +142,10 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             
             
         }
-        console.log(other_selections)
-    }
-
-
-    
-    
-    
+        
+    }  
     
     id_vars += `]`;   
-    console.log(id_vars)
-    
 
     let api_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
         encodeURIComponent('{"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":' +
@@ -167,7 +158,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     const response = await fetch(api_url);
     const {result} = await response.json();
 
-    console.log(result)
+    
 
     if (result.dimension[geog_type].category.index.includes("N92000002")) {
         NI_position = result.dimension[geog_type].category.index.indexOf("N92000002")
@@ -382,6 +373,17 @@ function fillSubjectsMenu () {
         subjects_menu.appendChild(option);
     }
 
+    let selected_subject = subjects[0];
+
+    for (let i = 0; i < search.length; i ++) {
+        if (search[i].includes("subject")) {
+            search_split = search[i].split("=");
+            selected_subject = search_split[1].replaceAll("%20", " ");
+        }
+    }
+
+    subjects_menu.value = selected_subject;    
+
 }
 
 function fillProductsMenu () {
@@ -408,6 +410,17 @@ function fillProductsMenu () {
         option.textContent = products[i];
         products_menu.appendChild(option);
     }
+
+    let selected_product = products[0];
+
+    for (let i = 0; i < search.length; i ++) {
+        if (search[i].includes("product")) {
+            search_split = search[i].split("=");
+            selected_product = search_split[1].replaceAll("%20", " ");
+        }
+    }
+
+    products_menu.value = selected_product;  
 
 }
 
@@ -436,6 +449,17 @@ function fillNamesMenu () {
         option.textContent = names[i];
         names_menu.appendChild(option);
     }
+
+    let selected_name = names[0];
+
+    for (let i = 0; i < search.length; i ++) {
+        if (search[i].includes("name")) {
+            search_split = search[i].split("=");
+            selected_name = search_split[1].replaceAll("%20", " ");
+        }
+    }
+
+    names_menu.value = selected_name;  
 
 }
 
@@ -477,6 +501,16 @@ function fillStatMenu () {
         stats_menu.appendChild(option);
     }
 
+    let selected_stat = Object.keys(statistics)[0];
+
+    for (let i = 0; i < search.length; i ++) {
+        if (search[i].includes("stat")) {
+            search_split = search[i].split("=");
+            selected_stat = search_split[1];
+        }
+    }
+
+    stats_menu.value = selected_stat;  
     
     mapSelections();
 
