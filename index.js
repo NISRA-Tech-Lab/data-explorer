@@ -24,30 +24,32 @@ async function createMenus () {
         
     }
 
-    let themes = [];
+    let themes = {}
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
         theme = tables[Object.keys(tables)[i]].theme;
-        if (!themes.includes(theme)) {
-            themes.push(theme);
+        theme_code = tables[Object.keys(tables)[i]].theme_code;
+        if (!Object.keys(themes).includes(theme)) {
+            themes[theme] = {"code": theme_code};
         }
     }
 
-    themes.sort();
+    themes = sortObject(themes);
 
-    for (let i = 0; i < themes.length; i ++) {
+    for (let i = 0; i < Object.keys(themes).length; i ++) {
         option = document.createElement("option");
-        option.value = themes[i];
-        option.textContent = themes[i];
+        option.value = themes[Object.keys(themes)[i]].code;
+        option.textContent = Object.keys(themes)[i];
         themes_menu.appendChild(option);
     }
 
-    let selected_theme = themes[0];
+    let selected_theme = themes[Object.keys(themes)[0]].code;
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("theme")) {
+        if (search[i].includes("theme=")) {
             search_split = search[i].split("=");
             selected_theme = search_split[1].replaceAll("%20", " ");
+            break;
         }
     }
 
@@ -248,7 +250,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
          function enhanceLayer(f, l){
 
             if (f.properties){
-                console.log(f.properties['OBJECTID'])
+                
                   if (data[f.properties['OBJECTID'] - 1] != null) {
                      l.bindTooltip(f.properties[area_var] + " (" + year + "): <b>" + data[f.properties['OBJECTID'] - 1].toLocaleString("en-GB") + "</b> (" + unit + ")");
                   } else {
@@ -357,31 +359,33 @@ function fillSubjectsMenu () {
         subjects_menu.removeChild(subjects_menu.firstChild);
     }
 
-    let subjects = [];
+    let subjects = {};
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
-        theme = tables[Object.keys(tables)[i]].theme;
+        theme = tables[Object.keys(tables)[i]].theme_code;
         subject = tables[Object.keys(tables)[i]].subject;
-        if (theme == themes_menu.value & !subjects.includes(subject)) {
-            subjects.push(subject);
+        subject_code = tables[Object.keys(tables)[i]].subject_code;
+        if (theme == themes_menu.value & !Object.keys(subjects).includes(subject)) {
+            subjects[subject] = {"code": subject_code};
         }
     }
 
-    subjects.sort();
+    subjects = sortObject(subjects);
 
-    for (let i = 0; i < subjects.length; i ++) {
+    for (let i = 0; i < Object.keys(subjects).length; i ++) {
         option = document.createElement("option");
-        option.value = subjects[i];
-        option.textContent = subjects[i];
+        option.value = subjects[Object.keys(subjects)[i]].code;
+        option.textContent = Object.keys(subjects)[i];
         subjects_menu.appendChild(option);
     }
 
-    let selected_subject = subjects[0];
+    let selected_subject = subjects[Object.keys(subjects)[0]].code;
 
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("subject")) {
             search_split = search[i].split("=");
-            selected_subject = search_split[1].replaceAll("%20", " ");
+            selected_subject = search_split[1];
+            break;
         }
     }
 
@@ -398,7 +402,7 @@ function fillProductsMenu () {
     let products = [];
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
-        subject = tables[Object.keys(tables)[i]].subject;
+        subject = tables[Object.keys(tables)[i]].subject_code;
         product = tables[Object.keys(tables)[i]].product;
         if (subject == subjects_menu.value & !products.includes(product)) {
             products.push(product);
@@ -417,9 +421,10 @@ function fillProductsMenu () {
     let selected_product = products[0];
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("product")) {
+        if (search[i].includes("product=")) {
             search_split = search[i].split("=");
             selected_product = search_split[1].replaceAll("%20", " ");
+            break;
         }
     }
 
@@ -436,7 +441,7 @@ function fillNamesMenu () {
     let names = [];
 
     for (let i = 0; i < Object.keys(tables).length; i ++) {
-        subject = tables[Object.keys(tables)[i]].subject;
+        subject = tables[Object.keys(tables)[i]].subject_code;
         product = tables[Object.keys(tables)[i]].product;
         title = tables[Object.keys(tables)[i]].name;
         if (subject == subjects_menu.value & product == products_menu.value & !names.includes(title)) {
@@ -456,9 +461,10 @@ function fillNamesMenu () {
     let selected_name = names[0];
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("name")) {
+        if (search[i].includes("name=")) {
             search_split = search[i].split("=");
             selected_name = search_split[1].replaceAll("%20", " ");
+            break;
         }
     }
 
@@ -520,9 +526,10 @@ function fillStatMenu () {
     let selected_stat = Object.keys(statistics)[0];
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("stat")) {
+        if (search[i].includes("stat=")) {
             search_split = search[i].split("=");
             selected_stat = search_split[1];
+            break
         }
     }
 
@@ -551,4 +558,24 @@ function clearOtherMenus () {
     while (other_menu.firstChild) {
         other_menu.removeChild(other_menu.firstChild);
     } 
+}
+
+// A function to sort items alphabetically inside an object based on the object key
+function sortObject(o) {
+   var sorted = {},
+   key, a = [];
+
+   for (key in o) {
+         if (o.hasOwnProperty(key)) {
+            a.push(key);
+         }
+   }
+
+   a.sort();
+
+   for (key = 0; key < a.length; key++) {
+         sorted[a[key]] = o[a[key]];
+   }
+   
+   return sorted;
 }

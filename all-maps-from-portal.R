@@ -11,21 +11,31 @@ data_portal_nav <- jsonlite::fromJSON(
 
 data_portal_structure <- data.frame(
   Theme = character(),
-  Subject = character()
+  `Theme Code` = numeric(),
+  Subject = character(),
+  `Subject Code` = numeric(),
+  check.names = FALSE
 )
 
 themes <- data_portal_nav$result$ThmValue
+theme_codes <- data_portal_nav$result$ThmCode
 
 for (i in seq_along(themes)) {
   
   subjects <- data_portal_nav$result$subject[[i]]$SbjValue
+  subject_codes <- data_portal_nav$result$subject[[i]]$SbjCode
   
   for (j in seq_along(subjects)) {
 
     data_portal_structure <- data_portal_structure %>% 
       bind_rows(
-        data.frame(Theme = themes[i],
-                   Subject = subjects[j])
+        data.frame(
+          Theme = themes[i],
+          `Theme Code` = theme_codes[i],
+          Subject = subjects[j],
+          `Subject Code` = subject_codes[j],
+          check.names = FALSE
+          )
       )
     
   }
@@ -66,8 +76,7 @@ for (i in 1:length(data_portal$label)) {
     if (subject == "Crime") subject <- "Recorded crime"
     
     theme <- data_portal_structure %>% 
-      filter(Subject == subject) %>% 
-      pull("Theme")
+      filter(Subject == subject)
 
     tables[[data_portal$extension$matrix[i]]] <- list(
       name = data_portal$label[i],
@@ -76,8 +85,10 @@ for (i in 1:length(data_portal$label)) {
       statistics = json_data$result$dimension$STATISTIC$category$label,
       time = time_var,
       time_series = time_series,
-      theme = theme,
+      theme = theme$Theme,
+      theme_code = theme$`Theme Code`,
       subject = subject,
+      subject_code = theme$`Subject Code`,
       product = json_data$result$extension$product$value
     )
   }
