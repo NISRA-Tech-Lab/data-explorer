@@ -334,12 +334,11 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             if (f.properties){
 
                 let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[code_var]);
-                console.log()
                 
                   if (data[geog_index] != null) {
-                     l.bindTooltip(f.properties[area_var] + " (" + year + "): <b>" + data[geog_index].toLocaleString("en-GB") + "</b> (" + unit + ")");
+                     l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <b>" + data[geog_index].toLocaleString("en-GB") + "</b> (" + unit + ")");
                   } else {
-                     l.bindTooltip(f.properties[area_var] + " (" + year + "): <b>Not available</b>");
+                     l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <b>Not available</b>");
                   }
 
                   // http://leafletjs.com/reference.html#path-options
@@ -437,8 +436,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         highest_area = result.dimension[geog_type].category.label[result.dimension[geog_type].category.index[data.indexOf(Math.max(...data))]];
         lowest_area = result.dimension[geog_type].category.label[result.dimension[geog_type].category.index[data.indexOf(Math.min(...data))]];
          
-        document.getElementById("map-commentary").innerHTML = "In " + year + ", " + highest_area + " had the highest " + unit +  " of " + stat_label +
-            " (" + Math.max(...data).toLocaleString() + ") while " + lowest_area + " had the lowest (" + Math.min(...data).toLocaleString() + ").";
+        document.getElementById("map-commentary").innerHTML = "In " + year + ", " + titleCase(highest_area) + " had the highest " + unit +  " of " + stat_label +
+            " (" + Math.max(...data).toLocaleString() + ") while " + titleCase(lowest_area) + " had the lowest (" + Math.min(...data).toLocaleString() + ").";
 
         document.getElementById("dp-link").innerHTML = `<a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">See on NISRA Data Portal</a>`
 
@@ -641,7 +640,6 @@ function fillStatMenu () {
 function mapSelections () {
 
     categories = tables[geo_menu.value].categories;
-    console.log(categories)
     
     if (categories.includes("LGD2014")) {
         geog_type = "LGD2014";
@@ -680,4 +678,14 @@ function sortObject(o) {
    }
    
    return sorted;
+}
+
+function titleCase(str) {
+  str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] != "and") {
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);     
+    }
+  }
+  return str.join(' ');
 }
