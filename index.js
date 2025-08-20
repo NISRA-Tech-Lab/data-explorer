@@ -105,7 +105,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
     let other_vars = tables[matrix].categories;
-    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT"].includes(x));
+    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014"].includes(x));
 
     let id_vars = `["STATISTIC", "${time_var}", "${geog_type}"`;
     let other_selections = "";
@@ -188,10 +188,12 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         const time_series = ni_result.result.dimension[time_var].category.index;
 
+        var stat_label = Object.values(result.dimension.STATISTIC.category.label)[0];
+
         const chart_data = {
         labels: time_series,
         datasets: [{
-            label: 'Northern Ireland',
+            label: stat_label,
             data: values,
             borderColor: "#000000",
             backgroundColor: "#000000",
@@ -258,6 +260,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let data = result.value;
     data = data.map(item => item === '-' ? null : item);
     let unit = result.dimension.STATISTIC.category.unit[statistic].label;
+    
 
     // Create a div for map to sit in
     map_div = document.createElement("div");
@@ -313,26 +316,35 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     // Variable name to use if geo data is LGD or AA
     if (geog_type.includes("LGD")) {
         area_var = "LGDNAME";
+        code_var = "LGDCode";
     } else if (geog_type == "AA") {
         area_var = "PC_NAME";
+        code_var = "PC_ID";
     } if (geog_type == "HSCT") {
         area_var = "TrustName";
+        code_var = "TrustCode";
+    } if (geog_type.includes("DEA")) {
+        area_var = "DEA";
+        code_var = "DEA_code"
     }
 
          // Function to add tool tip to each layer
          function enhanceLayer(f, l){
 
             if (f.properties){
+
+                let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[code_var]);
+                console.log()
                 
-                  if (data[f.properties['OBJECTID'] - 1] != null) {
-                     l.bindTooltip(f.properties[area_var] + " (" + year + "): <b>" + data[f.properties['OBJECTID'] - 1].toLocaleString("en-GB") + "</b> (" + unit + ")");
+                  if (data[geog_index] != null) {
+                     l.bindTooltip(f.properties[area_var] + " (" + year + "): <b>" + data[geog_index].toLocaleString("en-GB") + "</b> (" + unit + ")");
                   } else {
                      l.bindTooltip(f.properties[area_var] + " (" + year + "): <b>Not available</b>");
                   }
 
                   // http://leafletjs.com/reference.html#path-options
                   l.setStyle({
-                     fillColor: getColor(colours[f.properties['OBJECTID'] - 1]),
+                     fillColor: getColor(colours[geog_index]),
                      fillOpacity: 0.75,
                      stroke: true,
                      color: "#555555",
@@ -362,17 +374,25 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
          
          // geojson data atted to map and enhanceLayer function applied to each feature    
          if (geog_type.includes("LGD")) {
-               shapes = L.geoJSON(LGD_map, {onEachFeature:enhanceLayer}).addTo(map);
+            shapes = L.geoJSON(LGD_map, {onEachFeature:enhanceLayer}).addTo(map);
          } else if (geog_type == "AA") {
-               shapes = L.geoJSON(AA_map, {onEachFeature:enhanceLayer}).addTo(map);
+            shapes = L.geoJSON(AA_map, {onEachFeature:enhanceLayer}).addTo(map);
          } else if (geog_type == "HSCT") {
-                shapes = L.geoJSON(HSCT_map, {onEachFeature:enhanceLayer}).addTo(map);
+            shapes = L.geoJSON(HSCT_map, {onEachFeature:enhanceLayer}).addTo(map);
+         } else if (geog_type.includes("DEA")) {
+            shapes = L.geoJSON(DEA_map, {onEachFeature:enhanceLayer}).addTo(map);
          }
 
          if (!document.getElementById(matrix + "-legend")) {
             legend_div = document.createElement("div");
             legend_div.id = matrix + "-legend";
             legend_div.classList.add("map-legend");
+
+            legend_title = document.createElement("div");
+            legend_title.textContent = stat_label;
+            legend_title.classList.add("legend-title");
+            legend_div.appendChild(legend_title);
+
             legend_row_1 = document.createElement("div");
             legend_row_1.classList.add("row");
 
@@ -409,17 +429,15 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
          min_value.innerHTML = range_min.toLocaleString("en-GB");       
          max_value.innerHTML = range_max.toLocaleString("en-GB");
 
-        let stat = result.dimension.STATISTIC.category.label[statistic];
-
-        
+            
 
         document.getElementById("map-title").innerHTML = result.label + " by " + result.dimension[geog_type].label + " (" + year + ")" ;
         document.getElementById("map-updated").innerHTML = "Last updated: <strong>" + result.updated.substr(8, 2) + "/" + result.updated.substr(5, 2) + "/" + result.updated.substr(0, 4) + "</strong>";
 
         highest_area = result.dimension[geog_type].category.label[result.dimension[geog_type].category.index[data.indexOf(Math.max(...data))]];
         lowest_area = result.dimension[geog_type].category.label[result.dimension[geog_type].category.index[data.indexOf(Math.min(...data))]];
-
-        document.getElementById("map-commentary").innerHTML = "In " + year + ", " + highest_area + " had the highest " + unit +  " of " + stat +
+         
+        document.getElementById("map-commentary").innerHTML = "In " + year + ", " + highest_area + " had the highest " + unit +  " of " + stat_label +
             " (" + Math.max(...data).toLocaleString() + ") while " + lowest_area + " had the lowest (" + Math.min(...data).toLocaleString() + ").";
 
         document.getElementById("dp-link").innerHTML = `<a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">See on NISRA Data Portal</a>`
@@ -569,6 +587,8 @@ function fillGeoMenu () {
                 option.textContent = "Local Government District";
             } else if (categories.includes("HSCT")) {
                 option.textContent = "Health and Social Care Trust";
+            } else if (categories.includes("DEA2014")) {
+                option.textContent = "District Electoral Area";
             }
             geo_menu.appendChild(option);
         }
@@ -621,6 +641,7 @@ function fillStatMenu () {
 function mapSelections () {
 
     categories = tables[geo_menu.value].categories;
+    console.log(categories)
     
     if (categories.includes("LGD2014")) {
         geog_type = "LGD2014";
@@ -628,6 +649,8 @@ function mapSelections () {
         geog_type = "AA";
     } else if (categories.includes("HSCT")) {
         geog_type = "HSCT";
+    } else if (categories.includes("DEA2014")) {
+        geog_type = "DEA2014";
     }
 
     plotMap(geo_menu.value, stats_menu.value, geog_type);

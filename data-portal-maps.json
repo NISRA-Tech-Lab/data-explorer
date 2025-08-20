@@ -1,213 +1,4 @@
 {
-  "MHIAHSCT": {
-    "name": "Mental Health Inpatient Activity",
-    "updated": "2025-05-05",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "1": "Inpatient: Average Available Beds",
-      "2": "Inpatient: Average Occupied beds",
-      "3": "Inpatients",
-      "4": "Inpatient: Day Cases",
-      "5": "Inpatient: Occupancy",
-      "6": "Inpatient: Throughput",
-      "7": "Inpatient: Average Length of Stay",
-      "8": "Inpatient: Turnover Interval"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Health conditions and disability",
-    "subject_code": 143,
-    "product": "Mental health",
-    "product_code": "HCDMH"
-  },
-  "CARELEAVE19HSCT": {
-    "name": "Care Leavers Aged 19",
-    "updated": "2025-05-05",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "GENDERTOT": "Total Number of Care Leavers",
-      "GENDERM": "Number of Male Care Leavers",
-      "GENDERF": "Number of Female Care Leavers",
-      "ACCGEM": "Current Accommodation: GEM Placement",
-      "ACCIND": "Current Accommodation: Independent Accommodation",
-      "ACCPFF": "Current Accommodation: With Parents, Family, or Friends",
-      "ACCOTH": "Current Accommodation: Other, Including Supported",
-      "ACTEDU": "Current Activity: In Education, Training, or Employment",
-      "ACTUNEM": "Current Activity: Unemployed, or Economically Inactive"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2019/20", "2020/21", "2021/22"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Children looked after in care",
-    "product_code": "CLA"
-  },
-  "PRHSCT": {
-    "name": "Poverty Rates",
-    "updated": "2025-05-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "INDRELPOV": "Individual Relative Poverty",
-      "INDABSPOV": "Individual Absolute Poverty"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Deprivation and poverty",
-    "subject_code": 150,
-    "product": "Poverty",
-    "product_code": "DPP"
-  },
-  "PRLGDGRP": {
-    "name": "Poverty Rates",
-    "updated": "2025-05-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "INDRELPOV": "Individual Relative Poverty"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2007-10", "2008-11", "2009-12", "2010-13", "2011-14", "2012-15", "2013-16", "2014-17", "2015-18", "2016-19", "2017-20", "2018-22", "2019-23", "2021-24"],
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Deprivation and poverty",
-    "subject_code": 150,
-    "product": "Poverty",
-    "product_code": "DPP"
-  },
-  "PRHSCTGRP": {
-    "name": "Poverty Rates",
-    "updated": "2025-05-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "INDRELPOV": "Individual Relative Poverty",
-      "CHRELPOV": "Children Relative Poverty"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2007-10", "2008-11", "2009-12", "2010-13", "2011-14", "2012-15", "2013-16", "2014-17", "2015-18", "2016-19", "2017-20", "2018-22", "2019-23", "2021-24"],
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Deprivation and poverty",
-    "subject_code": 150,
-    "product": "Poverty",
-    "product_code": "DPP"
-  },
-  "EMPVACHSCT": {
-    "name": "Employment vacancies notified to DfC",
-    "updated": "2025-05-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "EMPVAC": "Employment vacancies notified to DfC"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
-    "theme": "Work, pay and benefits",
-    "theme_code": 72,
-    "subject": "Jobs, redundancies and vacancies",
-    "subject_code": 161,
-    "product": "Vacancies",
-    "product_code": "JRVV"
-  },
-  "EMPVACAA": {
-    "name": "Employment vacancies notified to DfC",
-    "updated": "2025-05-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "AA"],
-    "statistics": {
-      "EMPVAC": "Employment vacancies notified to DfC"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
-    "theme": "Work, pay and benefits",
-    "theme_code": 72,
-    "subject": "Jobs, redundancies and vacancies",
-    "subject_code": 161,
-    "product": "Vacancies",
-    "product_code": "JRVV"
-  },
-  "EMPVACLGD": {
-    "name": "Employment vacancies notified to DfC",
-    "updated": "2025-05-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "EMPVAC": "Employment vacancies notified to DfC"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
-    "theme": "Work, pay and benefits",
-    "theme_code": 72,
-    "subject": "Jobs, redundancies and vacancies",
-    "subject_code": 161,
-    "product": "Vacancies",
-    "product_code": "JRVV"
-  },
-  "JMWCPTLGD": {
-    "name": "Journeys made by walking, cycling and public transport",
-    "updated": "2025-05-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "JWCPT": "Journeys made by walking/cycling/public transport"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19"],
-    "theme": "Transport, environment and climate change",
-    "theme_code": 71,
-    "subject": "Travel and transport",
-    "subject_code": 164,
-    "product": "Active and sustainable travel",
-    "product_code": "TTAST"
-  },
-  "QS104NI": {
-    "name": "Age - 5 Year",
-    "updated": "2025-05-08",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age_5_year_90+"],
-    "statistics": {
-      "All_usual_residents": "All usual residents"
-    },
-    "time": "TLIST(A1)",
-    "time_series": "2011",
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Census",
-    "subject_code": 148,
-    "product": "Census 2011",
-    "product_code": "C2011"
-  },
-  "KS103NI": {
-    "name": "Marital and Civil Partnership Status",
-    "updated": "2025-05-08",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Marital_and_Civil_Partnership_Status"],
-    "statistics": {
-      "All_usual_residents": "All usual residents"
-    },
-    "time": "TLIST(A1)",
-    "time_series": "2011",
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Census",
-    "subject_code": 148,
-    "product": "Census 2011",
-    "product_code": "C2011"
-  },
-  "KS102NI": {
-    "name": "Age Structure",
-    "updated": "2025-05-08",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age_strucuture_90+"],
-    "statistics": {
-      "All_usual_residents": "All usual residents"
-    },
-    "time": "TLIST(A1)",
-    "time_series": "2011",
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Census",
-    "subject_code": 148,
-    "product": "Census 2011",
-    "product_code": "C2011"
-  },
   "KS101NI": {
     "name": "Usual Resident Population",
     "updated": "2025-05-08",
@@ -1553,6 +1344,23 @@
     "product": "Disease prevalence",
     "product_code": "HCDDP"
   },
+  "DISPREVDEA": {
+    "name": "Raw disease prevalence",
+    "updated": "2025-05-20",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "DIS"],
+    "statistics": {
+      "Numreg": "Number of patients on the register",
+      "Rawprevalence1000": "Raw disease prevalence per 1,000 patients"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health conditions and disability",
+    "subject_code": 143,
+    "product": "Disease prevalence",
+    "product_code": "HCDDP"
+  },
   "DISPREVLGD": {
     "name": "Raw disease prevalence",
     "updated": "2025-05-20",
@@ -1658,6 +1466,22 @@
     "product": "Hospital waiting times",
     "product_code": "HAWLHWT"
   },
+  "ADMITDEA": {
+    "name": "Primary Reason for Admissions to HSC Hospitals",
+    "updated": "2025-05-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "PDIAG"],
+    "statistics": {
+      "Adm": "Admissions"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2019", "2020", "2021", "2022", "2023"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Hospital activity and waiting lists",
+    "subject_code": 145,
+    "product": "Hospital activity",
+    "product_code": "HAWLHA"
+  },
   "DTHSALCLGD": {
     "name": "Alcohol Specific Deaths",
     "updated": "2025-05-22",
@@ -1724,6 +1548,31 @@
     "subject_code": 165,
     "product": "House prices",
     "product_code": "HHP"
+  },
+  "BSDEA": {
+    "name": "Benefit Statistics",
+    "updated": "2025-05-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "IS": "Income Support",
+      "JSA": "Jobseekers Allowance",
+      "RP": "Retirement Pension",
+      "PC": "Pension Credit",
+      "AA": "Attendance Allowance",
+      "CA": "Carer's Allowance",
+      "DLA": "Disability Living Allowance",
+      "ESA": "Employment & Support Allowance",
+      "UC": "Universal Credit",
+      "PIP": "Personal Independence Payment"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "theme": "Work, pay and benefits",
+    "theme_code": 72,
+    "subject": "Disability and work-related benefits",
+    "subject_code": 159,
+    "product": "Benefits",
+    "product_code": "DWRBB"
   },
   "BSHSCT": {
     "name": "Benefit Statistics",
@@ -1863,6 +1712,22 @@
     "subject_code": 153,
     "product": "Migration and components of change",
     "product_code": "PMMCC"
+  },
+  "MYE01T010": {
+    "name": "Mid-year population estimates",
+    "updated": "2025-06-10",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "broadage4", "Sex"],
+    "statistics": {
+      "MYE": "Mid-year population estimate"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2021", "2022", "2023"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Population and migration",
+    "subject_code": 153,
+    "product": "Population estimates",
+    "product_code": "PMPE"
   },
   "MYE01T022": {
     "name": "Population totals",
@@ -2008,6 +1873,22 @@
     "product": "Anti-social behaviour",
     "product_code": "CANTISB"
   },
+  "ASBDEA": {
+    "name": "Anti-Social Behaviour Incidents",
+    "updated": "2025-06-16",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "allasbinc": "All Anti-Social Behaviour Incidents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Crime and justice",
+    "theme_code": 58,
+    "subject": "Recorded crime",
+    "subject_code": 130,
+    "product": "Anti-social behaviour",
+    "product_code": "CANTISB"
+  },
   "ASBHSCT": {
     "name": "Anti-Social Behaviour Incidents",
     "updated": "2025-06-16",
@@ -2045,6 +1926,23 @@
     "updated": "2025-06-16",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
     "statistics": {
+      "alldacrm": "All Domestic Abuse Crimes"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Crime and justice",
+    "theme_code": 58,
+    "subject": "Recorded crime",
+    "subject_code": 130,
+    "product": "Domestic abuse",
+    "product_code": "CDA"
+  },
+  "DOMDEA": {
+    "name": "Domestic Abuse Incidents and Crimes",
+    "updated": "2025-06-16",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "alldainc": "All Domestic Abuse Incidents",
       "alldacrm": "All Domestic Abuse Crimes"
     },
     "time": "TLIST(A1)",
@@ -2107,6 +2005,27 @@
     "product": "Hate motivated crimes and incidents",
     "product_code": "CHMCI"
   },
+  "HATEDEA": {
+    "name": "Hate Motivated Incidents and Crimes",
+    "updated": "2025-06-16",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "allsoinc": "All Incidents with a Sexual Orientation Motivation",
+      "allsocrm": "All Crimes with a Sexual Orientation Motivation",
+      "allracinc": "All Incidents with a Racist Motivation",
+      "allraccrm": "All Crimes with a Racist Motivation",
+      "allsectinc": "All Incidents with a Sectarian Motivation",
+      "allsectcrm": "All Crimes with a Sectarian Motivation"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2004/05", "2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Crime and justice",
+    "theme_code": 58,
+    "subject": "Recorded crime",
+    "subject_code": 130,
+    "product": "Hate motivated crimes and incidents",
+    "product_code": "CHMCI"
+  },
   "HATEHSCT": {
     "name": "Hate Motivated Crimes",
     "updated": "2025-06-16",
@@ -2150,6 +2069,22 @@
     "name": "Police Recorded Crime",
     "updated": "2025-06-16",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "crmclass"],
+    "statistics": {
+      "allcrime": "All Crimes Recorded by the Police"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2001/02", "2002/03", "2003/04", "2004/05", "2005/06", "2006/07", "2007/08", "2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Crime and justice",
+    "theme_code": 58,
+    "subject": "Recorded crime",
+    "subject_code": 130,
+    "product": "All crime",
+    "product_code": "CALLCRIME"
+  },
+  "PRCDEA": {
+    "name": "Police Recorded Crime",
+    "updated": "2025-06-16",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "crmclass"],
     "statistics": {
       "allcrime": "All Crimes Recorded by the Police"
     },
@@ -2367,6 +2302,22 @@
     "product": "Dental",
     "product_code": "PCDENT"
   },
+  "FPSGDSDRDEA": {
+    "name": "General Dental Services Dental Registrations",
+    "updated": "2025-06-30",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "Age"],
+    "statistics": {
+      "Dental_Registrations": "Dental Registrations"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Primary care",
+    "subject_code": 146,
+    "product": "Dental",
+    "product_code": "PCDENT"
+  },
   "FPSGDSDRHSCT": {
     "name": "General Dental Services Dental Registrations",
     "updated": "2025-06-30",
@@ -2403,6 +2354,25 @@
     "name": "General Dental Services Dental Treatments",
     "updated": "2025-06-30",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "GDSDTF": "Fillings",
+      "GDSDTE": "Extractions",
+      "GDSDTC": "Crowns",
+      "GDSDTX": "XRays"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Primary care",
+    "subject_code": 146,
+    "product": "Dental",
+    "product_code": "PCDENT"
+  },
+  "FPSGDSDTDEA": {
+    "name": "General Dental Services Dental Treatments",
+    "updated": "2025-06-30",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "GDSDTF": "Fillings",
       "GDSDTE": "Extractions",
@@ -2460,6 +2430,23 @@
     "name": "General Dental Services Dentists and Surgeries",
     "updated": "2025-06-30",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "GDSDSDentists": "Dentists",
+      "GDSDSSurgeries": "Dental Surgeries"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Primary care",
+    "subject_code": 146,
+    "product": "Dental",
+    "product_code": "PCDENT"
+  },
+  "FPSGDSDSDEA": {
+    "name": "General Dental Services Dentists and Surgeries",
+    "updated": "2025-06-30",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "GDSDSDentists": "Dentists",
       "GDSDSSurgeries": "Dental Surgeries"
@@ -2658,6 +2645,23 @@
     "product": "Destination",
     "product_code": "SLDEST"
   },
+  "DESLSADEA": {
+    "name": "School Leavers Survey - Attainment",
+    "updated": "2025-07-09",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "ATTAIN", "FSME"],
+    "statistics": {
+      "NumSL": "Number of School Leavers",
+      "PercSL": "Percentage of School leavers"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "School leavers",
+    "subject_code": 137,
+    "product": "Qualifications",
+    "product_code": "SLQUAL"
+  },
   "INDHOUSCTLGD": {
     "name": "Indicator - Housing costs as a proportion of household income",
     "updated": "2025-07-10",
@@ -2787,6 +2791,22 @@
     "product": "Achievements",
     "product_code": "FEACH"
   },
+  "FEACHMDEA": {
+    "name": "Achievements in Further Education Colleges",
+    "updated": "2025-07-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "FEACHMn": "Number of achievements"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Further education",
+    "subject_code": 133,
+    "product": "Achievements",
+    "product_code": "FEACH"
+  },
   "FEACHMHSCT": {
     "name": "Achievements in Further Education Colleges",
     "updated": "2025-07-22",
@@ -2823,6 +2843,22 @@
     "name": "Regulated enrolments at Further Education Colleges",
     "updated": "2025-07-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "FEENROLn": "Number of enrolments"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Further education",
+    "subject_code": 133,
+    "product": "Enrolments",
+    "product_code": "FEENROL"
+  },
+  "FEENROLDEA": {
+    "name": "Regulated enrolments at Further Education Colleges",
+    "updated": "2025-07-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "FEENROLn": "Number of enrolments"
     },
@@ -2882,6 +2918,23 @@
     "subject_code": 147,
     "product": "Deaths",
     "product_code": "BDMD"
+  },
+  "DESLSDDEA": {
+    "name": "School Leavers Survey - Destination",
+    "updated": "2025-07-23",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "DESTINATION"],
+    "statistics": {
+      "NumSL": "Number of School Leavers",
+      "PercSL": "Percentage of School Leavers"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "School leavers",
+    "subject_code": 137,
+    "product": "Destination",
+    "product_code": "SLDEST"
   },
   "MORTCASEAA": {
     "name": "Mortgages cases received and disposed",
@@ -3097,6 +3150,25 @@
     "product": "Attendance",
     "product_code": "SAA"
   },
+  "DEATTDEA": {
+    "name": "Pupil Attendance",
+    "updated": "2025-08-05",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "TYPE"],
+    "statistics": {
+      "pcattend": "Percentage attendance",
+      "pcabsence": "Percentage total absence",
+      "pcautabsence": "Percentage authorised absence",
+      "pcunautabsence": "Percentage unauthorised absence"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2023/24"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "School attendance",
+    "subject_code": 135,
+    "product": "Attendance",
+    "product_code": "SAA"
+  },
   "DEATTLGD": {
     "name": "Pupil Attendance",
     "updated": "2025-08-05",
@@ -3177,6 +3249,34 @@
     "name": "School Census - Post Primary",
     "updated": "2025-08-05",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Year8": "Year 8 pupils",
+      "Year9": "Year 9 pupils",
+      "Year10": "Year 10 pupils",
+      "Year11": "Year 11 pupils",
+      "Year12": "Year 12 pupils",
+      "Year13": "Year 13 pupils",
+      "Year14": "Year 14 pupils",
+      "All": "All"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2024/25"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "School enrolments",
+    "subject_code": 136,
+    "product": "Post Primary",
+    "product_code": "SEPP"
+  },
+  "DESCPPDEA": {
+    "name": "School Census - Post Primary",
+    "updated": "2025-08-05",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "Male": "Male",
       "Female": "Female",
@@ -3333,10 +3433,79 @@
     "product": "Post Primary",
     "product_code": "SEPP"
   },
+  "DESCSDEA": {
+    "name": "School Census - Special Schools",
+    "updated": "2025-08-05",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Nursery": "Nursery pupils",
+      "Reception": "Reception pupils",
+      "Year1": "Year 1 pupils",
+      "Year2": "Year 2 pupils",
+      "Year3": "Year 3 pupils",
+      "Year4": "Year 4 pupils",
+      "Year5": "Year 5 pupils",
+      "Year6": "Year 6 pupils",
+      "Year7": "Year 7 pupils",
+      "Year8": "Year 8 pupils",
+      "Year9": "Year 9 pupils",
+      "Year10": "Year 10 pupils",
+      "Year11": "Year 11 pupils",
+      "Year12": "Year 12 pupils",
+      "Year13": "Year 13 pupils",
+      "Year14": "Year 14 pupils",
+      "Year15": "Year 15 pupils",
+      "All": "All"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2024/25"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "School enrolments",
+    "subject_code": 136,
+    "product": "Special Schools",
+    "product_code": "SESS"
+  },
   "DESCPAA": {
     "name": "School Census - Primary",
     "updated": "2025-08-06",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "Male": "Male",
+      "Female": "Female",
+      "FSME": "Free School Meal Entitled Pupils",
+      "SENNonStatemented": "Special Educational Needs pupils without a statement",
+      "SENStatement": "Special Educational Needs pupils with a statement",
+      "Nursery": "Nursery pupils",
+      "Reception": "Reception pupils",
+      "Year1": "Year 1 pupils",
+      "Year2": "Year 2 pupils",
+      "Year3": "Year 3 pupils",
+      "Year4": "Year 4 pupils",
+      "Year5": "Year 5 pupils",
+      "Year6": "Year 6 pupils",
+      "Year7": "Year 7 pupils",
+      "All": "All",
+      "PreschoolAgedSPiM": "Pre-school aged pupils in Specialist Provision"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2024/25"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "School enrolments",
+    "subject_code": 136,
+    "product": "Primary",
+    "product_code": "SEPRMRY"
+  },
+  "DESCPDEA": {
+    "name": "School Census - Primary",
+    "updated": "2025-08-06",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "Male": "Male",
       "Female": "Female",
@@ -3445,6 +3614,25 @@
     "product": "Ophthalmic",
     "product_code": "PCOPH"
   },
+  "FPSGOSOTDEA": {
+    "name": "General Ophthalmic Services Ophthalmic Activity",
+    "updated": "2025-08-08",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "GOSOTS": "Sight Tests",
+      "GOSOTD": "Domiciliary Sight Tests",
+      "GOSOTV": "Vouchers",
+      "GOSOTR": "Repairs & Replacements"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Primary care",
+    "subject_code": 146,
+    "product": "Ophthalmic",
+    "product_code": "PCOPH"
+  },
   "FPSGOSOTHSCT": {
     "name": "General Ophthalmic Services Ophthalmic Activity",
     "updated": "2025-08-08",
@@ -3519,6 +3707,22 @@
     "name": "General Ophthalmic Services Ophthalmic Practices",
     "updated": "2025-08-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "GOSOPRAC": "Ophthalmic Practices"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Primary care",
+    "subject_code": 146,
+    "product": "Ophthalmic",
+    "product_code": "PCOPH"
+  },
+  "FPSGOSOPDEA": {
+    "name": "General Ophthalmic Services Ophthalmic Practices",
+    "updated": "2025-08-08",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "GOSOPRAC": "Ophthalmic Practices"
     },
@@ -3645,6 +3849,149 @@
     "product": "School leavers attainment gap",
     "product_code": "SLAG"
   },
+  "SECINCLGD": {
+    "name": "Security Related Incidents",
+    "updated": "2025-08-15",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "DEA": "Security related deaths",
+      "SHO": "Shooting incidents",
+      "BOM": "Bombing incidents",
+      "INC": "Incendiary incidents",
+      "ASL": "Casualties of paramilitary style assaults (Loyalist)",
+      "ASR": "Casualties of paramilitary style assaults (Republican)",
+      "SHL": "Casualties of paramilitary style shootings (Loyalist)",
+      "SHR": "Casualties of paramilitary style shootings (Republican)",
+      "FIR": "Firearms found",
+      "AMM": "Rounds of ammunition found",
+      "EXP": "Quantity of explosives found (kg)",
+      "ARR": "Persons arrested under S41 of the Terrorism Act 2000",
+      "CHA": "Persons subsequently charged"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Crime and justice",
+    "theme_code": 58,
+    "subject": "Recorded crime",
+    "subject_code": 130,
+    "product": "Security related incidents",
+    "product_code": "CRSI"
+  },
+  "SSLGD": {
+    "name": "Stop and Search",
+    "updated": "2025-08-15",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Arrested"],
+    "statistics": {
+      "ALLPERSS": "Persons stopped and searched"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Crime and justice",
+    "theme_code": 58,
+    "subject": "Recorded crime",
+    "subject_code": 130,
+    "product": "Stop and search",
+    "product_code": "CSS"
+  },
+  "SSLEGLGD": {
+    "name": "Stop and Search",
+    "updated": "2025-08-18",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Legislation"],
+    "statistics": {
+      "ALLPERSS": "Persons stopped and searched"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Crime and justice",
+    "theme_code": 58,
+    "subject": "Recorded crime",
+    "subject_code": 130,
+    "product": "Stop and search",
+    "product_code": "CSS"
+  },
+  "CHSCONCERNLGD": {
+    "name": "Continuous Household Survey: Concern about the environment",
+    "updated": "2025-08-19",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "CONCERNENVI": "Households concerned for Environment",
+      "NOTCONCERNENVI": "Households not concerned for Environment"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Transport, environment and climate change",
+    "theme_code": 71,
+    "subject": "Energy, environment and climate change",
+    "subject_code": 155,
+    "product": "Public attitudes",
+    "product_code": "EECPA"
+  },
+  "CHSENVPROBLEMSLGD": {
+    "name": "Continuous Household Survey: Environmental problems considered most important",
+    "updated": "2025-08-19",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ILLWAS": "Illegal dumping of waste",
+      "POLLAWS": "Pollution of air water and soil",
+      "LOSSWB": "Loss of plant and wildlife biodiversity",
+      "CLICHAO": "Climate change and Ozone layer depletion",
+      "WASMAN": "Waste management",
+      "OTHER": "Other",
+      "NONE": "None of these"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Transport, environment and climate change",
+    "theme_code": 71,
+    "subject": "Energy, environment and climate change",
+    "subject_code": 155,
+    "product": "Public attitudes",
+    "product_code": "EECPA"
+  },
+  "CHSBIODIVLGD": {
+    "name": "Continuous Household Survey: Considered greatest threat to biodiversity",
+    "updated": "2025-08-19",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "POLLALW": "Pollution (air, land and water)",
+      "HABLOSS": "Habitat loss by human activity",
+      "CLCHAN": "Climate Change",
+      "NNINVS": "Non-native invasive species",
+      "OTHER": "Other"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Transport, environment and climate change",
+    "theme_code": 71,
+    "subject": "Energy, environment and climate change",
+    "subject_code": 155,
+    "product": "Public attitudes",
+    "product_code": "EECPA"
+  },
+  "CHSACTIONLGD": {
+    "name": "Continuous Household Survey: Actions taken for a positive impact on the environment",
+    "updated": "2025-08-19",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "REDCON": "Reduced consumption of household utilities",
+      "ENVORG": "Joined or donated to an environment group/organisation",
+      "RECYCL": "Reused, Recycled and disposed of waste products appropriately",
+      "PWBIOD": "Encouraged plant and wildlife biodiversity",
+      "RFOOWA": "Reduced food waste",
+      "ORSUPRO": "Bought organic or sustainable products",
+      "REDCAR": "Reduced the number of car journeys",
+      "OTHER": "Other",
+      "NONE": "None"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2021/22", "2022/23", "2023/24", "2024/25"],
+    "theme": "Transport, environment and climate change",
+    "theme_code": 71,
+    "subject": "Energy, environment and climate change",
+    "subject_code": 155,
+    "product": "Public attitudes",
+    "product_code": "EECPA"
+  },
   "NIMDM17T11": {
     "name": "Northern Ireland Multiple Deprivation Measure Indicators",
     "updated": "2023-03-24",
@@ -3701,6 +4048,58 @@
     "name": "Northern Ireland Multiple Deprivation Measure Indicators",
     "updated": "2023-03-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
+      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
+      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
+      "4": "Proportion of the working age population who are employment deprived",
+      "5": "Standardised preventable death ratio (excluding Suicides)",
+      "6": "Standardised physical health-related benefit ratio",
+      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
+      "8": "Standardised emergency admission ratio (NI = 100)",
+      "9": "Proportion of Singleton Births with Low Birth Weight",
+      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
+      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
+      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
+      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
+      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
+      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
+      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
+      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
+      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
+      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
+      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
+      "21": "Proportion of properties with broadband speed below 10Mb/s",
+      "22": "Proportion of domestic dwellings that are unfit",
+      "23": "Proportion of domestic dwellings in a state of disrepair",
+      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
+      "25": "Rate of Household overcrowding",
+      "26": "Proportion of population with disability without adaptations to dwelling",
+      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
+      "28": "Standardised ratio of road defects (NI = 100)",
+      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
+      "30": "Proportion of properties in flood risk area",
+      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
+      "32": "Rate of Burglary (per 1,000 population)",
+      "33": "Rate of Theft (per 1,000 population)",
+      "34": "Rate of Vehicle Crime (per 1,000 population)",
+      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
+      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
+      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2017",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Deprivation and poverty",
+    "subject_code": 150,
+    "product": "Deprivation",
+    "product_code": "DPD"
+  },
+  "NIMDM17T12": {
+    "name": "Northern Ireland Multiple Deprivation Measure Indicators",
+    "updated": "2023-03-24",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
       "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
@@ -4178,10 +4577,42 @@
     "product": "Enrolments",
     "product_code": "HEENROL"
   },
+  "HEENROLDEA": {
+    "name": "Enrolments at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "HEENROLn": "Number of enrolments"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Enrolments",
+    "product_code": "HEENROL"
+  },
   "HEQUALLGD": {
     "name": "Qualifications at Higher Education Institutions",
     "updated": "2023-06-21",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HEQUALn": "Number of students gaining qualifications"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Qualifications",
+    "product_code": "HEQUAL"
+  },
+  "HEQUALDEA": {
+    "name": "Qualifications at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "HEQUALn": "Number of students gaining qualifications"
     },
@@ -5206,6 +5637,22 @@
     "product": "Number of businesses",
     "product_code": "BNB"
   },
+  "SGADEA": {
+    "name": "Small for Gestational Age",
+    "updated": "2024-04-10",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "SGA": "Small for Gestational Age"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Pregnancy and early years",
+    "product_code": "HIPEY"
+  },
   "SGALGD": {
     "name": "Small for Gestational Age",
     "updated": "2024-04-10",
@@ -5247,6 +5694,22 @@
     },
     "time": "TLIST(A1)",
     "time_series": ["2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Pregnancy and early years",
+    "product_code": "HIPEY"
+  },
+  "BFEEDDEA": {
+    "name": "Breastfeeding on discharge",
+    "updated": "2024-04-10",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "Bfeed": "Breastfeeding on discharge"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
     "theme": "Health and social care",
     "theme_code": 6,
     "subject": "Health inequalities",
@@ -5336,6 +5799,22 @@
     "product": "Pregnancy and early years",
     "product_code": "HIPEY"
   },
+  "LBWDEA": {
+    "name": "Low birth weight",
+    "updated": "2024-04-12",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "LBW": "Proportion of all live births with weight less than 2,500g"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Pregnancy and early years",
+    "product_code": "HIPEY"
+  },
   "LBWHSCT": {
     "name": "Low birth weight",
     "updated": "2024-04-12",
@@ -5404,6 +5883,22 @@
     "name": "Smoking During Pregnancy",
     "updated": "2024-04-16",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "SmokePreg": "Proportion of all live births that were to mothers that reported smoking during pregnancy"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Pregnancy and early years",
+    "product_code": "HIPEY"
+  },
+  "SMOKEPREGDEA": {
+    "name": "Smoking During Pregnancy",
+    "updated": "2024-04-16",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
     "statistics": {
       "SmokePreg": "Proportion of all live births that were to mothers that reported smoking during pregnancy"
     },
@@ -5544,10 +6039,58 @@
     "product": "Census 2021",
     "product_code": "C2021"
   },
+  "C21002DEA": {
+    "name": "Single year of age and sex",
+    "updated": "2024-05-24",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "AGE_SYOA", "UR_SEX"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2021",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2021",
+    "product_code": "C2021"
+  },
+  "C21001DEA": {
+    "name": "Usual resident population",
+    "updated": "2024-05-24",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2021",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2021",
+    "product_code": "C2021"
+  },
   "C21001LGD": {
     "name": "Usual resident population",
     "updated": "2024-05-24",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2021",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2021",
+    "product_code": "C2021"
+  },
+  "C21003DEA": {
+    "name": "Country of birth - basic detail",
+    "updated": "2024-05-24",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "COB_BASIC"],
     "statistics": {
       "UR_POP": "All usual residents"
     },
@@ -5834,34 +6377,6 @@
     "product": "Driving offences",
     "product_code": "CDO"
   },
-  "SECINCLGD": {
-    "name": "Security Related Incidents",
-    "updated": "2024-07-03",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "DEA": "Security related deaths",
-      "SHO": "Shooting incidents",
-      "BOM": "Bombing incidents",
-      "INC": "Incendiary incidents",
-      "ASL": "Casualties of paramilitary style assaults (Loyalist)",
-      "ASR": "Casualties of paramilitary style assaults (Republican)",
-      "SHL": "Casualties of paramilitary style shootings (Loyalist)",
-      "SHR": "Casualties of paramilitary style shootings (Republican)",
-      "FIR": "Firearms found",
-      "AMM": "Rounds of ammunition found",
-      "EXP": "Quantity of explosives found (kg)",
-      "ARR": "Persons arrested under S41 of the Terrorism Act 2000",
-      "CHA": "Persons subsequently charged"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
-    "theme": "Crime and justice",
-    "theme_code": 58,
-    "subject": "Recorded crime",
-    "subject_code": 130,
-    "product": "Security related incidents",
-    "product_code": "CRSI"
-  },
   "FPNAGELGD": {
     "name": "Fixed Penalties and Speed Awareness by age group",
     "updated": "2024-07-03",
@@ -5893,101 +6408,6 @@
     "subject_code": 130,
     "product": "Driving offences",
     "product_code": "CDO"
-  },
-  "SSLGD": {
-    "name": "Stop and Search",
-    "updated": "2024-07-04",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Arrested"],
-    "statistics": {
-      "ALLPERSS": "Persons stopped and searched"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
-    "theme": "Crime and justice",
-    "theme_code": 58,
-    "subject": "Recorded crime",
-    "subject_code": 130,
-    "product": "Stop and search",
-    "product_code": "CSS"
-  },
-  "SSLEGLGD": {
-    "name": "Stop and Search",
-    "updated": "2024-07-04",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Legislation"],
-    "statistics": {
-      "ALLPERSS": "Persons stopped and searched"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
-    "theme": "Crime and justice",
-    "theme_code": 58,
-    "subject": "Recorded crime",
-    "subject_code": 130,
-    "product": "Stop and search",
-    "product_code": "CSS"
-  },
-  "CHSCONCERNLGD": {
-    "name": "Continuous Household Survey: Concern about the environment",
-    "updated": "2024-08-20",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "CONCERNENVI": "Households concerned for Environment",
-      "NOTCONCERNENVI": "Households not concerned for Environment"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2021/22", "2022/23", "2023/24"],
-    "theme": "Transport, environment and climate change",
-    "theme_code": 71,
-    "subject": "Energy, environment and climate change",
-    "subject_code": 155,
-    "product": "Public attitudes",
-    "product_code": "EECPA"
-  },
-  "CHSACTIONLGD": {
-    "name": "Continuous Household Survey: Actions taken for a positive impact on the environment",
-    "updated": "2024-08-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "REDCON": "Reduced consumption of household utilities",
-      "ENVORG": "Joined or donated to an environment group/organisation",
-      "RECYCL": "Reused, Recycled and disposed of waste products appropriately",
-      "PWBIOD": "Encouraged plant and wildlife biodiversity",
-      "RFOOWA": "Reduced food waste",
-      "ORSUPRO": "Bought organic or sustainable products",
-      "REDCAR": "Reduced the number of car journeys",
-      "OTHER": "Other",
-      "NONE": "None"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2021/22", "2022/23", "2023/24"],
-    "theme": "Transport, environment and climate change",
-    "theme_code": 71,
-    "subject": "Energy, environment and climate change",
-    "subject_code": 155,
-    "product": "Public attitudes",
-    "product_code": "EECPA"
-  },
-  "CHSENVPROBLEMSLGD": {
-    "name": "Continuous Household Survey: Environmental problems considered most important",
-    "updated": "2024-08-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "ILLWAS": "Illegal dumping of waste",
-      "POLLAWS": "Pollution of air water and soil",
-      "LOSSWB": "Loss of plant and wildlife biodiversity",
-      "CLICHAO": "Climate change and Ozone layer depletion",
-      "WASMAN": "Waste management",
-      "OTHER": "Other",
-      "NONE": "None of these"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2021/22", "2022/23", "2023/24"],
-    "theme": "Transport, environment and climate change",
-    "theme_code": 71,
-    "subject": "Energy, environment and climate change",
-    "subject_code": 155,
-    "product": "Public attitudes",
-    "product_code": "EECPA"
   },
   "RSPCAMTYPELGD": {
     "name": "Road Safety Partnership detections by camera type",
@@ -6517,6 +6937,22 @@
     "product": "Census 2021",
     "product_code": "C2021"
   },
+  "C21007DEA": {
+    "name": "General health",
+    "updated": "2024-10-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "GENERAL_HEALTH"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2021",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2021",
+    "product_code": "C2021"
+  },
   "C21007HSCT": {
     "name": "General health",
     "updated": "2024-10-07",
@@ -6537,6 +6973,22 @@
     "name": "General health",
     "updated": "2024-10-07",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "GENERAL_HEALTH"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2021",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2021",
+    "product_code": "C2021"
+  },
+  "C21008DEA": {
+    "name": "Long-term health problem or disability",
+    "updated": "2024-10-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "DISABILITY"],
     "statistics": {
       "UR_POP": "All usual residents"
     },
@@ -6581,6 +7033,22 @@
     "product": "Census 2021",
     "product_code": "C2021"
   },
+  "C21004DEA": {
+    "name": "Number of dependent children - households",
+    "updated": "2024-10-08",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "HH_DEPENDENT_CHILDREN_AGG11"],
+    "statistics": {
+      "HH": "All households"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2021",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2021",
+    "product_code": "C2021"
+  },
   "C21004HSCT": {
     "name": "Number of dependent children - households",
     "updated": "2024-10-08",
@@ -6613,6 +7081,22 @@
     "product": "Census 2021",
     "product_code": "C2021"
   },
+  "C21005DEA": {
+    "name": "Ethnic group",
+    "updated": "2024-10-08",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "ETHNIC_GROUP_INTERMEDIATE"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2021",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2021",
+    "product_code": "C2021"
+  },
   "C21005HSCT": {
     "name": "Ethnic group",
     "updated": "2024-10-08",
@@ -6633,6 +7117,22 @@
     "name": "Ethnic group",
     "updated": "2024-10-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "ETHNIC_GROUP_INTERMEDIATE"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2021",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2021",
+    "product_code": "C2021"
+  },
+  "C21006DEA": {
+    "name": "Sexual orientation - basic detail",
+    "updated": "2024-10-08",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEXUAL_ORIENTATION_BASIC"],
     "statistics": {
       "UR_POP": "All usual residents"
     },
@@ -6713,6 +7213,24 @@
     "product": "Additional Indicators",
     "product_code": "HIAddInd"
   },
+  "SPRTYPEDEA": {
+    "name": "Standardised Prescription Rate, by type",
+    "updated": "2024-10-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
+    "statistics": {
+      "SPRAntihyp": "Persons prescribed antihypertensive medication per 1,000 population",
+      "SPRMA": "Persons prescribed mood and anxiety medication per 1,000 population",
+      "SPRStatin": "Persons prescribed statin medication per 1,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Additional Indicators",
+    "product_code": "HIAddInd"
+  },
   "SPRTYPEAA": {
     "name": "Standardised Prescription Rate, by type",
     "updated": "2024-10-22",
@@ -6751,6 +7269,22 @@
     "name": "Standardised Death Rate – Smoking Attributable Causes",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "SEX"],
+    "statistics": {
+      "SDRSmoke": "Deaths from smoking attributable causes per 100,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2009-13", "2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Alcohol, smoking and drugs",
+    "product_code": "HIASD"
+  },
+  "SDRSMOKEDEA": {
+    "name": "Standardised Death Rate – Smoking Attributable Causes",
+    "updated": "2024-10-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
     "statistics": {
       "SDRSmoke": "Deaths from smoking attributable causes per 100,000 population"
     },
@@ -6836,6 +7370,25 @@
     "product": "Hospital activity",
     "product_code": "HIHA"
   },
+  "SARTYPEDEA": {
+    "name": "Standardised Admission Rate, by type",
+    "updated": "2024-10-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
+    "statistics": {
+      "SARAll": "All hospital admissions per 100,000 population",
+      "SARDaycase": "Day case admissions per 100,000 population",
+      "SARElec": "Elective inpatient admissions per 100,000 population",
+      "SAREmerg": "Emergency admissions per 100,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Hospital activity",
+    "product_code": "HIHA"
+  },
   "SARTYPEHSCT": {
     "name": "Standardised Admission Rate, by type",
     "updated": "2024-10-22",
@@ -6848,6 +7401,24 @@
     },
     "time": "TLIST(A1)",
     "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Hospital activity",
+    "product_code": "HIHA"
+  },
+  "SARCAUSEDEA": {
+    "name": "Standardised Admission Rate, by Cause",
+    "updated": "2024-10-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
+    "statistics": {
+      "SARAlc": "Alcohol-related admissions per 100,000 population",
+      "SARCirc": "Circulatory disease admissions per 100,000 population",
+      "SARResp": "Respiratory disease admissions per 100,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008/09-2010/11", "2009/10-2011/12", "2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2020/21", "2019/20-2021/22", "2020/21-2022/23"],
     "theme": "Health and social care",
     "theme_code": 6,
     "subject": "Health inequalities",
@@ -6926,6 +7497,22 @@
     "product": "Hospital activity",
     "product_code": "HIHA"
   },
+  "EDATTENDDEA": {
+    "name": "Standardised Attendance Rate – Emergency Attendances",
+    "updated": "2024-10-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
+    "statistics": {
+      "EDAttend": "Emergency department attendances per 100,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Hospital activity",
+    "product_code": "HIHA"
+  },
   "EDATTENDHSCT": {
     "name": "Standardised Attendance Rate – Emergency Attendances",
     "updated": "2024-10-22",
@@ -6962,6 +7549,22 @@
     "name": "Standardised Death Rate – All Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
+    "statistics": {
+      "SDRAAACM": "Deaths from any cause per 100,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Life expectancy and general health",
+    "product_code": "HILEGH"
+  },
+  "SDRAAACMDEA": {
+    "name": "Standardised Death Rate – All Cause",
+    "updated": "2024-10-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
     "statistics": {
       "SDRAAACM": "Deaths from any cause per 100,000 population"
     },
@@ -7022,6 +7625,22 @@
     "product": "Life expectancy and general health",
     "product_code": "HILEGH"
   },
+  "LEDEA": {
+    "name": "Life expectancy at birth",
+    "updated": "2024-10-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
+    "statistics": {
+      "LEbirth": "Life expectancy at birth"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008-10", "2009-11", "2010-12", "2011-13", "2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Life expectancy and general health",
+    "product_code": "HILEGH"
+  },
   "LEAA": {
     "name": "Life expectancy at birth",
     "updated": "2024-10-22",
@@ -7058,6 +7677,22 @@
     "name": "Standardised Admission Rate – Self-Harm Admissions",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "SEX"],
+    "statistics": {
+      "SARSelfHarm": "Self-harm related admissions per 100,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2006/07-2010/11", "2007/08-2011/12", "2008/09-2012/13", "2009/10-2013/14", "2010/11-2014/15", "2011/12-2015/16", "2012/13-2016/17", "2013/14-2017/18", "2014/15-2018/19", "2015/16-2019/20", "2016/17-2020/21", "2017/18-2021/22", "2018/19-2022/23"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Mental health",
+    "product_code": "HIMH"
+  },
+  "SARSELFHARMDEA": {
+    "name": "Standardised Admission Rate – Self-Harm Admissions",
+    "updated": "2024-10-22",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
     "statistics": {
       "SARSelfHarm": "Self-harm related admissions per 100,000 population"
     },
@@ -7108,6 +7743,24 @@
     "name": "Standardised Death rate for Avoidable, Treatable and Preventable Causes",
     "updated": "2024-10-23",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "SEX"],
+    "statistics": {
+      "SDRAvoid": "Avoidable deaths per 100,000 population",
+      "SDRPrev": "Preventable deaths per 100,000 population",
+      "SDRTreat": "Treatable deaths per 100,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2010-14", "2011-15", "2012-16", "2013-17", "2014-18", "2015-19", "2016-20", "2017-21", "2018-22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Premature mortality",
+    "product_code": "HIPM"
+  },
+  "SDROECDDEA": {
+    "name": "Standardised Death rate for Avoidable, Treatable and Preventable Causes",
+    "updated": "2024-10-23",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
     "statistics": {
       "SDRAvoid": "Avoidable deaths per 100,000 population",
       "SDRPrev": "Preventable deaths per 100,000 population",
@@ -7226,6 +7879,22 @@
     "product": "Premature mortality",
     "product_code": "HIPM"
   },
+  "PYLLDEA": {
+    "name": "Potential Years of Life Lost",
+    "updated": "2024-10-23",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
+    "statistics": {
+      "PYLL": "Potential Years of Life Lost"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008-10", "2009-11", "2010-12", "2011-13", "2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Premature mortality",
+    "product_code": "HIPM"
+  },
   "PYLLAA": {
     "name": "Potential Years of Life Lost",
     "updated": "2024-10-23",
@@ -7241,6 +7910,27 @@
     "subject_code": 8,
     "product": "Premature mortality",
     "product_code": "HIPM"
+  },
+  "GPPRACPATDEA": {
+    "name": "GPs Practices and Registered Patients",
+    "updated": "2024-10-23",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "PRACS": "Total Practices",
+      "GPS": "Total GPs",
+      "RESPAT": "Total Resident Patients",
+      "REGPAT": "Total Registered Patients",
+      "PRACLIST": "Average Practice List Size",
+      "GPLIST": "Average GP List Size"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Primary care",
+    "subject_code": 146,
+    "product": "Medical",
+    "product_code": "PCMED"
   },
   "GAPAA": {
     "name": "Gross Annual Pay",
@@ -7560,6 +8250,29 @@
     "product": "Summary status",
     "product_code": "LMSSS"
   },
+  "RTCCSOIDEA": {
+    "name": "Road Traffic Collision Casualties by Severity of Injury",
+    "updated": "2025-02-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "All": "Collisions",
+      "1": "Fatal Collision",
+      "2": "Serious Collision",
+      "3": "Slight Collision",
+      "4": "Killed",
+      "5": "Seriously injured",
+      "6": "Slightly injured",
+      "7": "Casualties"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015", "2016", "2017", "2018", "2019", "2020"],
+    "theme": "Transport, environment and climate change",
+    "theme_code": 71,
+    "subject": "Motoring",
+    "subject_code": 156,
+    "product": "Road traffic collisions",
+    "product_code": "MRTC"
+  },
   "RTCCSOILGD": {
     "name": "Road Traffic Collision Casualties by Severity of Injury",
     "updated": "2025-02-07",
@@ -7748,6 +8461,41 @@
     "product": "Farms, crops, livestock and labour",
     "product_code": "AFCLL"
   },
+  "FCDEA": {
+    "name": "Farm Census",
+    "updated": "2025-03-04",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "F": "Number of Farms",
+      "LFAF": "LFA farms",
+      "NLFAF": "Non LFA farms",
+      "AFH": "Area farmed in hectares",
+      "AVGSOF": "Average SO/farm",
+      "CH": "Crops in hectares",
+      "GH": "Grass in hectares",
+      "C": "Cattle",
+      "S": "Sheep",
+      "P": "Pigs",
+      "PO": "Poultry",
+      "FA": "Farmers",
+      "SE": "Self employed",
+      "SP": "Spouses",
+      "OW": "Other workers",
+      "AL": "Agricultural labour",
+      "VSF": "Very Small farms",
+      "SF": "Small farms",
+      "MF": "Medium farms",
+      "LF": "Large farms"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "theme": "Transport, environment and climate change",
+    "theme_code": 71,
+    "subject": "Agriculture",
+    "subject_code": 154,
+    "product": "Farms, crops, livestock and labour",
+    "product_code": "AFCLL"
+  },
   "FCAA": {
     "name": "Farm Census",
     "updated": "2025-03-05",
@@ -7799,6 +8547,55 @@
     "subject_code": 8,
     "product": "Hospital activity",
     "product_code": "HIHA"
+  },
+  "SARDRUGDEA": {
+    "name": "Standardised Admission Rate - Drug Related Causes",
+    "updated": "2025-03-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "Sex"],
+    "statistics": {
+      "SARDrug": "Drug-related admissions per 100,000 population"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008/09-2010/11", "2009/10-2011/12", "2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2020/21", "2019/20-2021/22", "2020/21-2022/23"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Hospital activity",
+    "product_code": "HIHA"
+  },
+  "SARCAUSEU75DEA": {
+    "name": "Standardised Admission Rate Under 75s, by Cause",
+    "updated": "2025-03-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "Sex"],
+    "statistics": {
+      "SARCircU75": "Circulatory disease admissions per 100,000 population aged under 75 years",
+      "SARRespU75": "Respiratory disease admissions per 100,000 population aged under 75 years"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008/09-2010/11", "2009/10-2011/12", "2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18", "2016/17-2018/19", "2017/18-2019/20", "2018/19-2020/21", "2019/20-2021/22", "2020/21-2022/23"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Hospital activity",
+    "product_code": "HIHA"
+  },
+  "LE65DEA": {
+    "name": "Life Expectancy at age 65",
+    "updated": "2025-03-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "Sex"],
+    "statistics": {
+      "LE65": "Life Expectancy at age 65 (years)"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008-10", "2009-11", "2010-12", "2011-13", "2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19", "2018-20", "2019-21", "2020-22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health inequalities",
+    "subject_code": 8,
+    "product": "Life expectancy and general health",
+    "product_code": "HILEGH"
   },
   "LE65LGD": {
     "name": "Life Expectancy at Age 65",
@@ -7997,6 +8794,22 @@
     "product": "Births",
     "product_code": "BDMB"
   },
+  "BRTHSACADDEA": {
+    "name": "Births Registered",
+    "updated": "2025-04-29",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "BRTHCOUNT": "Births"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Births, deaths and marriages",
+    "subject_code": 147,
+    "product": "Births",
+    "product_code": "BDMB"
+  },
   "DTHSOBHSCT": {
     "name": "Deaths due to Obesity",
     "updated": "2025-04-29",
@@ -8173,26 +8986,6 @@
     "subject_code": 155,
     "product": "Greenhouse gas emissions",
     "product_code": "EECGGE"
-  },
-  "CHSBIODIVLGD": {
-    "name": "Continuous Household Survey: Considered greatest threat to biodiversity",
-    "updated": "2025-04-29",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "POLLALW": "Pollution (air, land and water)",
-      "HABLOSS": "Habitat loss by human activity",
-      "CLCHAN": "Climate Change",
-      "NNINVS": "Non-native invasive species",
-      "OTHER": "Other"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2021/22", "2022/23", "2023/24"],
-    "theme": "Transport, environment and climate change",
-    "theme_code": 71,
-    "subject": "Energy, environment and climate change",
-    "subject_code": 155,
-    "product": "Public attitudes",
-    "product_code": "EECPA"
   },
   "CHSENVIINFOLGD": {
     "name": "Continuous Household Survey: Environmental Information Source",
@@ -8404,6 +9197,23 @@
     "product": "Recycled waste",
     "product_code": "RW"
   },
+  "S2SDEA": {
+    "name": "Steps 2 Success",
+    "updated": "2025-05-05",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "S2SReferrals": "S2S Referrals",
+      "S2SStarts": "S2S Starts"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2014", "2015", "2016", "2017", "2018", "2019", "2020"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Training and apprenticeships",
+    "subject_code": 140,
+    "product": "Steps 2 success",
+    "product_code": "TAS2S"
+  },
   "S2SLGD": {
     "name": "Steps 2 Success",
     "updated": "2025-05-05",
@@ -8614,5 +9424,230 @@
     "subject_code": 145,
     "product": "Hospital waiting times",
     "product_code": "HAWLHWT"
+  },
+  "MHIAHSCT": {
+    "name": "Mental Health Inpatient Activity",
+    "updated": "2025-05-05",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "1": "Inpatient: Average Available Beds",
+      "2": "Inpatient: Average Occupied beds",
+      "3": "Inpatients",
+      "4": "Inpatient: Day Cases",
+      "5": "Inpatient: Occupancy",
+      "6": "Inpatient: Throughput",
+      "7": "Inpatient: Average Length of Stay",
+      "8": "Inpatient: Turnover Interval"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Health conditions and disability",
+    "subject_code": 143,
+    "product": "Mental health",
+    "product_code": "HCDMH"
+  },
+  "CARELEAVE19HSCT": {
+    "name": "Care Leavers Aged 19",
+    "updated": "2025-05-05",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "GENDERTOT": "Total Number of Care Leavers",
+      "GENDERM": "Number of Male Care Leavers",
+      "GENDERF": "Number of Female Care Leavers",
+      "ACCGEM": "Current Accommodation: GEM Placement",
+      "ACCIND": "Current Accommodation: Independent Accommodation",
+      "ACCPFF": "Current Accommodation: With Parents, Family, or Friends",
+      "ACCOTH": "Current Accommodation: Other, Including Supported",
+      "ACTEDU": "Current Activity: In Education, Training, or Employment",
+      "ACTUNEM": "Current Activity: Unemployed, or Economically Inactive"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2019/20", "2020/21", "2021/22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Children looked after in care",
+    "product_code": "CLA"
+  },
+  "PRHSCT": {
+    "name": "Poverty Rates",
+    "updated": "2025-05-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "INDRELPOV": "Individual Relative Poverty",
+      "INDABSPOV": "Individual Absolute Poverty"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Deprivation and poverty",
+    "subject_code": 150,
+    "product": "Poverty",
+    "product_code": "DPP"
+  },
+  "PRLGDGRP": {
+    "name": "Poverty Rates",
+    "updated": "2025-05-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "INDRELPOV": "Individual Relative Poverty"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2007-10", "2008-11", "2009-12", "2010-13", "2011-14", "2012-15", "2013-16", "2014-17", "2015-18", "2016-19", "2017-20", "2018-22", "2019-23", "2021-24"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Deprivation and poverty",
+    "subject_code": 150,
+    "product": "Poverty",
+    "product_code": "DPP"
+  },
+  "PRHSCTGRP": {
+    "name": "Poverty Rates",
+    "updated": "2025-05-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "INDRELPOV": "Individual Relative Poverty",
+      "CHRELPOV": "Children Relative Poverty"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2007-10", "2008-11", "2009-12", "2010-13", "2011-14", "2012-15", "2013-16", "2014-17", "2015-18", "2016-19", "2017-20", "2018-22", "2019-23", "2021-24"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Deprivation and poverty",
+    "subject_code": 150,
+    "product": "Poverty",
+    "product_code": "DPP"
+  },
+  "EMPVACHSCT": {
+    "name": "Employment vacancies notified to DfC",
+    "updated": "2025-05-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "EMPVAC": "Employment vacancies notified to DfC"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "theme": "Work, pay and benefits",
+    "theme_code": 72,
+    "subject": "Jobs, redundancies and vacancies",
+    "subject_code": 161,
+    "product": "Vacancies",
+    "product_code": "JRVV"
+  },
+  "EMPVACAA": {
+    "name": "Employment vacancies notified to DfC",
+    "updated": "2025-05-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "EMPVAC": "Employment vacancies notified to DfC"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "theme": "Work, pay and benefits",
+    "theme_code": 72,
+    "subject": "Jobs, redundancies and vacancies",
+    "subject_code": 161,
+    "product": "Vacancies",
+    "product_code": "JRVV"
+  },
+  "EMPVACLGD": {
+    "name": "Employment vacancies notified to DfC",
+    "updated": "2025-05-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "EMPVAC": "Employment vacancies notified to DfC"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "theme": "Work, pay and benefits",
+    "theme_code": 72,
+    "subject": "Jobs, redundancies and vacancies",
+    "subject_code": 161,
+    "product": "Vacancies",
+    "product_code": "JRVV"
+  },
+  "EMPVACDEA": {
+    "name": "Employment vacancies notified to DfC",
+    "updated": "2025-05-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "EMPVAC": "Employment vacancies notified to DfC"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "theme": "Work, pay and benefits",
+    "theme_code": 72,
+    "subject": "Jobs, redundancies and vacancies",
+    "subject_code": 161,
+    "product": "Vacancies",
+    "product_code": "JRVV"
+  },
+  "JMWCPTLGD": {
+    "name": "Journeys made by walking, cycling and public transport",
+    "updated": "2025-05-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "JWCPT": "Journeys made by walking/cycling/public transport"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012-14", "2013-15", "2014-16", "2015-17", "2016-18", "2017-19"],
+    "theme": "Transport, environment and climate change",
+    "theme_code": 71,
+    "subject": "Travel and transport",
+    "subject_code": 164,
+    "product": "Active and sustainable travel",
+    "product_code": "TTAST"
+  },
+  "QS104NI": {
+    "name": "Age - 5 Year",
+    "updated": "2025-05-08",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age_5_year_90+"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2011",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2011",
+    "product_code": "C2011"
+  },
+  "KS103NI": {
+    "name": "Marital and Civil Partnership Status",
+    "updated": "2025-05-08",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Marital_and_Civil_Partnership_Status"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2011",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2011",
+    "product_code": "C2011"
+  },
+  "KS102NI": {
+    "name": "Age Structure",
+    "updated": "2025-05-08",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age_strucuture_90+"],
+    "statistics": {
+      "All_usual_residents": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2011",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census 2011",
+    "product_code": "C2011"
   }
 }

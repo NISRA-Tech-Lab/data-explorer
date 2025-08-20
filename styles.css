@@ -133,3 +133,7 @@ label, select {
 .sidebar {
     background-color: #e5e5e5;
 }
+
+.legend-title {
+    text-align: center;
+}
