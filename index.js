@@ -119,14 +119,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             id_vars += `, "${other_vars[i]}"`;
 
             new_menu = document.createElement("div");
-            if (i == 0) {
-                new_menu.style = "margin-top: 20px; margin-bottom: 10px;";
-            } else {
-                new_menu.style = "margin-bottom: 10px;"
-            }
 
             if (other == "") {
-                new_menu.innerHTML = `<label for = "${other_vars[i]}">${fetched_restful.dimension[other_vars[i]].label}:</label><select id = "${other_vars[i]}" name = "${other_vars[i]}"></select>`
+                new_menu.innerHTML = `<label for = "${other_vars[i]}" class = "form-label">${fetched_restful.dimension[other_vars[i]].label}:</label><select id = "${other_vars[i]}" name = "${other_vars[i]}" class = "form-select"></select>`
 
                 options = Object.keys(fetched_restful.dimension[other_vars[i]].category.label);
                 labels = Object.values(fetched_restful.dimension[other_vars[i]].category.label);
@@ -237,20 +232,16 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         plugins: []
         };
 
-        chart_title = document.createElement("h3");
+        chart_title = document.getElementById("chart-title");
 
         if (time_series.length == 1) {
-            chart_title.innerHTML = `Northern Ireland ${time_series[0]}`;
+            chart_title.textContent = `Northern Ireland ${time_series[0]}`;
         } else {
-            chart_title.innerHTML = `Northern Ireland ${time_series[0]} - ${time_series.pop()}`;
+            chart_title.textContent = `Northern Ireland ${time_series[0]} - ${time_series.pop()}`;
         }
-        
 
-        chart_container.appendChild(chart_title);
-
-        chart_subtitle = document.createElement("p");
+        chart_subtitle = document.getElementById("chart-subtitle");
         chart_subtitle.innerHTML = map_subtitle.innerHTML;
-        chart_container.appendChild(chart_subtitle);
 
         // Create a new canvas and render
         const chart_canvas = document.createElement("canvas");
@@ -289,7 +280,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     map_div.classList.add("map");
 
     
-    document.getElementById("map-loading").style.display = "none";
     map_container.style.display = "block";
     map_container.appendChild(map_div);
 
@@ -462,8 +452,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         page_title.textContent = `Data Explorer - ${result.label}`;
         document.getElementById("map-title").textContent = `Mapped by ${result.dimension[geog_type].label} (${year})` ;
         document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
+        document.getElementById("chart-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
-        document.getElementById("dp-link").innerHTML = `<a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">See on NISRA Data Portal</a>`
+        document.getElementById("dp-link").innerHTML = `Showing rows 1-${Math.min(data.length, 10)} of ${fetched_restful.value.length.toLocaleString("en-GB")}. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal</a>.`
 
          while (table_preview.firstChild) {
             table_preview.removeChild(table_preview.firstChild)
@@ -494,7 +485,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
          table_preview.appendChild(header_row);
 
-         for (let i = 0; i < Math.min(data.length, 18); i ++) {
+         for (let i = 0; i < Math.min(data.length, 10); i ++) {
             tr = document.createElement("tr");
 
             stat_cell = document.createElement("td");

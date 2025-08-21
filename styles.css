@@ -1,3 +1,5 @@
+/* ===== Original styles (kept/adapted) ===== */
+
 #header {
     width: 100%;
     background-color: #00205b;
@@ -65,19 +67,20 @@ h2, h3 {
     color: #00205b;
 }
 
+/* Map / Chart containers */
 .map {
     height: 410px;
-    width: 700px;
+    width: 100%;
     position: relative;
-    z-index: 0
- }
+    z-index: 0;
+}
 
- #map-container {
+#map-container {
     height: 500px;
-    display: none;
- }
+    /* shown/hidden by JS via classes; do not force display:none here */
+}
 
- .legend-min {
+.legend-min {
     width: 33%;
     font-size: 10pt;
     padding-left: 7.5px;
@@ -99,6 +102,7 @@ h2, h3 {
     font-weight: bold;
 }
 
+/* Legend overlay (adjust if your map size changes) */
 .map-legend {
     width: 170px;
     background-color: #ffffff;
@@ -118,11 +122,11 @@ h2, h3 {
 
 .canvas-container {
     height: 500px;
-    min-width: 680px;
-    max-width: 90%;
- }
+    min-width: 0;
+    max-width: 100%;
+}
 
- path.leaflet-interactive:focus {
+path.leaflet-interactive:focus {
     outline: none;
 }
 
@@ -135,13 +139,62 @@ label, select {
 }
 
 #chart-container {
-    width: 700px;
+    width: 100%;
+    min-height: 420px;
 }
 
 .sidebar {
     background-color: #e5e5e5;
 }
 
+/* Ensure offcanvas width and stacking context */
+.sidebar.offcanvas {
+    --bs-offcanvas-width: 320px;  /* adjust if you want a wider/narrower drawer */
+    z-index: 1055;                /* above content, below modal (Bootstrap default) */
+}
+
 .legend-title {
     text-align: center;
+}
+
+/* Map & Chart min heights for small vs large screens */
+#map-container,
+#chart-container {
+    min-height: 320px;
+}
+
+@media (min-width: 992px) {
+    #map-container,
+    #chart-container {
+        min-height: 420px;
+    }
+}
+
+/* Brand styling */
+.app-brand {
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+/* Prevent loading GIF from overflowing */
+#map-loading {
+    max-width: 100%;
+}
+
+/* Slightly tighter padding on very small screens */
+@media (max-width: 575.98px) {
+    #map-div {
+        padding: 12px;
+    }
+}
+
+#chart-chard {
+    display: none;
+}
+
+/* Disable offcanvas animations only when the body has .offcanvas-no-anim */
+.offcanvas-no-anim .offcanvas,
+.offcanvas-no-anim .offcanvas-backdrop {
+  transition: none !important;
+  animation: none !important;
 }
