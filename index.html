@@ -50,7 +50,7 @@
                     <select id = "product" name = "product"></select>
                 </div>
                 <div style = "margin-bottom: 10px;">
-                    <label for = "name">Choose a name:</label>
+                    <label for = "name">Choose a table:</label>
                     <select id = "name" name = "name"></select>
                 </div>
                 <div style = "margin-bottom: 10px;">
@@ -69,14 +69,18 @@
 
       <div id = "map-div" class = "col-9">
         
-            <h2 id = "map-title"></h3>
+            <h2 id = "table-title"></h2>
+            <h3 id = "map-title"></h3>
+            <p id = "map-subtitle"></p>
             <img id = "map-loading" src = "img/TechLab Loading.gif">
             <div id = "map-container"></div>
 
-            <div id = "chart-container"></div>
+            <div id = "chart-container">
+                <div id = "map-subtitle"></div>
+            </div>
 
             
-
+            <h3>Data Preview</h3>
             <table id = "table-preview" class = "table table-bordered"></table>
             
             <p id = "dp-link"></p>

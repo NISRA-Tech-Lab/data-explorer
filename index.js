@@ -13,6 +13,8 @@ let other_menu = document.getElementById("other-vars");
 let window_title = document.getElementsByTagName("title")[0];
 let chart_container = document.getElementById("chart-container");
 let table_preview = document.getElementById("table-preview");
+let map_subtitle = document.getElementById("map-subtitle");
+let page_title = document.getElementsByTagName("title")[0];
 
 let search = window.location.search.replace("?", "").split("&");
 
@@ -144,8 +146,14 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                 }
             }
 
+            
             other_selections += `,"${other_vars[i]}":{"category":{"index":["${document.getElementById(other_vars[i]).value}"]}}`;
             
+            if (i == 0) {
+                map_subtitle.innerHTML = "";
+            }
+
+            map_subtitle.innerHTML += `<strong>${fetched_restful.dimension[other_vars[i]].label}</strong>: ${fetched_restful.dimension[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}<br>`;
             
         }
         
@@ -226,11 +234,15 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         plugins: []
         };
 
-        chart_title = document.createElement("h2");
+        chart_title = document.createElement("h3");
 
-        chart_title.innerHTML = `${result.label} in Northern Ireland<br>${time_series[0]} - ${time_series.pop()}`;
+        chart_title.innerHTML = `Northern Ireland ${time_series[0]} - ${time_series.pop()}`;
 
         chart_container.appendChild(chart_title);
+
+        chart_subtitle = document.createElement("p");
+        chart_subtitle.innerHTML = map_subtitle.innerHTML;
+        chart_container.appendChild(chart_subtitle);
 
         // Create a new canvas and render
         const chart_canvas = document.createElement("canvas");
@@ -326,7 +338,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         code_var = "TrustCode";
     } if (geog_type.includes("DEA")) {
         area_var = "DEA";
-        code_var = "DEA_code"
+        code_var = "DEA_code";
     }
 
          // Function to add tool tip to each layer
@@ -337,9 +349,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                 let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[code_var]);
                 
                   if (data[geog_index] != null) {
-                     l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <b>" + data[geog_index].toLocaleString("en-GB") + "</b> (" + unit + ")");
+                     l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>" + data[geog_index].toLocaleString("en-GB") + "</strong> (" + unit + ")");
                   } else {
-                     l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <b>Not available</b>");
+                     l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>Not available</strong>");
                   }
 
                   // http://leafletjs.com/reference.html#path-options
@@ -431,7 +443,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
             
 
-        document.getElementById("map-title").innerHTML = `${result.label} by ${result.dimension[geog_type].label} (${year})` ;
+        document.getElementById("table-title").textContent = `${result.label}`;
+        page_title.textContent = `Data Explorer - ${result.label}`;
+        document.getElementById("map-title").textContent = `Mapped by ${result.dimension[geog_type].label} (${year})` ;
         document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
         document.getElementById("dp-link").innerHTML = `<a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">See on NISRA Data Portal</a>`
@@ -491,7 +505,16 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             tr.appendChild(unit_cell);
 
             value_cell = document.createElement("td");
-            value_cell.textContent = data[i].toLocaleString("en-GB");
+            if (data[i] == null) {
+                value_cell.textContent = "..";
+            } else {
+                let decimals = result.dimension.STATISTIC.category.unit[stats_menu.value].decimals;
+                value_cell.textContent = data[i].toLocaleString("en-GB", {
+                    minimumFractionDigits: decimals,
+                    maximumFractionDigts: decimals
+                });
+            }
+            
             value_cell.align = "right";
             tr.appendChild(value_cell);
 
