@@ -172,6 +172,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     const response = await fetch(api_url);
     const {result} = await response.json();
 
+    var stat_label = Object.values(result.dimension.STATISTIC.category.label)[0];
+
     if (result.dimension[geog_type].category.index.includes("N92000002")) {
         NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
         result.value.splice(NI_position, 1);
@@ -197,7 +199,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         const time_series = ni_result.result.dimension[time_var].category.index;
 
-        var stat_label = Object.values(result.dimension.STATISTIC.category.label)[0];
+        
 
         const chart_data = {
         labels: time_series,
@@ -412,6 +414,15 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             min_value.classList.add("legend-min");
             legend_row_1.appendChild(min_value);
 
+            
+
+            unit_value = document.createElement("div");
+            unit_value.classList.add("legend-unit");
+            if (unit.toLowerCase() != "number") {
+                unit_value.innerHTML = `(${unit})`;
+            }
+            legend_row_1.appendChild(unit_value);
+
             max_value = document.createElement("div");
 
             max_value.classList.add("legend-max");
@@ -438,10 +449,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
          }        
 
-         min_value.innerHTML = range_min.toLocaleString("en-GB");       
-         max_value.innerHTML = range_max.toLocaleString("en-GB");
-
-            
+        min_value.innerHTML = range_min.toLocaleString("en-GB");       
+        max_value.innerHTML = range_max.toLocaleString("en-GB");         
 
         document.getElementById("table-title").textContent = `${result.label}`;
         page_title.textContent = `Data Explorer - ${result.label}`;

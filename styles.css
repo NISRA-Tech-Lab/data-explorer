@@ -78,14 +78,21 @@ h2, h3 {
  }
 
  .legend-min {
-    width: 50%;
+    width: 33%;
     font-size: 10pt;
     padding-left: 7.5px;
     font-weight: bold;
 }
 
+.legend-unit {
+    width: 33%;
+    font-size: 10pt;
+    padding: 0;
+    text-align: center;
+}
+
 .legend-max {
-    width: 50%;
+    width: 33%;
     text-align: right;
     font-size: 10pt;
     padding-right: 7.5px;
