@@ -192,31 +192,32 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         const ni_response = await fetch(ni_url);
         const ni_result = await ni_response.json();
-
         const data_series = ni_result.result.value;
         // Make sure values are numbers
         const values = data_series.map(v => (v === null || v === undefined ? null : Number(v)));
 
         const time_series = ni_result.result.dimension[time_var].category.index;
 
-        
-
         const chart_data = {
-        labels: time_series,
+        labels: [...time_series],
         datasets: [{
             label: stat_label,
             data: values,
-            borderColor: "#000000",
-            backgroundColor: "#000000",
+            borderColor: "#00205b",
+            backgroundColor: "#00205b",
+            barPercentage: 0.4,
             fill: false,
-            pointBackgroundColor: "#000000",
+            pointBackgroundColor: "#00205b",
             tension: 0 // optional: straight lines
         }]
         };
 
+        // Decide chart type dynamically
+        const chartType = (values.length === 1) ? 'bar' : 'line';
+
         // Chart configuration
         const chart_config = {
-        type: 'line',
+        type: chartType,
         data: chart_data, // <-- was `chart_data,` before (wrong key)
         options: {
             responsive: true,
@@ -238,7 +239,12 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         chart_title = document.createElement("h3");
 
-        chart_title.innerHTML = `Northern Ireland ${time_series[0]} - ${time_series.pop()}`;
+        if (time_series.length == 1) {
+            chart_title.innerHTML = `Northern Ireland ${time_series[0]}`;
+        } else {
+            chart_title.innerHTML = `Northern Ireland ${time_series[0]} - ${time_series.pop()}`;
+        }
+        
 
         chart_container.appendChild(chart_title);
 
@@ -297,7 +303,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
        boxZoom: false,
        keyboard: false,
        attributionControl: false,
-       tap: false}).setView([54.65, -6.8], 8); // Set initial co-ordinates and zoom
+       tap: false}).setView([54.67, -6.3], 8); // Set initial co-ordinates and zoom
 
     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
        maxZoom: 19,
@@ -500,7 +506,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             tr.appendChild(year_cell);
 
             geog_cell = document.createElement("td");
-            geog_cell.textContent = Object.values(result.dimension[geog_type].category.label)[i];
+            geog_cell.textContent = titleCase(Object.values(result.dimension[geog_type].category.label)[i]);
             tr.appendChild(geog_cell);
 
             for (let j = 0; j < other_vars.length; j ++) {
