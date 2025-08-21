@@ -12,6 +12,7 @@ let stats_menu = document.getElementById("stat");
 let other_menu = document.getElementById("other-vars");
 let window_title = document.getElementsByTagName("title")[0];
 let chart_container = document.getElementById("chart-container");
+let table_preview = document.getElementById("table-preview");
 
 let search = window.location.search.replace("?", "").split("&");
 
@@ -430,17 +431,71 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
             
 
-        document.getElementById("map-title").innerHTML = result.label + " by " + result.dimension[geog_type].label + " (" + year + ")" ;
-        document.getElementById("map-updated").innerHTML = "Last updated: <strong>" + result.updated.substr(8, 2) + "/" + result.updated.substr(5, 2) + "/" + result.updated.substr(0, 4) + "</strong>";
-
-        highest_area = result.dimension[geog_type].category.label[result.dimension[geog_type].category.index[data.indexOf(Math.max(...data))]];
-        lowest_area = result.dimension[geog_type].category.label[result.dimension[geog_type].category.index[data.indexOf(Math.min(...data))]];
-         
-        document.getElementById("map-commentary").innerHTML = "In " + year + ", " + titleCase(highest_area) + " had the highest " + unit +  " of " + stat_label +
-            " (" + Math.max(...data).toLocaleString() + ") while " + titleCase(lowest_area) + " had the lowest (" + Math.min(...data).toLocaleString() + ").";
+        document.getElementById("map-title").innerHTML = `${result.label} by ${result.dimension[geog_type].label} (${year})` ;
+        document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
         document.getElementById("dp-link").innerHTML = `<a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">See on NISRA Data Portal</a>`
 
+         while (table_preview.firstChild) {
+            table_preview.removeChild(table_preview.firstChild)
+         }
+
+         header_row = document.createElement("tr");
+
+         let headers = Object.keys(result.dimension);
+
+         for (let i = 0; i < headers.length; i ++) {
+
+           th = document.createElement("th");
+           th.textContent = result.dimension[headers[i]].label;
+           
+           header_row.appendChild(th);
+
+         }
+
+         unit_header = document.createElement("th");
+         value_header = document.createElement("th");
+
+         unit_header.textContent = "Unit";
+         value_header.textContent = "Value";
+
+         header_row.appendChild(unit_header);
+         header_row.appendChild(value_header);
+
+         table_preview.appendChild(header_row);
+
+         for (let i = 0; i < Math.min(data.length, 18); i ++) {
+            tr = document.createElement("tr");
+
+            stat_cell = document.createElement("td");
+            stat_cell.textContent = stat_label;
+            tr.appendChild(stat_cell);
+
+            year_cell = document.createElement("td");
+            year_cell.textContent = year;
+            tr.appendChild(year_cell);
+
+            geog_cell = document.createElement("td");
+            geog_cell.textContent = Object.values(result.dimension[geog_type].category.label)[i];
+            tr.appendChild(geog_cell);
+
+            for (let j = 0; j < other_vars.length; j ++) {
+                other_cell = document.createElement("td");
+                other_cell.textContent = Object.values(result.dimension[other_vars[j]].category.label)[0];
+                tr.append(other_cell);
+            }
+
+            unit_cell = document.createElement("td");
+            unit_cell.textContent = unit;
+            tr.appendChild(unit_cell);
+
+            value_cell = document.createElement("td");
+            value_cell.textContent = data[i].toLocaleString("en-GB");
+            value_cell.align = "right";
+            tr.appendChild(value_cell);
+
+            table_preview.appendChild(tr);
+         }
 
 }
 
