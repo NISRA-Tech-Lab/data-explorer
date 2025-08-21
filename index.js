@@ -458,6 +458,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
          unit_header.textContent = "Unit";
          value_header.textContent = "Value";
+         value_header.style.textAlign = "right";
 
          header_row.appendChild(unit_header);
          header_row.appendChild(value_header);
