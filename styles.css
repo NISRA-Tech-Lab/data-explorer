@@ -213,3 +213,8 @@ label, select {
     margin-left: 20px;
     margin-bottom: -20px;
 }
+
+#global-search-results {
+  max-height: 280px;
+  overflow: auto;
+}

@@ -15,7 +15,10 @@ let chart_container = document.getElementById("chart-container");
 let table_preview = document.getElementById("table-preview");
 let map_subtitle = document.getElementById("map-subtitle");
 let page_title = document.getElementsByTagName("title")[0];
-let nameSearch = document.getElementById("name-search");
+let globalSearchInput = document.getElementById("global-search");
+let globalSearchResults = document.getElementById("global-search-results");
+let searchIndex = [];
+
 
 let search = window.location.search.replace("?", "").split("&");
 
@@ -25,6 +28,24 @@ async function createMenus () {
         const response = await fetch("data-portal-maps.json");
         const responseData = await response.json();
         tables = responseData;
+        // Build a global search index from all datasets
+        searchIndex = Object.keys(tables).map(key => {
+        const t = tables[key] || {};
+        const name = (t.name || "").trim();
+        return {
+            key,
+            name,
+            nameLower: name.toLowerCase(),
+            theme_code: t.theme_code,
+            subject_code: t.subject_code,
+            product_code: t.product_code,
+            theme: t.theme,
+            subject: t.subject,
+            product: t.product,
+            slug: name.replace(/\s+/g, "-")   // your app uses spaces → hyphens
+        };
+        });
+
     } catch (error) {
         
     }
@@ -799,3 +820,69 @@ function titleCase(str) {
   }
   return str.join(' ');
 }
+
+function filterNamesGlobal(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const words = q.split(/\s+/).filter(Boolean);
+  return searchIndex.filter(item => words.every(w => item.nameLower.includes(w)));
+}
+
+function renderGlobalResults(items) {
+  globalSearchResults.innerHTML = "";
+  if (!items.length) {
+    globalSearchResults.innerHTML = '<div class="list-group-item text-muted small">No matches</div>';
+    return;
+  }
+
+// Deduplicate by name
+const seen = new Set();
+const unique = [];
+for (const item of items) {
+  if (!seen.has(item.name)) {
+    seen.add(item.name);
+    unique.push(item);
+  }
+}
+
+// Limit to a reasonable number
+const top = unique.slice(0, 25);
+top.forEach(item => {
+  const a = document.createElement("a");
+  a.className = "list-group-item list-group-item-action";
+  a.href = `?theme=${item.theme_code}&subject=${item.subject_code}&product=${item.product_code}&name=${item.slug}`;
+  a.innerHTML = `
+    <div class="fw-semibold">${item.name}</div>
+    <div class="small text-secondary">${item.theme} &rsaquo; ${item.subject} &rsaquo; ${item.product}</div>
+  `;
+
+  a.addEventListener("click", () => {
+    const sidebarEl = document.getElementById("sidebar");
+    const inst = sidebarEl ? bootstrap.Offcanvas.getInstance(sidebarEl) : null;
+    if (inst) inst.hide();
+  });
+
+  globalSearchResults.appendChild(a);
+});
+
+}
+
+// Wire up global search input
+if (globalSearchInput) {
+  const doSearch = () => {
+    const matches = filterNamesGlobal(globalSearchInput.value || "");
+    renderGlobalResults(matches);
+  };
+  globalSearchInput.addEventListener("input", doSearch);
+
+  // Optional: Enter navigates to first match
+  globalSearchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const first = globalSearchResults.querySelector(".list-group-item-action");
+      if (first && first.getAttribute("href")) {
+        window.location.href = first.getAttribute("href");
+      }
+    }
+  });
+}
+

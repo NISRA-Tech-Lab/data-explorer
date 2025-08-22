@@ -46,6 +46,7 @@
 
     <div class="offcanvas-body">
       <div class="vstack gap-3">
+        <p class = "h6">Browse NISRA Data Portal:</p>
         <div>
           <label for="theme" class="form-label">Choose a theme</label>
           <select id="theme" name="theme" class="form-select"></select>
@@ -75,13 +76,28 @@
           <!-- dynamic inputs injected here -->
         </div>
 
+        
+        
         <div class="pt-3">
+          <label for="global-search" class="form-label mb-1 h6">Or search by table name:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input id="global-search" type="search" class="form-control" placeholder="Search" autocomplete="off">
+          </div>
+
+          <!-- live results go here -->
+          <div id="global-search-results" class="list-group mt-2"></div>
+
+
+        </div>
+        <div class="pt-3"></div>
         <button type="button"
                 class="btn btn-primary w-100"
                 data-bs-dismiss="offcanvas">
           Done
         </button>
-</div>
+
+        </div>
       </div>
     </div>
   </div>
