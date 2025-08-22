@@ -356,6 +356,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     map_container.style.display = "block";
     map_container.appendChild(map_div);
 
+    let initialZoom = window.innerWidth < 768 ? 7 : 8; 
+
     // Create a map
     var map = L.map(matrix + "-map",
     {zoomControl: false, // Turn off zoom controls
@@ -366,7 +368,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
        boxZoom: false,
        keyboard: false,
        attributionControl: false,
-       tap: false}).setView([54.67, -6.85], 8); // Set initial co-ordinates and zoom
+       tap: false}).setView([54.67, -6.85], initialZoom); // Set initial co-ordinates and zoom
 
     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
        maxZoom: 19,

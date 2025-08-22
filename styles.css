@@ -67,13 +67,19 @@ h2, h3 {
     color: #00205b;
 }
 
-/* Map / Chart containers */
+/* Default: mobile */
 .map {
+  height: 220px;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+/* Larger screens (≥768px ~ Bootstrap md and up) */
+@media (min-width: 768px) {
+  .map {
     height: 410px;
-    width: 100%;
-    position: relative;
-    z-index: 0;
-    margin-bottom: 2px;
+  }
 }
 
 #map-container {
