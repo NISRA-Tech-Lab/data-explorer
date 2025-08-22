@@ -192,14 +192,17 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     var stat_label = Object.values(result.dimension.STATISTIC.category.label)[0];
     var unit = result.dimension.STATISTIC.category.unit[statistic].label;
 
-    if (result.dimension[geog_type].category.index.includes("N92000002")) {
+
+    if (result.dimension[geog_type].category.index.includes("N92000002") | themes_menu.value == "67") {
 
         document.getElementById("chart-card").style.display = "flex";
 
-        NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
-        result.value.splice(NI_position, 1);
-        result.dimension[geog_type].category.index.splice(NI_position, 1);
-        delete result.dimension[geog_type].category.label["N92000002"];
+        if (themes_menu.value != "67") {
+            NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
+            result.value.splice(NI_position, 1);
+            result.dimension[geog_type].category.index.splice(NI_position, 1);
+            delete result.dimension[geog_type].category.label["N92000002"];
+        }
 
         while(chart_container.firstChild) {
             chart_container.removeChild(chart_container.firstChild)
@@ -212,12 +215,33 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         chart_unit.textContent = unit;
 
         chart_container.appendChild(chart_unit);
+        let ni_url;
 
-        let ni_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
-        encodeURIComponent('{"jsonrpc": "2.0", "method": "PxStat.Data.Cube_API.ReadDataset", "params": {"class": "query", "id": ' + id_vars + ', "dimension": { "STATISTIC": {"category": {"index": ["' + statistic +
-            '"]}}, "' + geog_type + 
-            '": {"category": {"index": ["N92000002"]}}' + other_selections + '},"extension": {"pivot": null,"codes": false,"language": {"code":"en"},"format":{"type": "JSON-stat","version": "2.0"},"matrix": "'+
-            matrix + '"},"version": "2.0"}}');   
+        if (themes_menu.value == "67") {
+            if (product = "RW") {
+                ni_url = "https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.Data.Cube_API.ReadDataset%22,%22params%22:%7B%22class%22:%22query%22,%22id%22:%5B%5D,%22dimension%22:%7B%7D,%22extension%22:%7B%22pivot%22:null,%22codes%22:false,%22language%22:%7B%22code%22:%22en%22%7D,%22format%22:%7B%22type%22:%22JSON-stat%22,%22version%22:%222.0%22%7D,%22matrix%22:%22INDRECWSTENI%22%7D,%22version%22:%222.0%22%7D%7D";
+            } else {
+                 if (geog_type == "LGD2014") {
+                    eq_matrix = matrix.replace("LGD", "EQ");
+                } else if (geog_type == "AA") {
+                    eq_matrix = matrix.replace("AA", "EQ");
+                }
+
+                ni_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' + 
+                    encodeURIComponent('{"jsonrpc": "2.0", "method": "PxStat.Data.Cube_API.ReadDataset", "params": {"class": "query","id": ["EQUALGROUPS"],"dimension": {"EQUALGROUPS": {"category": {"index": ["N92000002"]}}},"extension": {"pivot": null,"codes": false,"language": {"code": "en"},"format": {"type": "JSON-stat","version": "2.0"},"matrix": "' +
+                        eq_matrix + '"},"version": "2.0"}}')
+                }
+
+        } else {
+
+        ni_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
+            encodeURIComponent('{"jsonrpc": "2.0", "method": "PxStat.Data.Cube_API.ReadDataset", "params": {"class": "query", "id": ' + id_vars + ', "dimension": { "STATISTIC": {"category": {"index": ["' + statistic +
+                '"]}}, "' + geog_type + 
+                '": {"category": {"index": ["N92000002"]}}' + other_selections + '},"extension": {"pivot": null,"codes": false,"language": {"code":"en"},"format":{"type": "JSON-stat","version": "2.0"},"matrix": "'+
+                matrix + '"},"version": "2.0"}}');   
+        }
+
+        
 
         const ni_response = await fetch(ni_url);
         const ni_result = await ni_response.json();
