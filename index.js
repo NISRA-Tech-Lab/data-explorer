@@ -301,7 +301,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     legend_title = document.createElement("div");
     legend_title.textContent = stat_label;
     legend_title.classList.add("legend-title");
-    legend_div.appendChild(legend_title);
+    map_container.appendChild(legend_title);
 
     legend_row_1 = document.createElement("div");
     legend_row_1.classList.add("row");
@@ -467,7 +467,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
         document.getElementById("chart-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
-        document.getElementById("dp-link").innerHTML = `Showing rows 1-${Math.min(data.length, 10)} of ${fetched_restful.value.length.toLocaleString("en-GB")}. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal</a>.`
+        let rows = fetched_restful.value.length;
+
+        document.getElementById("dp-link").innerHTML = `Showing rows 1-${Math.min(data.length, 10)} of ${rows.toLocaleString("en-GB")}. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal</a> or download it in <a href = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/${matrix}/CSV/1.0/en">CSV format</a>.`
 
          while (table_preview.firstChild) {
             table_preview.removeChild(table_preview.firstChild)
