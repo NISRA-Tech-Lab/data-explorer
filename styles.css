@@ -73,6 +73,7 @@ h2, h3 {
   width: 100%;
   position: relative;
   z-index: 0;
+  margin-bottom: 2px
 }
 
 /* Larger screens (≥768px ~ Bootstrap md and up) */
