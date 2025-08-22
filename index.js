@@ -170,6 +170,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     var stat_label = Object.values(result.dimension.STATISTIC.category.label)[0];
 
     if (result.dimension[geog_type].category.index.includes("N92000002")) {
+
+        document.getElementById("chart-card").style.display = "flex";
+
         NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
         result.value.splice(NI_position, 1);
         result.dimension[geog_type].category.index.splice(NI_position, 1);
@@ -273,6 +276,76 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     data = data.map(item => item === '-' ? null : item);
     let unit = result.dimension.STATISTIC.category.unit[statistic].label;
     
+    let range_min = Math.floor(Math.min(...data));
+    let range_max = Math.ceil(Math.max(...data));
+         
+    let range = range_max - range_min; // Calculate the range of values
+
+    // Create an array colours, where each value is between 0 and 1 depending on where it falls in the range of values
+    colours = [];
+    for (let i = 0; i < data.length; i++) {
+        colours.push((data[i] - range_min) / range);
+    }
+
+    // Colour palettes for increasing/decreasing indicators
+    let palette = ["#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c"];
+
+
+    
+    legend_div = document.createElement("div");
+    legend_div.id = "map-legend";
+    legend_div.classList.add("map-legend");
+    legend_div.classList.add("align-self-center");
+    legend_div.classList.add("col-6")
+
+    legend_title = document.createElement("div");
+    legend_title.textContent = stat_label;
+    legend_title.classList.add("legend-title");
+    legend_div.appendChild(legend_title);
+
+    legend_row_1 = document.createElement("div");
+    legend_row_1.classList.add("row");
+
+    min_value = document.createElement("div");
+    min_value.classList.add("legend-min");
+    legend_row_1.appendChild(min_value);
+
+    
+
+    unit_value = document.createElement("div");
+    unit_value.classList.add("legend-unit");
+    if (unit.toLowerCase() != "number") {
+        unit_value.innerHTML = `(${unit})`;
+    }
+    legend_row_1.appendChild(unit_value);
+
+    max_value = document.createElement("div");
+
+    max_value.classList.add("legend-max");
+    legend_row_1.appendChild(max_value);
+
+    legend_div.appendChild(legend_row_1);
+
+    legend_row_2 = document.createElement("div");
+    legend_row_2.classList.add("row");
+
+    for (let i = 0; i < palette.length; i++) {
+        colour_block = document.createElement("div");
+        colour_block.style.backgroundColor = palette[i];
+        colour_block.classList.add("colour-block");
+    
+        if (i == palette.length - 1) {
+            colour_block.style.borderRight = "1px #555555 solid;"
+        }
+
+        legend_row_2.appendChild(colour_block);
+    }
+
+    legend_div.appendChild(legend_row_2);
+
+    map_container.appendChild(legend_div);
+
+         
 
     // Create a div for map to sit in
     map_div = document.createElement("div");
@@ -293,26 +366,14 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
        boxZoom: false,
        keyboard: false,
        attributionControl: false,
-       tap: false}).setView([54.67, -6.3], 8); // Set initial co-ordinates and zoom
+       tap: false}).setView([54.67, -6.85], 8); // Set initial co-ordinates and zoom
 
     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
        maxZoom: 19,
        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map); // Add a background map
 
-    let range_min = Math.floor(Math.min(...data));
-    let range_max = Math.ceil(Math.max(...data));
-         
-    let range = range_max - range_min; // Calculate the range of values
-
-    // Create an array colours, where each value is between 0 and 1 depending on where it falls in the range of values
-    colours = [];
-    for (let i = 0; i < data.length; i++) {
-        colours.push((data[i] - range_min) / range);
-    }
-
-    // Colour palettes for increasing/decreasing indicators
-    let palette = ["#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c"];
+   
 
 
     // When called chooses a colour from above palette based on value of colours array
@@ -393,57 +454,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             shapes = L.geoJSON(DEA_map, {onEachFeature:enhanceLayer}).addTo(map);
          }
 
-         if (!document.getElementById(matrix + "-legend")) {
-            legend_div = document.createElement("div");
-            legend_div.id = matrix + "-legend";
-            legend_div.classList.add("map-legend");
-
-            legend_title = document.createElement("div");
-            legend_title.textContent = stat_label;
-            legend_title.classList.add("legend-title");
-            legend_div.appendChild(legend_title);
-
-            legend_row_1 = document.createElement("div");
-            legend_row_1.classList.add("row");
-
-            min_value = document.createElement("div");
-            min_value.classList.add("legend-min");
-            legend_row_1.appendChild(min_value);
-
-            
-
-            unit_value = document.createElement("div");
-            unit_value.classList.add("legend-unit");
-            if (unit.toLowerCase() != "number") {
-                unit_value.innerHTML = `(${unit})`;
-            }
-            legend_row_1.appendChild(unit_value);
-
-            max_value = document.createElement("div");
-
-            max_value.classList.add("legend-max");
-            legend_row_1.appendChild(max_value);
-
-            legend_div.appendChild(legend_row_1);
-
-            legend_row_2 = document.createElement("div");
-            legend_row_2.classList.add("row");
-
-            for (let i = 0; i < palette.length; i++) {
-               colour_block = document.createElement("div");
-               colour_block.style.backgroundColor = palette[i];
-               colour_block.classList.add("colour-block");
-               legend_row_2.appendChild(colour_block);
-               if (i == 0) {
-                  colour_block.style.marginLeft = "7.5px"
-               }
-            }
-
-            legend_div.appendChild(legend_row_2);
-
-            map_container.appendChild(legend_div);
-
-         }        
+                
 
         min_value.innerHTML = range_min.toLocaleString("en-GB");       
         max_value.innerHTML = range_max.toLocaleString("en-GB");         
