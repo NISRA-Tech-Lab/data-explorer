@@ -3257,7 +3257,7 @@
     "product_code": "HIAddInd"
   },
   "SDRSMOKELGD": {
-    "name": "Standardised Death Rate – Smoking Attributable Causes",
+    "name": "Standardised Death Rate - Smoking Attributable Causes",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
     "statistics": {
@@ -3273,7 +3273,7 @@
     "product_code": "HIASD"
   },
   "SDRSMOKEHSCT": {
-    "name": "Standardised Death Rate – Smoking Attributable Causes",
+    "name": "Standardised Death Rate - Smoking Attributable Causes",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "SEX"],
     "statistics": {
@@ -3289,7 +3289,7 @@
     "product_code": "HIASD"
   },
   "SDRSMOKEDEA": {
-    "name": "Standardised Death Rate – Smoking Attributable Causes",
+    "name": "Standardised Death Rate - Smoking Attributable Causes",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
     "statistics": {
@@ -3305,7 +3305,7 @@
     "product_code": "HIASD"
   },
   "SDRSMOKEAA": {
-    "name": "Standardised Death Rate – Smoking Attributable Causes",
+    "name": "Standardised Death Rate - Smoking Attributable Causes",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
     "statistics": {
@@ -3489,7 +3489,7 @@
     "product_code": "HIHA"
   },
   "EDATTENDAA": {
-    "name": "Standardised Attendance Rate – Emergency Attendances",
+    "name": "Standardised Attendance Rate - Emergency Attendances",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
     "statistics": {
@@ -3505,7 +3505,7 @@
     "product_code": "HIHA"
   },
   "EDATTENDDEA": {
-    "name": "Standardised Attendance Rate – Emergency Attendances",
+    "name": "Standardised Attendance Rate - Emergency Attendances",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
     "statistics": {
@@ -3521,7 +3521,7 @@
     "product_code": "HIHA"
   },
   "EDATTENDHSCT": {
-    "name": "Standardised Attendance Rate – Emergency Attendances",
+    "name": "Standardised Attendance Rate - Emergency Attendances",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "SEX"],
     "statistics": {
@@ -3537,7 +3537,7 @@
     "product_code": "HIHA"
   },
   "EDATTENDLGD": {
-    "name": "Standardised Attendance Rate – Emergency Attendances",
+    "name": "Standardised Attendance Rate - Emergency Attendances",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
     "statistics": {
@@ -3553,7 +3553,7 @@
     "product_code": "HIHA"
   },
   "SDRAAACMAA": {
-    "name": "Standardised Death Rate – All Cause",
+    "name": "Standardised Death Rate - All Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
     "statistics": {
@@ -3569,7 +3569,7 @@
     "product_code": "HILEGH"
   },
   "SDRAAACMDEA": {
-    "name": "Standardised Death Rate – All Cause",
+    "name": "Standardised Death Rate - All Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
     "statistics": {
@@ -3585,7 +3585,7 @@
     "product_code": "HILEGH"
   },
   "SDRAAACMHSCT": {
-    "name": "Standardised Death Rate – All Cause",
+    "name": "Standardised Death Rate - All Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "SEX"],
     "statistics": {
@@ -3601,7 +3601,7 @@
     "product_code": "HILEGH"
   },
   "SDRAAACMLGD": {
-    "name": "Standardised Death Rate – All Cause",
+    "name": "Standardised Death Rate - All Cause",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
     "statistics": {
@@ -3665,7 +3665,7 @@
     "product_code": "HILEGH"
   },
   "SARSELFHARMLGD": {
-    "name": "Standardised Admission Rate – Self-Harm Admissions",
+    "name": "Standardised Admission Rate - Self-Harm Admissions",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX"],
     "statistics": {
@@ -3681,7 +3681,7 @@
     "product_code": "HIMH"
   },
   "SARSELFHARMHSCT": {
-    "name": "Standardised Admission Rate – Self-Harm Admissions",
+    "name": "Standardised Admission Rate - Self-Harm Admissions",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "SEX"],
     "statistics": {
@@ -3697,7 +3697,7 @@
     "product_code": "HIMH"
   },
   "SARSELFHARMDEA": {
-    "name": "Standardised Admission Rate – Self-Harm Admissions",
+    "name": "Standardised Admission Rate - Self-Harm Admissions",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "SEX"],
     "statistics": {
@@ -3713,7 +3713,7 @@
     "product_code": "HIMH"
   },
   "SARSELFHARMAA": {
-    "name": "Standardised Admission Rate – Self-Harm Admissions",
+    "name": "Standardised Admission Rate - Self-Harm Admissions",
     "updated": "2024-10-22",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "SEX"],
     "statistics": {
