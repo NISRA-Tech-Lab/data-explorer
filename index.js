@@ -15,6 +15,7 @@ let chart_container = document.getElementById("chart-container");
 let table_preview = document.getElementById("table-preview");
 let map_subtitle = document.getElementById("map-subtitle");
 let page_title = document.getElementsByTagName("title")[0];
+let nameSearch = document.getElementById("name-search");
 
 let search = window.location.search.replace("?", "").split("&");
 
@@ -168,6 +169,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     const {result} = await response.json();
 
     var stat_label = Object.values(result.dimension.STATISTIC.category.label)[0];
+    var unit = result.dimension.STATISTIC.category.unit[statistic].label;
 
     if (result.dimension[geog_type].category.index.includes("N92000002")) {
 
@@ -181,6 +183,14 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         while(chart_container.firstChild) {
             chart_container.removeChild(chart_container.firstChild)
         }
+
+        chart_unit = document.createElement("div");
+        chart_unit.classList.add("chart-unit");        
+        chart_unit.classList.add("text-secondary");   
+
+        chart_unit.textContent = unit;
+
+        chart_container.appendChild(chart_unit);
 
         let ni_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
         encodeURIComponent('{"jsonrpc": "2.0", "method": "PxStat.Data.Cube_API.ReadDataset", "params": {"class": "query", "id": ' + id_vars + ', "dimension": { "STATISTIC": {"category": {"index": ["' + statistic +
@@ -255,6 +265,11 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         const ctx = chart_canvas.getContext('2d');
         new Chart(ctx, chart_config);
 
+        x_axis_label = document.createElement("div");
+        x_axis_label.textContent = result.dimension[time_var].label;
+        x_axis_label.classList.add("text-secondary");
+        x_axis_label.classList.add("text-center");
+        chart_container.appendChild(x_axis_label);
 
     }
 
@@ -274,7 +289,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     let data = result.value;
     data = data.map(item => item === '-' ? null : item);
-    let unit = result.dimension.STATISTIC.category.unit[statistic].label;
     
     let range_min = Math.floor(Math.min(...data));
     let range_max = Math.ceil(Math.max(...data));
@@ -290,8 +304,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     // Colour palettes for increasing/decreasing indicators
     let palette = ["#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c"];
 
-
-    
     legend_div = document.createElement("div");
     legend_div.id = "map-legend";
     legend_div.classList.add("map-legend");
@@ -309,8 +321,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     min_value = document.createElement("div");
     min_value.classList.add("legend-min");
     legend_row_1.appendChild(min_value);
-
-    
 
     unit_value = document.createElement("div");
     unit_value.classList.add("legend-unit");

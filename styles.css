@@ -113,8 +113,7 @@ h2, h3 {
 
 /* Legend overlay (adjust if your map size changes) */
 .map-legend {
-    padding: 10px;
-    border-radius: 25px;
+    padding-bottom: 10px; 
     z-index: 1;
      /* Centering */
     margin: 0 auto;         /* center horizontally */
@@ -165,6 +164,7 @@ label, select {
 
 .legend-title {
     text-align: center;
+    padding-top: 10px;
 }
 
 /* Map & Chart min heights for small vs large screens */
@@ -207,4 +207,9 @@ label, select {
 .offcanvas-no-anim .offcanvas-backdrop {
   transition: none !important;
   animation: none !important;
+}
+
+.chart-unit {
+    margin-left: 20px;
+    margin-bottom: -20px;
 }
