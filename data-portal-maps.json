@@ -1,851 +1,4 @@
 {
-  "NIMDM17T11": {
-    "name": "Northern Ireland Multiple Deprivation Measure Indicators",
-    "updated": "2023-03-24",
-    "categories": ["TLIST(A1)", "STATISTIC", "AA"],
-    "statistics": {
-      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
-      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
-      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
-      "4": "Proportion of the working age population who are employment deprived",
-      "5": "Standardised preventable death ratio (excluding Suicides)",
-      "6": "Standardised physical health-related benefit ratio",
-      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
-      "8": "Standardised emergency admission ratio (NI = 100)",
-      "9": "Proportion of Singleton Births with Low Birth Weight",
-      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
-      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
-      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
-      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
-      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
-      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
-      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
-      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
-      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
-      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
-      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
-      "21": "Proportion of properties with broadband speed below 10Mb/s",
-      "22": "Proportion of domestic dwellings that are unfit",
-      "23": "Proportion of domestic dwellings in a state of disrepair",
-      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
-      "25": "Rate of Household overcrowding",
-      "26": "Proportion of population with disability without adaptations to dwelling",
-      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
-      "28": "Standardised ratio of road defects (NI = 100)",
-      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
-      "30": "Proportion of properties in flood risk area",
-      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
-      "32": "Rate of Burglary (per 1,000 population)",
-      "33": "Rate of Theft (per 1,000 population)",
-      "34": "Rate of Vehicle Crime (per 1,000 population)",
-      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
-      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
-      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
-    },
-    "time": "TLIST(A1)",
-    "time_series": "2017",
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Deprivation and poverty",
-    "subject_code": 150,
-    "product": "Deprivation",
-    "product_code": "DPD"
-  },
-  "NIMDM17T10": {
-    "name": "Northern Ireland Multiple Deprivation Measure Indicators",
-    "updated": "2023-03-24",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
-      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
-      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
-      "4": "Proportion of the working age population who are employment deprived",
-      "5": "Standardised preventable death ratio (excluding Suicides)",
-      "6": "Standardised physical health-related benefit ratio",
-      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
-      "8": "Standardised emergency admission ratio (NI = 100)",
-      "9": "Proportion of Singleton Births with Low Birth Weight",
-      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
-      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
-      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
-      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
-      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
-      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
-      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
-      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
-      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
-      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
-      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
-      "21": "Proportion of properties with broadband speed below 10Mb/s",
-      "22": "Proportion of domestic dwellings that are unfit",
-      "23": "Proportion of domestic dwellings in a state of disrepair",
-      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
-      "25": "Rate of Household overcrowding",
-      "26": "Proportion of population with disability without adaptations to dwelling",
-      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
-      "28": "Standardised ratio of road defects (NI = 100)",
-      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
-      "30": "Proportion of properties in flood risk area",
-      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
-      "32": "Rate of Burglary (per 1,000 population)",
-      "33": "Rate of Theft (per 1,000 population)",
-      "34": "Rate of Vehicle Crime (per 1,000 population)",
-      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
-      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
-      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
-    },
-    "time": "TLIST(A1)",
-    "time_series": "2017",
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Deprivation and poverty",
-    "subject_code": 150,
-    "product": "Deprivation",
-    "product_code": "DPD"
-  },
-  "NIMDM17T12": {
-    "name": "Northern Ireland Multiple Deprivation Measure Indicators",
-    "updated": "2023-03-24",
-    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
-    "statistics": {
-      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
-      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
-      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
-      "4": "Proportion of the working age population who are employment deprived",
-      "5": "Standardised preventable death ratio (excluding Suicides)",
-      "6": "Standardised physical health-related benefit ratio",
-      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
-      "8": "Standardised emergency admission ratio (NI = 100)",
-      "9": "Proportion of Singleton Births with Low Birth Weight",
-      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
-      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
-      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
-      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
-      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
-      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
-      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
-      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
-      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
-      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
-      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
-      "21": "Proportion of properties with broadband speed below 10Mb/s",
-      "22": "Proportion of domestic dwellings that are unfit",
-      "23": "Proportion of domestic dwellings in a state of disrepair",
-      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
-      "25": "Rate of Household overcrowding",
-      "26": "Proportion of population with disability without adaptations to dwelling",
-      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
-      "28": "Standardised ratio of road defects (NI = 100)",
-      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
-      "30": "Proportion of properties in flood risk area",
-      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
-      "32": "Rate of Burglary (per 1,000 population)",
-      "33": "Rate of Theft (per 1,000 population)",
-      "34": "Rate of Vehicle Crime (per 1,000 population)",
-      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
-      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
-      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
-    },
-    "time": "TLIST(A1)",
-    "time_series": "2017",
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Deprivation and poverty",
-    "subject_code": 150,
-    "product": "Deprivation",
-    "product_code": "DPD"
-  },
-  "HPVVCHSCT": {
-    "name": "Human Papillomavirus (HPV) Vaccine Coverage",
-    "updated": "2023-03-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "HPVSY", "GENDER"],
-    "statistics": {
-      "HPVNC": "Number in Cohort",
-      "1DVN": "1st dose vaccination",
-      "1DVP": "Percentage 1st dose vaccination",
-      "2DVN": "2nd dose vaccination",
-      "2DVP": "Percentage 2nd dose vaccination",
-      "3DVN": "3rd dose vaccination",
-      "3DVP": "Percentage 3rd dose vaccination"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 1 – Giving Every Child the Best Start",
-    "subject_code": 113,
-    "product": "Healthy Children",
-    "product_code": "MLBTH1P4"
-  },
-  "SHPT1": {
-    "name": "Self-Harm Presentations at Hospital Emergency Departments",
-    "updated": "2023-04-18",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "RESTR": "Self-harm presentations by Trust of residence",
-      "PRETR": "Self-harm presentations by presenting hospital Trust"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 3 – Empowering Healthy Living",
-    "subject_code": 115,
-    "product": "Mental Health",
-    "product_code": "MLBTH3P2"
-  },
-  "CNSCRT1": {
-    "name": "Cervical Cancer Screening",
-    "updated": "2023-04-18",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "ELPOPN": "Eligible population for cervical screening",
-      "CVCSCN": "Attended cervical screening in the last 5 years",
-      "CVCSNP": "5 year coverage for cervical screening"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 3 – Empowering Healthy Living",
-    "subject_code": 115,
-    "product": "Cancer Screening",
-    "product_code": "MLBTH3P3"
-  },
-  "CNSCRT2": {
-    "name": "Bowel Cancer Screening",
-    "updated": "2023-04-18",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "INVPARN": "Invited to participate in bowel cancer screening",
-      "BWCSPN": "Participated in bowel cancer screening (6 month compliance)",
-      "BWCSUP": "Uptake for bowel cancer screening"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 3 – Empowering Healthy Living",
-    "subject_code": 115,
-    "product": "Cancer Screening",
-    "product_code": "MLBTH3P3"
-  },
-  "CNSCRT3": {
-    "name": "Breast Cancer Screening",
-    "updated": "2023-04-18",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "INBRSCN": "Invited to attend breast screening",
-      "BRCSCN": "Attended breast screening",
-      "BRCSNP": "Uptake for breast screening"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 3 – Empowering Healthy Living",
-    "subject_code": 115,
-    "product": "Cancer Screening",
-    "product_code": "MLBTH3P3"
-  },
-  "OTHSCRT1": {
-    "name": "Abdominal Aortic Aneurysm Screening",
-    "updated": "2023-04-18",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "ELAAASCN": "Eligible for Abdominal Aortic Aneurysm screening",
-      "AAASCN": "Screened for Abdominal Aortic Aneurysm",
-      "AAASCP": "Abdominal Aortic Aneurysm screening uptake rate"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 3 – Empowering Healthy Living",
-    "subject_code": 115,
-    "product": "Cancer Screening",
-    "product_code": "MLBTH3P3"
-  },
-  "CHVACT1": {
-    "name": "Childhood Vaccination Rates at 12 months",
-    "updated": "2023-04-18",
-    "categories": ["TLIST(Q1)", "STATISTIC", "HSCT", "VACT1"],
-    "statistics": {
-      "CHVAC": "Children immunised against"
-    },
-    "time": "TLIST(Q1)",
-    "time_series": ["2011Q1", "2011Q2", "2011Q3", "2011Q4", "2012Q1", "2012Q2", "2012Q3", "2012Q4", "2013Q1", "2013Q2", "2013Q3", "2013Q4", "2014Q1", "2014Q2", "2014Q3", "2014Q4", "2015Q1", "2015Q2", "2015Q3", "2015Q4", "2016Q1", "2016Q2", "2016Q3", "2016Q4", "2017Q1", "2017Q2", "2017Q3", "2017Q4"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 1 – Giving Every Child the Best Start",
-    "subject_code": 113,
-    "product": "Healthy Children",
-    "product_code": "MLBTH1P4"
-  },
-  "CHVACT2": {
-    "name": "Childhood Vaccination Rates at 24 months",
-    "updated": "2023-04-18",
-    "categories": ["TLIST(Q1)", "STATISTIC", "HSCT", "VACT2"],
-    "statistics": {
-      "CHVAC": "Children immunised against"
-    },
-    "time": "TLIST(Q1)",
-    "time_series": ["2011Q1", "2011Q2", "2011Q3", "2011Q4", "2012Q1", "2012Q2", "2012Q3", "2012Q4", "2013Q1", "2013Q2", "2013Q3", "2013Q4", "2014Q1", "2014Q2", "2014Q3", "2014Q4", "2015Q1", "2015Q2", "2015Q3", "2015Q4", "2016Q1", "2016Q2", "2016Q3", "2016Q4", "2017Q1", "2017Q2", "2017Q3", "2017Q4"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 1 – Giving Every Child the Best Start",
-    "subject_code": 113,
-    "product": "Healthy Children",
-    "product_code": "MLBTH1P4"
-  },
-  "CHVACT3": {
-    "name": "Childhood Vaccination Rates at 5 years",
-    "updated": "2023-04-18",
-    "categories": ["TLIST(Q1)", "STATISTIC", "HSCT", "VACT3"],
-    "statistics": {
-      "CHVAC": "Children immunised against"
-    },
-    "time": "TLIST(Q1)",
-    "time_series": ["2011Q1", "2011Q2", "2011Q3", "2011Q4", "2012Q1", "2012Q2", "2012Q3", "2012Q4", "2013Q1", "2013Q2", "2013Q3", "2013Q4", "2014Q1", "2014Q2", "2014Q3", "2014Q4", "2015Q1", "2015Q2", "2015Q3", "2015Q4", "2016Q1", "2016Q2", "2016Q3", "2016Q4", "2017Q1", "2017Q2", "2017Q3", "2017Q4"],
-    "theme": "Making life better",
-    "theme_code": 59,
-    "subject": "Theme 1 – Giving Every Child the Best Start",
-    "subject_code": 113,
-    "product": "Healthy Children",
-    "product_code": "MLBTH1P4"
-  },
-  "EOTNELGD": {
-    "name": "Estimated Overnight Trips, Nights and Expenditure",
-    "updated": "2023-04-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "OTN": "Number of Overnight Trips",
-      "OTP": "Proportion of Overnight Trips",
-      "NSN": "Number of Nights Stayed per Trip",
-      "NSP": "Proportion of Nights Stayed per Trip",
-      "ETN": "Expenditure per Trip (£)",
-      "ETP": "Proportion of Expenditure per Trip (£)"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
-    "theme": "Business, economy and trade",
-    "theme_code": 68,
-    "subject": "Tourism",
-    "subject_code": 127,
-    "product": "Trips",
-    "product_code": "TTRIP"
-  },
-  "EJOBSLGD": {
-    "name": "Employee Jobs",
-    "updated": "2023-04-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "EMJOBS"],
-    "statistics": {
-      "EMJOBS": "Employee Jobs"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2011", "2013", "2015", "2017", "2019"],
-    "theme": "Business, economy and trade",
-    "theme_code": 68,
-    "subject": "Tourism",
-    "subject_code": 127,
-    "product": "Jobs",
-    "product_code": "TJOBS"
-  },
-  "CAOLGD": {
-    "name": "Certified Accommodation Occupancy",
-    "updated": "2023-04-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "HROR": "Hotel Room Occupancy Rate",
-      "HBOR": "Hotel Bed-Space Occupancy Rate",
-      "BBGGROR": "Bed & Breakfast, Guesthouses and Guest Accommodation Occupancy Rate",
-      "BBGGBOR": "Bed & Breakfast, Guesthouses and Guest Accommodation Bed-Space Occupancy Rate",
-      "SCUOAR": "Self-Catering Unit Occupancy Annual Rate",
-      "SCUOPR": "Self-Catering Unit Occupancy Peak Rate"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
-    "theme": "Business, economy and trade",
-    "theme_code": 68,
-    "subject": "Tourism",
-    "subject_code": 127,
-    "product": "Trips",
-    "product_code": "TTRIP"
-  },
-  "EOTPOLGD": {
-    "name": "Estimated Overnight Trips by Place of Origin - 3 year rolling average.",
-    "updated": "2023-04-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Origin"],
-    "statistics": {
-      "EOT": "Number of Estimated Overnight Trips"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2011-2013", "2012-2014", "2013-2015", "2014-2016", "2015-2017", "2016-2018", "2017-2019"],
-    "theme": "Business, economy and trade",
-    "theme_code": 68,
-    "subject": "Tourism",
-    "subject_code": 127,
-    "product": "Trips",
-    "product_code": "TTRIP"
-  },
-  "EOTRVLGD": {
-    "name": "Estimated Overnight Trips by Reason for Visit - 3 year rolling average",
-    "updated": "2023-04-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "RFV"],
-    "statistics": {
-      "NOV": "Number of Visits"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2011-2013", "2012-2014", "2013-2015", "2014-2016", "2015-2017", "2016-2018", "2017-2019"],
-    "theme": "Business, economy and trade",
-    "theme_code": 68,
-    "subject": "Tourism",
-    "subject_code": 127,
-    "product": "Trips",
-    "product_code": "TTRIP"
-  },
-  "OTPCLGD": {
-    "name": "Overnight Trips per Capita",
-    "updated": "2023-04-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "ONT": "Overnight Trips",
-      "TPC": "Trips Per Capita"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2015", "2016", "2017", "2018", "2019"],
-    "theme": "Business, economy and trade",
-    "theme_code": 68,
-    "subject": "Tourism",
-    "subject_code": 127,
-    "product": "Spending",
-    "product_code": "TSPEND"
-  },
-  "CASLGD": {
-    "name": "Certified Accommodation Stock",
-    "updated": "2023-04-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Estb"],
-    "statistics": {
-      "All": "Number of Establishments",
-      "Rooms": "Number of Rooms",
-      "Beds": "Number of Bed Spaces",
-      "Units": "Number of Units"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
-    "theme": "Business, economy and trade",
-    "theme_code": 68,
-    "subject": "Tourism",
-    "subject_code": 127,
-    "product": "Accommodation",
-    "product_code": "TACC"
-  },
-  "YJAWLGD": {
-    "name": "Youth Justice Agency Workload",
-    "updated": "2023-05-23",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "YJS"],
-    "statistics": {
-      "YJAW": "Workload"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Crime and justice",
-    "theme_code": 58,
-    "subject": "Courts, prison and probation",
-    "subject_code": 129,
-    "product": "Youth justice",
-    "product_code": "CPPYJ"
-  },
-  "TFSAA": {
-    "name": "Training for Success",
-    "updated": "2023-06-14",
-    "categories": ["TLIST(A1)", "STATISTIC", "AA", "Level"],
-    "statistics": {
-      "TfS": "Training for Success Occupancy"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2019", "2020", "2021"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Training and apprenticeships",
-    "subject_code": 140,
-    "product": "Training for success",
-    "product_code": "TATFS"
-  },
-  "TFSLGD": {
-    "name": "Training for Success",
-    "updated": "2023-06-14",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Level"],
-    "statistics": {
-      "TfS": "Training for Success Occupancy"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2019", "2020", "2021"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Training and apprenticeships",
-    "subject_code": 140,
-    "product": "Training for success",
-    "product_code": "TATFS"
-  },
-  "REGNONUKRLGD": {
-    "name": "Health Card Registrations from Outside the UK",
-    "updated": "2023-06-15",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Reason"],
-    "statistics": {
-      "REGNONUK": "Total Non-UK Registrations"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Primary care",
-    "subject_code": 146,
-    "product": "Medical",
-    "product_code": "PCMED"
-  },
-  "HEENROLHSCT": {
-    "name": "Enrolments at Higher Education Institutions",
-    "updated": "2023-06-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "HEENROLn": "Number of enrolments"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Higher education",
-    "subject_code": 134,
-    "product": "Enrolments",
-    "product_code": "HEENROL"
-  },
-  "HEENROLAA": {
-    "name": "Enrolments at Higher Education Institutions",
-    "updated": "2023-06-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "AA"],
-    "statistics": {
-      "HEENROLn": "Number of enrolments"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Higher education",
-    "subject_code": 134,
-    "product": "Enrolments",
-    "product_code": "HEENROL"
-  },
-  "HEQUALHSCT": {
-    "name": "Qualifications at Higher Education Institutions",
-    "updated": "2023-06-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "HEQUALn": "Number of students gaining qualifications"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Higher education",
-    "subject_code": 134,
-    "product": "Qualifications",
-    "product_code": "HEQUAL"
-  },
-  "HEQUALAA": {
-    "name": "Qualifications at Higher Education Institutions",
-    "updated": "2023-06-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "AA"],
-    "statistics": {
-      "HEQUALn": "Number of students gaining qualifications"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Higher education",
-    "subject_code": 134,
-    "product": "Qualifications",
-    "product_code": "HEQUAL"
-  },
-  "HEENROLLGD": {
-    "name": "Enrolments at Higher Education Institutions",
-    "updated": "2023-06-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "HEENROLn": "Number of enrolments"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Higher education",
-    "subject_code": 134,
-    "product": "Enrolments",
-    "product_code": "HEENROL"
-  },
-  "HEENROLDEA": {
-    "name": "Enrolments at Higher Education Institutions",
-    "updated": "2023-06-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
-    "statistics": {
-      "HEENROLn": "Number of enrolments"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Higher education",
-    "subject_code": 134,
-    "product": "Enrolments",
-    "product_code": "HEENROL"
-  },
-  "HEQUALLGD": {
-    "name": "Qualifications at Higher Education Institutions",
-    "updated": "2023-06-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
-    "statistics": {
-      "HEQUALn": "Number of students gaining qualifications"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Higher education",
-    "subject_code": 134,
-    "product": "Qualifications",
-    "product_code": "HEQUAL"
-  },
-  "HEQUALDEA": {
-    "name": "Qualifications at Higher Education Institutions",
-    "updated": "2023-06-21",
-    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
-    "statistics": {
-      "HEQUALn": "Number of students gaining qualifications"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "Higher education",
-    "subject_code": 134,
-    "product": "Qualifications",
-    "product_code": "HEQUAL"
-  },
-  "DETNFTELGD": {
-    "name": "Full-Time Equivalent Teachers in Northern Ireland",
-    "updated": "2023-06-29",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "TNschooltype"],
-    "statistics": {
-      "TeacherFTE": "Full-Time Equivalent"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "School workforce",
-    "subject_code": 139,
-    "product": "School workforce",
-    "product_code": "SWSW"
-  },
-  "DETNPTRLGD": {
-    "name": "Pupil Teacher Ratios in Northern Ireland",
-    "updated": "2023-06-29",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "TNschooltype"],
-    "statistics": {
-      "PTR": "Pupil:Teacher Ratio"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
-    "theme": "Education and skills",
-    "theme_code": 69,
-    "subject": "School workforce",
-    "subject_code": 139,
-    "product": "School workforce",
-    "product_code": "SWSW"
-  },
-  "MPHOWNHSCT": {
-    "name": "Continuous Household Survey: Mobile phone ownership",
-    "updated": "2023-07-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "OMBPHY": "Owns a Mobile Phone: Yes",
-      "OMBPHN": "Owns a Mobile Phone: No"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2021/22"],
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Digital access",
-    "subject_code": 151,
-    "product": "Mobile phone",
-    "product_code": "DAMP"
-  },
-  "INTACCHSCT": {
-    "name": "Continuous Household Survey: Internet Access and Home Internet Access",
-    "updated": "2023-07-07",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "INTACCY": "Internet Access: Yes",
-      "INTACCN": "Internet Access: No",
-      "HINTACCY": "Home Internet Access: Yes",
-      "HINTACCN": "Home Internet Access: No"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Digital access",
-    "subject_code": 151,
-    "product": "Internet",
-    "product_code": "DAI"
-  },
-  "CONTHRSHSCT": {
-    "name": "Domiciliary Care Contact Hours",
-    "updated": "2023-07-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "DOMCARESECTOR"],
-    "statistics": {
-      "DOMCAREHRSNUM": "Contact Hours Per Sector",
-      "DOMCAREHRSPERC": "Percentage of Contact Hours Per Sector",
-      "DOMCAREHRSAVG": "Average Number of Contact Hours Per Client"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Care at home",
-    "product_code": "CAHS"
-  },
-  "IDCAGEHSCT": {
-    "name": "Intensive Domiciliary Care Client Age Groups",
-    "updated": "2023-07-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "AGE"],
-    "statistics": {
-      "CLIENTPERC": "Intensive Domiciliary Care Clients"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Care at home",
-    "product_code": "CAHS"
-  },
-  "IDCNUMHSCT": {
-    "name": "Intensive Domiciliary Care Client Numbers",
-    "updated": "2023-07-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "CARESECTOR"],
-    "statistics": {
-      "CLIENTNUM": "Intensive Domiciliary Care Clients"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Care at home",
-    "product_code": "CAHS"
-  },
-  "PEPHSCT": {
-    "name": "Attendance at Structured Patient Education / Self Management Programmes",
-    "updated": "2023-07-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
-    "statistics": {
-      "PARTNUM": "Participants"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Care not at home",
-    "product_code": "CNAH"
-  },
-  "RESACCHSCT": {
-    "name": "Residential Accommodation",
-    "updated": "2023-07-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "CCRESACCTYPE"],
-    "statistics": {
-      "COMCARERESACC": "Residential Accommodation"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Care not at home",
-    "product_code": "CNAH"
-  },
-  "CONTWITHHSCT": {
-    "name": "Persons with Disability or Impairment in Contact with Health and Social Care Trusts",
-    "updated": "2023-07-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "CCDISTYPE"],
-    "statistics": {
-      "CCPERSCONTHSCT": "Persons with a disability in contact with HSC Trusts"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Care not at home",
-    "product_code": "CNAH"
-  },
-  "NURACCHSCT": {
-    "name": "Nursing Accommodation",
-    "updated": "2023-07-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "CCNURSACC"],
-    "statistics": {
-      "COMCARENURSACC": "Nursing Accommodation"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Care not at home",
-    "product_code": "CNAH"
-  },
-  "DCCLIENTSHSCT": {
-    "name": "Domiciliary Care Client Numbers",
-    "updated": "2023-07-28",
-    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "DOMCARESECTOR"],
-    "statistics": {
-      "DOMCARECLIENTNUM": "Domiciliary Care Clients"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-    "theme": "Health and social care",
-    "theme_code": 6,
-    "subject": "Social care",
-    "subject_code": 87,
-    "product": "Care at home",
-    "product_code": "CAHS"
-  },
-  "TS006": {
-    "name": "Sex - 2011 and 2021 TS006",
-    "updated": "2023-11-10",
-    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX_TS"],
-    "statistics": {
-      "UR_POP": "All usual residents"
-    },
-    "time": "TLIST(A1)",
-    "time_series": ["2011", "2021"],
-    "theme": "People and communities",
-    "theme_code": 70,
-    "subject": "Census",
-    "subject_code": 148,
-    "product": "Census over time",
-    "product_code": "CCOT"
-  },
   "TS020": {
     "name": "Marital and civil partnership status - 2011 and 2021 TS020",
     "updated": "2023-11-10",
@@ -5656,6 +4809,853 @@
     "subject_code": 148,
     "product": "Census 2011",
     "product_code": "C2011"
+  },
+  "NIMDM17T11": {
+    "name": "Northern Ireland Multiple Deprivation Measure Indicators",
+    "updated": "2023-03-24",
+    "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
+      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
+      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
+      "4": "Proportion of the working age population who are employment deprived",
+      "5": "Standardised preventable death ratio (excluding Suicides)",
+      "6": "Standardised physical health-related benefit ratio",
+      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
+      "8": "Standardised emergency admission ratio (NI = 100)",
+      "9": "Proportion of Singleton Births with Low Birth Weight",
+      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
+      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
+      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
+      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
+      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
+      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
+      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
+      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
+      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
+      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
+      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
+      "21": "Proportion of properties with broadband speed below 10Mb/s",
+      "22": "Proportion of domestic dwellings that are unfit",
+      "23": "Proportion of domestic dwellings in a state of disrepair",
+      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
+      "25": "Rate of Household overcrowding",
+      "26": "Proportion of population with disability without adaptations to dwelling",
+      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
+      "28": "Standardised ratio of road defects (NI = 100)",
+      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
+      "30": "Proportion of properties in flood risk area",
+      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
+      "32": "Rate of Burglary (per 1,000 population)",
+      "33": "Rate of Theft (per 1,000 population)",
+      "34": "Rate of Vehicle Crime (per 1,000 population)",
+      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
+      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
+      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2017",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Deprivation and poverty",
+    "subject_code": 150,
+    "product": "Deprivation",
+    "product_code": "DPD"
+  },
+  "NIMDM17T10": {
+    "name": "Northern Ireland Multiple Deprivation Measure Indicators",
+    "updated": "2023-03-24",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
+      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
+      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
+      "4": "Proportion of the working age population who are employment deprived",
+      "5": "Standardised preventable death ratio (excluding Suicides)",
+      "6": "Standardised physical health-related benefit ratio",
+      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
+      "8": "Standardised emergency admission ratio (NI = 100)",
+      "9": "Proportion of Singleton Births with Low Birth Weight",
+      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
+      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
+      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
+      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
+      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
+      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
+      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
+      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
+      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
+      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
+      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
+      "21": "Proportion of properties with broadband speed below 10Mb/s",
+      "22": "Proportion of domestic dwellings that are unfit",
+      "23": "Proportion of domestic dwellings in a state of disrepair",
+      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
+      "25": "Rate of Household overcrowding",
+      "26": "Proportion of population with disability without adaptations to dwelling",
+      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
+      "28": "Standardised ratio of road defects (NI = 100)",
+      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
+      "30": "Proportion of properties in flood risk area",
+      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
+      "32": "Rate of Burglary (per 1,000 population)",
+      "33": "Rate of Theft (per 1,000 population)",
+      "34": "Rate of Vehicle Crime (per 1,000 population)",
+      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
+      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
+      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2017",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Deprivation and poverty",
+    "subject_code": 150,
+    "product": "Deprivation",
+    "product_code": "DPD"
+  },
+  "NIMDM17T12": {
+    "name": "Northern Ireland Multiple Deprivation Measure Indicators",
+    "updated": "2023-03-24",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "1": "Proportion of the population living in households whose equivalised income is below 60 per cent of the NI median",
+      "2": "Proportion of the population aged 15 and under living in households whose equivalised income is below 60 per cent of the NI median",
+      "3": "Proportion of the population aged 65 and over living in households whose equivalised income is below 60 per cent of the NI median",
+      "4": "Proportion of the working age population who are employment deprived",
+      "5": "Standardised preventable death ratio (excluding Suicides)",
+      "6": "Standardised physical health-related benefit ratio",
+      "7": "Standardised ratio of people registered as having cancer (excluding non-melanoma skin cancers) (NI = 100)",
+      "8": "Standardised emergency admission ratio (NI = 100)",
+      "9": "Proportion of Singleton Births with Low Birth Weight",
+      "10": "Standardised ratio of Childrens Dental Extractions (NI = 100)",
+      "11": "Standardised ratio of people on multiple prescriptions on a regular basis (NI = 100)",
+      "12": "Standardised ratio of people with a long-term health problem or disability (Excluding Mental Health problems) (NI = 100)",
+      "13": "Proportion of pupils attending Special Schools or attending primary school with Special Education Needs Stages 3-5",
+      "14": "Absenteeism at Primary Schools (Percent of possible attendance)",
+      "15": "Proportion of school leavers not achieving five or more GCSEs at A*-C (and equivalent) incl. English and maths",
+      "16": "Proportion of those leaving school aged 16, 17 and 18 not entering Education, Employment or Training",
+      "17": "Proportion of 18-21 year olds who have not enrolled in Higher Education Courses at Higher or Further Education establishments",
+      "18": "Proportion of pupils attending Special Schools or who are attending post-primary schools with Special Education Needs Stages 3-5",
+      "19": "Absenteeism at post-primary schools (Percent of possible attendance)",
+      "20": "Proportions of working age adults (25-64) with no or low levels of qualification",
+      "21": "Proportion of properties with broadband speed below 10Mb/s",
+      "22": "Proportion of domestic dwellings that are unfit",
+      "23": "Proportion of domestic dwellings in a state of disrepair",
+      "24": "Proportion of domestic dwellings without (1) modern boiler, or (2) loft insulation and double glazing",
+      "25": "Rate of Household overcrowding",
+      "26": "Proportion of population with disability without adaptations to dwelling",
+      "27": "Proportion of domestic dwellings with Local Area Problem Scores",
+      "28": "Standardised ratio of road defects (NI = 100)",
+      "29": "Rate of Road Traffic Collisions (per 1,000 population)",
+      "30": "Proportion of properties in flood risk area",
+      "31": "Rate of Violence (including sexual offences), robbery and public order (per 1,000 population)",
+      "32": "Rate of Burglary (per 1,000 population)",
+      "33": "Rate of Theft (per 1,000 population)",
+      "34": "Rate of Vehicle Crime (per 1,000 population)",
+      "35": "Rate of Criminal Damage and Arson (per 1,000 population)",
+      "36": "Rate of Deliberate Primary and Secondary Fires (per 1,000 population)",
+      "37": "Rate of Anti-Social Behaviour Incidents (per 1,000 population)"
+    },
+    "time": "TLIST(A1)",
+    "time_series": "2017",
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Deprivation and poverty",
+    "subject_code": 150,
+    "product": "Deprivation",
+    "product_code": "DPD"
+  },
+  "HPVVCHSCT": {
+    "name": "Human Papillomavirus (HPV) Vaccine Coverage",
+    "updated": "2023-03-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "HPVSY", "GENDER"],
+    "statistics": {
+      "HPVNC": "Number in Cohort",
+      "1DVN": "1st dose vaccination",
+      "1DVP": "Percentage 1st dose vaccination",
+      "2DVN": "2nd dose vaccination",
+      "2DVP": "Percentage 2nd dose vaccination",
+      "3DVN": "3rd dose vaccination",
+      "3DVP": "Percentage 3rd dose vaccination"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 1 – Giving Every Child the Best Start",
+    "subject_code": 113,
+    "product": "Healthy Children",
+    "product_code": "MLBTH1P4"
+  },
+  "SHPT1": {
+    "name": "Self-Harm Presentations at Hospital Emergency Departments",
+    "updated": "2023-04-18",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "RESTR": "Self-harm presentations by Trust of residence",
+      "PRETR": "Self-harm presentations by presenting hospital Trust"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 3 – Empowering Healthy Living",
+    "subject_code": 115,
+    "product": "Mental Health",
+    "product_code": "MLBTH3P2"
+  },
+  "CNSCRT1": {
+    "name": "Cervical Cancer Screening",
+    "updated": "2023-04-18",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "ELPOPN": "Eligible population for cervical screening",
+      "CVCSCN": "Attended cervical screening in the last 5 years",
+      "CVCSNP": "5 year coverage for cervical screening"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 3 – Empowering Healthy Living",
+    "subject_code": 115,
+    "product": "Cancer Screening",
+    "product_code": "MLBTH3P3"
+  },
+  "CNSCRT2": {
+    "name": "Bowel Cancer Screening",
+    "updated": "2023-04-18",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "INVPARN": "Invited to participate in bowel cancer screening",
+      "BWCSPN": "Participated in bowel cancer screening (6 month compliance)",
+      "BWCSUP": "Uptake for bowel cancer screening"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 3 – Empowering Healthy Living",
+    "subject_code": 115,
+    "product": "Cancer Screening",
+    "product_code": "MLBTH3P3"
+  },
+  "CNSCRT3": {
+    "name": "Breast Cancer Screening",
+    "updated": "2023-04-18",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "INBRSCN": "Invited to attend breast screening",
+      "BRCSCN": "Attended breast screening",
+      "BRCSNP": "Uptake for breast screening"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2010/11-2012/13", "2011/12-2013/14", "2012/13-2014/15", "2013/14-2015/16", "2014/15-2016/17", "2015/16-2017/18"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 3 – Empowering Healthy Living",
+    "subject_code": 115,
+    "product": "Cancer Screening",
+    "product_code": "MLBTH3P3"
+  },
+  "OTHSCRT1": {
+    "name": "Abdominal Aortic Aneurysm Screening",
+    "updated": "2023-04-18",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "ELAAASCN": "Eligible for Abdominal Aortic Aneurysm screening",
+      "AAASCN": "Screened for Abdominal Aortic Aneurysm",
+      "AAASCP": "Abdominal Aortic Aneurysm screening uptake rate"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 3 – Empowering Healthy Living",
+    "subject_code": 115,
+    "product": "Cancer Screening",
+    "product_code": "MLBTH3P3"
+  },
+  "CHVACT1": {
+    "name": "Childhood Vaccination Rates at 12 months",
+    "updated": "2023-04-18",
+    "categories": ["TLIST(Q1)", "STATISTIC", "HSCT", "VACT1"],
+    "statistics": {
+      "CHVAC": "Children immunised against"
+    },
+    "time": "TLIST(Q1)",
+    "time_series": ["2011Q1", "2011Q2", "2011Q3", "2011Q4", "2012Q1", "2012Q2", "2012Q3", "2012Q4", "2013Q1", "2013Q2", "2013Q3", "2013Q4", "2014Q1", "2014Q2", "2014Q3", "2014Q4", "2015Q1", "2015Q2", "2015Q3", "2015Q4", "2016Q1", "2016Q2", "2016Q3", "2016Q4", "2017Q1", "2017Q2", "2017Q3", "2017Q4"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 1 – Giving Every Child the Best Start",
+    "subject_code": 113,
+    "product": "Healthy Children",
+    "product_code": "MLBTH1P4"
+  },
+  "CHVACT2": {
+    "name": "Childhood Vaccination Rates at 24 months",
+    "updated": "2023-04-18",
+    "categories": ["TLIST(Q1)", "STATISTIC", "HSCT", "VACT2"],
+    "statistics": {
+      "CHVAC": "Children immunised against"
+    },
+    "time": "TLIST(Q1)",
+    "time_series": ["2011Q1", "2011Q2", "2011Q3", "2011Q4", "2012Q1", "2012Q2", "2012Q3", "2012Q4", "2013Q1", "2013Q2", "2013Q3", "2013Q4", "2014Q1", "2014Q2", "2014Q3", "2014Q4", "2015Q1", "2015Q2", "2015Q3", "2015Q4", "2016Q1", "2016Q2", "2016Q3", "2016Q4", "2017Q1", "2017Q2", "2017Q3", "2017Q4"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 1 – Giving Every Child the Best Start",
+    "subject_code": 113,
+    "product": "Healthy Children",
+    "product_code": "MLBTH1P4"
+  },
+  "CHVACT3": {
+    "name": "Childhood Vaccination Rates at 5 years",
+    "updated": "2023-04-18",
+    "categories": ["TLIST(Q1)", "STATISTIC", "HSCT", "VACT3"],
+    "statistics": {
+      "CHVAC": "Children immunised against"
+    },
+    "time": "TLIST(Q1)",
+    "time_series": ["2011Q1", "2011Q2", "2011Q3", "2011Q4", "2012Q1", "2012Q2", "2012Q3", "2012Q4", "2013Q1", "2013Q2", "2013Q3", "2013Q4", "2014Q1", "2014Q2", "2014Q3", "2014Q4", "2015Q1", "2015Q2", "2015Q3", "2015Q4", "2016Q1", "2016Q2", "2016Q3", "2016Q4", "2017Q1", "2017Q2", "2017Q3", "2017Q4"],
+    "theme": "Making life better",
+    "theme_code": 59,
+    "subject": "Theme 1 – Giving Every Child the Best Start",
+    "subject_code": 113,
+    "product": "Healthy Children",
+    "product_code": "MLBTH1P4"
+  },
+  "EOTNELGD": {
+    "name": "Estimated Overnight Trips, Nights and Expenditure",
+    "updated": "2023-04-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "OTN": "Number of Overnight Trips",
+      "OTP": "Proportion of Overnight Trips",
+      "NSN": "Number of Nights Stayed per Trip",
+      "NSP": "Proportion of Nights Stayed per Trip",
+      "ETN": "Expenditure per Trip (£)",
+      "ETP": "Proportion of Expenditure per Trip (£)"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+    "theme": "Business, economy and trade",
+    "theme_code": 68,
+    "subject": "Tourism",
+    "subject_code": 127,
+    "product": "Trips",
+    "product_code": "TTRIP"
+  },
+  "EJOBSLGD": {
+    "name": "Employee Jobs",
+    "updated": "2023-04-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "EMJOBS"],
+    "statistics": {
+      "EMJOBS": "Employee Jobs"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2011", "2013", "2015", "2017", "2019"],
+    "theme": "Business, economy and trade",
+    "theme_code": 68,
+    "subject": "Tourism",
+    "subject_code": 127,
+    "product": "Jobs",
+    "product_code": "TJOBS"
+  },
+  "CAOLGD": {
+    "name": "Certified Accommodation Occupancy",
+    "updated": "2023-04-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HROR": "Hotel Room Occupancy Rate",
+      "HBOR": "Hotel Bed-Space Occupancy Rate",
+      "BBGGROR": "Bed & Breakfast, Guesthouses and Guest Accommodation Occupancy Rate",
+      "BBGGBOR": "Bed & Breakfast, Guesthouses and Guest Accommodation Bed-Space Occupancy Rate",
+      "SCUOAR": "Self-Catering Unit Occupancy Annual Rate",
+      "SCUOPR": "Self-Catering Unit Occupancy Peak Rate"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+    "theme": "Business, economy and trade",
+    "theme_code": 68,
+    "subject": "Tourism",
+    "subject_code": 127,
+    "product": "Trips",
+    "product_code": "TTRIP"
+  },
+  "EOTPOLGD": {
+    "name": "Estimated Overnight Trips by Place of Origin - 3 year rolling average.",
+    "updated": "2023-04-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Origin"],
+    "statistics": {
+      "EOT": "Number of Estimated Overnight Trips"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2011-2013", "2012-2014", "2013-2015", "2014-2016", "2015-2017", "2016-2018", "2017-2019"],
+    "theme": "Business, economy and trade",
+    "theme_code": 68,
+    "subject": "Tourism",
+    "subject_code": 127,
+    "product": "Trips",
+    "product_code": "TTRIP"
+  },
+  "EOTRVLGD": {
+    "name": "Estimated Overnight Trips by Reason for Visit - 3 year rolling average",
+    "updated": "2023-04-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "RFV"],
+    "statistics": {
+      "NOV": "Number of Visits"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2011-2013", "2012-2014", "2013-2015", "2014-2016", "2015-2017", "2016-2018", "2017-2019"],
+    "theme": "Business, economy and trade",
+    "theme_code": 68,
+    "subject": "Tourism",
+    "subject_code": 127,
+    "product": "Trips",
+    "product_code": "TTRIP"
+  },
+  "OTPCLGD": {
+    "name": "Overnight Trips per Capita",
+    "updated": "2023-04-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "ONT": "Overnight Trips",
+      "TPC": "Trips Per Capita"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015", "2016", "2017", "2018", "2019"],
+    "theme": "Business, economy and trade",
+    "theme_code": 68,
+    "subject": "Tourism",
+    "subject_code": 127,
+    "product": "Spending",
+    "product_code": "TSPEND"
+  },
+  "CASLGD": {
+    "name": "Certified Accommodation Stock",
+    "updated": "2023-04-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Estb"],
+    "statistics": {
+      "All": "Number of Establishments",
+      "Rooms": "Number of Rooms",
+      "Beds": "Number of Bed Spaces",
+      "Units": "Number of Units"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+    "theme": "Business, economy and trade",
+    "theme_code": 68,
+    "subject": "Tourism",
+    "subject_code": 127,
+    "product": "Accommodation",
+    "product_code": "TACC"
+  },
+  "YJAWLGD": {
+    "name": "Youth Justice Agency Workload",
+    "updated": "2023-05-23",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "YJS"],
+    "statistics": {
+      "YJAW": "Workload"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008/09", "2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Crime and justice",
+    "theme_code": 58,
+    "subject": "Courts, prison and probation",
+    "subject_code": 129,
+    "product": "Youth justice",
+    "product_code": "CPPYJ"
+  },
+  "TFSAA": {
+    "name": "Training for Success",
+    "updated": "2023-06-14",
+    "categories": ["TLIST(A1)", "STATISTIC", "AA", "Level"],
+    "statistics": {
+      "TfS": "Training for Success Occupancy"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2019", "2020", "2021"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Training and apprenticeships",
+    "subject_code": 140,
+    "product": "Training for success",
+    "product_code": "TATFS"
+  },
+  "TFSLGD": {
+    "name": "Training for Success",
+    "updated": "2023-06-14",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Level"],
+    "statistics": {
+      "TfS": "Training for Success Occupancy"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2019", "2020", "2021"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Training and apprenticeships",
+    "subject_code": 140,
+    "product": "Training for success",
+    "product_code": "TATFS"
+  },
+  "REGNONUKRLGD": {
+    "name": "Health Card Registrations from Outside the UK",
+    "updated": "2023-06-15",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Reason"],
+    "statistics": {
+      "REGNONUK": "Total Non-UK Registrations"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Primary care",
+    "subject_code": 146,
+    "product": "Medical",
+    "product_code": "PCMED"
+  },
+  "HEENROLHSCT": {
+    "name": "Enrolments at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "HEENROLn": "Number of enrolments"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Enrolments",
+    "product_code": "HEENROL"
+  },
+  "HEENROLAA": {
+    "name": "Enrolments at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "HEENROLn": "Number of enrolments"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Enrolments",
+    "product_code": "HEENROL"
+  },
+  "HEQUALHSCT": {
+    "name": "Qualifications at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "HEQUALn": "Number of students gaining qualifications"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Qualifications",
+    "product_code": "HEQUAL"
+  },
+  "HEQUALAA": {
+    "name": "Qualifications at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "AA"],
+    "statistics": {
+      "HEQUALn": "Number of students gaining qualifications"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Qualifications",
+    "product_code": "HEQUAL"
+  },
+  "HEENROLLGD": {
+    "name": "Enrolments at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HEENROLn": "Number of enrolments"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Enrolments",
+    "product_code": "HEENROL"
+  },
+  "HEENROLDEA": {
+    "name": "Enrolments at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "HEENROLn": "Number of enrolments"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Enrolments",
+    "product_code": "HEENROL"
+  },
+  "HEQUALLGD": {
+    "name": "Qualifications at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
+    "statistics": {
+      "HEQUALn": "Number of students gaining qualifications"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Qualifications",
+    "product_code": "HEQUAL"
+  },
+  "HEQUALDEA": {
+    "name": "Qualifications at Higher Education Institutions",
+    "updated": "2023-06-21",
+    "categories": ["TLIST(A1)", "STATISTIC", "DEA2014"],
+    "statistics": {
+      "HEQUALn": "Number of students gaining qualifications"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "Higher education",
+    "subject_code": 134,
+    "product": "Qualifications",
+    "product_code": "HEQUAL"
+  },
+  "DETNFTELGD": {
+    "name": "Full-Time Equivalent Teachers in Northern Ireland",
+    "updated": "2023-06-29",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "TNschooltype"],
+    "statistics": {
+      "TeacherFTE": "Full-Time Equivalent"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "School workforce",
+    "subject_code": 139,
+    "product": "School workforce",
+    "product_code": "SWSW"
+  },
+  "DETNPTRLGD": {
+    "name": "Pupil Teacher Ratios in Northern Ireland",
+    "updated": "2023-06-29",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "TNschooltype"],
+    "statistics": {
+      "PTR": "Pupil:Teacher Ratio"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23"],
+    "theme": "Education and skills",
+    "theme_code": 69,
+    "subject": "School workforce",
+    "subject_code": 139,
+    "product": "School workforce",
+    "product_code": "SWSW"
+  },
+  "MPHOWNHSCT": {
+    "name": "Continuous Household Survey: Mobile phone ownership",
+    "updated": "2023-07-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "OMBPHY": "Owns a Mobile Phone: Yes",
+      "OMBPHN": "Owns a Mobile Phone: No"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2009/10", "2010/11", "2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2021/22"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Digital access",
+    "subject_code": 151,
+    "product": "Mobile phone",
+    "product_code": "DAMP"
+  },
+  "INTACCHSCT": {
+    "name": "Continuous Household Survey: Internet Access and Home Internet Access",
+    "updated": "2023-07-07",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "INTACCY": "Internet Access: Yes",
+      "INTACCN": "Internet Access: No",
+      "HINTACCY": "Home Internet Access: Yes",
+      "HINTACCN": "Home Internet Access: No"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Digital access",
+    "subject_code": 151,
+    "product": "Internet",
+    "product_code": "DAI"
+  },
+  "CONTHRSHSCT": {
+    "name": "Domiciliary Care Contact Hours",
+    "updated": "2023-07-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "DOMCARESECTOR"],
+    "statistics": {
+      "DOMCAREHRSNUM": "Contact Hours Per Sector",
+      "DOMCAREHRSPERC": "Percentage of Contact Hours Per Sector",
+      "DOMCAREHRSAVG": "Average Number of Contact Hours Per Client"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Care at home",
+    "product_code": "CAHS"
+  },
+  "IDCAGEHSCT": {
+    "name": "Intensive Domiciliary Care Client Age Groups",
+    "updated": "2023-07-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "AGE"],
+    "statistics": {
+      "CLIENTPERC": "Intensive Domiciliary Care Clients"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Care at home",
+    "product_code": "CAHS"
+  },
+  "IDCNUMHSCT": {
+    "name": "Intensive Domiciliary Care Client Numbers",
+    "updated": "2023-07-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "CARESECTOR"],
+    "statistics": {
+      "CLIENTNUM": "Intensive Domiciliary Care Clients"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Care at home",
+    "product_code": "CAHS"
+  },
+  "PEPHSCT": {
+    "name": "Attendance at Structured Patient Education / Self Management Programmes",
+    "updated": "2023-07-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
+    "statistics": {
+      "PARTNUM": "Participants"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2011/12", "2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Care not at home",
+    "product_code": "CNAH"
+  },
+  "RESACCHSCT": {
+    "name": "Residential Accommodation",
+    "updated": "2023-07-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "CCRESACCTYPE"],
+    "statistics": {
+      "COMCARERESACC": "Residential Accommodation"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Care not at home",
+    "product_code": "CNAH"
+  },
+  "CONTWITHHSCT": {
+    "name": "Persons with Disability or Impairment in Contact with Health and Social Care Trusts",
+    "updated": "2023-07-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "CCDISTYPE"],
+    "statistics": {
+      "CCPERSCONTHSCT": "Persons with a disability in contact with HSC Trusts"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2012/13", "2013/14", "2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Care not at home",
+    "product_code": "CNAH"
+  },
+  "NURACCHSCT": {
+    "name": "Nursing Accommodation",
+    "updated": "2023-07-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "CCNURSACC"],
+    "statistics": {
+      "COMCARENURSACC": "Nursing Accommodation"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Care not at home",
+    "product_code": "CNAH"
+  },
+  "DCCLIENTSHSCT": {
+    "name": "Domiciliary Care Client Numbers",
+    "updated": "2023-07-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "DOMCARESECTOR"],
+    "statistics": {
+      "DOMCARECLIENTNUM": "Domiciliary Care Clients"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "theme": "Health and social care",
+    "theme_code": 6,
+    "subject": "Social care",
+    "subject_code": 87,
+    "product": "Care at home",
+    "product_code": "CAHS"
+  },
+  "TS006": {
+    "name": "Sex - 2011 and 2021 TS006",
+    "updated": "2023-11-10",
+    "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "SEX_TS"],
+    "statistics": {
+      "UR_POP": "All usual residents"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2011", "2021"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Census",
+    "subject_code": 148,
+    "product": "Census over time",
+    "product_code": "CCOT"
   },
   "KS101NI": {
     "name": "Usual Resident Population",
