@@ -93,4 +93,6 @@ for (i in 1:length(data_portal$label)) {
   }
 }
 
+tables <- tables[order(names(tables))]
+
 write_json(tables, "data-portal-maps.json", auto_unbox = TRUE, pretty = TRUE)
