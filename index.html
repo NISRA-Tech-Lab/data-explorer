@@ -182,7 +182,7 @@
 
       // Default open on first load; otherwise restore last state
       const saved = localStorage.getItem(STORAGE_KEY);
-      const shouldOpen = (saved === null) ? true : saved === "true";
+      const shouldOpen = (saved === null) || (saved === "true") || (window.location.search === "");
 
       if (shouldOpen && !sidebarEl.classList.contains("show")) {
         // Temporarily disable animation for the first show on page load

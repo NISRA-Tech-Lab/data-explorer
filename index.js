@@ -244,7 +244,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         const ni_response = await fetch(ni_url);
         const ni_result = await ni_response.json();
-        console.log(ni_result)
+        
         const data_series = ni_result.result.value;
         // Make sure values are numbers
         const values = data_series.map(v => (v === null || v === undefined ? null : Number(v)));
