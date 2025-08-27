@@ -531,20 +531,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             shapes.clearLayers();
          }
          
-         // geojson data atted to map and enhanceLayer function applied to each feature    
-         if (geog_type.includes("LGD")) {
-            shapes = L.geoJSON(LGD_map, {onEachFeature:enhanceLayer}).addTo(map);
-         } else if (geog_type == "AA") {
-            shapes = L.geoJSON(AA_map, {onEachFeature:enhanceLayer}).addTo(map);
-         } else if (geog_type == "HSCT") {
-            shapes = L.geoJSON(HSCT_map, {onEachFeature:enhanceLayer}).addTo(map);
-         } else if (geog_type.includes("DEA")) {
-            shapes = L.geoJSON(DEA_map, {onEachFeature:enhanceLayer}).addTo(map);
-         } else if (geog_type.includes("SDZ")) {
-            shapes = L.geoJSON(SDZ_map, {onEachFeature:enhanceLayer}).addTo(map);
-         }
 
-                
+        const geojsonData = await loadShapes(geog_type);
+        shapes = L.geoJSON(geojsonData, { onEachFeature: enhanceLayer }).addTo(map);                
 
         min_value.innerHTML = range_min.toLocaleString("en-GB");       
         max_value.innerHTML = range_max.toLocaleString("en-GB");         
@@ -995,6 +984,37 @@ if (globalSearchInput) {
      if (globalSearchInput) globalSearchInput.value = "";
    });
  }
+}
+
+
+// Map a geog_type to file paths (GeoJSON works great)
+const SHAPE_URLS = {
+  LGD2014: "map/LGD2014.geo.json",
+  AA:      "map/AA.geo.json",
+  HSCT:    "map/HSCT.geo.json",
+  DEA2014: "map/DEA2014.geo.json",
+  SDZ2021: "map/SDZ2021.geo.json",
+};
+
+const shapeCache = new Map();
+
+async function loadShapes(geog_type) {
+  if (shapeCache.has(geog_type)) return shapeCache.get(geog_type);
+
+  const url = SHAPE_URLS[geog_type];
+  if (!url) throw new Error(`No shape URL for ${geog_type}`);
+
+  const res = await fetch(url, { cache: "force-cache" });
+  if (!res.ok) throw new Error(`Failed to load ${url}`);
+  const data = await res.json();
+
+  // If you ever switch to .topo.json, this still works:
+  const geojson = (data.type === "Topology" && window.topojson)
+    ? topojson.feature(data, Object.values(data.objects)[0])
+    : data;
+
+  shapeCache.set(geog_type, geojson);
+  return geojson;
 }
 
 
