@@ -408,6 +408,31 @@
     "product": "Benefits",
     "product_code": "DWRBB"
   },
+  "BSSDZ": {
+    "name": "Benefit Statistics",
+    "updated": "2025-05-28",
+    "categories": ["TLIST(A1)", "STATISTIC", "SDZ2021"],
+    "statistics": {
+      "IS": "Income Support",
+      "JSA": "Jobseekers Allowance",
+      "RP": "Retirement Pension",
+      "PC": "Pension Credit",
+      "AA": "Attendance Allowance",
+      "CA": "Carer's Allowance",
+      "DLA": "Disability Living Allowance",
+      "ESA": "Employment & Support Allowance",
+      "UC": "Universal Credit",
+      "PIP": "Personal Independence Payment"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "theme": "Work, pay and benefits",
+    "theme_code": 72,
+    "subject": "Disability and work-related benefits",
+    "subject_code": 159,
+    "product": "Benefits",
+    "product_code": "DWRBB"
+  },
   "BUSBIRTHLGD": {
     "name": "Business Births",
     "updated": "2024-03-20",
@@ -5950,6 +5975,22 @@
     "name": "Mid-year population estimates",
     "updated": "2025-06-10",
     "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "broadage4", "Sex"],
+    "statistics": {
+      "MYE": "Mid-year population estimate"
+    },
+    "time": "TLIST(A1)",
+    "time_series": ["2021", "2022", "2023"],
+    "theme": "People and communities",
+    "theme_code": 70,
+    "subject": "Population and migration",
+    "subject_code": 153,
+    "product": "Population estimates",
+    "product_code": "PMPE"
+  },
+  "MYE01T012": {
+    "name": "Mid-year population estimates",
+    "updated": "2025-06-10",
+    "categories": ["TLIST(A1)", "STATISTIC", "SDZ2021", "broadage4", "Sex"],
     "statistics": {
       "MYE": "Mid-year population estimate"
     },

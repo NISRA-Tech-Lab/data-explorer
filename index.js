@@ -88,7 +88,6 @@ async function createMenus () {
     fillNamesMenu();
     fillGeoMenu();
     fillStatMenu();
-    clearOtherMenus();
 
     themes_menu.onchange = function () {
         window.location.search = `?theme=${themes_menu.value}`;
@@ -132,7 +131,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
     let other_vars = tables[matrix].categories;
-    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014"].includes(x));
+    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021"].includes(x));
 
     let id_vars = `["STATISTIC", "${time_var}", "${geog_type}"`;
     let other_selections = "";
@@ -259,6 +258,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         const ni_response = await fetch(ni_url);
         const ni_result = await ni_response.json();
+
+        console.log(ni_result)
         
         const data_series = ni_result.result.value;
         // Make sure values are numbers
@@ -270,7 +271,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         labels: [...time_series],
         datasets: [{
             label: stat_label,
-            data: values,
+            data: [...values],
             borderColor: "#00205b",
             backgroundColor: "#00205b",
             barPercentage: 0.4,
@@ -310,7 +311,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         if (time_series.length == 1) {
             chart_title.textContent = `Northern Ireland ${time_series[0]}`;
         } else {
-            chart_title.textContent = `Northern Ireland ${time_series[0]} - ${time_series.pop()}`;
+            chart_title.textContent = `Northern Ireland ${time_series[0]} - ${time_series[time_series.length - 1]}`;
         }
 
         chart_subtitle = document.getElementById("chart-subtitle");
@@ -338,10 +339,10 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         }
         
         let headline_value = "Not available";
-        if (values.pop() != null) headline_value = values.pop().toLocaleString();
+        if (values[values.length - 1] != null) headline_value = values[values.length - 1].toLocaleString();
 
         document.getElementById("headline-fig").innerHTML = `<span class = "h2">${headline_value}</span> ${unit_fixed}`;
-        document.getElementById("headline-stat").innerHTML = `<strong>${stat_label}</strong> in Northern Ireland in <strong>${time_series.pop()}</strong>${other_headline}.`
+        document.getElementById("headline-stat").innerHTML = `<strong>${stat_label}</strong> in Northern Ireland in <strong>${time_series[time_series.length - 1]}</strong>${other_headline}.`
 
     }
 
@@ -482,6 +483,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     } if (geog_type.includes("DEA")) {
         area_var = "DEA";
         code_var = "DEA_code";
+    } else if (geog_type.includes("SDZ")) {
+        area_var = "SDZ21_name";
+        code_var = "SDZ21_code";
     }
 
          // Function to add tool tip to each layer
@@ -536,6 +540,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             shapes = L.geoJSON(HSCT_map, {onEachFeature:enhanceLayer}).addTo(map);
          } else if (geog_type.includes("DEA")) {
             shapes = L.geoJSON(DEA_map, {onEachFeature:enhanceLayer}).addTo(map);
+         } else if (geog_type.includes("SDZ")) {
+            shapes = L.geoJSON(SDZ_map, {onEachFeature:enhanceLayer}).addTo(map);
          }
 
                 
@@ -545,6 +551,12 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         document.getElementById("table-title").textContent = `${result.label}`;
         page_title.textContent += ` - ${result.label}`;
+
+        document.getElementById("nav-theme").textContent = tables[matrix].theme;        
+        document.getElementById("nav-subject").textContent = tables[matrix].subject;    
+        document.getElementById("nav-product").textContent = tables[matrix].product;    
+
+
         document.getElementById("map-title").textContent = `Mapped by ${result.dimension[geog_type].label} (${year})` ;
         document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
         document.getElementById("chart-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
@@ -793,6 +805,8 @@ function fillGeoMenu () {
                 option.textContent = "Health and Social Care Trust";
             } else if (categories.includes("DEA2014")) {
                 option.textContent = "District Electoral Area";
+            } else if (categories.includes("SDZ2021")) {
+                option.textContent = "Super Data Zone";
             }
             geo_menu.appendChild(option);
         }
@@ -858,15 +872,11 @@ function mapSelections () {
         geog_type = "HSCT";
     } else if (categories.includes("DEA2014")) {
         geog_type = "DEA2014";
+    } else if (categories.includes("SDZ2021")) {
+        geog_type = "SDZ2021";
     }
 
     plotMap(geo_menu.value, stats_menu.value, geog_type);
-}
-
-function clearOtherMenus () {
-    while (other_menu.firstChild) {
-        other_menu.removeChild(other_menu.firstChild);
-    } 
 }
 
 // A function to sort items alphabetically inside an object based on the object key

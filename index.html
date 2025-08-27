@@ -14,6 +14,13 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <link rel="icon" href="https:/nisra.gov.uk/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" type="image/png" href="https:/nisra.gov.uk/sites/nisra/themes/nisra_theme/images/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="https:/nisra.gov.uk/sites/nisra/themes/nisra_theme/images/favicons/favicon.svg" />
+  <link rel="shortcut icon" href="https:/nisra.gov.uk/sites/nisra/themes/nisra_theme/images/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https:/nisra.gov.uk/sites/nisra/themes/nisra_theme/images/favicons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="NISRA Data Viewer" />
+
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -109,24 +116,34 @@
     <div class="container-fluid py-4">
 
       <!-- Titles -->
-      <div class="row g-4 align-itmes-strech mb-3">
-        <div class = "col-12 col-lg-6">
-          <div class = "card h-100">
-            <div class = "card-body">
-              <h2 id="table-title" class="h2 mb-1"></h2>
-              
-            </div>
-          </div>
-        </div>
-        <div class = "col-12 col-lg-6">
-          <div class = "card h-100">
-            <div class = "card-body">
-              <p id = "headline-fig"></p>
-              <p id = "headline-stat"></p>
-            </div>
+      <div class="row g-4 align-items-stretch mb-3">
+      <div class="col-12 col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <p id="table-title" class="h2 mb-3"></p>
+
+            <!-- Breadcrumb placeholder -->
+            <nav aria-label="breadcrumb">
+              <ol id="breadcrumb" class="breadcrumb mb-0 mt-2 text-secondary">
+                <li id = "nav-theme" class="breadcrumb-item"></li>
+                <li id = "nav-subject" class="breadcrumb-item"></li>
+                <li id = "nav-product" class="breadcrumb-item"></li>
+              </ol>
+            </nav>
+
           </div>
         </div>
       </div>
+      <div class="col-12 col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <p id="headline-fig"></p>
+            <p id="headline-stat"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
       <!-- Map & Chart row (side-by-side on lg+, stacked on mobile) -->
       <div class="row g-4 align-items-stretch">
