@@ -258,8 +258,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         const ni_response = await fetch(ni_url);
         const ni_result = await ni_response.json();
-
-        console.log(ni_result)
         
         const data_series = ni_result.result.value;
         // Make sure values are numbers
@@ -341,7 +339,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         let headline_value = "Not available";
         if (values[values.length - 1] != null) headline_value = values[values.length - 1].toLocaleString();
 
-        document.getElementById("headline-fig").innerHTML = `<span class = "h2">${headline_value}</span> ${unit_fixed}`;
+        document.getElementById("headline-fig").innerHTML = `<span class = "h1">${headline_value}</span> ${unit_fixed}`;
         document.getElementById("headline-stat").innerHTML = `<strong>${stat_label}</strong> in Northern Ireland in <strong>${time_series[time_series.length - 1]}</strong>${other_headline}.`
 
     }
