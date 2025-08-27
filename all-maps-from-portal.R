@@ -71,13 +71,14 @@ for (i in 1:length(data_portal$label)) {
     
     subject <- json_data$result$extension$subject$value
     
-    if (subject == "Crime") subject <- "Recorded crime"
+    name <- gsub("\u2013", "-", data_portal$label[i], fixed = TRUE)
+    if (name == "Life Expectancy at age 65") name <- "Life Expectancy at Age 65"
     
     theme <- data_portal_structure %>% 
       filter(Subject == subject)
 
     tables[[data_portal$extension$matrix[i]]] <- list(
-      name = gsub("\u2013", "-", data_portal$label[i], fixed = TRUE),
+      name = name,
       updated = as.Date(substr(data_portal$updated[i], 1, 10)),
       categories = unlist(data_portal$id[i]),
       statistics = json_data$result$dimension$STATISTIC$category$label,

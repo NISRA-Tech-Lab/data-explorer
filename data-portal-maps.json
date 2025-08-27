@@ -5610,7 +5610,7 @@
     "product_code": "HILEGH"
   },
   "LE65DEA": {
-    "name": "Life Expectancy at age 65",
+    "name": "Life Expectancy at Age 65",
     "updated": "2025-03-21",
     "categories": ["TLIST(A1)", "STATISTIC", "DEA2014", "Sex"],
     "statistics": {
