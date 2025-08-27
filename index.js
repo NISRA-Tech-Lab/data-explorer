@@ -10,7 +10,6 @@ let names_menu = document.getElementById("name");
 let geo_menu = document.getElementById("geo");
 let stats_menu = document.getElementById("stat");
 let other_menu = document.getElementById("other-vars");
-let window_title = document.getElementsByTagName("title")[0];
 let chart_container = document.getElementById("chart-container");
 let table_preview = document.getElementById("table-preview");
 let map_subtitle = document.getElementById("map-subtitle");
@@ -18,6 +17,8 @@ let page_title = document.getElementsByTagName("title")[0];
 let globalSearchInput = document.getElementById("global-search");
 let globalSearchResults = document.getElementById("global-search-results");
 let searchIndex = [];
+let globalSearchWrap = document.querySelector(".sidebar-search");
+let metadata_text = document.getElementById("metadata-text");
 
 
 let search = window.location.search.replace("?", "").split("&");
@@ -69,7 +70,8 @@ async function createMenus () {
         themes_menu.appendChild(option);
     }
 
-    let selected_theme = themes[Object.keys(themes)[0]].code;
+    // let selected_theme = themes[Object.keys(themes)[0]].code;
+    let selected_theme = 70;
 
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("theme=")) {
@@ -134,8 +136,10 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     let id_vars = `["STATISTIC", "${time_var}", "${geog_type}"`;
     let other_selections = "";
+    var other_headline = "";
 
     if (other_vars.length > 0) {
+        other_headline = " for ";
         for (let i = 0; i < other_vars.length; i ++) {
             
             id_vars += `, "${other_vars[i]}"`;
@@ -171,6 +175,17 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             }
 
             map_subtitle.innerHTML += `<strong>${fetched_restful.dimension[other_vars[i]].label}</strong>: ${fetched_restful.dimension[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}<br>`;
+
+            if (i != 0) {
+                if (i == other_vars.length - 1) {
+                    other_headline += " and "
+                } else {
+                    other_headline += ", "
+                }
+            }
+            
+
+            other_headline += `the <strong>${fetched_restful.dimension[other_vars[i]].label}</strong> category <em>"${fetched_restful.dimension[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}"</em>`
             
         }
         
@@ -315,6 +330,18 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         x_axis_label.classList.add("text-secondary");
         x_axis_label.classList.add("text-center");
         chart_container.appendChild(x_axis_label);
+
+        if (unit.toLowerCase() == "number") {
+            unit_fixed = "";
+        } else {
+            unit_fixed = unit;
+        }
+        
+        let headline_value = "Not available";
+        if (values.pop() != null) headline_value = values.pop().toLocaleString();
+
+        document.getElementById("headline-fig").innerHTML = `<span class = "h2">${headline_value}</span> ${unit_fixed}`;
+        document.getElementById("headline-stat").innerHTML = `<strong>${stat_label}</strong> in Northern Ireland in <strong>${time_series.pop()}</strong>${other_headline}.`
 
     }
 
@@ -517,7 +544,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         max_value.innerHTML = range_max.toLocaleString("en-GB");         
 
         document.getElementById("table-title").textContent = `${result.label}`;
-        page_title.textContent = `Data Explorer - ${result.label}`;
+        page_title.textContent += ` - ${result.label}`;
         document.getElementById("map-title").textContent = `Mapped by ${result.dimension[geog_type].label} (${year})` ;
         document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
         document.getElementById("chart-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
@@ -597,6 +624,17 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             table_preview.appendChild(tr);
          }
 
+         let note_cleaned = result.note[0].replaceAll("\r", "<br>").replaceAll("[b]", "<strong>").replaceAll("[/b]", "</strong>").replaceAll("[i]", "<em>").replaceAll("[/i]", "</em>");
+
+         // Convert [url=...]...[/url] into <a href="...">...</a>
+        note_cleaned = note_cleaned.replace(
+        /\[url=([a-zA-Z][a-zA-Z0-9+.-]*:[^\]]+)\](.*?)\[\/url\]/gi,
+        "<a href='$1' target='_blank'>$2</a>"
+        );
+
+
+         metadata_text.innerHTML = note_cleaned;
+
 }
 
 function fillSubjectsMenu () {
@@ -626,6 +664,10 @@ function fillSubjectsMenu () {
     }
 
     let selected_subject = subjects[Object.keys(subjects)[0]].code;
+
+    if (window.location.search == "") {
+        selected_subject = 153
+    }
 
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("subject")) {
@@ -668,6 +710,10 @@ function fillProductsMenu () {
 
     let selected_product = products[Object.keys(products)[0]].code;
 
+    if (window.location.search == "") {
+        selected_product = "PMPE"
+    }
+
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("product=")) {
             search_split = search[i].split("=");
@@ -709,6 +755,10 @@ function fillNamesMenu () {
 
     let selected_name = names[0].replaceAll(" ", "-");
 
+    if (window.location.search == "") {
+        selected_name = "Population-totals";
+    }
+
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("name=")) {
             search_split = search[i].split("=");
@@ -749,6 +799,10 @@ function fillGeoMenu () {
     }
 
     let selected_geo = geo_menu.options[0].value;
+
+    if (window.location.search == "") {
+        selected_geo = "MYE01T06";
+    }
 
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("geo=")) {
@@ -856,50 +910,52 @@ function renderGlobalResults(items) {
   globalSearchResults.innerHTML = "";
   if (!items.length) {
     globalSearchResults.innerHTML = '<div class="list-group-item text-muted small">No matches</div>';
+   if (globalSearchWrap) globalSearchWrap.classList.remove("has-results");
     return;
   }
 
-// Deduplicate by name
-const seen = new Set();
-const unique = [];
-for (const item of items) {
-  if (!seen.has(item.name)) {
-    seen.add(item.name);
-    unique.push(item);
+  // Deduplicate by name
+  const seen = new Set();
+  const unique = [];
+  for (const item of items) {
+    if (!seen.has(item.name)) {
+      seen.add(item.name);
+      unique.push(item);
+    }
   }
-}
 
-// Limit to a reasonable number
-const top = unique.slice(0, 25);
-top.forEach(item => {
-  const a = document.createElement("a");
-  a.className = "list-group-item list-group-item-action";
-  a.href = `?theme=${item.theme_code}&subject=${item.subject_code}&product=${item.product_code}&name=${item.slug}`;
-  a.innerHTML = `
-    <div class="fw-semibold">${item.name}</div>
-    <div class="small text-secondary">${item.theme} &rsaquo; ${item.subject} &rsaquo; ${item.product}</div>
-  `;
-
-  a.addEventListener("click", () => {
-    const sidebarEl = document.getElementById("sidebar");
-    const inst = sidebarEl ? bootstrap.Offcanvas.getInstance(sidebarEl) : null;
-    if (inst) inst.hide();
+  const top = unique.slice(0, 25);
+  top.forEach(item => {
+    const a = document.createElement("a");
+    a.className = "list-group-item list-group-item-action";
+    a.href = `?theme=${item.theme_code}&subject=${item.subject_code}&product=${item.product_code}&name=${item.slug}`;
+    a.innerHTML = `
+      <div class="fw-semibold">${item.name}</div>
+      <div class="small text-secondary">${item.theme} &rsaquo; ${item.subject} &rsaquo; ${item.product}</div>
+    `;
+    a.addEventListener("click", () => {
+      const sidebarEl = document.getElementById("sidebar");
+      const inst = sidebarEl ? bootstrap.Offcanvas.getInstance(sidebarEl) : null;
+      if (inst) inst.hide();
+      if (globalSearchWrap) globalSearchWrap.classList.remove("has-results");
+    });
+    globalSearchResults.appendChild(a);
   });
 
-  globalSearchResults.appendChild(a);
-});
-
+ if (globalSearchWrap) globalSearchWrap.classList.add("has-results");
 }
+
 
 // Wire up global search input
 if (globalSearchInput) {
   const doSearch = () => {
-    const matches = filterNamesGlobal(globalSearchInput.value || "");
+    const q = globalSearchInput.value || "";
+    const matches = filterNamesGlobal(q);
     renderGlobalResults(matches);
+   if (!q.trim() && globalSearchWrap) globalSearchWrap.classList.remove("has-results");
   };
   globalSearchInput.addEventListener("input", doSearch);
 
-  // Optional: Enter navigates to first match
   globalSearchInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       const first = globalSearchResults.querySelector(".list-group-item-action");
@@ -907,6 +963,28 @@ if (globalSearchInput) {
         window.location.href = first.getAttribute("href");
       }
     }
+   if (e.key === "Escape" && globalSearchWrap) {
+     globalSearchWrap.classList.remove("has-results");
+     globalSearchInput.blur();
+   }
   });
+
+ // Hide when input loses focus (small delay so clicks still register)
+ globalSearchInput.addEventListener("blur", () => {
+   setTimeout(() => {
+     if (globalSearchWrap) globalSearchWrap.classList.remove("has-results");
+   }, 150);
+ });
+
+ // Also clear when the offcanvas closes
+ const sidebarEl = document.getElementById("sidebar");
+ if (sidebarEl) {
+   sidebarEl.addEventListener("hidden.bs.offcanvas", () => {
+     globalSearchResults.innerHTML = "";
+     if (globalSearchWrap) globalSearchWrap.classList.remove("has-results");
+     if (globalSearchInput) globalSearchInput.value = "";
+   });
+ }
 }
+
 
