@@ -118,9 +118,6 @@ async function createMenus () {
 async function plotMap (matrix, statistic, geog_type, other = "") {
 
     let map_container = document.getElementById("map-container");
-    while (map_container.firstChild) {
-        map_container.removeChild(map_container.firstChild);
-    }    
 
     let restful_url = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/" + matrix + "/JSON-stat/2.0/en";
 
@@ -133,9 +130,22 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let other_vars = tables[matrix].categories;
     other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021"].includes(x));
 
-    let id_vars = `["STATISTIC", "${time_var}", "${geog_type}"`;
     let other_selections = "";
     var other_headline = "";
+    let id_vars;
+
+    if (geog_type == "none") {
+        document.getElementById("map-card").style.display = "none";
+        document.getElementById("chart-card").classList.remove("col-lg-6");
+        
+        id_vars = `["STATISTIC", "${time_var}"`;
+
+    } else {
+
+        id_vars = `["STATISTIC", "${time_var}", "${geog_type}"`;
+
+    }
+        
 
     if (other_vars.length > 0) {
         other_headline = " for ";
@@ -206,12 +216,21 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     var stat_label = Object.values(result.dimension.STATISTIC.category.label)[0];
     var unit = result.dimension.STATISTIC.category.unit[statistic].label;
 
+    let plot_ni = false;
 
-    if (result.dimension[geog_type].category.index.includes("N92000002") | themes_menu.value == "67") {
+    if (geog_type == "none") {
+        plot_ni = true;
+    } else {
+        if (result.dimension[geog_type].category.index.includes("N92000002") | themes_menu.value == "67") {
+            plot_ni = true;
+        }
+    }
 
-        document.getElementById("chart-card").style.display = "flex";
+    if (plot_ni) {
 
-        if (themes_menu.value != "67") {
+        document.getElementById("chart-card").style.display = "block";
+
+        if (themes_menu.value != "67" & geog_type != "none") {
             NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
             result.value.splice(NI_position, 1);
             result.dimension[geog_type].category.index.splice(NI_position, 1);
@@ -238,12 +257,21 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                     eq_matrix = matrix.replace("LGD", "EQ");
                 } else if (geog_type == "AA") {
                     eq_matrix = matrix.replace("AA", "EQ");
+                } else {
+                    eq_matrix = matrix;
                 }
 
                 ni_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' + 
                     encodeURIComponent('{"jsonrpc": "2.0", "method": "PxStat.Data.Cube_API.ReadDataset", "params": {"class": "query","id": ["EQUALGROUPS"],"dimension": {"EQUALGROUPS": {"category": {"index": ["N92000002"]}}},"extension": {"pivot": null,"codes": false,"language": {"code": "en"},"format": {"type": "JSON-stat","version": "2.0"},"matrix": "' +
                         eq_matrix + '"},"version": "2.0"}}')
                 }
+
+        } else if (geog_type == "none") {
+
+            ni_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
+            encodeURIComponent('{"jsonrpc":"2.0", "method": "PxStat.Data.Cube_API.ReadDataset", "params": {"class": "query", "id": ' + id_vars + ', "dimension": { "STATISTIC": {"category": {"index": ["' + statistic +
+                '"]}}' + other_selections + '},"extension": {"pivot": null,"codes": false,"language": {"code":"en"},"format":{"type": "JSON-stat","version": "2.0"},"matrix": "'+
+                matrix + '"},"version": "2.0"}}');
 
         } else {
 
@@ -288,7 +316,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         data: chart_data, // <-- was `chart_data,` before (wrong key)
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             scales: {
             x: {
                 grid: { lineWidth: 0, drawTicks: true, tickWidth: 1 },
@@ -344,208 +372,217 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     }
 
-    if (result.dimension[geog_type].category.index.includes("0")) {
-        u_position = result.dimension[geog_type].category.index.indexOf("0")
-        result.value.splice(u_position, 1);
-        result.dimension[geog_type].category.index.splice(u_position, 1);
-        delete result.dimension[geog_type].category.label["0"];
-    }
+    if (geog_type != "none") {
 
-    if (result.dimension[geog_type].category.index.includes("Unknown")) {
-        u_position = result.dimension[geog_type].category.index.indexOf("Unknown")
-        result.value.splice(u_position, 1);
-        result.dimension[geog_type].category.index.splice(u_position, 1);
-        delete result.dimension[geog_type].category.label["Unknown"];
-    }
-
-    let data = result.value;
-    data = data.map(item => item === '-' ? null : item);
-    
-    let range_min = Math.floor(Math.min(...data));
-    let range_max = Math.ceil(Math.max(...data));
-         
-    let range = range_max - range_min; // Calculate the range of values
-
-    // Create an array colours, where each value is between 0 and 1 depending on where it falls in the range of values
-    colours = [];
-    for (let i = 0; i < data.length; i++) {
-        colours.push((data[i] - range_min) / range);
-    }
-
-    // Colour palettes for increasing/decreasing indicators
-    let palette = ["#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c"];
-
-    legend_div = document.createElement("div");
-    legend_div.id = "map-legend";
-    legend_div.classList.add("map-legend");
-    legend_div.classList.add("align-self-center");
-    legend_div.classList.add("col-6")
-
-    legend_title = document.createElement("div");
-    legend_title.textContent = stat_label;
-    legend_title.classList.add("legend-title");
-    map_container.appendChild(legend_title);
-
-    legend_row_1 = document.createElement("div");
-    legend_row_1.classList.add("row");
-
-    min_value = document.createElement("div");
-    min_value.classList.add("legend-min");
-    legend_row_1.appendChild(min_value);
-
-    unit_value = document.createElement("div");
-    unit_value.classList.add("legend-unit");
-    if (unit.toLowerCase() != "number") {
-        unit_value.innerHTML = `(${unit})`;
-    }
-    legend_row_1.appendChild(unit_value);
-
-    max_value = document.createElement("div");
-
-    max_value.classList.add("legend-max");
-    legend_row_1.appendChild(max_value);
-
-    legend_div.appendChild(legend_row_1);
-
-    legend_row_2 = document.createElement("div");
-    legend_row_2.classList.add("row");
-
-    for (let i = 0; i < palette.length; i++) {
-        colour_block = document.createElement("div");
-        colour_block.style.backgroundColor = palette[i];
-        colour_block.classList.add("colour-block");
-    
-        if (i == palette.length - 1) {
-            colour_block.style.borderRight = "1px #555555 solid;"
+        if (result.dimension[geog_type].category.index.includes("0")) {
+            u_position = result.dimension[geog_type].category.index.indexOf("0")
+            result.value.splice(u_position, 1);
+            result.dimension[geog_type].category.index.splice(u_position, 1);
+            delete result.dimension[geog_type].category.label["0"];
         }
 
-        legend_row_2.appendChild(colour_block);
-    }
-
-    legend_div.appendChild(legend_row_2);
-
-    map_container.appendChild(legend_div);
-
-         
-
-    // Create a div for map to sit in
-    map_div = document.createElement("div");
-    map_div.id = matrix + "-map";
-    map_div.classList.add("map");
-
-    
-    map_container.style.display = "block";
-    map_container.appendChild(map_div);
-
-    let initialZoom = window.innerWidth < 768 ? 7 : 8; 
-
-    // Create a map
-    var map = L.map(matrix + "-map",
-    {zoomControl: false, // Turn off zoom controls
-       dragging: false,
-       touchZoom: false,
-       doubleClickZoom: false,
-       scrollWheelZoom: false,
-       boxZoom: false,
-       keyboard: false,
-       attributionControl: false,
-       tap: false}).setView([54.67, -6.85], initialZoom); // Set initial co-ordinates and zoom
-
-    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-       maxZoom: 19,
-       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map); // Add a background map
-
-   
-
-
-    // When called chooses a colour from above palette based on value of colours array
-    function getColor(d) {
-        if (d < 0) {
-            return "#d3d3d3";
-        } else {
-            return palette[Math.round(d*4)];
+        if (result.dimension[geog_type].category.index.includes("Unknown")) {
+            u_position = result.dimension[geog_type].category.index.indexOf("Unknown")
+            result.value.splice(u_position, 1);
+            result.dimension[geog_type].category.index.splice(u_position, 1);
+            delete result.dimension[geog_type].category.label["Unknown"];
         }
-    }
 
-    // Variable name to use if geo data is LGD or AA
-    if (geog_type.includes("LGD")) {
-        area_var = "LGDNAME";
-        code_var = "LGDCode";
-    } else if (geog_type == "AA") {
-        area_var = "PC_NAME";
-        code_var = "PC_ID";
-    } if (geog_type == "HSCT") {
-        area_var = "TrustName";
-        code_var = "TrustCode";
-    } if (geog_type.includes("DEA")) {
-        area_var = "DEA";
-        code_var = "DEA_code";
-    } else if (geog_type.includes("SDZ")) {
-        area_var = "SDZ21_name";
-        code_var = "SDZ21_code";
-    }
+        data = result.value;
+        data = data.map(item => item === '-' ? null : item);
+        
+        let range_min = Math.floor(Math.min(...data));
+        let range_max = Math.ceil(Math.max(...data));
+            
+        let range = range_max - range_min; // Calculate the range of values
 
-         // Function to add tool tip to each layer
-         function enhanceLayer(f, l){
+        // Create an array colours, where each value is between 0 and 1 depending on where it falls in the range of values
+        colours = [];
+        for (let i = 0; i < data.length; i++) {
+            colours.push((data[i] - range_min) / range);
+        }
 
-            if (f.properties){
+        // Colour palettes for increasing/decreasing indicators
+        let palette = ["#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c"];
 
-                let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[code_var]);
-                
-                  if (data[geog_index] != null) {
-                     l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>" + data[geog_index].toLocaleString("en-GB") + "</strong> (" + unit + ")");
-                  } else {
-                     l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>Not available</strong>");
-                  }
+        legend_div = document.createElement("div");
+        legend_div.id = "map-legend";
+        legend_div.classList.add("map-legend");
+        legend_div.classList.add("align-self-center");
+        legend_div.classList.add("col-6")
 
-                  // http://leafletjs.com/reference.html#path-options
-                  l.setStyle({
-                     fillColor: getColor(colours[geog_index]),
-                     fillOpacity: 0.75,
-                     stroke: true,
-                     color: "#555555",
-                     opacity: 0.75,
-                     weight: 1
-                  });
+        legend_title = document.createElement("div");
+        legend_title.textContent = stat_label;
+        legend_title.classList.add("legend-title");
+        map_container.appendChild(legend_title);
 
-                  l.on("mouseover", function (e) {
-                     l.setStyle({
-                        weight: 2,
-                        opacity: 1
-                     })
-                  })
+        legend_row_1 = document.createElement("div");
+        legend_row_1.classList.add("row");
 
-                  l.on("mouseout", function (e) {
-                     l.setStyle({
-                        weight: 1,
-                        opacity: 0.75
-                     })
-                  })
+        min_value = document.createElement("div");
+        min_value.classList.add("legend-min");
+        legend_row_1.appendChild(min_value);
+
+        unit_value = document.createElement("div");
+        unit_value.classList.add("legend-unit");
+        if (unit.toLowerCase() != "number") {
+            unit_value.innerHTML = `(${unit})`;
+        }
+        legend_row_1.appendChild(unit_value);
+
+        max_value = document.createElement("div");
+
+        max_value.classList.add("legend-max");
+        legend_row_1.appendChild(max_value);
+
+        legend_div.appendChild(legend_row_1);
+
+        legend_row_2 = document.createElement("div");
+        legend_row_2.classList.add("row");
+
+        for (let i = 0; i < palette.length; i++) {
+            colour_block = document.createElement("div");
+            colour_block.style.backgroundColor = palette[i];
+            colour_block.classList.add("colour-block");
+        
+            if (i == palette.length - 1) {
+                colour_block.style.borderRight = "1px #555555 solid;"
             }
-         }
-         
-         if (typeof shapes !== "undefined") {
-            shapes.clearLayers();
-         }
-         
 
-        const geojsonData = await loadShapes(geog_type);
-        shapes = L.geoJSON(geojsonData, { onEachFeature: enhanceLayer }).addTo(map);                
+            legend_row_2.appendChild(colour_block);
+        }
 
-        min_value.innerHTML = range_min.toLocaleString("en-GB");       
-        max_value.innerHTML = range_max.toLocaleString("en-GB");         
+        legend_div.appendChild(legend_row_2);
+
+        map_container.appendChild(legend_div);
+
+            
+
+        // Create a div for map to sit in
+        map_div = document.createElement("div");
+        map_div.id = matrix + "-map";
+        map_div.classList.add("map");
+
+        
+        map_container.style.display = "block";
+        map_container.appendChild(map_div);
+
+        let initialZoom = window.innerWidth < 768 ? 7 : 8; 
+
+        // Create a map
+        var map = L.map(matrix + "-map",
+        {zoomControl: false, // Turn off zoom controls
+        dragging: false,
+        touchZoom: false,
+        doubleClickZoom: false,
+        scrollWheelZoom: false,
+        boxZoom: false,
+        keyboard: false,
+        attributionControl: false,
+        tap: false}).setView([54.67, -6.85], initialZoom); // Set initial co-ordinates and zoom
+
+        L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map); // Add a background map
+
+    
+
+
+        // When called chooses a colour from above palette based on value of colours array
+        function getColor(d) {
+            if (d < 0) {
+                return "#d3d3d3";
+            } else {
+                return palette[Math.round(d*4)];
+            }
+        }
+
+        // Variable name to use if geo data is LGD or AA
+        if (geog_type.includes("LGD")) {
+            area_var = "LGDNAME";
+            code_var = "LGDCode";
+        } else if (geog_type == "AA") {
+            area_var = "PC_NAME";
+            code_var = "PC_ID";
+        } if (geog_type == "HSCT") {
+            area_var = "TrustName";
+            code_var = "TrustCode";
+        } if (geog_type.includes("DEA")) {
+            area_var = "DEA";
+            code_var = "DEA_code";
+        } else if (geog_type.includes("SDZ")) {
+            area_var = "SDZ21_name";
+            code_var = "SDZ21_code";
+        }
+
+            // Function to add tool tip to each layer
+            function enhanceLayer(f, l){
+
+                if (f.properties){
+
+                    let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[code_var]);
+                    
+                    if (data[geog_index] != null) {
+                        l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>" + data[geog_index].toLocaleString("en-GB") + "</strong> (" + unit + ")");
+                    } else {
+                        l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>Not available</strong>");
+                    }
+
+                    // http://leafletjs.com/reference.html#path-options
+                    l.setStyle({
+                        fillColor: getColor(colours[geog_index]),
+                        fillOpacity: 0.75,
+                        stroke: true,
+                        color: "#555555",
+                        opacity: 0.75,
+                        weight: 1
+                    });
+
+                    l.on("mouseover", function (e) {
+                        l.setStyle({
+                            weight: 2,
+                            opacity: 1
+                        })
+                    })
+
+                    l.on("mouseout", function (e) {
+                        l.setStyle({
+                            weight: 1,
+                            opacity: 0.75
+                        })
+                    })
+                }
+            }
+            
+            if (typeof shapes !== "undefined") {
+                shapes.clearLayers();
+            }
+            
+
+            const geojsonData = await loadShapes(geog_type);
+            shapes = L.geoJSON(geojsonData, { onEachFeature: enhanceLayer }).addTo(map);                
+
+            min_value.innerHTML = range_min.toLocaleString("en-GB");       
+            max_value.innerHTML = range_max.toLocaleString("en-GB");         
+
+             
+
+
+            document.getElementById("map-title").textContent = `Mapped by ${result.dimension[geog_type].label} (${year})` ;
+            document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
+
+        } else {
+            data = fetched_restful.value;
+        }
 
         document.getElementById("table-title").textContent = `${result.label}`;
-        page_title.textContent += ` - ${result.label}`;
+            page_title.textContent += ` - ${result.label}`;
 
-        document.getElementById("nav-theme").textContent = tables[matrix].theme;        
-        document.getElementById("nav-subject").textContent = tables[matrix].subject;    
-        document.getElementById("nav-product").textContent = tables[matrix].product;    
+            document.getElementById("nav-theme").textContent = tables[matrix].theme;        
+            document.getElementById("nav-subject").textContent = tables[matrix].subject;    
+            document.getElementById("nav-product").textContent = tables[matrix].product;   
 
-
-        document.getElementById("map-title").textContent = `Mapped by ${result.dimension[geog_type].label} (${year})` ;
-        document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
         document.getElementById("chart-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
         let rows = fetched_restful.value.length;
@@ -592,9 +629,11 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             year_cell.textContent = year;
             tr.appendChild(year_cell);
 
-            geog_cell = document.createElement("td");
-            geog_cell.textContent = titleCase(Object.values(result.dimension[geog_type].category.label)[i]);
-            tr.appendChild(geog_cell);
+            if (geog_type != "none") {
+                geog_cell = document.createElement("td");
+                geog_cell.textContent = titleCase(Object.values(result.dimension[geog_type].category.label)[i]);
+                tr.appendChild(geog_cell);
+            }
 
             for (let j = 0; j < other_vars.length; j ++) {
                 other_cell = document.createElement("td");
@@ -623,7 +662,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             table_preview.appendChild(tr);
          }
 
-         let note_cleaned = result.note[0].replaceAll("\r", "<br>").replaceAll("[b]", "<strong>").replaceAll("[/b]", "</strong>").replaceAll("[i]", "<em>").replaceAll("[/i]", "</em>");
+         let note_cleaned = result.note[0].replaceAll("\r", "<br>").replaceAll("[b]", "<strong>").replaceAll("[/b]", "</strong>").replaceAll("[i]", "<em>").replaceAll("[/i]", "</em>").replaceAll("[u]", "<u>").replaceAll("[/u]", "</u>");
 
          // Convert [url=...]...[/url] into <a href="...">...</a>
         note_cleaned = note_cleaned.replace(
@@ -632,7 +671,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         );
 
 
-         metadata_text.innerHTML = note_cleaned;
+         metadata_text.innerHTML = note_cleaned;   
+   
 
 }
 
@@ -776,6 +816,8 @@ function fillGeoMenu () {
         geo_menu.removeChild(geo_menu.firstChild);
     }
 
+    let num_options = 0;
+
     for (let i = 0; i < Object.keys(tables).length; i ++) {
         theme = tables[Object.keys(tables)[i]].theme_code;
         subject = tables[Object.keys(tables)[i]].subject_code;
@@ -796,8 +838,11 @@ function fillGeoMenu () {
                 option.textContent = "Super Data Zone";
             }
             geo_menu.appendChild(option);
+            if (option.textContent != "") num_options += 1;
         }
     }
+
+    if (num_options > 0) document.getElementById("geo").parentElement.style.display = "block";
 
     let selected_geo = geo_menu.options[0].value;
 
@@ -861,6 +906,8 @@ function mapSelections () {
         geog_type = "DEA2014";
     } else if (categories.includes("SDZ2021")) {
         geog_type = "SDZ2021";
+    } else {
+        geog_type = "none";
     }
 
     plotMap(geo_menu.value, stats_menu.value, geog_type);

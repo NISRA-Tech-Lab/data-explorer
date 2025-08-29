@@ -46,7 +46,6 @@ data_portal <- jsonlite::fromJSON(txt = "https://ws-data.nisra.gov.uk/public/api
 tables <- list()
 
 for (i in 1:length(data_portal$label)) {
-  if (any(c("AA", "LGD2014", "HSCT", "DEA2014", "SDZ2021") %in% unlist(data_portal$id[i]))) {
 
     time_var <- unlist(data_portal$role$time[i])
     time_series <- data_portal$dimension[[time_var]]$category$index[[i]]
@@ -91,7 +90,6 @@ for (i in 1:length(data_portal$label)) {
       product = json_data$result$extension$product$value,
       product_code = json_data$result$extension$product$code
     )
-  }
 }
 
 tables <- tables[order(names(tables))]

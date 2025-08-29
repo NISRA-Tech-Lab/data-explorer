@@ -83,7 +83,7 @@
           <label for="name" class="form-label">Choose a table</label>
           <select id="name" name="name" class="form-select"></select>
         </div>
-        <div>
+        <div style = "display: none;">
           <label for="geo" class="form-label">Choose a geography type</label>
           <select id="geo" name="geo" class="form-select"></select>
         </div>
@@ -147,7 +147,7 @@
 
       <!-- Map & Chart row (side-by-side on lg+, stacked on mobile) -->
       <div class="row g-4 align-items-stretch">
-        <div class="col-12 col-lg-6">
+        <div id = "map-card" class="col-12 col-lg-6">
           <div class="card h-100">
             <div class="card-header">
               <h3 id = "map-title" class="h5 mb-0"></h3>
@@ -165,8 +165,8 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6">
-          <div id = "chart-card" class="card h-100">
+        <div id = "chart-card" class="col-12 col-lg-6">
+          <div class="card h-100">
             <div class="card-header">
               <h3 id="chart-title" class="h5 mb-0"></h3>
             </div>
