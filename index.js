@@ -68,6 +68,11 @@ const GEOG_PROPS = {
     area_var: "SOA_LABEL",
     code_var: "SOA_CODE"
   },
+  SA: {
+    url: "map/SA2011.geo.json",
+    area_var: "SA2011",
+    code_var: "SA2011"
+  },
   LCG: {
     url: "map/HSCT.geo.json",
     area_var: "TrustName",
@@ -603,11 +608,13 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                 if (f.properties){
 
                     let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[GEOG_PROPS[geog_type].code_var].replace(" ", ""));
+
+                    let shape_label = titleCase(result.dimension[geog_type].category.label[f.properties[GEOG_PROPS[geog_type].code_var].replace(" ", "")]);
                     
                     if (data[geog_index] != null) {
-                        l.bindTooltip(titleCase(f.properties[GEOG_PROPS[geog_type].area_var]) + " (" + year + "): <strong>" + data[geog_index].toLocaleString("en-GB") + "</strong> (" + unit + ")");
+                        l.bindTooltip(shape_label + " (" + year + "): <strong>" + data[geog_index].toLocaleString("en-GB") + "</strong> (" + unit + ")");
                     } else {
-                        l.bindTooltip(titleCase(f.properties[GEOG_PROPS[geog_type].area_var]) + " (" + year + "): <strong>Not available</strong>");
+                        l.bindTooltip(shape_label + " (" + year + "): <strong>Not available</strong>");
                     }                    
 
                     // http://leafletjs.com/reference.html#path-options
@@ -923,6 +930,8 @@ function fillGeoMenu () {
                 option.textContent = "Ward";
             } else if (categories.includes("SOA")) {
                 option.textContent = "Super Output Area";   
+            } else if (categories.includes("SA")) {
+                option.textContent = "Small Area";   
             } else if (categories.includes("LCG")) {
                 option.textContent = "Local Commisioning Group";
             } else if (categories.includes("UR2015")) {
@@ -1007,6 +1016,8 @@ function mapSelections () {
         geog_type = "Ward2014";
     } else if (categories.includes("SOA")) {
         geog_type = "SOA";
+    } else if (categories.includes("SA")) {
+        geog_type = "SA";
     } else if (categories.includes("LCG")) {
         geog_type = "LCG";
     } else if (categories.includes("UR2015")) {
@@ -1041,14 +1052,11 @@ function sortObject(o) {
 }
 
 function titleCase(str) {
-  str = str.toLowerCase().split(' ');
-  for (var i = 0; i < str.length; i++) {
-    if (str[i] != "and") {
-        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);     
-    }
-  }
-  return str.join(' ');
+  return str.toLowerCase().replace(/\b(?!and)\w/g, function(char) {
+    return char.toUpperCase();
+  });
 }
+
 
 function filterNamesGlobal(query) {
   const q = query.trim().toLowerCase();
