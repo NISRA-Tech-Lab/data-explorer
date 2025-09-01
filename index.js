@@ -23,6 +23,11 @@ const GEOG_PROPS = {
     area_var: "LGDNAME",
     code_var: "LGDCode"
   },
+  LGD: {
+    url: "map/LGD2014.geo.json",
+    area_var: "LGDNAME",
+    code_var: "LGDCode"
+  },
   AA: {
     url: "map/AA.geo.json",
     area_var: "PC_NAME",
@@ -98,7 +103,7 @@ let search = window.location.search.replace("?", "").split("&");
 async function createMenus () {
 
     try {
-        const response = await fetch("data-portal-maps.json");
+        const response = await fetch("data-portal-tables.json");
         const responseData = await response.json();
         tables = responseData;
         // Build a global search index from all datasets
@@ -904,7 +909,7 @@ function fillGeoMenu () {
             option.value = Object.keys(tables)[i];
             if (categories.includes("AA") | categories.includes("AA2024")) {
                 option.textContent = "Assembly Area";
-            } else if (categories.includes("LGD2014")) {
+            } else if (categories.includes("LGD2014") | categories.includes("LGD")) {
                 option.textContent = "Local Government District";
             } else if (categories.includes("HSCT")) {
                 option.textContent = "Health and Social Care Trust";
@@ -984,6 +989,8 @@ function mapSelections () {
     
     if (categories.includes("LGD2014")) {
         geog_type = "LGD2014";
+    } else  if (categories.includes("LGD")) {
+        geog_type = "LGD";
     } else if (categories.includes("AA")) {
         geog_type = "AA";
     } else if (categories.includes("AA2024")) {

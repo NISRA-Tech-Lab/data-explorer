@@ -13,7 +13,9 @@ data_portal_structure <- data.frame(
   theme = character(),
   theme_code = numeric(),
   Subject = character(),
-  subject_code = numeric()
+  subject_code = numeric(),
+  product = character(),
+  Product_code = character()
 )
 
 themes <- data_portal_nav$result$ThmValue
@@ -25,16 +27,25 @@ for (i in seq_along(themes)) {
   subject_codes <- data_portal_nav$result$subject[[i]]$SbjCode
   
   for (j in seq_along(subjects)) {
-
-    data_portal_structure <- data_portal_structure %>% 
-      bind_rows(
-        data.frame(
-          theme = themes[i],
-          theme_code = theme_codes[i],
-          Subject = subjects[j],
-          subject_code = subject_codes[j]
+    
+    products <- data_portal_nav$result$subject[[i]]$product[[j]]$PrcValue
+    product_codes <- data_portal_nav$result$subject[[i]]$product[[j]]$PrcCode
+    
+    for (k in seq_along(products)) {
+      
+      data_portal_structure <- data_portal_structure %>% 
+        bind_rows(
+          data.frame(
+            theme = themes[i],
+            theme_code = theme_codes[i],
+            Subject = subjects[j],
+            subject_code = subject_codes[j],
+            product = products[k],
+            Product_code = product_codes[k]
           )
-      )
+        )
+      
+    }
     
   }
 }
@@ -69,12 +80,13 @@ for (i in 1:length(data_portal$label)) {
     }
     
     subject <- json_data$result$extension$subject$value
+    product_code <- json_data$result$extension$product$code
     
     name <- gsub("\u2013", "-", data_portal$label[i], fixed = TRUE)
     if (name == "Life Expectancy at age 65") name <- "Life Expectancy at Age 65"
     
     theme <- data_portal_structure %>% 
-      filter(Subject == subject)
+      filter(Product_code == product_code)
 
     tables[[data_portal$extension$matrix[i]]] <- list(
       name = name,
@@ -94,4 +106,4 @@ for (i in 1:length(data_portal$label)) {
 
 tables <- tables[order(names(tables))]
 
-write_json(tables, "data-portal-maps.json", auto_unbox = TRUE, pretty = TRUE)
+write_json(tables, "data-portal-tables.json", auto_unbox = TRUE, pretty = TRUE)
