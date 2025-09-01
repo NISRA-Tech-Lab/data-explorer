@@ -971,6 +971,8 @@ function fillGeoMenu () {
                 option.textContent = "Urban/Rural";
             } else if (categories.includes("NUTS3")) {
                 option.textContent = "NUTS3";
+            } else if (theme == "67") {
+                option.textContent = "Equality Groups";
             }
             geo_menu.appendChild(option);
             if (option.textContent != "") num_options += 1;
