@@ -128,7 +128,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
     let other_vars = tables[matrix].categories;
-    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021", "DZ2021"].includes(x));
+    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021", "DZ2021", "Ward2014"].includes(x));
 
     let other_selections = "";
     var other_headline = "";
@@ -170,9 +170,27 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                     document.getElementById(other_vars[i]).appendChild(option);
                 }
 
+                let selected_option = options[0];
+
+                for (let j = 0; j < search.length; j ++) {
+                    if (search[j].includes(`${other_vars[i]}=`)) {
+                        search_split = search[j].split("=");
+                        selected_option = search_split[1];
+                        break;
+                    }
+                }
+
+                document.getElementById(other_vars[i]).value = selected_option;
+
                 new_menu.onchange = function () {
                     plotMap(matrix, statistic, geog_type, other = document.getElementById(other_vars[i]).value);
+                    
 
+                    if (i == 0) {
+                        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}&geo=${geo_menu.value}&stat=${stats_menu.value}&${other_vars[i]}=${document.getElementById(other_vars[i]).value}`;
+                    } else {
+                        window.location.search += `&${other_vars[i]}=${document.getElementById(other_vars[i]).value}`;
+                    }
                 }
             }
 
@@ -195,7 +213,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             
 
             other_headline += `the <strong>${fetched_restful.dimension[other_vars[i]].label}</strong> category <em>"${fetched_restful.dimension[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}"</em>`
-            
         }
         
     }  
@@ -517,6 +534,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         } else if (geog_type.includes("DZ")) {
             area_var = "DZ21_name";
             code_var = "DZ21_code";
+        } else if (geog_type.includes("Ward")) {
+            area_var = "Ward_Name";
+            code_var = "Ward_Code";
         }
 
             // Function to add tool tip to each layer
@@ -531,6 +551,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                     } else {
                         l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>Not available</strong>");
                     }
+
+                    
 
                     // http://leafletjs.com/reference.html#path-options
                     l.setStyle({
@@ -564,7 +586,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             
 
             const geojsonData = await loadShapes(geog_type);
-            shapes = L.geoJSON(geojsonData, { onEachFeature: enhanceLayer }).addTo(map);                
+            shapes = L.geoJSON(geojsonData, { onEachFeature: enhanceLayer }).addTo(map);               
 
             min_value.innerHTML = range_min.toLocaleString("en-GB");       
             max_value.innerHTML = range_max.toLocaleString("en-GB");         
@@ -841,6 +863,8 @@ function fillGeoMenu () {
                 option.textContent = "Super Data Zone";
             } else if (categories.includes("DZ2021")) {
                 option.textContent = "Data Zone";
+            } else if (categories.includes("Ward2014")) {
+                option.textContent = "Ward";
             }
             geo_menu.appendChild(option);
             if (option.textContent != "") num_options += 1;
@@ -913,11 +937,15 @@ function mapSelections () {
         geog_type = "SDZ2021";
     } else if (categories.includes("DZ2021")) {
         geog_type = "DZ2021";
+    } else if (categories.includes("Ward2014")) {
+        geog_type = "Ward2014";
     } else {
         geog_type = "none";
     }
 
     plotMap(geo_menu.value, stats_menu.value, geog_type);
+
+
 }
 
 // A function to sort items alphabetically inside an object based on the object key
@@ -1046,7 +1074,8 @@ const SHAPE_URLS = {
   HSCT:    "map/HSCT.geo.json",
   DEA2014: "map/DEA2014.geo.json",
   SDZ2021: "map/SDZ2021.geo.json",
-  DZ2021:  "map/DZ2021.geo.json"
+  DZ2021:  "map/DZ2021.geo.json",
+  Ward2014: "map/Ward2014.geo.json"
 };
 
 const shapeCache = new Map();
