@@ -128,7 +128,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
     let other_vars = tables[matrix].categories;
-    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021"].includes(x));
+    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021", "DZ2021"].includes(x));
 
     let other_selections = "";
     var other_headline = "";
@@ -514,6 +514,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         } else if (geog_type.includes("SDZ")) {
             area_var = "SDZ21_name";
             code_var = "SDZ21_code";
+        } else if (geog_type.includes("DZ")) {
+            area_var = "DZ21_name";
+            code_var = "DZ21_code";
         }
 
             // Function to add tool tip to each layer
@@ -836,6 +839,8 @@ function fillGeoMenu () {
                 option.textContent = "District Electoral Area";
             } else if (categories.includes("SDZ2021")) {
                 option.textContent = "Super Data Zone";
+            } else if (categories.includes("DZ2021")) {
+                option.textContent = "Data Zone";
             }
             geo_menu.appendChild(option);
             if (option.textContent != "") num_options += 1;
@@ -906,6 +911,8 @@ function mapSelections () {
         geog_type = "DEA2014";
     } else if (categories.includes("SDZ2021")) {
         geog_type = "SDZ2021";
+    } else if (categories.includes("DZ2021")) {
+        geog_type = "DZ2021";
     } else {
         geog_type = "none";
     }
@@ -1039,6 +1046,7 @@ const SHAPE_URLS = {
   HSCT:    "map/HSCT.geo.json",
   DEA2014: "map/DEA2014.geo.json",
   SDZ2021: "map/SDZ2021.geo.json",
+  DZ2021:  "map/DZ2021.geo.json"
 };
 
 const shapeCache = new Map();
