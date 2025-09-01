@@ -63,11 +63,15 @@ const GEOG_PROPS = {
     area_var: "SOA_LABEL",
     code_var: "SOA_CODE"
   },
-  // LCG piggybacks on HSCT geometry and matches by TrustName (strip spaces for code matching)
   LCG: {
     url: "map/HSCT.geo.json",
     area_var: "TrustName",
     code_var: "TrustName"
+  },
+  UR2015: {
+    url: "map/UR2015.geo.json",
+    area_var: "UR_NAME",
+    code_var: "UR_CODE"
   }
 };
 
@@ -195,8 +199,13 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let time_var = fetched_restful.id.filter(function (x) {return x.includes("TLIST")})[0];
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
+    
+    normal_vars = Object.keys(GEOG_PROPS);
+    normal_vars.push(time_var);
+    normal_vars.push("STATISTIC");
+
     let other_vars = tables[matrix].categories;
-    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021", "DZ2021", "Ward2014", "SOA", "LCG", "AA2024"].includes(x));
+    other_vars = other_vars.filter(x => !normal_vars.includes(x));
 
     let other_selections = "";
     var other_headline = "";
@@ -911,6 +920,8 @@ function fillGeoMenu () {
                 option.textContent = "Super Output Area";   
             } else if (categories.includes("LCG")) {
                 option.textContent = "Local Commisioning Group";
+            } else if (categories.includes("UR2015")) {
+                option.textContent = "Urban/Rural";
             }
             geo_menu.appendChild(option);
             if (option.textContent != "") num_options += 1;
@@ -991,6 +1002,8 @@ function mapSelections () {
         geog_type = "SOA";
     } else if (categories.includes("LCG")) {
         geog_type = "LCG";
+    } else if (categories.includes("UR2015")) {
+        geog_type = "UR2015";
     } else {
         geog_type = "none";
     }
