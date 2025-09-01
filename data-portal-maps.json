@@ -5521,7 +5521,7 @@
   },
   "GHGALL": {
     "name": "Greenhouse Gas Emissions - Full dataset",
-    "updated": "2025-04-29",
+    "updated": "2025-09-01",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "GHGSECTOR"],
     "statistics": {
       "CO2": "Carbon Dioxide",
@@ -5530,7 +5530,7 @@
       "GHGALL": "Total GHG"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "time_series": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     "theme": "Transport, environment and climate change",
     "theme_code": 71,
     "subject": "Energy, environment and climate change",
