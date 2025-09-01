@@ -3,6 +3,74 @@ window.onload = function() {
     createMenus();
 }
 
+/* =============================
+   Defaults (used when there is no query string)
+   ============================= */
+const defaults = {
+  theme: 70,
+  subject: 153,
+  product: "PMPE",
+  name: "Population-totals",
+  geo: "MYE01T06"
+};
+
+/* =============================
+   Per-geography configuration
+   ============================= */
+const GEOG_PROPS = {
+  LGD2014: {
+    url: "map/LGD2014.geo.json",
+    area_var: "LGDNAME",
+    code_var: "LGDCode"
+  },
+  AA: {
+    url: "map/AA.geo.json",
+    area_var: "PC_NAME",
+    code_var: "PC_ID"
+  },
+  AA2024: {
+    url: "map/AA2024.geo.json",
+    area_var: "PC_NAME",
+    code_var: "PC_Code"
+  },
+  HSCT: {
+    url: "map/HSCT.geo.json",
+    area_var: "TrustName",
+    code_var: "TrustCode"
+  },
+  DEA2014: {
+    url: "map/DEA2014.geo.json",
+    area_var: "DEA",
+    code_var: "DEA_code"
+  },
+  SDZ2021: {
+    url: "map/SDZ2021.geo.json",
+    area_var: "SDZ21_name",
+    code_var: "SDZ21_code"
+  },
+  DZ2021: {
+    url: "map/DZ2021.geo.json",
+    area_var: "DZ21_name",
+    code_var: "DZ21_code"
+  },
+  Ward2014: {
+    url: "map/Ward2014.geo.json",
+    area_var: "Ward_Name",
+    code_var: "Ward_Code"
+  },
+  SOA: {
+    url: "map/SOA2011.geo.json",
+    area_var: "SOA_LABEL",
+    code_var: "SOA_CODE"
+  },
+  // LCG piggybacks on HSCT geometry and matches by TrustName (strip spaces for code matching)
+  LCG: {
+    url: "map/HSCT.geo.json",
+    area_var: "TrustName",
+    code_var: "TrustName"
+  }
+};
+
 let themes_menu = document.getElementById("theme");
 let products_menu = document.getElementById("product");
 let subjects_menu = document.getElementById("subject");
@@ -71,7 +139,7 @@ async function createMenus () {
     }
 
     // let selected_theme = themes[Object.keys(themes)[0]].code;
-    let selected_theme = 70;
+    let selected_theme = defaults.theme;
 
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("theme=")) {
@@ -128,7 +196,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
     let other_vars = tables[matrix].categories;
-    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021", "DZ2021", "Ward2014"].includes(x));
+    other_vars = other_vars.filter(x => ![time_var, "STATISTIC", "LGD2014", "AA", "HSCT", "DEA2014", "SDZ2021", "DZ2021", "Ward2014", "SOA", "LCG", "AA2024"].includes(x));
 
     let other_selections = "";
     var other_headline = "";
@@ -515,44 +583,18 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             }
         }
 
-        // Variable name to use if geo data is LGD or AA
-        if (geog_type.includes("LGD")) {
-            area_var = "LGDNAME";
-            code_var = "LGDCode";
-        } else if (geog_type == "AA") {
-            area_var = "PC_NAME";
-            code_var = "PC_ID";
-        } if (geog_type == "HSCT") {
-            area_var = "TrustName";
-            code_var = "TrustCode";
-        } if (geog_type.includes("DEA")) {
-            area_var = "DEA";
-            code_var = "DEA_code";
-        } else if (geog_type.includes("SDZ")) {
-            area_var = "SDZ21_name";
-            code_var = "SDZ21_code";
-        } else if (geog_type.includes("DZ")) {
-            area_var = "DZ21_name";
-            code_var = "DZ21_code";
-        } else if (geog_type.includes("Ward")) {
-            area_var = "Ward_Name";
-            code_var = "Ward_Code";
-        }
-
             // Function to add tool tip to each layer
             function enhanceLayer(f, l){
 
                 if (f.properties){
 
-                    let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[code_var]);
+                    let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[GEOG_PROPS[geog_type].code_var].replace(" ", ""));
                     
                     if (data[geog_index] != null) {
-                        l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>" + data[geog_index].toLocaleString("en-GB") + "</strong> (" + unit + ")");
+                        l.bindTooltip(titleCase(f.properties[GEOG_PROPS[geog_type].area_var]) + " (" + year + "): <strong>" + data[geog_index].toLocaleString("en-GB") + "</strong> (" + unit + ")");
                     } else {
-                        l.bindTooltip(titleCase(f.properties[area_var]) + " (" + year + "): <strong>Not available</strong>");
-                    }
-
-                    
+                        l.bindTooltip(titleCase(f.properties[GEOG_PROPS[geog_type].area_var]) + " (" + year + "): <strong>Not available</strong>");
+                    }                    
 
                     // http://leafletjs.com/reference.html#path-options
                     l.setStyle({
@@ -730,7 +772,7 @@ function fillSubjectsMenu () {
     let selected_subject = subjects[Object.keys(subjects)[0]].code;
 
     if (window.location.search == "") {
-        selected_subject = 153
+        selected_subject = defaults.subject;
     }
 
     for (let i = 0; i < search.length; i ++) {
@@ -775,7 +817,7 @@ function fillProductsMenu () {
     let selected_product = products[Object.keys(products)[0]].code;
 
     if (window.location.search == "") {
-        selected_product = "PMPE"
+        selected_product = defaults.product;
     }
 
     for (let i = 0; i < search.length; i ++) {
@@ -820,7 +862,7 @@ function fillNamesMenu () {
     let selected_name = names[0].replaceAll(" ", "-");
 
     if (window.location.search == "") {
-        selected_name = "Population-totals";
+        selected_name = defaults.name;
     }
 
     for (let i = 0; i < search.length; i ++) {
@@ -851,7 +893,7 @@ function fillGeoMenu () {
         if (theme == themes_menu.value & subject == subjects_menu.value & title == names_menu.value) {
             option = document.createElement("option");
             option.value = Object.keys(tables)[i];
-            if (categories.includes("AA")) {
+            if (categories.includes("AA") | categories.includes("AA2024")) {
                 option.textContent = "Assembly Area";
             } else if (categories.includes("LGD2014")) {
                 option.textContent = "Local Government District";
@@ -865,6 +907,10 @@ function fillGeoMenu () {
                 option.textContent = "Data Zone";
             } else if (categories.includes("Ward2014")) {
                 option.textContent = "Ward";
+            } else if (categories.includes("SOA")) {
+                option.textContent = "Super Output Area";   
+            } else if (categories.includes("LCG")) {
+                option.textContent = "Local Commisioning Group";
             }
             geo_menu.appendChild(option);
             if (option.textContent != "") num_options += 1;
@@ -876,7 +922,7 @@ function fillGeoMenu () {
     let selected_geo = geo_menu.options[0].value;
 
     if (window.location.search == "") {
-        selected_geo = "MYE01T06";
+        selected_geo = defaults.geo;
     }
 
     for (let i = 0; i < search.length; i ++) {
@@ -929,6 +975,8 @@ function mapSelections () {
         geog_type = "LGD2014";
     } else if (categories.includes("AA")) {
         geog_type = "AA";
+    } else if (categories.includes("AA2024")) {
+        geog_type = "AA2024";
     } else if (categories.includes("HSCT")) {
         geog_type = "HSCT";
     } else if (categories.includes("DEA2014")) {
@@ -939,6 +987,10 @@ function mapSelections () {
         geog_type = "DZ2021";
     } else if (categories.includes("Ward2014")) {
         geog_type = "Ward2014";
+    } else if (categories.includes("SOA")) {
+        geog_type = "SOA";
+    } else if (categories.includes("LCG")) {
+        geog_type = "LCG";
     } else {
         geog_type = "none";
     }
@@ -1066,24 +1118,12 @@ if (globalSearchInput) {
  }
 }
 
-
-// Map a geog_type to file paths (GeoJSON works great)
-const SHAPE_URLS = {
-  LGD2014: "map/LGD2014.geo.json",
-  AA:      "map/AA.geo.json",
-  HSCT:    "map/HSCT.geo.json",
-  DEA2014: "map/DEA2014.geo.json",
-  SDZ2021: "map/SDZ2021.geo.json",
-  DZ2021:  "map/DZ2021.geo.json",
-  Ward2014: "map/Ward2014.geo.json"
-};
-
 const shapeCache = new Map();
 
 async function loadShapes(geog_type) {
   if (shapeCache.has(geog_type)) return shapeCache.get(geog_type);
 
-  const url = SHAPE_URLS[geog_type];
+  const url = GEOG_PROPS[geog_type].url;
   if (!url) throw new Error(`No shape URL for ${geog_type}`);
 
   const res = await fetch(url, { cache: "force-cache" });
