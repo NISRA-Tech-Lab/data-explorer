@@ -10,8 +10,8 @@ const defaults = {
   theme: 70,
   subject: 153,
   product: "PMPE",
-  name: "Population-totals",
-  geo: "MYE01T06"
+  name: "Mid-year-population-estimates",
+  geo: "MYE01T02"
 };
 
 /* =============================
@@ -27,6 +27,11 @@ const GEOG_PROPS = {
     url: "map/LGD2014.geo.json",
     area_var: "LGDNAME",
     code_var: "LGDCode"
+  },
+  LGD1992: {
+    url: "map/LGD1992.geo.json",
+    area_var: "LGDNAME",
+    code_var: "LGD_CODE"
   },
   AA: {
     url: "map/AA.geo.json",
@@ -82,6 +87,11 @@ const GEOG_PROPS = {
     url: "map/UR2015.geo.json",
     area_var: "UR_NAME",
     code_var: "UR_CODE"
+  },
+  NUTS3: {
+    url: "map/NUTS3.geo.json",
+    area_var: "NUTS3_Name",
+    code_var: "NUTS3"
   }
 };
 
@@ -257,7 +267,16 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                     document.getElementById(other_vars[i]).appendChild(option);
                 }
 
+                
                 let selected_option = options[0];
+
+                const other_defaults = ["All", "N92000002"];
+
+                for (let j = 0; j < other_defaults.length; j ++) {
+                    if (options.includes(other_defaults[j])) {
+                        selected_option = other_defaults[j];
+                    }
+                }                
 
                 for (let j = 0; j < search.length; j ++) {
                     if (search[j].includes(`${other_vars[i]}=`)) {
@@ -271,7 +290,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
                 new_menu.onchange = function () {
                     plotMap(matrix, statistic, geog_type, other = document.getElementById(other_vars[i]).value);
-                    
 
                     if (i == 0) {
                         window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}&geo=${geo_menu.value}&stat=${stats_menu.value}&${other_vars[i]}=${document.getElementById(other_vars[i]).value}`;
@@ -333,6 +351,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     if (plot_ni) {
 
         document.getElementById("chart-card").style.display = "block";
+        document.getElementById("headline").style.display = "block";
 
         if (themes_menu.value != "67" & geog_type != "none") {
             NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
@@ -431,7 +450,12 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                 ticks: { minRotation: 0, maxRotation: 0 }
             }
             },
-            interaction: { intersect: false, mode: "index" }
+            interaction: { intersect: false, mode: "index" },
+            plugins: {
+                legend: {
+                    onClick: (e) => null // disables toggling on legend click
+                }
+            }
         },
         plugins: []
         };
@@ -754,9 +778,16 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
          // Convert [url=...]...[/url] into <a href="...">...</a>
         note_cleaned = note_cleaned.replace(
-        /\[url=([a-zA-Z][a-zA-Z0-9+.-]*:[^\]]+)\](.*?)\[\/url\]/gi,
-        "<a href='$1' target='_blank'>$2</a>"
+            /\[url=([a-zA-Z][a-zA-Z0-9+.-]*:[^\]]+)\](.*?)\[\/url\]/gi,
+            (match, url, text) => {
+                if (url.toLowerCase().startsWith("mailto:")) {
+                return `<a href="${url}">${text}</a>`;
+                } else {
+                return `<a href="${url}" target="_blank">${text}</a>`;
+                }
+            }
         );
+
 
 
          metadata_text.innerHTML = note_cleaned;   
@@ -918,6 +949,8 @@ function fillGeoMenu () {
                 option.textContent = "Assembly Area";
             } else if (categories.includes("LGD2014") | categories.includes("LGD")) {
                 option.textContent = "Local Government District";
+            } else if (categories.includes("LGD1992")) {
+                option.textContent = "Local Government District (1992)"
             } else if (categories.includes("HSCT")) {
                 option.textContent = "Health and Social Care Trust";
             } else if (categories.includes("DEA2014")) {
@@ -936,6 +969,8 @@ function fillGeoMenu () {
                 option.textContent = "Local Commisioning Group";
             } else if (categories.includes("UR2015")) {
                 option.textContent = "Urban/Rural";
+            } else if (categories.includes("NUTS3")) {
+                option.textContent = "NUTS3";
             }
             geo_menu.appendChild(option);
             if (option.textContent != "") num_options += 1;
@@ -998,8 +1033,10 @@ function mapSelections () {
     
     if (categories.includes("LGD2014")) {
         geog_type = "LGD2014";
-    } else  if (categories.includes("LGD")) {
+    } else if (categories.includes("LGD")) {
         geog_type = "LGD";
+    } else if (categories.includes("LGD1992")) {
+        geog_type = "LGD1992";
     } else if (categories.includes("AA")) {
         geog_type = "AA";
     } else if (categories.includes("AA2024")) {
@@ -1022,6 +1059,8 @@ function mapSelections () {
         geog_type = "LCG";
     } else if (categories.includes("UR2015")) {
         geog_type = "UR2015";
+    } else if (categories.includes("NUTS3")) {
+        geog_type = "NUTS3";
     } else {
         geog_type = "none";
     }
@@ -1052,10 +1091,13 @@ function sortObject(o) {
 }
 
 function titleCase(str) {
-  return str.toLowerCase().replace(/\b(?!and)\w/g, function(char) {
-    return char.toUpperCase();
-  });
+  return str
+    .toLowerCase()
+    .replace(/\b(?!and\b|of\b)\w/g, function (char) {
+      return char.toUpperCase();
+    });
 }
+
 
 
 function filterNamesGlobal(query) {
