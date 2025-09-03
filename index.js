@@ -20,83 +20,71 @@ const defaults = {
 const GEOG_PROPS = {
   LGD2014: {
     url: "map/LGD2014.geo.json",
-    area_var: "LGDNAME",
     code_var: "LGDCode"
   },
   LGD: {
     url: "map/LGD2014.geo.json",
-    area_var: "LGDNAME",
     code_var: "LGDCode"
   },
   LGD1992: {
     url: "map/LGD1992.geo.json",
-    area_var: "LGDNAME",
     code_var: "LGD_CODE"
   },
   AA: {
     url: "map/AA.geo.json",
-    area_var: "PC_NAME",
     code_var: "PC_ID"
   },
   AA2024: {
     url: "map/AA2024.geo.json",
-    area_var: "PC_NAME",
     code_var: "PC_Code"
   },
   HSCT: {
     url: "map/HSCT.geo.json",
-    area_var: "TrustName",
     code_var: "TrustCode"
   },
   DEA2014: {
     url: "map/DEA2014.geo.json",
-    area_var: "DEA",
     code_var: "DEA_code"
   },
   SDZ2021: {
     url: "map/SDZ2021.geo.json",
-    area_var: "SDZ21_name",
     code_var: "SDZ21_code"
   },
   DZ2021: {
     url: "map/DZ2021.geo.json",
-    area_var: "DZ21_name",
     code_var: "DZ21_code"
   },
   Ward2014: {
     url: "map/Ward2014.geo.json",
-    area_var: "Ward_Name",
     code_var: "Ward_Code"
   },
   SOA: {
     url: "map/SOA2011.geo.json",
-    area_var: "SOA_LABEL",
     code_var: "SOA_CODE"
   },
   SA: {
     url: "map/SA2011.geo.json",
-    area_var: "SA2011",
     code_var: "SA2011"
   },
   LCG: {
     url: "map/HSCT.geo.json",
-    area_var: "TrustName",
     code_var: "TrustName"
   },
   UR2015: {
     url: "map/UR2015.geo.json",
-    area_var: "UR_NAME",
     code_var: "UR_CODE"
   },
   NUTS3: {
     url: "map/NUTS3.geo.json",
-    area_var: "NUTS3_Name",
     code_var: "NUTS3"
   },
   ELB: {
     url: "map/ELB.geo.json",
-    area_var: "North Eastern",
     code_var: "ELB_Code"
+  },
+  COB_BASIC: {
+    url: "map/COB.geo.json",
+    code_var: "COB_BASIC"
   }
 };
 
@@ -225,9 +213,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let year = fetched_restful.dimension[time_var].category.index.slice(-1);
 
     
-    normal_vars = Object.keys(GEOG_PROPS);
-    normal_vars.push(time_var);
-    normal_vars.push("STATISTIC");
+    normal_vars = ["STATISTIC", geog_type, time_var];
 
     let other_vars = tables[matrix].categories;
     other_vars = other_vars.filter(x => !normal_vars.includes(x));
@@ -522,21 +508,65 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         }
 
         data = result.value;
-        data = data.map(item => item === '-' ? null : item);
-        
-        let range_min = Math.floor(Math.min(...data));
-        let range_max = Math.ceil(Math.max(...data));
-            
-        let range = range_max - range_min; // Calculate the range of values
+        data = data.map(item => item === '-' ? null : Number(item));
 
-        // Create an array colours, where each value is between 0 and 1 depending on where it falls in the range of values
-        colours = [];
+        // Useful for legend (keep as-is even for COB quintiles)
+        let range_min = Math.floor(Math.min(...data.filter(v => v != null)));
+        let range_max = Math.ceil(Math.max(...data.filter(v => v != null)));
+
+        let colours = [];
+
+        // Quintile helper (linear interpolation on sorted values)
+        function quantile(sortedVals, p) {
+        const n = sortedVals.length;
+        if (!n) return null;
+        const pos = (n - 1) * p;
+        const base = Math.floor(pos);
+        const rest = pos - base;
+        const next = sortedVals[base + 1];
+        return next !== undefined
+            ? sortedVals[base] + rest * (next - sortedVals[base])
+            : sortedVals[base];
+        }
+
+        if (geog_type === "COB_BASIC") {
+        // Build evenly-sized quintile thresholds (20/40/60/80%)
+        const vals = data.filter(v => v != null).sort((a, b) => a - b);
+        const qs = [0.2, 0.4, 0.6, 0.8].map(p => quantile(vals, p));
+
+        // Map each value to a bin 0..4, then normalize to 0..1 in steps of 0.25
+        const toBin = (v) => {
+            if (v == null) return -1;              // “no data”
+            if (v <= qs[0]) return 0;
+            if (v <= qs[1]) return 1;
+            if (v <= qs[2]) return 2;
+            if (v <= qs[3]) return 3;
+            return 4;
+        };
+
         for (let i = 0; i < data.length; i++) {
-            colours.push((data[i] - range_min) / range);
+            const bin = toBin(data[i]);
+            colours.push(bin < 0 ? -1 : bin / 4);  // -1 marks NA; 0, .25, .5, .75, 1 for bins
+        }
+        } else {
+        // Original continuous scaling
+        const range = range_max - range_min || 1; // avoid divide-by-zero
+        for (let i = 0; i < data.length; i++) {
+            const v = data[i];
+            colours.push(v == null ? -1 : (v - range_min) / range);
+        }
         }
 
         // Colour palettes for increasing/decreasing indicators
         let palette = ["#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c"];
+
+        // Use the normalized value (or bin) to pick a color; -1 → grey for NA
+        function getColor(normOrBin) {
+        if (normOrBin == null || normOrBin < 0) return "#d3d3d3";
+        const idx = Math.max(0, Math.min(4, Math.round(normOrBin * 4)));
+        return palette[idx];
+        }
+
 
         legend_div = document.createElement("div");
         legend_div.id = "map-legend";
@@ -602,11 +632,15 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         let initialZoom = window.innerWidth < 768 ? 7 : 8; 
 
+        if (geog_type == "COB_BASIC") {
+            initialZoom = 1;
+        }
+
         // Create a map
         var map = L.map(matrix + "-map",
-        {zoomControl: false, // Turn off zoom controls
+        {zoomControl: true, // Turn off zoom controls
         dragging: false,
-        touchZoom: false,
+        touchZoom: true,
         doubleClickZoom: false,
         scrollWheelZoom: false,
         boxZoom: false,
@@ -615,30 +649,61 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         tap: false}).setView([54.67, -6.85], initialZoom); // Set initial co-ordinates and zoom
 
         L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
+        minZoom: initialZoom,
+        maxZoom: initialZoom + 3,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map); // Add a background map
+        }).addTo(map); // Add a background map    
 
-    
+        // Toggle dragging based on zoom vs initialZoom
+        function syncDraggingToZoom() {
+        if (map.getZoom() === initialZoom) {
+            map.dragging.disable();
+            map.getContainer().classList.add("leaflet-drag-disabled");
+        } else {
+            map.dragging.enable();
+            map.getContainer().classList.remove("leaflet-drag-disabled");
+        }
+        }
 
+        // Run once and on every zoom change
+        syncDraggingToZoom();
+        map.on('zoomend', syncDraggingToZoom);
 
-        // When called chooses a colour from above palette based on value of colours array
-        function getColor(d) {
-            if (d < 0) {
-                return "#d3d3d3";
-            } else {
-                return palette[Math.round(d*4)];
+        // Keep the original center you used for setView
+        const originalCenter = L.latLng(54.67, -6.85);
+        let hasDraggedAtNonBaseZoom = false;
+
+        // Mark that the user panned while zoomed in/out (not at base)
+        map.on("movestart", () => {
+        if (map.getZoom() !== initialZoom) hasDraggedAtNonBaseZoom = true;
+        });
+
+        // On zoom changes: toggle dragging AND snap back if we’re at base zoom again
+        map.on("zoomend", () => {
+        syncDraggingToZoom();
+
+        // If the user had dragged while off base zoom and returns to base zoom,
+        // snap back to the original center.
+        if (map.getZoom() === initialZoom && hasDraggedAtNonBaseZoom) {
+            hasDraggedAtNonBaseZoom = false;
+
+            // Only recenter if we’re notably off from the original center
+            const dist = map.getCenter().distanceTo(originalCenter); // meters
+            if (dist > 50) { // tweak threshold as you like
+            map.setView(originalCenter, initialZoom, { animate: true });
             }
         }
+        });
+
 
             // Function to add tool tip to each layer
             function enhanceLayer(f, l){
 
                 if (f.properties){
 
-                    let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[GEOG_PROPS[geog_type].code_var].replace(" ", ""));
+                    let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[GEOG_PROPS[geog_type].code_var].toString().replace(" ", ""));
 
-                    let shape_label = titleCase(result.dimension[geog_type].category.label[f.properties[GEOG_PROPS[geog_type].code_var].replace(" ", "")]);
+                    let shape_label = titleCase(result.dimension[geog_type].category.label[f.properties[GEOG_PROPS[geog_type].code_var].toString().replace(" ", "")]);
                     
                     if (data[geog_index] != null) {
                         l.bindTooltip(shape_label + " (" + year + "): <strong>" + data[geog_index].toLocaleString("en-GB") + "</strong> (" + unit + ")");
@@ -978,6 +1043,8 @@ function fillGeoMenu () {
                 option.textContent = "NUTS3";
             } else if (categories.includes("ELB")) {
                 option.textContent = "Education and Library Board";
+            } else if (categories.includes("COB_BASIC")) {
+                option.textContent = "Country of Birth";
             } else if (theme == "67") {
                 option.textContent = "Equality Groups";
             }
@@ -1071,7 +1138,9 @@ function mapSelections () {
     } else if (categories.includes("NUTS3")) {
         geog_type = "NUTS3";
     } else if (categories.includes("ELB")) {
-        geog_type = "ELB"
+        geog_type = "ELB";
+    } else if (categories.includes("COB_BASIC")) {
+        geog_type = "COB_BASIC";
     } else {
         geog_type = "none";
     }
