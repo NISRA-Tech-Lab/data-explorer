@@ -92,6 +92,11 @@ const GEOG_PROPS = {
     url: "map/NUTS3.geo.json",
     area_var: "NUTS3_Name",
     code_var: "NUTS3"
+  },
+  ELB: {
+    url: "map/ELB.geo.json",
+    area_var: "North Eastern",
+    code_var: "ELB_Code"
   }
 };
 
@@ -971,6 +976,8 @@ function fillGeoMenu () {
                 option.textContent = "Urban/Rural";
             } else if (categories.includes("NUTS3")) {
                 option.textContent = "NUTS3";
+            } else if (categories.includes("ELB")) {
+                option.textContent = "Education and Library Board";
             } else if (theme == "67") {
                 option.textContent = "Equality Groups";
             }
@@ -1063,12 +1070,13 @@ function mapSelections () {
         geog_type = "UR2015";
     } else if (categories.includes("NUTS3")) {
         geog_type = "NUTS3";
+    } else if (categories.includes("ELB")) {
+        geog_type = "ELB"
     } else {
         geog_type = "none";
     }
 
     plotMap(geo_menu.value, stats_menu.value, geog_type);
-
 
 }
 
