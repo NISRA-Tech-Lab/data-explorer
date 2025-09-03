@@ -261,7 +261,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                 
                 let selected_option = options[0];
 
-                const other_defaults = ["All", "N92000002"];
+                const other_defaults = ["All", "ALL", "N92000002"];
 
                 for (let j = 0; j < other_defaults.length; j ++) {
                     if (options.includes(other_defaults[j])) {
