@@ -223,7 +223,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     let id_vars;
 
     if (geog_type == "none") {
-        document.getElementById("map-card").style.display = "none";
+        document.getElementById("map-card").classList.add("d-none");
         document.getElementById("chart-card").classList.remove("col-lg-6");
         
         id_vars = `["STATISTIC", "${time_var}"`;
@@ -341,8 +341,10 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     if (plot_ni) {
 
-        document.getElementById("chart-card").style.display = "block";
-        document.getElementById("headline").style.display = "block";
+        document.getElementById("chart-card").classList.remove("d-none");
+        document.getElementById("chart-card").classList.add("d-block");
+        document.getElementById("headline").classList.remove("d-none");
+        document.getElementById("headline").classList.add("d-block");
 
         if (themes_menu.value != "67" & geog_type != "none") {
             NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
@@ -401,11 +403,11 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         const ni_response = await fetch(ni_url);
         const ni_result = await ni_response.json();
         
-        const data_series = ni_result.result.value;
+        var data_series = ni_result.result.value;
         // Make sure values are numbers
         const values = data_series.map(v => (v === null || v === undefined ? null : Number(v)));
 
-        const time_series = ni_result.result.dimension[time_var].category.index;
+        var time_series = ni_result.result.dimension[time_var].category.index;
 
         const chart_data = {
         labels: [...time_series],
@@ -427,7 +429,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         // Chart configuration
         const chart_config = {
         type: chartType,
-        data: chart_data, // <-- was `chart_data,` before (wrong key)
+        data: chart_data, 
         options: {
             responsive: true,
             maintainAspectRatio: false,
@@ -627,7 +629,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         map_div.classList.add("map");
 
         
-        map_container.style.display = "block";
+        map_container.classList.add("d-block");
         map_container.appendChild(map_div);
 
         let initialZoom = window.innerWidth < 768 ? 7 : 8; 
@@ -755,7 +757,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
         } else {
-            data = fetched_restful.value;
+            data = data_series;
         }
 
         document.getElementById("table-title").textContent = `${result.label}`;
@@ -793,7 +795,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
          unit_header.textContent = "Unit";
          value_header.textContent = "Value";
-         value_header.style.textAlign = "right";
+         value_header.classList.add("text-end");
 
          header_row.appendChild(unit_header);
          header_row.appendChild(value_header);
@@ -808,7 +810,11 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             tr.appendChild(stat_cell);
 
             year_cell = document.createElement("td");
-            year_cell.textContent = year;
+            if (geog_type == "none") {
+                year_cell.textContent = time_series[i];
+            } else {
+                year_cell.textContent = year;
+            }
             tr.appendChild(year_cell);
 
             if (geog_type != "none") {
@@ -1053,7 +1059,10 @@ function fillGeoMenu () {
         }
     }
 
-    if (num_options > 0) document.getElementById("geo").parentElement.style.display = "block";
+    if (num_options > 0) {
+        document.getElementById("geo").parentElement.classList.add("d-block");
+        document.getElementById("geo").parentElement.classList.remove("d-none");
+    }
 
     let selected_geo = geo_menu.options[0].value;
 
