@@ -83,11 +83,6 @@ label, select {
     z-index: 1055;                /* above content, below modal (Bootstrap default) */
 }
 
-.legend-title {
-    text-align: center;
-    padding-top: 10px;
-}
-
 /* Map & Chart min heights for small vs large screens */
 #map-container { min-height: 320px; }
 @media (min-width: 992px) {
@@ -116,11 +111,6 @@ label, select {
 .app-brand {
     font-weight: 700;
     letter-spacing: .2px;
-}
-
-/* Prevent loading GIF from overflowing */
-#map-loading {
-    max-width: 100%;
 }
 
 /* Slightly tighter padding on very small screens */

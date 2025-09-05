@@ -4,15 +4,10 @@ window.onload = function() {
 }
 
 /* =============================
-   Defaults (used when there is no query string)
+   Default (used when there is no query string)
    ============================= */
-const defaults = {
-  theme: 70,
-  subject: 153,
-  product: "PMPE",
-  name: "Mid-year-population-estimates",
-  geo: "MYE01T02"
-};
+
+const default_table = "MYE01T02";
 
 /* =============================
    Per-geography configuration
@@ -155,8 +150,7 @@ async function createMenus () {
         themes_menu.appendChild(option);
     }
 
-    // let selected_theme = themes[Object.keys(themes)[0]].code;
-    let selected_theme = defaults.theme;
+    let selected_theme = tables[default_table].theme_code;
 
     for (let i = 0; i < search.length; i ++) {
         if (search[i].includes("theme=")) {
@@ -578,7 +572,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         legend_title = document.createElement("div");
         legend_title.textContent = stat_label;
-        legend_title.classList.add("legend-title");
+        legend_title.classList.add("text-center");
+        legend_title.classList.add("pt-2");
+
         map_container.appendChild(legend_title);
 
         legend_row_1 = document.createElement("div");
@@ -900,7 +896,7 @@ function fillSubjectsMenu () {
     let selected_subject = subjects[Object.keys(subjects)[0]].code;
 
     if (window.location.search == "") {
-        selected_subject = defaults.subject;
+        selected_subject = tables[default_table].subject_code;
     }
 
     for (let i = 0; i < search.length; i ++) {
@@ -945,7 +941,7 @@ function fillProductsMenu () {
     let selected_product = products[Object.keys(products)[0]].code;
 
     if (window.location.search == "") {
-        selected_product = defaults.product;
+        selected_product = tables[default_table].product_code;
     }
 
     for (let i = 0; i < search.length; i ++) {
@@ -990,7 +986,7 @@ function fillNamesMenu () {
     let selected_name = names[0].replaceAll(" ", "-");
 
     if (window.location.search == "") {
-        selected_name = defaults.name;
+        selected_name = tables[default_table].name.replaceAll(" ", "-");
     }
 
     for (let i = 0; i < search.length; i ++) {
@@ -1067,7 +1063,7 @@ function fillGeoMenu () {
     let selected_geo = geo_menu.options[0].value;
 
     if (window.location.search == "") {
-        selected_geo = defaults.geo;
+        selected_geo = default_table;
     }
 
     for (let i = 0; i < search.length; i ++) {
