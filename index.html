@@ -37,15 +37,7 @@
   <!-- Top Navbar -->
   <nav class="navbar py-3" style="background-color:#00205b;">
   <div class="container-fluid d-flex align-items-center">
-    <!-- Mobile: sidebar trigger (hidden ≥ lg) -->
-    <button class="btn btn-outline-light d-lg-none me-2"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#sidebar"
-            aria-controls="sidebar"
-            aria-label="Open filters">
-      <i class="bi bi-list"></i><span class="ms-1">Search for Data</span>
-    </button>
+   
 
     <!-- Logo (left) -->
     <a class="navbar-brand ps-2 d-flex align-items-center me-auto" href="#">
@@ -54,6 +46,16 @@
 
     <!-- Heading (right) -->
     <h1 class="mb-0 pe-2 text-white fs-2 app-title ms-2">NISRA Data Explorer</h1>
+
+     <!-- Mobile: sidebar trigger (hidden ≥ lg) -->
+    <button class="btn btn-outline-light d-lg-none me-2 mt-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+            aria-controls="sidebar"
+            aria-label="Open filters">
+      <i class="bi bi-list"></i><span class="ms-1">Search for Data</span>
+    </button>
   </div>
 </nav>
 
@@ -299,26 +301,42 @@
 
   <script src="index.js"></script>
 
-  <!-- Remove the old "always open offcanvas" script.
-       If you still want to auto-open the drawer on *mobile only* the first time,
-       use this tiny optional snippet: -->
-  <script>
+<script>
+  (function () {
+    const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
+
     document.addEventListener("DOMContentLoaded", function () {
-      const mq = window.matchMedia("(max-width: 991.98px)");
-      if (!mq.matches) return; // only mobile
-      const STORAGE_KEY = "nisra:data-explorer:sidebarOpenedOnce";
-      if (!localStorage.getItem(STORAGE_KEY)) {
-        const el = document.getElementById("sidebar");
-        const off = new bootstrap.Offcanvas(el);
+      const sidebarEl = document.getElementById("sidebar");
+      if (!sidebarEl) return;
+
+      // Persist user open/close actions (so manual close stops auto-open next time)
+      sidebarEl.addEventListener("shown.bs.offcanvas", () => {
+        localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+      });
+      sidebarEl.addEventListener("hidden.bs.offcanvas", () => {
+        localStorage.setItem(SIDEBAR_OPEN_KEY, "0");
+      });
+
+      // Only auto-open on mobile/tablet and only if last state was "open"
+      if (window.matchMedia("(max-width: 991.98px)").matches &&
+          localStorage.getItem(SIDEBAR_OPEN_KEY) === "1") {
+
+        const off = new bootstrap.Offcanvas(sidebarEl);
+
+        // Disable animation just for this programmatic show
         document.body.classList.add("offcanvas-no-anim");
         off.show();
-        el.addEventListener("shown.bs.offcanvas", () => {
-          document.body.classList.remove("offcanvas-no-anim");
-          localStorage.setItem(STORAGE_KEY, "1");
-        }, { once: true });
+
+        // Remove the no-anim class once it's visible (and also via fallback)
+        const removeNoAnim = () => document.body.classList.remove("offcanvas-no-anim");
+        sidebarEl.addEventListener("shown.bs.offcanvas", removeNoAnim, { once: true });
+        setTimeout(removeNoAnim, 500); // safety in case the event doesn't fire
       }
     });
-  </script>
+  })();
+</script>
+
+
 
 </body>
 </html>

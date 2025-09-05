@@ -83,6 +83,9 @@ const GEOG_PROPS = {
   }
 };
 
+const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
+
+
 let themes_menu = document.getElementById("theme");
 let products_menu = document.getElementById("product");
 let subjects_menu = document.getElementById("subject");
@@ -169,6 +172,7 @@ async function createMenus () {
     fillStatMenu();
 
     themes_menu.onchange = function () {
+        localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
         fillSubjectsMenu();
         subjects_menu.value = subjects_menu.options[0].value;
         fillProductsMenu();
@@ -181,6 +185,7 @@ async function createMenus () {
     }
 
     subjects_menu.onchange = function() {
+        localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
         fillProductsMenu();
         products_menu.value = products_menu.options[0].value;
         fillNamesMenu();
@@ -191,6 +196,7 @@ async function createMenus () {
     }
 
     products_menu.onchange = function () {
+        localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
         fillNamesMenu();
         names_menu.value = names_menu.options[0].value;
         fillGeoMenu();
@@ -199,18 +205,22 @@ async function createMenus () {
     }
 
     names_menu.onchange = function () {
-       fillGeoMenu();
+        localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+        fillGeoMenu();
         geo_menu.value = geo_menu.options[0].value;
         window.location.search = `?table=${geo_menu.value}`;
     }
 
     geo_menu.onchange = function () {
-        window.location.search = `?table=${geo_menu.value}`;
+    localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+    window.location.search = `?table=${geo_menu.value}`;
     }
 
     stats_menu.onchange = function () {
-        window.location.search = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
+    localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+    window.location.search = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
     }
+
 
 }
 
@@ -297,6 +307,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
                 new_menu.onchange = function () {
 
+                    localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
                     let search_string = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
 
                     for (let j = 0; j < other_vars.length; j ++) {
