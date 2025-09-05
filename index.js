@@ -218,7 +218,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     if (geog_type == "none") {
         document.getElementById("map-card").classList.add("d-none");
-        document.getElementById("chart-card").classList.remove("col-lg-6");
+        document.getElementById("chart-card").classList.remove("col-xl-6");
         
         id_vars = `["STATISTIC", "${time_var}"`;
 
@@ -485,6 +485,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         document.getElementById("headline-fig").innerHTML = `<span class = "h1">${headline_value}</span> ${unit_fixed}`;
         document.getElementById("headline-stat").innerHTML = `<strong>${stat_label}</strong> in Northern Ireland in <strong>${time_series[time_series.length - 1]}</strong>${other_headline}.`
 
+    } else {
+        document.getElementById("map-card").classList.remove("col-xl-6")
     }
 
     if (geog_type != "none") {
