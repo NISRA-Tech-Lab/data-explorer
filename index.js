@@ -1209,12 +1209,13 @@ function renderGlobalResults(items) {
       unique.push(item);
     }
   }
+  
 
   const top = unique.slice(0, 25);
   top.forEach(item => {
     const a = document.createElement("a");
     a.className = "list-group-item list-group-item-action";
-    a.href = `?theme=${item.theme_code}&subject=${item.subject_code}&product=${item.product_code}&name=${item.slug}`;
+    a.href = `?table=${item.key}`;
     a.innerHTML = `
       <div class="fw-semibold">${item.name}</div>
       <div class="small text-secondary">${item.theme} &rsaquo; ${item.subject} &rsaquo; ${item.product}</div>
