@@ -440,7 +440,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             interaction: { intersect: false, mode: "index" },
             plugins: {
                 legend: {
-                    onClick: (e) => null // disables toggling on legend click
+                    display: false // disables legend 
                 }
             }
         },
@@ -450,9 +450,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         chart_title = document.getElementById("chart-title");
 
         if (time_series.length == 1) {
-            chart_title.textContent = `Northern Ireland ${time_series[0]}`;
+            chart_title.textContent = `${stat_label} in Northern Ireland ${time_series[0]}`;
         } else {
-            chart_title.textContent = `Northern Ireland ${time_series[0]} - ${time_series[time_series.length - 1]}`;
+            chart_title.textContent = `${stat_label} in Northern Ireland ${time_series[0]} - ${time_series[time_series.length - 1]}`;
         }
 
         chart_subtitle = document.getElementById("chart-subtitle");
@@ -568,14 +568,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         legend_div.id = "map-legend";
         legend_div.classList.add("map-legend");
         legend_div.classList.add("align-self-center");
-        legend_div.classList.add("col-6")
-
-        legend_title = document.createElement("div");
-        legend_title.textContent = stat_label;
-        legend_title.classList.add("text-center");
-        legend_title.classList.add("pt-2");
-
-        map_container.appendChild(legend_title);
+        legend_div.classList.add("col-6");
 
         legend_row_1 = document.createElement("div");
         legend_row_1.classList.add("row");
@@ -646,11 +639,15 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         attributionControl: false,
         tap: false}).setView([54.67, -6.85], initialZoom); // Set initial co-ordinates and zoom
 
-        L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        minZoom: initialZoom,
-        maxZoom: initialZoom + 3,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map); // Add a background map    
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            subdomains: 'abcd',
+            minZoom: initialZoom,
+            maxZoom: initialZoom + 3,
+            attribution:
+                '&copy; OpenStreetMap contributors &copy; CARTO'
+            }).addTo(map);
+
 
         // Toggle dragging based on zoom vs initialZoom
         function syncDraggingToZoom() {
@@ -744,12 +741,10 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             shapes = L.geoJSON(geojsonData, { onEachFeature: enhanceLayer }).addTo(map);               
 
             min_value.innerHTML = range_min.toLocaleString("en-GB");       
-            max_value.innerHTML = range_max.toLocaleString("en-GB");         
+            max_value.innerHTML = range_max.toLocaleString("en-GB"); 
+            
 
-             
-
-
-            document.getElementById("map-title").textContent = `Mapped by ${result.dimension[geog_type].label} (${year})` ;
+            document.getElementById("map-title").textContent = `${stat_label} by ${result.dimension[geog_type].label} (${year})` ;
             document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
         } else {
