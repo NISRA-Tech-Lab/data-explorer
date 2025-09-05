@@ -169,18 +169,38 @@ async function createMenus () {
     fillStatMenu();
 
     themes_menu.onchange = function () {
+        fillSubjectsMenu();
+        subjects_menu.value = subjects_menu.options[0].value;
+        fillProductsMenu();
+        products_menu.value = products_menu.options[0].value;
+        fillNamesMenu();
+        names_menu.value = names_menu.options[0].value;
+        fillGeoMenu();
+        geo_menu.value = geo_menu.options[0].value;
         window.location.search = `?table=${geo_menu.value}`;
     }
 
     subjects_menu.onchange = function() {
+        fillProductsMenu();
+        products_menu.value = products_menu.options[0].value;
+        fillNamesMenu();
+        names_menu.value = names_menu.options[0].value;
+        fillGeoMenu();
+        geo_menu.value = geo_menu.options[0].value;
         window.location.search = `?table=${geo_menu.value}`;
     }
 
     products_menu.onchange = function () {
+        fillNamesMenu();
+        names_menu.value = names_menu.options[0].value;
+        fillGeoMenu();
+        geo_menu.value = geo_menu.options[0].value;
         window.location.search = `?table=${geo_menu.value}`;
     }
 
     names_menu.onchange = function () {
+       fillGeoMenu();
+        geo_menu.value = geo_menu.options[0].value;
         window.location.search = `?table=${geo_menu.value}`;
     }
 
