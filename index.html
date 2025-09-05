@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NISRA Data Viewer</title>
+  <title>NISRA Data Explorer</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  
   <!-- Bootstrap CSS/JS (v5.3.3) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Icons & Charts -->
   <script src="https://kit.fontawesome.com/ee3848f0f5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js" integrity="sha512-Hn1w6YiiFw6p6S2lXv6yKeqTk0PLVzeCwWY9n32beuPjQ5HLcvz5l2QsP+KilEr1ws37rCTw3bZpvfvVIeTh0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -31,233 +35,290 @@
 <body class="bg-body">
 
   <!-- Top Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
-    <div class="container-fluid">
-      <!-- SHOW THIS BUTTON ON ALL SIZES -->
-      <button class="btn btn-outline-primary me-2" type="button"
-              data-bs-toggle="offcanvas" data-bs-target="#sidebar"
-              aria-controls="sidebar" aria-label="Open filters">
-        <i class="fa-solid fa-sliders"></i> Datasets
-      </button>
+  <nav class="navbar py-3" style="background-color:#00205b;">
+  <div class="container-fluid d-flex align-items-center">
+    <!-- Mobile: sidebar trigger (hidden ≥ lg) -->
+    <button class="btn btn-outline-light d-lg-none me-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+            aria-controls="sidebar"
+            aria-label="Open filters">
+      <i class="bi bi-list"></i><span class="ms-1">Search for Data</span>
+    </button>
 
-      <h1 class="navbar-brand app-brand">NISRA Data Viewer</h1>
-    </div>
-  </nav>
+    <!-- Logo (left) -->
+    <a class="navbar-brand ps-2 d-flex align-items-center me-auto" href="#">
+      <img src="img/nisra-logo-white-bilingual-wide.svg" alt="NISRA logo" height="60" class="me-3">
+    </a>
 
-  <!-- Sidebar: offcanvas on ALL breakpoints -->
-  <div class="offcanvas offcanvas-start sidebar" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-    <div class="offcanvas-header border-bottom">
-      <h5 class="offcanvas-title" id="sidebarLabel"><i class="fa-solid fa-sliders"></i> Datasets</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
+    <!-- Heading (right) -->
+    <h1 class="mb-0 pe-2 text-white fs-2 app-title ms-2">NISRA Data Explorer</h1>
+  </div>
+</nav>
 
-    <div class="offcanvas-body">
 
-      <div class="pt-3 sidebar-search">
-          <label for="global-search" class="form-label mb-1 h6">Search by table name:</label>
-          <div class="input-group">
-            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <input id="global-search" type="search" class="form-control" placeholder="Search" autocomplete="off">
+  <!-- Two-column layout: sidebar + content -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Sidebar:
+           - Offcanvas on < lg
+           - Static column on ≥ lg (thanks to .offcanvas-lg)
+      -->
+      <aside class="col-12 col-lg-3 col-xxl-2 border-end p-0">
+        <div class="offcanvas offcanvas-start offcanvas-lg sidebar h-100" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="sidebarLabel"><i class="bi bi-search"></i> Select Data</h5>
+            <!-- Close button shown only on mobile -->
+            <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
 
-          <!-- live results go here -->
-          <div id="global-search-results" class="list-group mt-2"></div>
+          <div class="offcanvas-body">
+
+            <div class="pt-3 px-1 sidebar-search">
+              <label for="global-search" class="form-label mb-1 h6">Search by topic:</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input id="global-search" type="search" class="form-control" placeholder="Search" autocomplete="off">
+              </div>
+              <div id="global-search-results" class="list-group mt-2"></div>
+            </div>
+
+            <div class="pt-3 px-1 vstack gap-3">
+              <p class="h6">Or browse by category:</p>
+              <div>
+                <label for="theme" class="form-label">Choose a theme</label>
+                <select id="theme" name="theme" class="form-select"></select>
+              </div>
+              <div>
+                <label for="subject" class="form-label">Choose a subject</label>
+                <select id="subject" name="subject" class="form-select"></select>
+              </div>
+              <div>
+                <label for="product" class="form-label">Choose a product</label>
+                <select id="product" name="product" class="form-select"></select>
+              </div>
+              <div>
+                <label for="name" class="form-label">Choose a table</label>
+                <select id="name" name="name" class="form-select"></select>
+              </div>
+              <div class="d-none">
+                <label for="geo" class="form-label">Choose a geography type</label>
+                <select id="geo" name="geo" class="form-select"></select>
+              </div>
+              <div>
+                <label for="stat" class="form-label">Choose a statistic</label>
+                <select id="stat" name="stat" class="form-select"></select>
+              </div>
+
+              <div id="other-vars" class="vstack gap-3"></div>
+
+              <div class="pt-3"></div>
+              <!-- Done button: mobile only -->
+              <button type="button" class="btn btn-primary w-100 d-lg-none" data-bs-dismiss="offcanvas">
+                Done
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="col-12 col-lg-9 col-xxl-10">
+        <div class="py-4">
+
+          <!-- Titles -->
+          <div class="row g-4 align-items-stretch mb-3">
+            <div class="col-12 col-xl-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <nav aria-label="breadcrumb">
+                    <ol id="breadcrumb" class="breadcrumb mb-0 mt-2 mb-2 text-secondary">
+                      <li id="nav-theme" class="breadcrumb-item"></li>
+                      <li id="nav-subject" class="breadcrumb-item"></li>
+                      <li id="nav-product" class="breadcrumb-item"></li>
+                    </ol>
+                  </nav>
+                  <p id="table-title" class="h2"></p>
+                </div>
+              </div>
+            </div>
+            <div id="headline" class="col-12 col-xl-6 d-none">
+              <div class="card h-100">
+                <div class="card-body">
+                  <p id="headline-fig"></p>
+                  <p class="text-secondary" id="headline-stat"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map & Chart row -->
+          <div class="row g-4 align-items-stretch">
+            <div id="map-card" class="col-12 col-xl-6">
+              <div class="card h-100">
+                <div class="card-header">
+                  <h3 id="map-title" class="h5 mb-0"></h3>
+                </div>
+                <div class="card-body">
+                  <div class="position-relative">
+                    <p id="map-subtitle" class="text-secondary mb-0"></p>
+                    <div id="map-container" class="rounded-2 justify-content-center mx-auto"></div>
+                  </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between small">
+                  <span id="map-updated" class="text-secondary"></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div id="chart-card" class="col-12 col-xl-6 d-none">
+              <div class="card h-100">
+                <div class="card-header">
+                  <h3 id="chart-title" class="h5 mb-0"></h3>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <p id="chart-subtitle" class="text-secondary mb-0"></p>
+                  <div id="chart-container" class="rounded-2 mt-auto">
+                  </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between small">
+                  <span id="chart-updated" class="text-secondary"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Preview -->
+          <div class="row g-4 mt-1">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs" id="previewTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="data-tab" data-bs-toggle="tab" data-bs-target="#data-preview" type="button" role="tab" aria-controls="data-preview" aria-selected="true">
+                        Data Preview
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="meta-tab" data-bs-toggle="tab" data-bs-target="#metadata" type="button" role="tab" aria-controls="metadata" aria-selected="false">
+                        Metadata
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body tab-content" id="previewTabsContent">
+                  <div class="tab-pane fade show active" id="data-preview" role="tabpanel" aria-labelledby="data-tab">
+                    <div class="table-responsive">
+                      <table id="table-preview" class="table table-sm table-bordered mb-0"></table>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="metadata" role="tabpanel" aria-labelledby="meta-tab">
+                    <div id="metadata-text"></div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <p id="dp-link" class="mb-0 small"></p>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
+      </main>
 
-      <div class="pt-3 vstack gap-3">
-        <p class = "h6">Or browse NISRA Data Portal:</p>
-        <div>
-          <label for="theme" class="form-label">Choose a theme</label>
-          <select id="theme" name="theme" class="form-select"></select>
-        </div>
-        <div>
-          <label for="subject" class="form-label">Choose a subject</label>
-          <select id="subject" name="subject" class="form-select"></select>
-        </div>
-        <div>
-          <label for="product" class="form-label">Choose a product</label>
-          <select id="product" name="product" class="form-select"></select>
-        </div>
-        <div>
-          <label for="name" class="form-label">Choose a table</label>
-          <select id="name" name="name" class="form-select"></select>
-        </div>
-        <div class = "d-none">
-          <label for="geo" class="form-label">Choose a geography type</label>
-          <select id="geo" name="geo" class="form-select"></select>
-        </div>
-        <div>
-          <label for="stat" class="form-label">Choose a statistic</label>
-          <select id="stat" name="stat" class="form-select"></select>
-        </div>
-
-        <div id="other-vars" class = "vstack gap-3">
-          <!-- dynamic inputs injected here -->
-        </div>
-
-        
-        
-        
-        <div class="pt-3"></div>
-        <button type="button"
-                class="btn btn-primary w-100"
-                data-bs-dismiss="offcanvas">
-          Done
-        </button>
-
-        </div>
-      </div>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <main class="content-wrap">
-    <div class="container-fluid py-4">
 
-      <!-- Titles -->
-      <div class="row g-4 align-items-stretch mb-3">
-      <div class="col-12 col-lg-6">
-        <div class="card h-100">
-          <div class="card-body">
-            
 
-            <!-- Breadcrumb placeholder -->
-            <nav aria-label="breadcrumb">
-              <ol id="breadcrumb" class="breadcrumb mb-0 mt-2 mb-2 text-secondary">
-                <li id = "nav-theme" class="breadcrumb-item"></li>
-                <li id = "nav-subject" class="breadcrumb-item"></li>
-                <li id = "nav-product" class="breadcrumb-item"></li>
-              </ol>
-            </nav>
-            <p id="table-title" class="h2"></p>
-          </div>
-        </div>
+
+<footer class="footer mt-auto py-4 bg-nisra text-white">
+  <div class="container">
+    <!-- 3 column section -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <h5>Data Tools</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://explore.nisra.gov.uk/local-stats/">Local Statistics Explorer</a></li>
+          <li><a href="https://data.nisra.gov.uk">Data Portal</a></li>
+          <li><a href="https://build.nisra.gov.uk/en/">Census Flexible Table Builder</a></li>
+        </ul>
       </div>
-      <div id = "headline" class="col-12 col-lg-6 d-none">
-        <div class="card h-100">
-          <div class="card-body">
-            <p id="headline-fig"></p>
-            <p class = "text-secondary" id ="headline-stat"></p>
-          </div>
-        </div>
+      <div class="col-md-4">
+        <h5>Corporate</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.nisra.gov.uk/">NISRA Website</a></li>
+          <li><a href="https://www.nisra.gov.uk/statistics/about-nisra/careers">Careers</a></li>
+          <li><a href="https://www.nisra.gov.uk/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Follow</h5>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/nisra.gov.uk">
+              <img src="img/facebook-brands-solid-full.svg" class="img-50"/>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://x.com/NISRA/">
+              <img src="img/x-twitter-brands-solid-full.svg" class="img-50"/>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.youtube.com/user/nisrastats">
+              <img src="img/youtube-brands-solid-full.svg" class="img-50"/>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/company/northern-ireland-statistics-and-research-agency/">
+              <img src="img/linkedin-in-brands-solid-full.svg" class="img-50"/>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
-
-      <!-- Map & Chart row (side-by-side on lg+, stacked on mobile) -->
-      <div class="row g-4 align-items-stretch">
-        <div id = "map-card" class="col-12 col-lg-6">
-          <div class="card h-100">
-            <div class="card-header">
-              <h3 id = "map-title" class="h5 mb-0"></h3>
-            </div>
-            <div class="card-body">
-              <div class="position-relative">
-                <p id="map-subtitle" class="text-secondary mb-0"></p>
-                <div id="map-container" class="rounded-2 justify-content-center mx-auto"></div>
-              </div>
-            </div>
-            <div class="card-footer d-flex justify-content-between small">
-              <span id="map-updated" class="text-secondary"></span>
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div id = "chart-card" class="col-12 col-lg-6 d-none">
-          <div class="card h-100">
-            <div class="card-header">
-              <h3 id="chart-title" class="h5 mb-0"></h3>
-            </div>
-            <div class="card-body d-flex flex-column">
-              <p id="chart-subtitle" class="text-secondary mb-0"></p>
-              <div id="chart-container" class="rounded-2 mt-auto">
-                <!-- your canvas/chart gets injected here by JS -->
-              </div>
-            </div>
-            <div class="card-footer d-flex justify-content-between small">
-              <span id="chart-updated" class="text-secondary"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Data Preview row (full width) -->
-      <div class="row g-4 mt-1">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <!-- Tabs -->
-              <ul class="nav nav-tabs card-header-tabs" id="previewTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="data-tab" data-bs-toggle="tab" data-bs-target="#data-preview" type="button" role="tab" aria-controls="data-preview" aria-selected="true">
-                    Data Preview
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="meta-tab" data-bs-toggle="tab" data-bs-target="#metadata" type="button" role="tab" aria-controls="metadata" aria-selected="false">
-                    Metadata
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body tab-content" id="previewTabsContent">
-              <!-- Data Preview Tab -->
-              <div class="tab-pane fade show active" id="data-preview" role="tabpanel" aria-labelledby="data-tab">
-                <div class="table-responsive">
-                  <table id="table-preview" class="table table-sm table-bordered mb-0"></table>
-                </div>
-              </div>
-              <!-- Metadata Tab -->
-              <div class="tab-pane fade" id="metadata" role="tabpanel" aria-labelledby="meta-tab">
-                <!-- You can add your metadata content here later -->
-                <div id = "metadata-text"></div>
-              </div>
-            </div>
-            <div class="card-footer">
-              <p id="dp-link" class="mb-0 small"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </main>
+    <!-- Horizontal list with separators -->
+    <ul class="list-inline footer-links text-center mb-0">
+      <li class="list-inline-item"><a href="https://www.nisra.gov.uk/crown-copyright">© Crown Copyright</a></li>
+      <li class="list-inline-item">|</li>
+      <li class="list-inline-item"><a href="https://www.nisra.gov.uk/terms-and-conditions">Terms and conditions</li>
+      <li class="list-inline-item">|</li>
+      <li class="list-inline-item"><a href="https://www.nisra.gov.uk/cookies">Cookies</a></li>
+      <li class="list-inline-item">|</li>
+      <li class="list-inline-item"><a href="https://www.nisra.gov.uk/nisra-privacy-notice">Privacy</a></li>
+      <li class="list-inline-item">|</li>
+      <li class="list-inline-item"><a href="https://www.nisra.gov.uk/accessibility-statement-nisra">Accessibility Statement</a></li>
+    </ul>
+  </div>
+</footer>
 
   <script src="index.js"></script>
+
+  <!-- Remove the old "always open offcanvas" script.
+       If you still want to auto-open the drawer on *mobile only* the first time,
+       use this tiny optional snippet: -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const STORAGE_KEY = "nisra:data-explorer:sidebarOpen";
-      const sidebarEl = document.getElementById("sidebar");
-      const offcanvas = new bootstrap.Offcanvas(sidebarEl);
-
-      // Default open on first load; otherwise restore last state
-      const saved = localStorage.getItem(STORAGE_KEY);
-      const shouldOpen = (saved === null) || (saved === "true") || (window.location.search === "");
-
-      if (shouldOpen && !sidebarEl.classList.contains("show")) {
-        // Temporarily disable animation for the first show on page load
+      const mq = window.matchMedia("(max-width: 991.98px)");
+      if (!mq.matches) return; // only mobile
+      const STORAGE_KEY = "nisra:data-explorer:sidebarOpenedOnce";
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        const el = document.getElementById("sidebar");
+        const off = new bootstrap.Offcanvas(el);
         document.body.classList.add("offcanvas-no-anim");
-        offcanvas.show();
-        // Once shown, re-enable animations for future user toggles
-        sidebarEl.addEventListener("shown.bs.offcanvas", () => {
+        off.show();
+        el.addEventListener("shown.bs.offcanvas", () => {
           document.body.classList.remove("offcanvas-no-anim");
+          localStorage.setItem(STORAGE_KEY, "1");
         }, { once: true });
       }
-
-      // Persist state on user actions
-      sidebarEl.addEventListener("shown.bs.offcanvas", () => {
-        localStorage.setItem(STORAGE_KEY, "true");
-      });
-      sidebarEl.addEventListener("hidden.bs.offcanvas", () => {
-        localStorage.setItem(STORAGE_KEY, "false");
-      });
     });
   </script>
-
-
 
 </body>
 </html>
