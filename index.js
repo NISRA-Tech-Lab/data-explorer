@@ -153,9 +153,9 @@ async function createMenus () {
     let selected_theme = tables[default_table].theme_code;
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("theme=")) {
+        if (search[i].includes("table=")) {
             search_split = search[i].split("=");
-            selected_theme = search_split[1].replaceAll("%20", " ");
+            selected_theme = tables[search_split[1]].theme_code;
             break;
         }
     }
@@ -169,27 +169,27 @@ async function createMenus () {
     fillStatMenu();
 
     themes_menu.onchange = function () {
-        window.location.search = `?theme=${themes_menu.value}`;
+        window.location.search = `?table=${geo_menu.value}`;
     }
 
     subjects_menu.onchange = function() {
-        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}`;
+        window.location.search = `?table=${geo_menu.value}`;
     }
 
     products_menu.onchange = function () {
-        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}`;
+        window.location.search = `?table=${geo_menu.value}`;
     }
 
     names_menu.onchange = function () {
-        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}`;
+        window.location.search = `?table=${geo_menu.value}`;
     }
 
     geo_menu.onchange = function () {
-        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}&geo=${geo_menu.value}`;
+        window.location.search = `?table=${geo_menu.value}`;
     }
 
     stats_menu.onchange = function () {
-        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}&geo=${geo_menu.value}&stat=${stats_menu.value}`;
+        window.location.search = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
     }
 
 }
@@ -273,14 +273,18 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
                 document.getElementById(other_vars[i]).value = selected_option;
 
-                new_menu.onchange = function () {
-                    plotMap(matrix, statistic, geog_type, other = document.getElementById(other_vars[i]).value);
+               
 
-                    if (i == 0) {
-                        window.location.search = `?theme=${themes_menu.value}&subject=${subjects_menu.value}&product=${products_menu.value}&name=${names_menu.value}&geo=${geo_menu.value}&stat=${stats_menu.value}&${other_vars[i]}=${document.getElementById(other_vars[i]).value}`;
-                    } else {
-                        window.location.search += `&${other_vars[i]}=${document.getElementById(other_vars[i]).value}`;
-                    }
+                new_menu.onchange = function () {
+
+                    let search_string = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
+
+                    for (let j = 0; j < other_vars.length; j ++) {
+                        search_string += `&${other_vars[j]}=${document.getElementById(other_vars[j]).value}`;
+                    }                    
+
+                    window.location.search = search_string;
+                    
                 }
             }
 
@@ -897,9 +901,9 @@ function fillSubjectsMenu () {
     }
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("subject")) {
+        if (search[i].includes("table")) {
             search_split = search[i].split("=");
-            selected_subject = search_split[1];
+            selected_subject = tables[search_split[1]].subject_code;
             break;
         }
     }
@@ -935,16 +939,16 @@ function fillProductsMenu () {
         products_menu.appendChild(option);
     }
 
-    let selected_product = products[Object.keys(products)[0]].code;
+    let selected_product;
 
     if (window.location.search == "") {
         selected_product = tables[default_table].product_code;
     }
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("product=")) {
+        if (search[i].includes("table=")) {
             search_split = search[i].split("=");
-            selected_product = search_split[1];
+            selected_product = tables[search_split[1]].product_code;
             break;
         }
     }
@@ -987,9 +991,9 @@ function fillNamesMenu () {
     }
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("name=")) {
+        if (search[i].includes("table=")) {
             search_split = search[i].split("=");
-            selected_name = search_split[1];
+            selected_name = tables[search_split[1]].name.replaceAll(" ", "-");
             break;
         }
     }
@@ -1057,14 +1061,14 @@ function fillGeoMenu () {
         document.getElementById("geo").parentElement.classList.remove("d-none");
     }
 
-    let selected_geo = geo_menu.options[0].value;
+    let selected_geo;
 
     if (window.location.search == "") {
         selected_geo = default_table;
     }
 
     for (let i = 0; i < search.length; i ++) {
-        if (search[i].includes("geo=")) {
+        if (search[i].includes("table=")) {
             search_split = search[i].split("=");
             selected_geo = search_split[1];
         }
