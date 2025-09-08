@@ -85,7 +85,6 @@ const GEOG_PROPS = {
 
 const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
 
-
 let themes_menu = document.getElementById("theme");
 let products_menu = document.getElementById("product");
 let subjects_menu = document.getElementById("subject");
@@ -106,33 +105,73 @@ let metadata_text = document.getElementById("metadata-text");
 
 let search = window.location.search.replace("?", "").split("&");
 
+const TABLES_CACHE_KEY = "nisra:tables:v1";     // bump v1→v2 if schema changes
+const TABLES_TTL_MS    = 60 * 60 * 1000;        // 1 hour
+
+function readCachedTables(allowStale = false) {
+  try {
+    const raw = localStorage.getItem(TABLES_CACHE_KEY);
+    if (!raw) return null;
+    const { ts, data } = JSON.parse(raw);
+    if (!data) return null;
+    if (allowStale) return data;
+    if (Date.now() - ts < TABLES_TTL_MS) return data;
+    return null;
+  } catch { return null; }
+}
+
+function writeCachedTables(data) {
+  try {
+    localStorage.setItem(TABLES_CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+  } catch { /* storage may be full or blocked; ignore */ }
+}
+
+async function loadTables() {
+  // 1) serve fresh cache immediately if valid
+  const fresh = readCachedTables(false);
+  if (fresh) return fresh;
+
+  // 2) try network; on success, cache+return
+  try {
+    const res = await fetch("data-portal-tables.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    writeCachedTables(data);
+    return data;
+  } catch (e) {
+    // 3) fall back to stale cache if we have one
+    const stale = readCachedTables(true);
+    if (stale) return stale;
+    throw e; // nothing available
+  }
+}
+
+
 async function createMenus () {
 
     try {
-        const response = await fetch("data-portal-tables.json");
-        const responseData = await response.json();
-        tables = responseData;
-        // Build a global search index from all datasets
-        searchIndex = Object.keys(tables).map(key => {
-        const t = tables[key] || {};
-        const name = (t.name || "").trim();
-        return {
-            key,
-            name,
-            nameLower: name.toLowerCase(),
-            theme_code: t.theme_code,
-            subject_code: t.subject_code,
-            product_code: t.product_code,
-            theme: t.theme,
-            subject: t.subject,
-            product: t.product,
-            slug: name.replace(/\s+/g, "-")   // your app uses spaces → hyphens
-        };
-        });
-
-    } catch (error) {
-        
-    }
+    tables = await loadTables();  // ← cached load
+    // Build global search index
+    searchIndex = Object.keys(tables).map(key => {
+      const t = tables[key] || {};
+      const name = (t.name || "").trim();
+      return {
+        key,
+        name,
+        nameLower: name.toLowerCase(),
+        theme_code: t.theme_code,
+        subject_code: t.subject_code,
+        product_code: t.product_code,
+        theme: t.theme,
+        subject: t.subject,
+        product: t.product,
+        slug: name.replace(/\s+/g, "-")
+      };
+    });
+  } catch (error) {
+    console.error("Failed to load tables:", error);
+    return; // bail early if we truly have nothing
+  }
 
     let themes = {}
 
