@@ -791,9 +791,9 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         document.getElementById("table-title").textContent = `${result.label}`;
             page_title.textContent += ` - ${result.label}`;
 
-            document.getElementById("nav-theme").textContent = tables[matrix].theme;        
-            document.getElementById("nav-subject").textContent = tables[matrix].subject;    
-            document.getElementById("nav-product").textContent = tables[matrix].product;   
+            document.getElementById("nav-theme").textContent = tables[geo_menu.value].theme;        
+            document.getElementById("nav-subject").textContent = tables[geo_menu.value].subject;    
+            document.getElementById("nav-product").textContent = tables[geo_menu.value].product;   
 
         document.getElementById("chart-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
@@ -1182,7 +1182,7 @@ function mapSelections () {
         geog_type = "none";
     }
 
-    plotMap(geo_menu.value, stats_menu.value, geog_type);
+    plotMap(geo_menu.value.replace(/_[0-9]+/, ""), stats_menu.value, geog_type);
 
 }
 

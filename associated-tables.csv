@@ -1,0 +1,497 @@
+MtrCode,MtrTitle,PRC_VALUE,PRC_CODE,prc_value,prc_code
+ACILWHSCT,Continuous Household Survey: Accidents/Illnesses at Work,Accidents or illnesses at work,JRVAIW,Safe and Healthy Workplaces,MLBTH5P8
+ADMITDEA,Primary Reason for Admissions to HSC Hospitals,Hospital activity,HAWLHA,Hospital Activity,MLBTH3P5
+ADPTNSAGE,Adoptions,Adoptions,BDMA,Children Services,MLBTH1P6
+ADPTNSSX,Adoptions,Adoptions,BDMA,Children Services,MLBTH1P6
+ALLAPPLGD,ApprenticeshipsNI and Higher Level Apprenticeships by LGD,Apprenticeships,TAAPP,Education and Training,MLBTH2P3
+ALLAPPSTEM,ApprenticeshipsNI and Higher Level Apprenticeships by Narrow STEM,Apprenticeships,TAAPP,Education and Training,MLBTH2P3
+APPSNIAA,ApprenticeshipsNI,Apprenticeships,TAAPP,Education and Training,MLBTH2P3
+APPSNILGD,ApprenticeshipsNI,Apprenticeships,TAAPP,Education and Training,MLBTH2P3
+ARTCULEQ,Arts and Cultural Activities Participation,"Culture, arts, heritage and sport",CCAHS,"Arts, Culture and Sport",ACS
+ASBAA,Anti-Social Behaviour Incidents,Anti-social behaviour,CANTISB,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+ASBDEA,Anti-Social Behaviour Incidents,Anti-social behaviour,CANTISB,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+ASBHSCT,Anti-Social Behaviour Incidents,Anti-social behaviour,CANTISB,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+ASBLGD,Anti-Social Behaviour Incidents,Anti-social behaviour,CANTISB,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+ASBUR,Anti-Social Behaviour Incidents,Anti-social behaviour,CANTISB,Crime and Justice,CJ
+ASBUR,Anti-Social Behaviour Incidents,Anti-social behaviour,CANTISB,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+ASBWARD,Anti-Social Behaviour Incidents,Anti-social behaviour,CANTISB,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+BCREFHSCT,Breast Cancer Referrals,Hospital waiting times,HAWLHWT,Hospital Activity,MLBTH3P5
+BFEEDAA,Breastfeeding on discharge,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+BFEEDDEA,Breastfeeding on discharge,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+BFEEDHSCT,Breastfeeding on discharge,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+BFEEDLGD,Breastfeeding on discharge,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+BRTHSACADDEA,Births Registered,Births,BDMB,Births Registered,MLBTH1P1
+BRTHSACADLGD,Births Registered,Births,BDMB,Births Registered,MLBTH1P1
+BRTHSACADWARD,Births Registered,Births,BDMB,Births Registered,MLBTH1P1
+BSAA,Benefit Statistics,Benefits,DWRBB,Social Welfare,MLBTH4P2
+BSDEA,Benefit Statistics,Benefits,DWRBB,Social Welfare,MLBTH4P2
+BSDZ,Benefit Statistics,Benefits,DWRBB,Social Welfare,MLBTH4P2
+BSHSCT,Benefit Statistics,Benefits,DWRBB,Social Welfare,MLBTH4P2
+BSLGD,Benefit Statistics,Benefits,DWRBB,Civil Participation and Employment,DOM6
+BSLGD,Benefit Statistics,Benefits,DWRBB,Social Welfare,MLBTH4P2
+BSSDZ,Benefit Statistics,Benefits,DWRBB,Social Welfare,MLBTH4P2
+BSWARD,Benefit Statistics,Benefits,DWRBB,Social Welfare,MLBTH4P2
+C21008DEA,Long-term health problem or disability,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21008HSCT,Long-term health problem or disability,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21008LGD,Long-term health problem or disability,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21008NI,Long-term health problem or disability,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21009HSCT,General health by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21009LGD,General health by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21009NI,General health by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21010HSCT,Long-term health problem or disability by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21010LGD,Long-term health problem or disability by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21010NI,Long-term health problem or disability by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21011HSCT,Number of long-term conditions by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21011LGD,Number of long-term conditions by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21011NI,Number of long-term conditions by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21012HSCT,Type of long-term condition: Autism or Asperger syndrome by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21012LGD,Type of long-term condition: Autism or Asperger syndrome by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21012NI,Type of long-term condition: Autism or Asperger syndrome by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21013HSCT,Type of long-term condition: Shortness of breath or difficulty breathing by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21013LGD,Type of long-term condition: Shortness of breath or difficulty breathing by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21013NI,Type of long-term condition: Shortness of breath or difficulty breathing by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21014HSCT,"Type of long-term condition: Emotional, psychological or mental health condition by age and sex",Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21014LGD,"Type of long-term condition: Emotional, psychological or mental health condition by age and sex",Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21014NI,"Type of long-term condition: Emotional, psychological or mental health condition by age and sex",Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21015HSCT,Type of long-term condition: Deafness or partial hearing loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21015LGD,Type of long-term condition: Deafness or partial hearing loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21015NI,Type of long-term condition: Deafness or partial hearing loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21016HSCT,Type of long-term condition: Intellectual or learning disability by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21016LGD,Type of long-term condition: Intellectual or learning disability by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21016NI,Type of long-term condition: Intellectual or learning disability by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21017HSCT,Type of long-term condition: Learning difficulty by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21017LGD,Type of long-term condition: Learning difficulty by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21017NI,Type of long-term condition: Learning difficulty by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21018HSCT,Type of long-term condition: Frequent periods of confusion or memory loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21018LGD,Type of long-term condition: Frequent periods of confusion or memory loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21018NI,Type of long-term condition: Frequent periods of confusion or memory loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21019HSCT,Type of long-term condition: Mobility or dexterity difficulty that limits basic physical activities by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21019LGD,Type of long-term condition: Mobility or dexterity difficulty that limits basic physical activities by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21019NI,Type of long-term condition: Mobility or dexterity difficulty that limits basic physical activities by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21020HSCT,Type of long-term condition: Mobility or dexterity difficulty that requires the use of a wheelchair by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21020LGD,Type of long-term condition: Mobility or dexterity difficulty that requires the use of a wheelchair by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21020NI,Type of long-term condition: Mobility or dexterity difficulty that requires the use of a wheelchair by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21021HSCT,Type of long-term condition: Other condition by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21021LGD,Type of long-term condition: Other condition by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21021NI,Type of long-term condition: Other condition by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21022HSCT,Type of long-term condition: Long-term pain or discomfort by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21022LGD,Type of long-term condition: Long-term pain or discomfort by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21022NI,Type of long-term condition: Long-term pain or discomfort by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21023HSCT,Type of long-term condition: Blindness or partial sight loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21023LGD,Type of long-term condition: Blindness or partial sight loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21023NI,Type of long-term condition: Blindness or partial sight loss by age and sex,Census 2021,C2021,Health Conditions and Disability,MLBTH3P6
+C21500EQ,Usual resident population,Census 2021,C2021,Census,CEN
+C21501EQ,Economic activity,Census 2021,C2021,Census,CEN
+C21502EQ,Industry of employment,Census 2021,C2021,Census,CEN
+C21503EQ,Hours worked,Census 2021,C2021,Census,CEN
+CARELEAVE19HSCT,Care Leavers Aged 19,Children looked after in care,CLA,Children Services,MLBTH1P6
+CCAAAA,Claimant Count Annual Averages,Claimant count,DWRBCC,Economic Inactivity,MLBTH4P4
+CCAALGD,Claimant Count Annual Averages,Claimant count,DWRBCC,Economic Inactivity,MLBTH4P4
+CCMAA,Claimant Count Monthly Data,Claimant count,DWRBCC,Economic Inactivity,MLBTH4P4
+CCMLGD,Claimant Count Monthly Data,Claimant count,DWRBCC,Economic Inactivity,MLBTH4P4
+CCMSOA,Claimant Count Monthly Data,Claimant count,DWRBCC,Economic Inactivity,MLBTH4P4
+CHILDBMIHSCT,Childhood BMI,Diet and dental health,HIDDH,Healthy Children,MLBTH1P4
+CHILDBMIHSCT,Childhood BMI,Diet and dental health,HIDDH,Healthy Behaviours,MLBTH3P4
+CHILDBMILGD,Childhood BMI,Diet and dental health,HIDDH,Healthy Children,MLBTH1P4
+CHILDBMILGD,Childhood BMI,Diet and dental health,HIDDH,Healthy Behaviours,MLBTH3P4
+CHSACTIONLGD,Continuous Household Survey: Actions taken for a positive impact on the environment,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSACTIONLGD,Continuous Household Survey: Actions taken for a positive impact on the environment,Public attitudes,EECPA,Volunteering,MLBTH5P7
+CHSBIODIVLGD,Continuous Household Survey: Considered greatest threat to biodiversity,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSCONCERNLGD,Continuous Household Survey: Concern about the environment,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSCONLGD,Continuous Household Survey: Concern about the environment,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSENVIINFOLGD,Continuous Household Survey: Environmental Information Source,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSENVIPHRLGD,Continuous Household Survey: Environmental phrases heard of,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSENVIPROBLGD,Continuous Household Survey: Environmental problems considered most important,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSENVPROBLEMSLGD,Continuous Household Survey: Environmental problems considered most important,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSPOSIMPLGD,Continuous Household Survey: Actions taken for a positive impact on the environment,Public attitudes,EECPA,Environmental,MLBTH4P6
+CHSPOSIMPLGD,Continuous Household Survey: Actions taken for a positive impact on the environment,Public attitudes,EECPA,Volunteering,MLBTH5P7
+COMRELEQ,Community Relations,Community relations,CCR,Life and Times Survey,LATS
+CONFCJSHSCT,NISCS: Confidence in the Criminal Justice System,Confidence in system,EACS,Safe Communities Survey,MLBTH5P4
+CONFCJSLGD,NISCS: Confidence in the Criminal Justice System,Confidence in system,EACS,Safe Communities Survey,MLBTH5P4
+CONFPOHSCT,NISCS: Confidence in Policing,Confidence in system,EACS,Safe Communities Survey,MLBTH5P4
+CONFPOLGD,NISCS: Confidence in Policing,Confidence in system,EACS,Safe Communities Survey,MLBTH5P4
+CONTHRSHSCT,Domiciliary Care Contact Hours,Care at home,CAHS,Healthy Ageing,MLBTH2P1
+CONTWITHHSCT,Persons with Disability or Impairment in Contact with Health and Social Care Trusts,Care not at home,CNAH,Health Conditions and Disability,MLBTH3P6
+CULTIDEQ,Respected Cultural Identity,Community relations,CCR,Life and Times Survey,LATS
+CWT31HSCT,Cancer Waiting Times: Patients Starting Treatment Following a Decision to Treat (31 Day Target),Hospital waiting times,HAWLHWT,Hospital Activity,MLBTH3P5
+CWT31TUMOUR,Cancer Waiting Times: Patients Starting Treatment Following a Decision to Treat (31 Day Target),Hospital waiting times,HAWLHWT,Hospital Activity,MLBTH3P5
+CWT62HSCT,Cancer Waiting Times: Patients Starting Treatment Following an Urgent GP Referral (62 Day Target),Hospital waiting times,HAWLHWT,Hospital Activity,MLBTH3P5
+CWT62TUMOUR,Cancer Waiting Times: Patients Starting Treatment Following an Urgent GP Referral (62 Day Target),Hospital waiting times,HAWLHWT,Hospital Activity,MLBTH3P5
+CWTBCHSCT,Cancer Waiting Times: Patients Seen Following Urgent Referral for Suspect Breast Cancer (14 Day Target),Hospital waiting times,HAWLHWT,Hospital Activity,MLBTH3P5
+DCCLIENTSHSCT,Domiciliary Care Client Numbers,Care at home,CAHS,Healthy Ageing,MLBTH2P1
+DEATTAA,Pupil Attendance,Attendance,SAA,Education,MLBTH1P5
+DEATTDEA,Pupil Attendance,Attendance,SAA,Education,MLBTH1P5
+DEATTHSCT,Pupil Attendance,Attendance,SAA,Education,MLBTH1P5
+DEATTLGD,Pupil Attendance,Attendance,SAA,Education,MLBTH1P5
+DESCEQ,"Primary, Post Primary and Special Schools",All Schools,SEALL,Education,MLBTH1P5
+DESCEQ,"Primary, Post Primary and Special Schools",All Schools,SEALL,School and College Education,SCE
+DESCPAA,School Census - Primary,Primary,SEPRMRY,Education,MLBTH1P5
+DESCPDEA,School Census - Primary,Primary,SEPRMRY,Education,MLBTH1P5
+DESCPHSCT,School Census - Primary,Primary,SEPRMRY,Education,MLBTH1P5
+DESCPLGD,School Census - Primary,Primary,SEPRMRY,Education,MLBTH1P5
+DESCPPAA,School Census - Post Primary,Post Primary,SEPP,Education,MLBTH1P5
+DESCPPDEA,School Census - Post Primary,Post Primary,SEPP,Education,MLBTH1P5
+DESCPPHSCT,School Census - Post Primary,Post Primary,SEPP,Education,MLBTH1P5
+DESCPPLGD,School Census - Post Primary,Post Primary,SEPP,Education,MLBTH1P5
+DESCSAA,School Census - Special Schools,Special Schools,SESS,Education,MLBTH1P5
+DESCSDEA,School Census - Special Schools,Special Schools,SESS,Education,MLBTH1P5
+DESCSHSCT,School Census - Special Schools,Special Schools,SESS,Education,MLBTH1P5
+DESCSLGD,School Census - Special Schools,Special Schools,SESS,Education,MLBTH1P5
+DESLSAAA,School Leavers Survey - Attainment,Qualifications,SLQUAL,Education,MLBTH1P5
+DESLSADEA,School Leavers Survey - Attainment,Qualifications,SLQUAL,Education,MLBTH1P5
+DESLSAHSCT,School Leavers Survey - Attainment,Qualifications,SLQUAL,Education,MLBTH1P5
+DESLSALGD,School Leavers Survey - Attainment,Qualifications,SLQUAL,Education,MLBTH1P5
+DESLSDAA,School Leavers Survey - Destination,Destination,SLDEST,Education,MLBTH1P5
+DESLSDDEA,School Leavers Survey - Destination,Destination,SLDEST,Education,MLBTH1P5
+DESLSDHSCT,School Leavers Survey - Destination,Destination,SLDEST,Education,MLBTH1P5
+DESLSDLGD,School Leavers Survey - Destination,Destination,SLDEST,Education,MLBTH1P5
+DETNLGD,Teachers in Northern Ireland,School workforce,SWSW,Civil Participation and Employment,DOM6
+DFLEDEPQUIN,Disability Free Life Expectancy at Birth,Life expectancy and general health,HILEGH,Life Expectancy,MLBKOIP2
+DFLEURBRUR,Disability Free Life Expectancy at Birth,Life expectancy and general health,HILEGH,Health and Social Care,HSC
+DFLEURBRUR,Disability Free Life Expectancy at Birth,Life expectancy and general health,HILEGH,Life Expectancy,MLBKOIP2
+DISPREVAA,Raw disease prevalence,Disease prevalence,HCDDP,Health Conditions and Disability,MLBTH3P6
+DISPREVDEA,Raw disease prevalence,Disease prevalence,HCDDP,Health Conditions and Disability,MLBTH3P6
+DISPREVHSCT,Raw disease prevalence,Disease prevalence,HCDDP,Health Conditions and Disability,MLBTH3P6
+DISPREVLGD,Raw disease prevalence,Disease prevalence,HCDDP,Community Support and Health Services,DOM8
+DISPREVLGD,Raw disease prevalence,Disease prevalence,HCDDP,Health Conditions and Disability,MLBTH3P6
+DISPREVNI,Raw disease prevalence - Northern Ireland,Disease prevalence,HCDDP,Health Conditions and Disability,MLBTH3P6
+DOMAA,Domestic Abuse Crimes,Domestic abuse,CDA,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+DOMDEA,Domestic Abuse Incidents and Crimes,Domestic abuse,CDA,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+DOMHSCT,Domestic Abuse  Crimes,Domestic abuse,CDA,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+DOMLGD,Domestic Abuse Incidents and Crimes,Domestic abuse,CDA,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+DOMUR,Domestic Abuse Crimes,Domestic abuse,CDA,Crime and Justice,CJ
+DOMUR,Domestic Abuse Crimes,Domestic abuse,CDA,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+DOMWARD,Domestic Abuse Incidents and Crimes,Domestic abuse,CDA,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+DTHCAUSE,Deaths,Deaths,BDMD,Mortality,MLBTH3P1
+DTHCAUSELGD,Deaths,Deaths,BDMD,Mortality,MLBTH3P1
+DTHSALCHSCT,Alcohol Specific Deaths,Deaths,BDMD,Mortality,MLBTH3P1
+DTHSALCHSCT,Alcohol Specific Deaths,Deaths,BDMD,Healthy Behaviours,MLBTH3P4
+DTHSALCLGD,Alcohol Specific Deaths,Deaths,BDMD,Mortality,MLBTH3P1
+DTHSALCLGD,Alcohol Specific Deaths,Deaths,BDMD,Healthy Behaviours,MLBTH3P4
+DTHSDRHSCT,Drug-Related Deaths,Deaths,BDMD,Mortality,MLBTH3P1
+DTHSDRLGD,Drug-Related Deaths,Deaths,BDMD,Mortality,MLBTH3P1
+DTHSHSCT,Deaths Registered,Deaths,BDMD,Mortality,MLBTH3P1
+DTHSLGD,Deaths Registered,Deaths,BDMD,Mortality,MLBTH3P1
+DTHSOBHSCT,Deaths due to Obesity,Deaths,BDMD,Mortality,MLBTH3P1
+DTHSOBLGD,Deaths due to Obesity,Deaths,BDMD,Mortality,MLBTH3P1
+EDATTENDAA,Standardised Attendance Rate ? Emergency Attendances,Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+EDATTENDDEA,Standardised Attendance Rate ? Emergency Attendances,Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+EDATTENDHSCT,Standardised Attendance Rate ? Emergency Attendances,Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+EDATTENDLGD,Standardised Attendance Rate ? Emergency Attendances,Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+FEACHMAA,Achievements in Further Education Colleges,Achievements,FEACH,Education and Training,MLBTH2P3
+FEACHMDEA,Achievements in Further Education Colleges,Achievements,FEACH,Education and Training,MLBTH2P3
+FEACHMHSCT,Achievements in Further Education Colleges,Achievements,FEACH,Education and Training,MLBTH2P3
+FEACHMLGD,Achievements in Further Education Colleges,Achievements,FEACH,Education and Training,MLBTH2P3
+FEARCRIMEHSCT,NISCS: Fear of Crime,Attitudes to crime,EAAC,Safe Communities Survey,MLBTH5P4
+FEARCRIMELGD,NISCS: Fear of Crime,Attitudes to crime,EAAC,Safe Communities Survey,MLBTH5P4
+FEENROLAA,Regulated enrolments at Further Education Colleges,Enrolments,FEENROL,Education and Training,MLBTH2P3
+FEENROLDEA,Regulated enrolments at Further Education Colleges,Enrolments,FEENROL,Education and Training,MLBTH2P3
+FEENROLHSCT,Regulated enrolments at Further Education Colleges,Enrolments,FEENROL,Education and Training,MLBTH2P3
+FEENROLLGD,Regulated enrolments at Further Education Colleges,Enrolments,FEENROL,Education and Training,MLBTH2P3
+FPSGDSDRAA,General Dental Services Dental Registrations,Dental,PCDENT,Healthy Children,MLBTH1P4
+FPSGDSDRDEA,General Dental Services Dental Registrations,Dental,PCDENT,Healthy Children,MLBTH1P4
+FPSGDSDREW,General Dental Services Dental Registrations,Dental,PCDENT,Healthy Children,MLBTH1P4
+FPSGDSDRHSCT,General Dental Services Dental Registrations,Dental,PCDENT,Healthy Children,MLBTH1P4
+FPSGDSDRLCG,General Dental Services Dental Registrations,Dental,PCDENT,Healthy Children,MLBTH1P4
+FPSGDSDRLGD,General Dental Services Dental Registrations,Dental,PCDENT,Healthy Children,MLBTH1P4
+FPSGDSDTAA,General Dental Services Dental Treatments,Dental,PCDENT,Healthy Behaviours,MLBTH3P4
+FPSGDSDTDEA,General Dental Services Dental Treatments,Dental,PCDENT,Healthy Behaviours,MLBTH3P4
+FPSGDSDTEW,General Dental Services Dental Treatments,Dental,PCDENT,Healthy Behaviours,MLBTH3P4
+FPSGDSDTHSCT,General Dental Services Dental Treatments,Dental,PCDENT,Healthy Behaviours,MLBTH3P4
+FPSGDSDTLCG,General Dental Services Dental Treatments,Dental,PCDENT,Healthy Behaviours,MLBTH3P4
+FPSGDSDTLGD,General Dental Services Dental Treatments,Dental,PCDENT,Healthy Behaviours,MLBTH3P4
+GHGALL,Greenhouse Gas Emissions - Full dataset,Greenhouse gas emissions,EECGGE,Environmental,MLBTH4P6
+GHGALLRATES,Greenhouse Gas Emissions (Rates) - Full dataset,Greenhouse gas emissions,EECGGE,Environmental,MLBTH4P6
+GHGINSCOPE,Greenhouse Gas Emissions - Subset dataset,Greenhouse gas emissions,EECGGE,Environmental,MLBTH4P6
+GHGINSCOPERATES,Greenhouse Gas Emissions (Rates) - Subset dataset,Greenhouse gas emissions,EECGGE,Environmental,MLBTH4P6
+GPREGAA,GP Registrations,Medical,PCMED,Healthy Children,MLBTH1P4
+GPREGAA,GP Registrations,Medical,PCMED,Healthy Ageing,MLBTH2P1
+GPREGHSCT,GP Registrations,Medical,PCMED,Healthy Children,MLBTH1P4
+GPREGHSCT,GP Registrations,Medical,PCMED,Healthy Ageing,MLBTH2P1
+GPREGLGD,GP Registrations,Medical,PCMED,Healthy Children,MLBTH1P4
+GPREGLGD,GP Registrations,Medical,PCMED,Healthy Ageing,MLBTH2P1
+GPREGWARD,GP Registrations,Medical,PCMED,Healthy Children,MLBTH1P4
+GPREGWARD,GP Registrations,Medical,PCMED,Healthy Ageing,MLBTH2P1
+HATEAA,Hate Motivated Crimes,Hate motivated crimes and incidents,CHMCI,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+HATEDEA,Hate Motivated Incidents and Crimes,Hate motivated crimes and incidents,CHMCI,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+HATEHSCT,Hate Motivated Crimes,Hate motivated crimes and incidents,CHMCI,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+HATELGD,Hate Motivated Incidents and Crimes,Hate motivated crimes and incidents,CHMCI,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+HATEUR,Hate Motivated Crimes,Hate motivated crimes and incidents,CHMCI,Crime and Justice,CJ
+HATEUR,Hate Motivated Crimes,Hate motivated crimes and incidents,CHMCI,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+HATEWARD,Hate Motivated Incidents and Crimes,Hate motivated crimes and incidents,CHMCI,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+HEENROLAA,Enrolments at Higher Education Institutions,Enrolments,HEENROL,Education and Training,MLBTH2P3
+HEENROLDEA,Enrolments at Higher Education Institutions,Enrolments,HEENROL,Education and Training,MLBTH2P3
+HEENROLHSCT,Enrolments at Higher Education Institutions,Enrolments,HEENROL,Education and Training,MLBTH2P3
+HEENROLLGD,Enrolments at Higher Education Institutions,Enrolments,HEENROL,Education and Training,MLBTH2P3
+HEQUALAA,Qualifications at Higher Education Institutions,Qualifications,HEQUAL,Education and Training,MLBTH2P3
+HEQUALDEA,Qualifications at Higher Education Institutions,Qualifications,HEQUAL,Education and Training,MLBTH2P3
+HEQUALHSCT,Qualifications at Higher Education Institutions,Qualifications,HEQUAL,Education and Training,MLBTH2P3
+HEQUALLGD,Qualifications at Higher Education Institutions,Qualifications,HEQUAL,Education and Training,MLBTH2P3
+HHTLGD,Continuous Household Survey: Household Tenure,Housing stock,HHS,Housing,MLBTH4P8
+HSECIGEQ,Use of E-Cigarettes,Smoking,HBSMK,Health Survey,HLTHSUR
+HSGENHEQ,General Health,General health,HCDGH,Health Survey,HLTHSUR
+HSNSMOKEQ,Never Smoked,Smoking,HBSMK,Health Survey,HLTHSUR
+HSSMOKEQ,Smoking,Smoking,HBSMK,Health Survey,HLTHSUR
+HSSMOKEQ,Smoking,Smoking,HBSMK,Healthy Behaviours,MLBTH3P4
+IDCAGEHSCT,Intensive Domiciliary Care Client Age Groups,Care at home,CAHS,Community Support and Health Services,DOM8
+INCDEPINEQEQ,Income Deprivation and Inequality,Poverty,DPP,Family Resources Survey,FRS
+INCMEANGEOG,Mean Weekly Household Income (Before Housing Costs),Poverty,DPP,People and Communities,PC
+INCMEDIANGEOG,Median Equivalised Net Weekly Household Income,Poverty,DPP,People and Communities,PC
+INCQUINGEOG,Quintile distribution of net equivalised weekly household income,Poverty,DPP,People and Communities,PC
+INDARTCULEQ,Indicator - Arts and cultural activties,Arts and cultural activities,ACA,People and Communities,PC
+INDATPUBEQ,Indicator - Sustainable travel - public transport,Sustainable travel - public transport,STPT,"Transport, Environment and Climate Change",TECC
+INDATWALKEQ,Indicator - Active travel - walking and cycling,Active travel - walking and cycling,ATWC,"Transport, Environment and Climate Change",TECC
+INDCHSCAA,Indicator - Children's social care,Children's social care,CSC,Children Services,MLBTH1P6
+INDCHSCEQ,Indicator - Children's social care,Children's social care,CSC,Health and Social Care,HSC
+INDCHSCEQ,Indicator - Children's social care,Children's social care,CSC,Children Services,MLBTH1P6
+INDCHSCLGD,Indicator - Children's social care,Children's social care,CSC,Children Services,MLBTH1P6
+INDCOMRELEQ,Indicator - Community relations,Community relations,CREL,People and Communities,PC
+INDCRIMEEQ,Indicator - Crime prevalence rate,Crime prevalence rate,CPR,Crime and Justice,CJ
+INDCULTIDEQ,Indicator - Cultural identity,Cultural identity,CIDENT,People and Communities,PC
+INDECONINACTEQ,Indicator - Economic inactivity,Economic inactivity,EI,"Work, Pay and Benefits",WPB
+INDEMPRATEEQ,Indicator - Employment rate,Employment rate,ERATE,"Work, Pay and Benefits",WPB
+INDHLEFEQ,Indicator - Healthy life expectancy (females),Healthy life expectancy (females),HLEF,Health and Social Care,HSC
+INDHLEFEQ,Indicator - Healthy life expectancy (females),Healthy life expectancy (females),HLEF,Life Expectancy,MLBKOIP2
+INDHLEMEQ,Indicator - Healthy life expectancy (males),Healthy life expectancy (males),HLEM,Health and Social Care,HSC
+INDHLEMEQ,Indicator - Healthy life expectancy (males),Healthy life expectancy (males),HLEM,Life Expectancy,MLBKOIP2
+INDHOUSCTEQ,Indicator - Housing costs as a proportion of household income,Housing costs as a proportion of household income,HCPHI,People and Communities,PC
+INDHOUSTRSEQ,Indicator - Housing stress,Housing stress,HS,People and Communities,PC
+INDINCDPEQ,Indicator - Income deprivation,Income deprivation,INCDEP,People and Communities,PC
+INDINCIEQEQ,Indicator - Income inequality,Income inequality,INCINEQ,People and Communities,PC
+INDLIFESATEQ,Indicator - Life satisfaction,Life satisfaction,LS,People and Communities,PC
+INDLIFESATYPEQ,Indicator - Life satisfaction among young people,Life satisfaction among young people,LSAYP,People and Communities,PC
+INDLONEEQ,Indicator - Loneliness,Loneliness,LON,People and Communities,PC
+INDMHEALTHEQ,Indicator - Mental health,Mental health,MENT,Health and Social Care,HSC
+INDOUTRECEQ,Indicator - Outdoor recreation,Outdoor recreation,OUTREC,People and Communities,PC
+INDPREVDTHEQ,Indicator - Preventable deaths,Preventable deaths,PREV,Health and Social Care,HSC
+INDPREVDTHEQ,Indicator - Preventable deaths,Preventable deaths,PREV,Mortality,MLBTH3P1
+INDRESPECTEQ,Indicator - Respect,Respect,RESP,People and Communities,PC
+INDSAFETOWNEQ,Indicator - Safe towns and city centres,Safe towns and city centres,STACC,People and Communities,PC
+INDSELFEFFEQ,Indicator - Self-efficacy,Self-efficacy,SEFF,People and Communities,PC
+INDSEYPEQ,Indicator - Self-efficacy among young people,Self-efficacy among young people,SEAYP,People and Communities,PC
+INDSFGANI,Indicator - Small for gestational age,Small for gestational age,SGA,Pregnancy and Early Years,MLBTH1P2
+INDSHARCOMEQ,Indicator - Shared community,Shared community,SCOMM,People and Communities,PC
+INDSKILLSEQ,Indicator - Skills,Skills,SKILLS,Education and Training,MLBTH2P3
+INDSKILLSLEV,Indicator - Skills,Skills,SKILLS,Education and Training,MLBTH2P3
+INDSKILLSLGD,Indicator - Skills,Skills,SKILLS,Education and Training,MLBTH2P3
+INDSLATTGAPAA,Indicator - School leavers attainment gap,School leavers attainment gap,SLAG,Education,MLBTH1P5
+INDSLATTGAPEQ,Indicator - School leavers attainment gap,School leavers attainment gap,SLAG,Education and Skills,ES
+INDSLATTGAPEQ,Indicator - School leavers attainment gap,School leavers attainment gap,SLAG,Education,MLBTH1P5
+INDSLATTGAPLGD,Indicator - School leavers attainment gap,School leavers attainment gap,SLAG,Education,MLBTH1P5
+INDSPORTSEQ,Indicator - Sport and physical activity,Sport and physical activity,SAPA,People and Communities,PC
+INDSUITHOUSEQ,Indicator - Availability of suitable housing,Availability of suitable housing,ASH,People and Communities,PC
+INDVOLEQ,Indicator - Volunteering,Volunteering,VOL,Volunteering,MLBTH5P7
+INDVOLEQ,Indicator - Volunteering,Volunteering,VOL,People and Communities,PC
+INDVOLLGD,Indicator - Volunteering,Volunteering,VOL,Volunteering,MLBTH5P7
+INFANTMRHSCT,Infant mortality rate,Pregnancy and early years,HIPEY,Infant Mortality,MLBTH1P3
+INFNTDTHS,Infant Deaths,Deaths,BDMD,Infant Mortality,MLBTH1P3
+JMWCPTLGD,"Journeys made by walking, cycling and public transport",Active and sustainable travel,TTAST,Transport,MLBTH4P7
+LBWAA,Low birth weight,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+LBWDEA,Low birth weight,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+LBWHSCT,Low birth weight,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+LBWLGD,Low birth weight,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+LEAA,Life expectancy at birth,Life expectancy and general health,HILEGH,Life Expectancy,MLBKOIP2
+LEDEA,Life expectancy at birth,Life expectancy and general health,HILEGH,Life Expectancy,MLBKOIP2
+LEHSCT,Life expectancy at birth,Life expectancy and general health,HILEGH,Life Expectancy,MLBKOIP2
+LELGD,Life expectancy at birth,Life expectancy and general health,HILEGH,Demography,DEM
+LELGD,Life expectancy at birth,Life expectancy and general health,HILEGH,Life Expectancy,MLBKOIP2
+LIFESATEQ,Life Satisfaction,Life satisfaction,IWLS,Continuous Household Survey,CONHS
+LMSAGE,Labour Market Status,Summary status,LMSSS,Labour Market,MLBTH2P2
+LMSAGE,Labour Market Status,Summary status,LMSSS,Economic Inactivity,MLBTH4P4
+LMSLGD,Labour Market Status,Summary status,LMSSS,Labour Market,MLBTH2P2
+LMSLGD,Labour Market Status,Summary status,LMSSS,Economic Inactivity,MLBTH4P4
+LMSSEX,Labour Market Status,Summary status,LMSSS,Labour Market,MLBTH2P2
+LMSSEX,Labour Market Status,Summary status,LMSSS,Economic Inactivity,MLBTH4P4
+LONEEQ,Loneliness,Loneliness,IWL,Continuous Household Survey,CONHS
+LTUNI,Long Term Unemployment,Unemployed,LMSU,Economic Inactivity,MLBTH4P4
+LVBRTHSHSCT,Live Births (Final),Births,BDMB,Births Registered,MLBTH1P1
+LVBRTHSLGD,Live Births (Final),Births,BDMB,Births Registered,MLBTH1P1
+LVBRTHSSX,Live Births (Final),Births,BDMB,Births Registered,MLBTH1P1
+MA01T01,Median age - Northern Ireland,Median age,PMMA,Demography,DEM
+MA01T02,Median age,Median age,PMMA,Demography,DEM
+MYE01T01,Mid-year population estimates - Northern Ireland,Population estimates,PMPE,Demography,DEM
+MYE01T01,Mid-year population estimates - Northern Ireland,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T010,Mid-year population estimates,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T016,Mid-year population estimates,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T017,Mid-year population estimates,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T018,Mid-year population estimates,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T02,Mid-year population estimates,Population estimates,PMPE,Demography,DEM
+MYE01T02,Mid-year population estimates,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T024,Mid-year population estimates,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T03,Mid-year population estimates - Northern Ireland,Population estimates,PMPE,Demography,DEM
+MYE01T03,Mid-year population estimates - Northern Ireland,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T04,Mid-year population estimates,Population estimates,PMPE,Demography,DEM
+MYE01T04,Mid-year population estimates,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T08,Mid-year population estimates - Northern Ireland,Population estimates,PMPE,Demography,DEM
+MYE01T08,Mid-year population estimates - Northern Ireland,Population estimates,PMPE,Population,MLBKOIP1
+MYE01T09,Mid-year population estimates,Population estimates,PMPE,Demography,DEM
+MYE01T09,Mid-year population estimates,Population estimates,PMPE,Population,MLBKOIP1
+NEETSNI,Youth Unemployment,Unemployed,LMSU,Labour Market,MLBTH2P2
+NEETSNI,Youth Unemployment,Unemployed,LMSU,Economic Inactivity,MLBTH4P4
+NIMDM17T1,Northern Ireland Multiple Deprivation Measure Domain Ranks,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T10,Northern Ireland Multiple Deprivation Measure Indicators,Deprivation,DPD,Civil Participation and Employment,DOM6
+NIMDM17T10,Northern Ireland Multiple Deprivation Measure Indicators,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T11,Northern Ireland Multiple Deprivation Measure Indicators,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T12,Northern Ireland Multiple Deprivation Measure Indicators,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T2,Northern Ireland Multiple Deprivation Measure Domain Ranks,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T3,Northern Ireland Multiple Deprivation Measure Domain Ranks,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T4,Access to Services Indicators,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T4,Access to Services Indicators,Deprivation,DPD,Transport,MLBTH4P7
+NIMDM17T5,Access to Services - Travel times,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T5,Access to Services - Travel times,Deprivation,DPD,Transport,MLBTH4P7
+NIMDM17T6,Living Environment Indicators,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T6,Living Environment Indicators,Deprivation,DPD,Housing,MLBTH4P8
+NIMDM17T7,Crime and Disorder Indicators,Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T7,Crime and Disorder Indicators,Deprivation,DPD,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+NIMDM17T8,"Education, Skills and Training Indicators",Deprivation,DPD,Education and Training,MLBTH2P3
+NIMDM17T8,"Education, Skills and Training Indicators",Deprivation,DPD,Deprivation,MLBTH4P1
+NIMDM17T9,Health and Disability Indicators,Deprivation,DPD,Health Conditions and Disability,MLBTH3P6
+NIMDM17T9,Health and Disability Indicators,Deprivation,DPD,Deprivation,MLBTH4P1
+NISCSASBHSCT,NISCS: Perceptions of Anti-Social Behaviour,Attitudes to crime,EAAC,Safe Communities Survey,MLBTH5P4
+NISCSASBLGD,NISCS: Perceptions of Anti-Social Behaviour,Attitudes to crime,EAAC,Safe Communities Survey,MLBTH5P4
+NISCSCRIMEHSCT,NISCS: Experience of Crime,Experience of crime,EAEC,Safe Communities Survey,MLBTH5P4
+NISCSCRIMELGD,NISCS: Experience of Crime,Experience of crime,EAEC,Safe Communities Survey,MLBTH5P4
+NURACCHSCT,Nursing Accommodation,Care not at home,CNAH,Community Support and Health Services,DOM8
+NURACCHSCT,Nursing Accommodation,Care not at home,CNAH,Health Conditions and Disability,MLBTH3P6
+PEPHSCT,Attendance at Structured Patient Education / Self Management Programmes,Care not at home,CNAH,Health Conditions and Disability,MLBTH3P6
+PNPIDTHRT,"Perinatal, Neonatal, Postneonatal and Infant Death Rates",Deaths,BDMD,Infant Mortality,MLBTH1P3
+PNPIDTHS,"Perinatal, Neonatal, Postneonatal and Infant Deaths",Deaths,BDMD,Infant Mortality,MLBTH1P3
+PRCAA,Police Recorded Crime,All crime,CALLCRIME,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+PRCDEA,Police Recorded Crime,All crime,CALLCRIME,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+PRCHSCT,Police Recorded Crime,All crime,CALLCRIME,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+PRCLGD,Police Recorded Crime,All crime,CALLCRIME,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+PRCOMPGEOG,Urban-Rural composition of people living in relative poverty,Poverty,DPP,People and Communities,PC
+PRCUR,Police Recorded Crime,All crime,CALLCRIME,Crime and Justice,CJ
+PRCUR,Police Recorded Crime,All crime,CALLCRIME,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+PRCWARD,Police Recorded Crime,All crime,CALLCRIME,Recorded Crime and Anti-social Behaviour,MLBTH5P1
+PREJUDEQ,Self-reported prejudice against minority ethnic communities,Community relations,CCR,Life and Times Survey,LATS
+PRGEOG,Individuals living in relative poverty,Poverty,DPP,People and Communities,PC
+PRHSCT,Poverty Rates,Poverty,DPP,Poverty,MLBTH4P3
+PRHSCTGRP,Poverty Rates,Poverty,DPP,Poverty,MLBTH4P3
+PRLGDGRP,Poverty Rates,Poverty,DPP,Poverty,MLBTH4P3
+PRNI,Poverty Rates - Northern Ireland,Poverty,DPP,Poverty,MLBTH4P3
+PUBTRANSEQ,Public Transport Use,Public transport,TTPT,Travel Survey,TSNI
+PYLLAA,Potential Years of Life Lost,Premature mortality,HIPM,Premature Mortality,MLBKOIP3
+PYLLDEA,Potential Years of Life Lost,Premature mortality,HIPM,Premature Mortality,MLBKOIP3
+PYLLHSCT,Potential Years of Life Lost,Premature mortality,HIPM,Premature Mortality,MLBKOIP3
+PYLLLGD,Potential Years of Life Lost,Premature mortality,HIPM,Demography,DEM
+PYLLLGD,Potential Years of Life Lost,Premature mortality,HIPM,Premature Mortality,MLBKOIP3
+REDCONAA,Redundancies Confirmed,Redundancies,JRVR,Economic Inactivity,MLBTH4P4
+REDCONLGD,Redundancies Confirmed,Redundancies,JRVR,Economic Inactivity,MLBTH4P4
+REFWELEQ,Refugee Welcome,Community relations,CCR,Life and Times Survey,LATS
+RESACCHSCT,Residential Accommodation,Care not at home,CNAH,Community Support and Health Services,DOM8
+RESACCHSCT,Residential Accommodation,Care not at home,CNAH,Healthy Ageing,MLBTH2P1
+RESPECTEQ,Feeling Respected,Community relations,CCR,Life and Times Survey,LATS
+RISKVICHSCT,NISCS: Risk of Victimisation,Attitudes to crime,EAAC,Safe Communities Survey,MLBTH5P4
+RISKVICLGD,NISCS: Risk of Victimisation,Attitudes to crime,EAAC,Safe Communities Survey,MLBTH5P4
+RTCCSOI60PLUS,Road Traffic Collision Casualties by Severity of Injury aged 60 and over,Road traffic collisions,MRTC,Road Traffic Collsions,MLBTH5P2
+RTCCSOIAA,Road Traffic Collision Casualties by Severity of Injury,Road traffic collisions,MRTC,Road Traffic Collsions,MLBTH5P2
+RTCCSOIDEA,Road Traffic Collision Casualties by Severity of Injury,Road traffic collisions,MRTC,Road Traffic Collsions,MLBTH5P2
+RTCCSOIHSCT,Road Traffic Collision Casualties by Severity of Injury,Road traffic collisions,MRTC,Road Traffic Collsions,MLBTH5P2
+RTCCSOILGD,Road Traffic Collision Casualties by Severity of Injury,Road traffic collisions,MRTC,Road Traffic Collsions,MLBTH5P2
+RTCCSOISOA,Road Traffic Collision Casualties by Severity of Injury,Road traffic collisions,MRTC,Road Traffic Collsions,MLBTH5P2
+RTCCSOIWARD,Road Traffic Collision Casualties by Severity of Injury,Road traffic collisions,MRTC,Road Traffic Collsions,MLBTH5P2
+SAFETOWNEQ,Safe Towns and City Centres,Safe towns and city centres,CSTCC,Life and Times Survey,LATS
+SAHLAFEEQ,Higher Level Apprenticeships in FE Equality Data,Apprenticeships,TAAPP,Further and Higher Education,FHE
+SARCAUSEAA,"Standardised Admission Rate Under 75s, by Cause",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARCAUSEDEA,"Standardised Admission Rate, by Cause",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARCAUSEHSCT,"Standardised Admission Rate, by Cause",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARCAUSELGD,"Standardised Admission Rate, by Cause",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARCAUSEU75DEA,"Standardised Admission Rate Under 75s, by Cause",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARCAUSEU75HSCT,"Standardised Admission Rate Under 75s, by Cause",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARCAUSEU75LGD,"Standardised Admission Rate Under 75s, by Cause",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARDRUGAA,Standardised Admission Rate - Drug Related Causes,Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARDRUGDEA,Standardised Admission Rate - Drug Related Causes,Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARDRUGHSCT,Standardised Admission Rate - Drug Related Causes,Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARDRUGLGD,Standardised Admission Rate - Drug Related Causes,Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARQL2FEEQ,Students Achieving Regulated Qualifications at Level 2 in FE Colleges,Achievements,FEACH,Further and Higher Education,FHE
+SARQL3FEEQ,Students Achieving Regulated Qualifications at Level 3 in FE Colleges,Achievements,FEACH,Further and Higher Education,FHE
+SARSELFHARMAA,Standardised Admission Rate ? Self-Harm Admissions,Mental health,HIMH,Mental Health,MLBTH3P2
+SARSELFHARMDEA,Standardised Admission Rate ? Self-Harm Admissions,Mental health,HIMH,Mental Health,MLBTH3P2
+SARSELFHARMHSCT,Standardised Admission Rate ? Self-Harm Admissions,Mental health,HIMH,Mental Health,MLBTH3P2
+SARSELFHARMLGD,Standardised Admission Rate ? Self-Harm Admissions,Mental health,HIMH,Mental Health,MLBTH3P2
+SARTYPEAA,"Standardised Admission Rate, by type",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARTYPEDEA,"Standardised Admission Rate, by type",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARTYPEHSCT,"Standardised Admission Rate, by type",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SARTYPELGD,"Standardised Admission Rate, by type",Hospital activity,HIHA,Hospital Activity,MLBTH3P5
+SBAIDHSCT,Stillbirths and Infant Deaths,Deaths,BDMD,Infant Mortality,MLBTH1P3
+SBAIDLGD,Stillbirths and Infant Deaths,Deaths,BDMD,Infant Mortality,MLBTH1P3
+SDRAAACMAA,Standardised Death Rate ? All Cause,Life expectancy and general health,HILEGH,Premature Mortality,MLBKOIP3
+SDRAAACMDEA,Standardised Death Rate ? All Cause,Life expectancy and general health,HILEGH,Premature Mortality,MLBKOIP3
+SDRAAACMHSCT,Standardised Death Rate ? All Cause,Life expectancy and general health,HILEGH,Premature Mortality,MLBKOIP3
+SDRAAACMLGD,Standardised Death Rate ? All Cause,Life expectancy and general health,HILEGH,Premature Mortality,MLBKOIP3
+SDROECDAA,"Standardised Death rate for Avoidable, Treatable and Preventable Causes",Premature mortality,HIPM,Premature Mortality,MLBKOIP3
+SDROECDDEA,"Standardised Death rate for Avoidable, Treatable and Preventable Causes",Premature mortality,HIPM,Premature Mortality,MLBKOIP3
+SDROECDHSCT,"Standardised Death rate for Avoidable, Treatable and Preventable Causes",Premature mortality,HIPM,Premature Mortality,MLBKOIP3
+SDROECDLGD,"Standardised Death rate for Avoidable, Treatable and Preventable Causes",Premature mortality,HIPM,Demography,DEM
+SDROECDLGD,"Standardised Death rate for Avoidable, Treatable and Preventable Causes",Premature mortality,HIPM,Premature Mortality,MLBKOIP3
+SDRSMOKEAA,Standardised Death Rate ? Smoking Attributable Causes,"Alcohol, smoking and drugs",HIASD,Mortality,MLBTH3P1
+SDRSMOKEDEA,Standardised Death Rate ? Smoking Attributable Causes,"Alcohol, smoking and drugs",HIASD,Mortality,MLBTH3P1
+SDRSMOKEHSCT,Standardised Death Rate ? Smoking Attributable Causes,"Alcohol, smoking and drugs",HIASD,Mortality,MLBTH3P1
+SDRSMOKELGD,Standardised Death Rate ? Smoking Attributable Causes,"Alcohol, smoking and drugs",HIASD,Mortality,MLBTH3P1
+SDRU75AA,"Standardised Death rate, Under 75, by cause",Premature mortality,HIPM,Mortality,MLBTH3P1
+SDRU75HSCT,"Standardised Death rate, Under 75, by cause",Premature mortality,HIPM,Mortality,MLBTH3P1
+SDRU75LGD,"Standardised Death rate, Under 75, by cause",Premature mortality,HIPM,Demography,DEM
+SDRU75LGD,"Standardised Death rate, Under 75, by cause",Premature mortality,HIPM,Mortality,MLBTH3P1
+SELFEFFEQ,Low Self-Efficacy,Self-efficacy,IWSE,Continuous Household Survey,CONHS
+SGAAA,Small for Gestational Age,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+SGADEA,Small for Gestational Age,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+SGAHSCT,Small for Gestational Age,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+SGALGD,Small for Gestational Age,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+SHARCOMEQ,Shared Community,Community relations,CCR,Life and Times Survey,LATS
+SLSAEQ,Qualifications of School Leavers,Qualifications,SLQUAL,Education,MLBTH1P5
+SLSAEQ,Qualifications of School Leavers,Qualifications,SLQUAL,School and College Education,SCE
+SLWAA,Skills for Life and Work,Skills for life and work,TASFLW,Education and Training,MLBTH2P3
+SLWLGD,Skills for Life and Work,Skills for life and work,TASFLW,Education and Training,MLBTH2P3
+SMOKEPREGAA,Smoking During Pregnancy,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+SMOKEPREGDEA,Smoking During Pregnancy,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+SMOKEPREGHSCT,Smoking During Pregnancy,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+SMOKEPREGLGD,Smoking During Pregnancy,Pregnancy and early years,HIPEY,Pregnancy and Early Years,MLBTH1P2
+SPORTSEQ,Sports and Physical Activity,"Culture, arts, heritage and sport",CCAHS,"Arts, Culture and Sport",ACS
+SPRTYPEAA,"Standardised Prescription Rate, by type",Additional Indicators,HIAddInd,Health Conditions and Disability,MLBTH3P6
+SPRTYPEDEA,"Standardised Prescription Rate, by type",Additional Indicators,HIAddInd,Health Conditions and Disability,MLBTH3P6
+SPRTYPEHSCT,"Standardised Prescription Rate, by type",Additional Indicators,HIAddInd,Health Conditions and Disability,MLBTH3P6
+SPRTYPELGD,"Standardised Prescription Rate, by type",Additional Indicators,HIAddInd,Health Conditions and Disability,MLBTH3P6
+STDAYCLIENT,Persons Registered at Statutory Day Care Facilities,Care not at home,CNAH,Healthy Ageing,MLBTH2P1
+TCONFCJSHSCT,NISCTS: Confidence in the Criminal Justice System,Confidence in system,EACS,Safe Communities Telephone Survey,MLBTH5P9
+TCONFPOHSCT,NISCTS: Confidence in Policing,Confidence in system,EACS,Safe Communities Telephone Survey,MLBTH5P9
+TEENBRHSCT,Teenage Birth Rates,Pregnancy and early years,HIPEY,Healthy Behaviours,MLBTH3P4
+TEENBRLGD,Teenage Birth Rates,Pregnancy and early years,HIPEY,Healthy Behaviours,MLBTH3P4
+TFEARCRIMEHSCT,NISCTS: Fear of Crime,Attitudes to crime,EAAC,Safe Communities Telephone Survey,MLBTH5P9
+TFEARCRIMELGD,NISCTS: Fear of Crime,Attitudes to crime,EAAC,Safe Communities Telephone Survey,MLBTH5P9
+TNISCSASBHSCT,NISCTS: Perceptions of Anti-Social Behaviour,Attitudes to crime,EAAC,Safe Communities Telephone Survey,MLBTH5P9
+TNISCSASBLGD,NISCTS: Perceptions of Anti-Social Behaviour,Attitudes to crime,EAAC,Safe Communities Telephone Survey,MLBTH5P9
+TNISCSCRIMEHSCT,NISCTS: Experience of Crime,Experience of crime,EAEC,Safe Communities Telephone Survey,MLBTH5P9
+TNISCSCRIMELGD,NISCTS: Experience of Crime,Experience of crime,EAEC,Safe Communities Telephone Survey,MLBTH5P9
+TS017,Long-term health problem or disability - 2011 and 2021 TS017,Census over time,CCOT,Health Conditions and Disability,MLBTH3P6
+TS019,Number of long-term health conditions - 2011 and 2021 TS019,Census over time,CCOT,Health Conditions and Disability,MLBTH3P6
+TS029,Number of adaptations to accommodation - 2011 and 2021 TS029,Census over time,CCOT,Healthy Ageing,MLBTH2P1
+TWORRYCRMHSCT,NISCTS: Worry about Crime and Personal Safety,Attitudes to crime,EAAC,Safe Communities Telephone Survey,MLBTH5P9
+TWORRYCRMLGD,NISCTS: Worry about Crime and Personal Safety,Attitudes to crime,EAAC,Safe Communities Telephone Survey,MLBTH5P9
+WALKCYCEQ,Walking or Cycling (Active Travel),Active and sustainable travel,TTAST,Travel Survey,TSNI
+WBLOCAA,Individual Wellbeing - Locus of Control,Locus of control,IWLC,Wellbeing,MLBTH5P5
+WBLOCEQ,Individual Wellbeing - Locus of Control,Locus of control,IWLC,Wellbeing,MLBTH5P5
+WBLOCEQ,Individual Wellbeing - Locus of Control,Locus of control,IWLC,People and Communities,PC
+WBLOCLGD,Individual Wellbeing - Locus of Control,Locus of control,IWLC,Wellbeing,MLBTH5P5
+WBLOCOTHR,Individual Wellbeing - Locus of Control,Locus of control,IWLC,Wellbeing,MLBTH5P5
+WBLONAA,Individual Wellbeing - Loneliness,Loneliness,IWL,Wellbeing,MLBTH5P5
+WBLONEQ,Individual Wellbeing - Loneliness,Loneliness,IWL,Wellbeing,MLBTH5P5
+WBLONEQ,Individual Wellbeing - Loneliness,Loneliness,IWL,People and Communities,PC
+WBLONLGD,Individual Wellbeing - Loneliness,Loneliness,IWL,Wellbeing,MLBTH5P5
+WBLONOTHR,Individual Wellbeing - Loneliness,Loneliness,IWL,Wellbeing,MLBTH5P5
+WBPERSWAA,Individual Wellbeing - Personal Wellbeing,Personal wellbeing,IWPW,Wellbeing,MLBTH5P5
+WBPERSWEQ,Individual Wellbeing - Personal Wellbeing,Personal wellbeing,IWPW,Wellbeing,MLBTH5P5
+WBPERSWEQ,Individual Wellbeing - Personal Wellbeing,Personal wellbeing,IWPW,People and Communities,PC
+WBPERSWLGD,Individual Wellbeing - Personal Wellbeing,Personal wellbeing,IWPW,Wellbeing,MLBTH5P5
+WBPERSWOTHR,Individual Wellbeing - Personal Wellbeing,Personal wellbeing,IWPW,Wellbeing,MLBTH5P5
+WBSELFEQ,Individual Wellbeing - Self-efficacy,Self-efficacy,IWSE,People and Communities,PC
+WBY8LOCEQ,Wellbeing - Locus of control (Year 8 pupils),Locus of control,IWLC,People and Communities,PC
+WBY8SEEQ,Wellbeing - Self-efficacy (Year 8 pupils),Self-efficacy,IWSE,People and Communities,PC
+WBY912LOCEQ,Wellbeing - Locus of control (Year 9-12 pupils),Locus of control,IWLC,People and Communities,PC
+WBY912SEEQ,Wellbeing - Self-efficacy (Year 9-12 pupils),Self-efficacy,IWSE,People and Communities,PC
+WBYPPWEQ,Wellbeing - Personal wellbeing (Year 8-12 pupils),Personal wellbeing,IWPW,People and Communities,PC
+WORRYCRMHSCT,NISCS: Worry about Crime and Personal Safety,Attitudes to crime,EAAC,Safe Communities Survey,MLBTH5P4
+WORRYCRMLGD,NISCS: Worry about Crime and Personal Safety,Attitudes to crime,EAAC,Safe Communities Survey,MLBTH5P4
+YPBASALCOHOLHSCT,Young Persons Behaviour - Alcohol,Alcohol,HBALC,Healthy Children,MLBTH1P4
+YPBASNUTRITIONHSCT,Young Persons Behaviour - Fruit and Vegetable Consumption,Fruit and veg,HBFV,Healthy Children,MLBTH1P4
+YPBASSMOKINGHSCT,Young Persons Behaviour - Smoking,Smoking,HBSMK,Healthy Children,MLBTH1P4

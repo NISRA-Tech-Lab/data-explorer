@@ -54,6 +54,8 @@ for (i in seq_along(themes)) {
 
 data_portal <- jsonlite::fromJSON(txt = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadCollection")$link$item
 
+associated_tables <- read.csv("associated-tables.csv")
+
 tables <- list()
 
 for (i in 1:length(data_portal$label)) {
@@ -87,8 +89,9 @@ for (i in 1:length(data_portal$label)) {
     
     theme <- data_portal_structure %>% 
       filter(Product_code == product_code)
+    
 
-    tables[[data_portal$extension$matrix[i]]] <- list(
+    tables[[matrix]] <- list(
       name = name,
       updated = as.Date(substr(data_portal$updated[i], 1, 10)),
       categories = unlist(data_portal$id[i]),
@@ -102,6 +105,38 @@ for (i in 1:length(data_portal$label)) {
       product = json_data$result$extension$product$value,
       product_code = json_data$result$extension$product$code
     )
+    
+    associated_product_code <- associated_tables %>% 
+      filter(MtrCode == matrix) %>% 
+      pull("prc_code")
+    
+    
+    if (length(associated_product_code) > 0) {
+      
+      for (j in 1:length(associated_product_code)) {
+        
+        associated_theme <- data_portal_structure %>% 
+          filter(Product_code == associated_product_code[j])
+        
+        tables[[paste0(matrix, "_", j)]] <- list(
+          name = name,
+          updated = as.Date(substr(data_portal$updated[i], 1, 10)),
+          categories = unlist(data_portal$id[i]),
+          statistics = json_data$result$dimension$STATISTIC$category$label,
+          time = time_var,
+          time_series = time_series,
+          theme = associated_theme$theme,
+          theme_code = associated_theme$theme_code,
+          subject = associated_theme$Subject,
+          subject_code = associated_theme$subject_code,
+          product = associated_theme$product,
+          product_code = associated_product_code[j]
+        )
+        
+      }
+      
+    }
+    
 }
 
 tables <- tables[order(names(tables))]
