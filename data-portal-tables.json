@@ -5716,13 +5716,13 @@
   },
   "GPREGAA": {
     "name": "GP Registrations",
-    "updated": "2024-06-19",
+    "updated": "2025-09-08",
     "categories": ["TLIST(A1)", "STATISTIC", "AA", "Age Group"],
     "statistics": {
       "GPREG": "GP Registrations"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
     "theme": "Health and social care",
     "theme_code": 6,
     "subject": "Primary care",
@@ -5732,13 +5732,13 @@
   },
   "GPREGHSCT": {
     "name": "GP Registrations",
-    "updated": "2024-06-19",
+    "updated": "2025-09-08",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT", "Age Group"],
     "statistics": {
       "GPREG": "GP Registrations"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
     "theme": "Health and social care",
     "theme_code": 6,
     "subject": "Primary care",
@@ -5748,13 +5748,13 @@
   },
   "GPREGLGD": {
     "name": "GP Registrations",
-    "updated": "2024-06-19",
+    "updated": "2025-09-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014", "Age Group"],
     "statistics": {
       "GPREG": "GP Registraions"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "time_series": ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
     "theme": "Health and social care",
     "theme_code": 6,
     "subject": "Primary care",
@@ -5764,13 +5764,13 @@
   },
   "GPREGWARD": {
     "name": "GP Registrations",
-    "updated": "2025-05-05",
+    "updated": "2025-09-08",
     "categories": ["TLIST(A1)", "STATISTIC", "Ward2014", "Age Group"],
     "statistics": {
       "GPREG": "GP Registrations"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "time_series": ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
     "theme": "Health and social care",
     "theme_code": 6,
     "subject": "Primary care",
@@ -8366,7 +8366,7 @@
   },
   "LMSLGD": {
     "name": "Labour Market Status",
-    "updated": "2025-02-04",
+    "updated": "2025-09-08",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
     "statistics": {
       "EMPN": "Employment number (aged 16 and over)",
@@ -8377,7 +8377,7 @@
       "INACTR": "Economic inactivity rate (aged 16 to 64)"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
+    "time_series": ["2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
     "theme": "Work, pay and benefits",
     "theme_code": 72,
     "subject": "Labour market status",
