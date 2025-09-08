@@ -526,7 +526,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         if (time_series.length == 1) {
             chart_title.textContent = `${stat_label} in Northern Ireland ${time_series[0]}`;
         } else {
-            chart_title.textContent = `${stat_label} in Northern Ireland ${time_series[0]} - ${time_series[time_series.length - 1]}`;
+            chart_title.textContent = `${stat_label} in Northern Ireland (${time_series[0]} to ${time_series[time_series.length - 1]})`;
         }
 
         chart_subtitle = document.getElementById("chart-subtitle");
@@ -1083,9 +1083,10 @@ function fillGeoMenu () {
     for (let i = 0; i < Object.keys(tables).length; i ++) {
         theme = tables[Object.keys(tables)[i]].theme_code;
         subject = tables[Object.keys(tables)[i]].subject_code;
+        product = tables[Object.keys(tables)[i]].product_code;
         title = tables[Object.keys(tables)[i]].name.replaceAll(" ", "-");
         categories = tables[Object.keys(tables)[i]].categories;
-        if (theme == themes_menu.value & subject == subjects_menu.value & title == names_menu.value) {
+        if (theme == themes_menu.value & subject == subjects_menu.value & product == products_menu.value & title == names_menu.value) {
             option = document.createElement("option");
             option.value = Object.keys(tables)[i];
             if (categories.includes("AA") | categories.includes("AA2024")) {
