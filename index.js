@@ -342,7 +342,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             new_menu = document.createElement("div");
 
             if (other == "") {
-                new_menu.innerHTML = `<label for = "${other_vars[i]}" class = "form-label">${fetched_restful.dimension[other_vars[i]].label}:</label><select id = "${other_vars[i]}" name = "${other_vars[i]}" class = "form-select"></select>`
+                new_menu.innerHTML = `<label for = "${other_vars[i]}" class = "form-label">${fetched_restful.dimension[other_vars[i]].label}</label><select id = "${other_vars[i]}" name = "${other_vars[i]}" class = "form-select"></select>`
 
                 options = Object.keys(fetched_restful.dimension[other_vars[i]].category.label);
                 labels = Object.values(fetched_restful.dimension[other_vars[i]].category.label);
