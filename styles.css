@@ -23,11 +23,6 @@
   }
 }
 
-#map-container {
-  border: 1px #555555 solid;
-  margin-top: 10px;
-}
-
 .legend-min {
   width: 33%;
   font-size: 10pt;

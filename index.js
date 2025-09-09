@@ -469,8 +469,8 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         chart_container.appendChild(chart_unit);
 
         if (themes_menu.value == "67") {
-            if (products_menu.value == "RW") {
-                ni_url = "https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.Data.Cube_API.ReadDataset%22,%22params%22:%7B%22class%22:%22query%22,%22id%22:%5B%5D,%22dimension%22:%7B%7D,%22extension%22:%7B%22pivot%22:null,%22codes%22:false,%22language%22:%7B%22code%22:%22en%22%7D,%22format%22:%7B%22type%22:%22JSON-stat%22,%22version%22:%222.0%22%7D,%22matrix%22:%22INDRECWSTENI%22%7D,%22version%22:%222.0%22%7D%7D";
+            if (categories.includes("NI")) {
+                ni_url = "https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.Data.Cube_API.ReadDataset%22,%22params%22:%7B%22class%22:%22query%22,%22id%22:%5B%5D,%22dimension%22:%7B%7D,%22extension%22:%7B%22pivot%22:null,%22codes%22:false,%22language%22:%7B%22code%22:%22en%22%7D,%22format%22:%7B%22type%22:%22JSON-stat%22,%22version%22:%222.0%22%7D,%22matrix%22:%22" + matrix + "%22%7D,%22version%22:%222.0%22%7D%7D";
             } else {
                  if (geog_type == "LGD2014") {
                     eq_matrix = matrix.replace("LGD", "EQ");
@@ -596,6 +596,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     } else {
         document.getElementById("map-card").classList.remove("col-xl-6")
+        document.getElementById("title-card").classList.remove("col-xl-6");
     }
 
     if (geog_type != "none") {
@@ -1082,6 +1083,7 @@ function fillGeoMenu (structure) {
         
         option = document.createElement("option");
         option.value = geos[i];
+        
         if (categories.includes("AA") | categories.includes("AA2024")) {
             option.textContent = "Assembly Area";
         } else if (categories.includes("LGD2014") | categories.includes("LGD")) {
@@ -1112,7 +1114,7 @@ function fillGeoMenu (structure) {
             option.textContent = "Education and Library Board";
         } else if (categories.includes("COB_BASIC")) {
             option.textContent = "Country of Birth";
-        } else if (theme == "67") {
+        } else if (themes_menu.value == "67" & categories.includes("EQUALGROUPS")) {
             option.textContent = "Equality Groups";
         }
         geo_menu.appendChild(option);
