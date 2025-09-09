@@ -234,8 +234,6 @@ async function createMenus () {
 
     themes_menu.onchange = function () {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-        
-        const firstKey  = o => Object.keys(o)[0];
 
         const theme = structure[themes_menu.value];
         const subjects = theme.subjects;
@@ -250,8 +248,6 @@ async function createMenus () {
     subjects_menu.onchange = function() {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
 
-        const firstKey  = o => Object.keys(o)[0];
-
         const subject = structure[themes_menu.value].subjects[subjects_menu.value];
         const products = subject.products;
         const tables   = products[firstKey(products)].tables;
@@ -263,8 +259,6 @@ async function createMenus () {
 
     products_menu.onchange = function () {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-
-        const firstKey  = o => Object.keys(o)[0];
 
         const product = structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value];
         const tables = product.tables;
@@ -280,7 +274,6 @@ async function createMenus () {
         const table_names = Object.keys(structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables);
 
         let selected_geo;
-
 
         for (let i = 0; i < table_names.length; i ++) {
             if (table_names[i].replaceAll(" ", "-") == names_menu.value) {
@@ -1084,50 +1077,47 @@ function fillGeoMenu (structure) {
     let num_options = 0;
 
     for (let i = 0; i < geos.length; i ++) {
-        // theme = tables[Object.keys(tables)[i]].theme_code;
-        // subject = tables[Object.keys(tables)[i]].subject_code;
-        // product = tables[Object.keys(tables)[i]].product_code;
-        // title = tables[Object.keys(tables)[i]].name.replaceAll(" ", "-");
+
         categories = tables[geos[i]].categories;
-        // if (theme == themes_menu.value & subject == subjects_menu.value & product == products_menu.value & title == names_menu.value) {
-            option = document.createElement("option");
-            option.value = geos[i];
-            if (categories.includes("AA") | categories.includes("AA2024")) {
-                option.textContent = "Assembly Area";
-            } else if (categories.includes("LGD2014") | categories.includes("LGD")) {
-                option.textContent = "Local Government District";
-            } else if (categories.includes("LGD1992")) {
-                option.textContent = "Local Government District (1992)"
-            } else if (categories.includes("HSCT")) {
-                option.textContent = "Health and Social Care Trust";
-            } else if (categories.includes("DEA2014")) {
-                option.textContent = "District Electoral Area";
-            } else if (categories.includes("SDZ2021")) {
-                option.textContent = "Super Data Zone";
-            } else if (categories.includes("DZ2021")) {
-                option.textContent = "Data Zone";
-            } else if (categories.includes("Ward2014")) {
-                option.textContent = "Ward";
-            } else if (categories.includes("SOA")) {
-                option.textContent = "Super Output Area";   
-            } else if (categories.includes("SA")) {
-                option.textContent = "Small Area";   
-            } else if (categories.includes("LCG")) {
-                option.textContent = "Local Commisioning Group";
-            } else if (categories.includes("UR2015") | categories.includes("SETTLEMENT")) {
-                option.textContent = "Urban/Rural";
-            } else if (categories.includes("NUTS3")) {
-                option.textContent = "NUTS3";
-            } else if (categories.includes("ELB")) {
-                option.textContent = "Education and Library Board";
-            } else if (categories.includes("COB_BASIC")) {
-                option.textContent = "Country of Birth";
-            } else if (theme == "67") {
-                option.textContent = "Equality Groups";
-            }
-            geo_menu.appendChild(option);
-            if (option.textContent != "") num_options += 1;
-        // }
+        
+        option = document.createElement("option");
+        option.value = geos[i];
+        if (categories.includes("AA") | categories.includes("AA2024")) {
+            option.textContent = "Assembly Area";
+        } else if (categories.includes("LGD2014") | categories.includes("LGD")) {
+            option.textContent = "Local Government District";
+        } else if (categories.includes("LGD1992")) {
+            option.textContent = "Local Government District (1992)"
+        } else if (categories.includes("HSCT")) {
+            option.textContent = "Health and Social Care Trust";
+        } else if (categories.includes("DEA2014")) {
+            option.textContent = "District Electoral Area";
+        } else if (categories.includes("SDZ2021")) {
+            option.textContent = "Super Data Zone";
+        } else if (categories.includes("DZ2021")) {
+            option.textContent = "Data Zone";
+        } else if (categories.includes("Ward2014")) {
+            option.textContent = "Ward";
+        } else if (categories.includes("SOA")) {
+            option.textContent = "Super Output Area";   
+        } else if (categories.includes("SA")) {
+            option.textContent = "Small Area";   
+        } else if (categories.includes("LCG")) {
+            option.textContent = "Local Commisioning Group";
+        } else if (categories.includes("UR2015") | categories.includes("SETTLEMENT")) {
+            option.textContent = "Urban/Rural";
+        } else if (categories.includes("NUTS3")) {
+            option.textContent = "NUTS3";
+        } else if (categories.includes("ELB")) {
+            option.textContent = "Education and Library Board";
+        } else if (categories.includes("COB_BASIC")) {
+            option.textContent = "Country of Birth";
+        } else if (theme == "67") {
+            option.textContent = "Equality Groups";
+        }
+        geo_menu.appendChild(option);
+        if (option.textContent != "") num_options += 1;
+        
     }
 
     if (num_options > 0) {
@@ -1248,13 +1238,26 @@ function sortObject(o) {
    return sorted;
 }
 
-function titleCase(str) {
-  return str
-    .toLowerCase()
-    .replace(/\b(?!and\b|of\b)\w/g, function (char) {
-      return char.toUpperCase();
-    });
+function titleCase(str, lowerWords = ['and', 'of']) {
+  const lowerSet = new Set(lowerWords.map(w => w.toLowerCase()));
+
+  // 1) Lowercase everything, then capitalize word starts (not after an apostrophe)
+  let out = str.toLowerCase().replace(/(^|[^A-Za-z'])([a-z])([a-z']*)/g,
+    (match, sep, first, rest) => {
+      // For the lowercase-word check, ignore trailing possessives 's or s'
+      const wordForCheck = (first + rest).replace(/'s$|s'$/i, '');
+      if (lowerSet.has(wordForCheck)) return sep + first + rest; // keep as lowercase
+      return sep + first.toUpperCase() + rest;
+    }
+  );
+
+  // 2) Surname prefixes: capitalize after apostrophe when it’s not a possessive
+  //    e.g., O'neill -> O'Neill, D'artagnan -> D'Artagnan, but Madam's stays Madam's
+  out = out.replace(/\b([A-Za-z])'([a-z])(?!s\b)/g, (m, a, b) => a + "'" + b.toUpperCase());
+
+  return out;
 }
+
 
 
 
@@ -1368,4 +1371,5 @@ async function loadShapes(geog_type) {
   return geojson;
 }
 
+const firstKey  = o => Object.keys(o)[0];
 
