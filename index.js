@@ -629,14 +629,14 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         }
         }
 
-        // Colour palettes for increasing/decreasing indicators
-        let palette = ["#edf8fb", "#b2e2e2", "#66c2a4", "#2ca25f", "#006d2c"];
+        // Colour palette
+        const palette = ["#d6e4f6", "#8db2e0", "#3878c5", "#22589c", "#00205b"];
 
         // Use the normalized value (or bin) to pick a color; -1 → grey for NA
         function getColor(normOrBin) {
-        if (normOrBin == null || normOrBin < 0) return "#d3d3d3";
-        const idx = Math.max(0, Math.min(4, Math.round(normOrBin * 4)));
-        return palette[idx];
+            if (normOrBin == null || normOrBin < 0) return "#d3d3d3";
+            const idx = Math.max(0, Math.min(4, Math.round(normOrBin * 4)));
+            return palette[idx];
         }
 
 
