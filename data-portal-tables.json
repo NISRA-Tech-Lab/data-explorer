@@ -7708,13 +7708,13 @@
   },
   "EMPVACAA": {
     "name": "Employment vacancies notified to DfC",
-    "updated": "2025-05-07",
+    "updated": "2025-09-09",
     "categories": ["TLIST(A1)", "STATISTIC", "AA"],
     "statistics": {
       "EMPVAC": "Employment vacancies notified to DfC"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
     "theme": "Work, pay and benefits",
     "theme_code": 72,
     "subject": "Jobs, redundancies and vacancies",
@@ -7740,13 +7740,13 @@
   },
   "EMPVACHSCT": {
     "name": "Employment vacancies notified to DfC",
-    "updated": "2025-05-07",
+    "updated": "2025-09-09",
     "categories": ["TLIST(A1)", "STATISTIC", "HSCT"],
     "statistics": {
       "EMPVAC": "Employment vacancies notified to DfC"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
     "theme": "Work, pay and benefits",
     "theme_code": 72,
     "subject": "Jobs, redundancies and vacancies",
@@ -7756,13 +7756,13 @@
   },
   "EMPVACLGD": {
     "name": "Employment vacancies notified to DfC",
-    "updated": "2025-05-07",
+    "updated": "2025-09-09",
     "categories": ["TLIST(A1)", "STATISTIC", "LGD2014"],
     "statistics": {
       "EMPVAC": "Employment vacancies notified to DfC"
     },
     "time": "TLIST(A1)",
-    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24"],
+    "time_series": ["2014/15", "2015/16", "2016/17", "2017/18", "2018/19", "2019/20", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"],
     "theme": "Work, pay and benefits",
     "theme_code": 72,
     "subject": "Jobs, redundancies and vacancies",
