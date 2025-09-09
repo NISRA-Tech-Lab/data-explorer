@@ -69,6 +69,10 @@ const GEOG_PROPS = {
     url: "map/UR2015.geo.json",
     code_var: "UR_CODE"
   },
+  SETTLEMENT: {
+    url: "map/UR2015.geo.json",
+    code_var: "UR_CODE"
+  },
   NUTS3: {
     url: "map/NUTS3.geo.json",
     code_var: "NUTS3"
@@ -173,15 +177,33 @@ async function createMenus () {
     return; // bail early if we truly have nothing
   }
 
-    let themes = {}
+        let themes = {};
+        const structure = {};
 
-    for (let i = 0; i < Object.keys(tables).length; i ++) {
-        theme = tables[Object.keys(tables)[i]].theme;
-        theme_code = tables[Object.keys(tables)[i]].theme_code;
-        if (!Object.keys(themes).includes(theme)) {
-            themes[theme] = {"code": theme_code};
+        for (const [matrix, t] of Object.entries(tables)) {
+            const theme = t.theme;
+            const theme_code   = String(t.theme_code);
+            const subject = String(t.subject);
+            const subject_code = String(t.subject_code);
+            const product = String(t.product);
+            const product_code = String(t.product_code);
+            const table_name   = t.name;
+
+            // Record theme -> code mapping (once)
+            if (!themes[theme]) themes[theme] = { code: theme_code };
+
+            // Build nested structure safely
+            structure[theme_code] ??= {name: theme, subjects: {}};
+            structure[theme_code].subjects[subject_code] ??= {name: subject, products: {}};
+            structure[theme_code].subjects[subject_code].products[product_code] ??= {name: product, tables: {}};
+
+            // Ensure an array at the table_name leaf
+            const list = (structure[theme_code].subjects[subject_code].products[product_code].tables[table_name] ??= []);
+
+            // Push matrix if not present
+            if (!list.includes(matrix)) list.push(matrix);
         }
-    }
+
 
     themes = sortObject(themes);
 
@@ -204,60 +226,80 @@ async function createMenus () {
 
     themes_menu.value = selected_theme;
 
-    fillSubjectsMenu();
-    fillProductsMenu();
-    fillNamesMenu();
-    fillGeoMenu();
+    fillSubjectsMenu(structure);
+    fillProductsMenu(structure);
+    fillNamesMenu(structure);
+    fillGeoMenu(structure);
     fillStatMenu();
 
     themes_menu.onchange = function () {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-        fillSubjectsMenu();
-        subjects_menu.value = subjects_menu.options[0].value;
-        fillProductsMenu();
-        products_menu.value = products_menu.options[0].value;
-        fillNamesMenu();
-        names_menu.value = names_menu.options[0].value;
-        fillGeoMenu();
-        geo_menu.value = geo_menu.options[0].value;
-        window.location.search = `?table=${geo_menu.value}`;
+        
+        const firstKey  = o => Object.keys(o)[0];
+
+        const theme = structure[themes_menu.value];
+        const subjects = theme.subjects;
+        const products = subjects[firstKey(subjects)].products;
+        const tables   = products[firstKey(products)].tables;
+
+        const selected_geo = tables[firstKey(tables)][0];
+
+        window.location.search = `?table=${selected_geo}`;
     }
 
     subjects_menu.onchange = function() {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-        fillProductsMenu();
-        products_menu.value = products_menu.options[0].value;
-        fillNamesMenu();
-        names_menu.value = names_menu.options[0].value;
-        fillGeoMenu();
-        geo_menu.value = geo_menu.options[0].value;
-        window.location.search = `?table=${geo_menu.value}`;
+
+        const firstKey  = o => Object.keys(o)[0];
+
+        const subject = structure[themes_menu.value].subjects[subjects_menu.value];
+        const products = subject.products;
+        const tables   = products[firstKey(products)].tables;
+
+        const selected_geo = tables[firstKey(tables)][0];
+        
+        window.location.search = `?table=${selected_geo}`;
     }
 
     products_menu.onchange = function () {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-        fillNamesMenu();
-        names_menu.value = names_menu.options[0].value;
-        fillGeoMenu();
-        geo_menu.value = geo_menu.options[0].value;
-        window.location.search = `?table=${geo_menu.value}`;
+
+        const firstKey  = o => Object.keys(o)[0];
+
+        const product = structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value];
+        const tables = product.tables;
+
+        const selected_geo = tables[firstKey(tables)][0];
+
+        window.location.search = `?table=${selected_geo}`;
     }
 
     names_menu.onchange = function () {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-        fillGeoMenu();
-        geo_menu.value = geo_menu.options[0].value;
-        window.location.search = `?table=${geo_menu.value}`;
+
+        const table_names = Object.keys(structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables);
+
+        let selected_geo;
+
+
+        for (let i = 0; i < table_names.length; i ++) {
+            if (table_names[i].replaceAll(" ", "-") == names_menu.value) {
+                let tables = structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables[table_names[i]];
+                selected_geo = tables[0];
+            }
+        }      
+
+        window.location.search = `?table=${selected_geo}`;
     }
 
     geo_menu.onchange = function () {
-    localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-    window.location.search = `?table=${geo_menu.value}`;
+        localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+        window.location.search = `?table=${geo_menu.value}`;
     }
 
     stats_menu.onchange = function () {
-    localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-    window.location.search = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
+        localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+        window.location.search = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
     }
 
 
@@ -938,29 +980,14 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
 }
 
-function fillSubjectsMenu () {
+function fillSubjectsMenu (structure) {
 
-    while(subjects_menu.firstChild) {
-        subjects_menu.removeChild(subjects_menu.firstChild);
-    }
-
-    let subjects = {};
-
-    for (let i = 0; i < Object.keys(tables).length; i ++) {
-        theme = tables[Object.keys(tables)[i]].theme_code;
-        subject = tables[Object.keys(tables)[i]].subject;
-        subject_code = tables[Object.keys(tables)[i]].subject_code;
-        if (theme == themes_menu.value & !Object.keys(subjects).includes(subject)) {
-            subjects[subject] = {"code": subject_code};
-        }
-    }
-
-    subjects = sortObject(subjects);
+    let subjects = structure[themes_menu.value].subjects;
 
     for (let i = 0; i < Object.keys(subjects).length; i ++) {
         option = document.createElement("option");
-        option.value = subjects[Object.keys(subjects)[i]].code;
-        option.textContent = Object.keys(subjects)[i];
+        option.value = Object.keys(subjects)[i];
+        option.textContent = subjects[Object.keys(subjects)[i]].name;
         subjects_menu.appendChild(option);
     }
 
@@ -982,30 +1009,16 @@ function fillSubjectsMenu () {
 
 }
 
-function fillProductsMenu () {
+function fillProductsMenu (structure) {
 
-    while(products_menu.firstChild) {
-        products_menu.removeChild(products_menu.firstChild);
-    }
-
-    let products = {};
-
-    for (let i = 0; i < Object.keys(tables).length; i ++) {
-        theme = tables[Object.keys(tables)[i]].theme_code;
-        subject = tables[Object.keys(tables)[i]].subject_code;
-        product = tables[Object.keys(tables)[i]].product;
-        product_code = tables[Object.keys(tables)[i]].product_code;
-        if (theme == themes_menu.value & subject == subjects_menu.value & !Object.keys(products).includes(product)) {
-            products[product] = {"code": product_code};
-        }
-    }
+    let products = structure[themes_menu.value].subjects[subjects_menu.value].products;
 
     products = sortObject(products);
 
     for (let i = 0; i < Object.keys(products).length; i ++) {
         option = document.createElement("option");
-        option.value = products[Object.keys(products)[i]].code;
-        option.textContent = Object.keys(products)[i];
+        option.value = Object.keys(products)[i];
+        option.textContent = products[Object.keys(products)[i]].name;
         products_menu.appendChild(option);
     }
 
@@ -1027,25 +1040,9 @@ function fillProductsMenu () {
 
 }
 
-function fillNamesMenu () {
+function fillNamesMenu (structure) {
 
-    while(names_menu.firstChild) {
-        names_menu.removeChild(names_menu.firstChild);
-    }
-
-    let names = [];
-
-    for (let i = 0; i < Object.keys(tables).length; i ++) {
-        theme = tables[Object.keys(tables)[i]].theme_code;
-        subject = tables[Object.keys(tables)[i]].subject_code;
-        product = tables[Object.keys(tables)[i]].product_code;
-        title = tables[Object.keys(tables)[i]].name;
-        if (theme == themes_menu.value & subject == subjects_menu.value & product == products_menu.value & !names.includes(title)) {
-            names.push(title);
-        }
-    }
-
-    names.sort();
+    let names = Object.keys(structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables);
 
     for (let i = 0; i < names.length; i ++) {
         option = document.createElement("option");
@@ -1072,23 +1069,29 @@ function fillNamesMenu () {
 
 }
 
-function fillGeoMenu () {
+function fillGeoMenu (structure) {
 
-    while(geo_menu.firstChild) {
-        geo_menu.removeChild(geo_menu.firstChild);
+    let names = structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables;
+    
+    let geos;
+
+    for (let i = 0; i < Object.keys(names).length; i ++) {
+        if (Object.keys(names)[i].replaceAll(" ", "-") == names_menu.value) {
+            geos = Object.values(names)[i]
+        }
     }
 
     let num_options = 0;
 
-    for (let i = 0; i < Object.keys(tables).length; i ++) {
-        theme = tables[Object.keys(tables)[i]].theme_code;
-        subject = tables[Object.keys(tables)[i]].subject_code;
-        product = tables[Object.keys(tables)[i]].product_code;
-        title = tables[Object.keys(tables)[i]].name.replaceAll(" ", "-");
-        categories = tables[Object.keys(tables)[i]].categories;
-        if (theme == themes_menu.value & subject == subjects_menu.value & product == products_menu.value & title == names_menu.value) {
+    for (let i = 0; i < geos.length; i ++) {
+        // theme = tables[Object.keys(tables)[i]].theme_code;
+        // subject = tables[Object.keys(tables)[i]].subject_code;
+        // product = tables[Object.keys(tables)[i]].product_code;
+        // title = tables[Object.keys(tables)[i]].name.replaceAll(" ", "-");
+        categories = tables[geos[i]].categories;
+        // if (theme == themes_menu.value & subject == subjects_menu.value & product == products_menu.value & title == names_menu.value) {
             option = document.createElement("option");
-            option.value = Object.keys(tables)[i];
+            option.value = geos[i];
             if (categories.includes("AA") | categories.includes("AA2024")) {
                 option.textContent = "Assembly Area";
             } else if (categories.includes("LGD2014") | categories.includes("LGD")) {
@@ -1111,7 +1114,7 @@ function fillGeoMenu () {
                 option.textContent = "Small Area";   
             } else if (categories.includes("LCG")) {
                 option.textContent = "Local Commisioning Group";
-            } else if (categories.includes("UR2015")) {
+            } else if (categories.includes("UR2015") | categories.includes("SETTLEMENT")) {
                 option.textContent = "Urban/Rural";
             } else if (categories.includes("NUTS3")) {
                 option.textContent = "NUTS3";
@@ -1124,7 +1127,7 @@ function fillGeoMenu () {
             }
             geo_menu.appendChild(option);
             if (option.textContent != "") num_options += 1;
-        }
+        // }
     }
 
     if (num_options > 0) {
@@ -1151,9 +1154,6 @@ function fillGeoMenu () {
 
 function fillStatMenu () {
 
-    while(stats_menu.firstChild) {
-        stats_menu.removeChild(stats_menu.firstChild);
-    }
 
     statistics = tables[geo_menu.value].statistics;
 
@@ -1212,6 +1212,8 @@ function mapSelections () {
         geog_type = "LCG";
     } else if (categories.includes("UR2015")) {
         geog_type = "UR2015";
+    } else if (categories.includes("SETTLEMENT")) {
+        geog_type = "SETTLEMENT";
     } else if (categories.includes("NUTS3")) {
         geog_type = "NUTS3";
     } else if (categories.includes("ELB")) {
