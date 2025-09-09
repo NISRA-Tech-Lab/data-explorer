@@ -177,40 +177,36 @@ async function createMenus () {
     return; // bail early if we truly have nothing
   }
 
-        let themes = {};
-        const structure = {};
+    // let themes = {};
+    let structure = {};
 
-        for (const [matrix, t] of Object.entries(tables)) {
-            const theme = t.theme;
-            const theme_code   = String(t.theme_code);
-            const subject = String(t.subject);
-            const subject_code = String(t.subject_code);
-            const product = String(t.product);
-            const product_code = String(t.product_code);
-            const table_name   = t.name;
+    for (const [matrix, t] of Object.entries(tables)) {
+        const theme = t.theme;
+        const theme_code   = String(t.theme_code);
+        const subject = String(t.subject);
+        const subject_code = String(t.subject_code);
+        const product = String(t.product);
+        const product_code = String(t.product_code);
+        const table_name   = t.name;
 
-            // Record theme -> code mapping (once)
-            if (!themes[theme]) themes[theme] = { code: theme_code };
+        // Build nested structure safely
+        structure[theme] ??= {code: theme_code, subjects: {}};
+        structure[theme].subjects[subject] ??= {code: subject_code, products: {}};
+        structure[theme].subjects[subject].products[product] ??= {code: product_code, tables: {}};
 
-            // Build nested structure safely
-            structure[theme_code] ??= {name: theme, subjects: {}};
-            structure[theme_code].subjects[subject_code] ??= {name: subject, products: {}};
-            structure[theme_code].subjects[subject_code].products[product_code] ??= {name: product, tables: {}};
+        // Ensure an array at the table_name leaf
+        const list = (structure[theme].subjects[subject].products[product].tables[table_name] ??= []);
 
-            // Ensure an array at the table_name leaf
-            const list = (structure[theme_code].subjects[subject_code].products[product_code].tables[table_name] ??= []);
+        // Push matrix if not present
+        if (!list.includes(matrix)) list.push(matrix);
+    }
 
-            // Push matrix if not present
-            if (!list.includes(matrix)) list.push(matrix);
-        }
+    structure = sortObject(structure);
 
-
-    themes = sortObject(themes);
-
-    for (let i = 0; i < Object.keys(themes).length; i ++) {
+    for (let i = 0; i < Object.keys(structure).length; i ++) {
         option = document.createElement("option");
-        option.value = themes[Object.keys(themes)[i]].code;
-        option.textContent = Object.keys(themes)[i];
+        option.value = structure[Object.keys(structure)[i]].code;
+        option.textContent = Object.keys(structure)[i];
         themes_menu.appendChild(option);
     }
 
@@ -235,7 +231,7 @@ async function createMenus () {
     themes_menu.onchange = function () {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
 
-        const theme = structure[themes_menu.value];
+        const theme = structure[themes_menu.options[themes_menu.selectedIndex].text];
         const subjects = theme.subjects;
         const products = subjects[firstKey(subjects)].products;
         const tables   = products[firstKey(products)].tables;
@@ -248,7 +244,7 @@ async function createMenus () {
     subjects_menu.onchange = function() {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
 
-        const subject = structure[themes_menu.value].subjects[subjects_menu.value];
+        const subject = structure[themes_menu.options[themes_menu.selectedIndex].text].subjects[subjects_menu.options[subjects_menu.selectedIndex].text];
         const products = subject.products;
         const tables   = products[firstKey(products)].tables;
 
@@ -260,7 +256,7 @@ async function createMenus () {
     products_menu.onchange = function () {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
 
-        const product = structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value];
+        const product = structure[themes_menu.options[themes_menu.selectedIndex].text].subjects[subjects_menu.options[subjects_menu.selectedIndex].text].products[products_menu.options[products_menu.selectedIndex].text];
         const tables = product.tables;
 
         const selected_geo = tables[firstKey(tables)][0];
@@ -271,16 +267,8 @@ async function createMenus () {
     names_menu.onchange = function () {
         localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
 
-        const table_names = Object.keys(structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables);
-
-        let selected_geo;
-
-        for (let i = 0; i < table_names.length; i ++) {
-            if (table_names[i].replaceAll(" ", "-") == names_menu.value) {
-                let tables = structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables[table_names[i]];
-                selected_geo = tables[0];
-            }
-        }      
+        const tables = structure[themes_menu.options[themes_menu.selectedIndex].text].subjects[subjects_menu.options[subjects_menu.selectedIndex].text].products[products_menu.options[products_menu.selectedIndex].text].tables[names_menu.options[names_menu.selectedIndex].text];
+        let selected_geo = tables[0];   
 
         window.location.search = `?table=${selected_geo}`;
     }
@@ -976,12 +964,12 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
 function fillSubjectsMenu (structure) {
 
-    let subjects = structure[themes_menu.value].subjects;
+    let subjects = structure[themes_menu.options[themes_menu.selectedIndex].text].subjects;
 
     for (let i = 0; i < Object.keys(subjects).length; i ++) {
         option = document.createElement("option");
-        option.value = Object.keys(subjects)[i];
-        option.textContent = subjects[Object.keys(subjects)[i]].name;
+        option.value = subjects[Object.keys(subjects)[i]].code;
+        option.textContent = Object.keys(subjects)[i];
         subjects_menu.appendChild(option);
     }
 
@@ -1005,14 +993,13 @@ function fillSubjectsMenu (structure) {
 
 function fillProductsMenu (structure) {
 
-    let products = structure[themes_menu.value].subjects[subjects_menu.value].products;
+    let products = structure[themes_menu.options[themes_menu.selectedIndex].text].subjects[subjects_menu.options[subjects_menu.selectedIndex].text].products;
 
-    products = sortObject(products);
 
     for (let i = 0; i < Object.keys(products).length; i ++) {
         option = document.createElement("option");
-        option.value = Object.keys(products)[i];
-        option.textContent = products[Object.keys(products)[i]].name;
+        option.value = products[Object.keys(products)[i]].code;
+        option.textContent = Object.keys(products)[i];
         products_menu.appendChild(option);
     }
 
@@ -1036,7 +1023,7 @@ function fillProductsMenu (structure) {
 
 function fillNamesMenu (structure) {
 
-    let names = Object.keys(structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables);
+    let names = Object.keys(structure[themes_menu.options[themes_menu.selectedIndex].text].subjects[subjects_menu.options[subjects_menu.selectedIndex].text].products[products_menu.options[products_menu.selectedIndex].text].tables);
 
     for (let i = 0; i < names.length; i ++) {
         option = document.createElement("option");
@@ -1065,8 +1052,8 @@ function fillNamesMenu (structure) {
 
 function fillGeoMenu (structure) {
 
-    let names = structure[themes_menu.value].subjects[subjects_menu.value].products[products_menu.value].tables;
-    
+    let names = structure[themes_menu.options[themes_menu.selectedIndex].text].subjects[subjects_menu.options[subjects_menu.selectedIndex].text].products[products_menu.options[products_menu.selectedIndex].text].tables;
+
     let geos;
 
     for (let i = 0; i < Object.keys(names).length; i ++) {
@@ -1220,25 +1207,24 @@ function mapSelections () {
 
 }
 
-// A function to sort items alphabetically inside an object based on the object key
-function sortObject(o) {
-   var sorted = {},
-   key, a = [];
-
-   for (key in o) {
-         if (o.hasOwnProperty(key)) {
-            a.push(key);
-         }
-   }
-
-   a.sort();
-
-   for (key = 0; key < a.length; key++) {
-         sorted[a[key]] = o[a[key]];
-   }
-   
-   return sorted;
+// Recursively sort object keys at all nesting levels
+function sortObject(obj) {
+  if (Array.isArray(obj)) {
+    // If it's an array, recurse into each item
+    return obj.map(sortObject);
+  } else if (obj !== null && typeof obj === "object") {
+    // If it's an object, sort its keys
+    return Object.keys(obj)
+      .sort((a, b) => a.localeCompare(b)) // alphabetical sort
+      .reduce((acc, key) => {
+        acc[key] = sortObject(obj[key]); // recurse into values
+        return acc;
+      }, {});
+  }
+  // If primitive (string, number, etc.), just return it
+  return obj;
 }
+
 
 function titleCase(str, lowerWords = ['and', 'of']) {
   const lowerSet = new Set(lowerWords.map(w => w.toLowerCase()));
