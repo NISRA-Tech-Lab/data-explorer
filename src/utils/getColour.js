@@ -1,4 +1,4 @@
-import { palette } from "../config.js";
+import { palette } from "../config/config.js";
 
 // Use the normalized value (or bin) to pick a color; -1 → grey for NA
 export function getColour(normOrBin) {

@@ -1,5 +1,5 @@
 import { mapSelections } from "./mapSelections.js";
-import { default_table } from "../config.js";
+import { default_table } from "../config/config.js";
 import {themes_menu, subjects_menu, search, products_menu, names_menu, geo_menu, stats_menu} from "./elements.js";
 
 export function fillSubjectsMenu (structure, tables) {

@@ -1,6 +1,6 @@
 import { wrapLabel } from "./wrapLabel.js";
 import { yAxisLabelPlugin } from "./yAxisLabelPlugin.js";
-import { palette, GEOG_PROPS } from "../config.js";
+import { palette, GEOG_PROPS } from "../config/config.js";
 import { syncDraggingToZoom } from "./syncDraggingToZoom.js";
 import { loadShapes } from "./loadShapes.js";
 import { titleCase } from "./titleCase.js";

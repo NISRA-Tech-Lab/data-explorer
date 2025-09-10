@@ -1,5 +1,5 @@
-import { createMenus, getSearchIndex } from "./scripts/utils/createMenus.js"; 
-import { wireSearch } from "./scripts/utils/wireSearch.js";
+import { createMenus, getSearchIndex } from "./utils/createMenus.js"; 
+import { wireSearch } from "./utils/wireSearch.js";
 
 let searchIndex = [];
 

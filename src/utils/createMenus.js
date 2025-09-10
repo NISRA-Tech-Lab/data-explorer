@@ -1,6 +1,6 @@
 import { loadTables } from "./loadTables.js";
 import { sortObject } from "./sortObject.js";
-import { default_table } from "../config.js";
+import { default_table } from "../config/config.js";
 import { fillSubjectsMenu, fillProductsMenu, fillNamesMenu, fillGeoMenu, fillStatMenu} from "./fillMenus.js";
 import { firstKey } from "./firstKey.js"
 import { themes_menu, subjects_menu, products_menu, names_menu, geo_menu, stats_menu, search, SIDEBAR_OPEN_KEY } from "./elements.js";

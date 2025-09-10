@@ -1,4 +1,4 @@
-import { GEOG_PROPS } from "../config.js";
+import { GEOG_PROPS } from "../config/config.js";
 
 export const shapeCache = new Map();
 
