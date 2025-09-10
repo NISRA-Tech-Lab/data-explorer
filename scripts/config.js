@@ -1,5 +1,7 @@
+// Default data to show on page load
 export const default_table = "MYE01T02";
 
+// Lookup for geojson files
 export const GEOG_PROPS= {
     LGD2014: { url: "map/LGD2014.geo.json", code_var: "LGDCode" },
     LGD:     { url: "map/LGD2014.geo.json", code_var: "LGDCode" },

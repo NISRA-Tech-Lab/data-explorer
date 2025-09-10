@@ -1,0 +1,20 @@
+export const themes_menu = document.getElementById("theme");
+export const subjects_menu = document.getElementById("subject");
+export const products_menu = document.getElementById("product");
+export const names_menu = document.getElementById("name");
+export const geo_menu = document.getElementById("geo");
+export const stats_menu = document.getElementById("stat");
+export const search = window.location.search.replace("?", "").split("&");
+export const chart_container = document.getElementById("chart-container");
+export const map_container = document.getElementById("map-container");
+export const map_subtitle = document.getElementById("map-subtitle");
+export const metadata_text = document.getElementById("metadata-text");
+export const other_menu = document.getElementById("other-vars");
+export const page_title = document.getElementsByTagName("title")[0];
+export const table_preview = document.getElementById("table-preview");
+export const sidebarEl = document.getElementById("sidebar");
+export const globalSearchResults = document.getElementById("global-search-results");
+export const globalSearchWrap = document.querySelector(".sidebar-search");
+export const globalSearchInput = document.getElementById("global-search");
+export const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
+

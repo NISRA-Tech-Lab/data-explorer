@@ -1,9 +1,7 @@
 
+import { globalSearchResults, globalSearchWrap } from "./elements.js";
 
 export function renderGlobalResults(items) {
-
-  const globalSearchResults = document.getElementById("global-search-results");
-  const globalSearchWrap = document.querySelector(".sidebar-search");
 
   globalSearchResults.innerHTML = "";
   if (!items.length) {
