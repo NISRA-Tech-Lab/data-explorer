@@ -443,13 +443,13 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             chart_container.removeChild(chart_container.firstChild)
         }
 
-        chart_unit = document.createElement("div");
-        chart_unit.classList.add("chart-unit");        
-        chart_unit.classList.add("text-secondary");   
+        // chart_unit = document.createElement("div");
+        // chart_unit.classList.add("chart-unit");        
+        // chart_unit.classList.add("text-secondary");   
 
-        chart_unit.textContent = unit;
+        // chart_unit.textContent = unit;
 
-        chart_container.appendChild(chart_unit);
+        // chart_container.appendChild(chart_unit);
 
         if (themes_menu.value == "67") {
             if (categories.includes("NI")) {
@@ -495,49 +495,117 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         var time_series = ni_result.result.dimension[time_var].category.index;
 
+        Chart.defaults.font.family = "'Roboto', Arial, sans-serif";
+        Chart.defaults.color = "#212529"; // optional: match Bootstrap body color
+
+        // Horizontal Y-axis label plugin (centred above axis line)
+        const yAxisLabelPlugin = {
+            id: "yAxisLabel",
+            afterDraw(chart, _args, opts) {
+                const { ctx, chartArea, scales } = chart;
+                const yScale = scales.y || scales.y1;
+                if (!yScale || !opts?.text) return;
+
+                const lines = wrapLabel(opts.text, opts.maxChars || 12);
+                const font = Chart.helpers.toFont(opts.font || Chart.defaults.font);
+
+                ctx.save();
+                ctx.font = font.string;
+                ctx.fillStyle = opts.color || Chart.defaults.color || "#6c757d";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "bottom";
+
+                // Anchor to the actual Y-axis line (right edge for left axis, left edge for right axis)
+                const axisX = (yScale.options.position === "right") ? yScale.left : yScale.right;
+                const x = (typeof opts.x === "number") ? opts.x : axisX;
+
+                // Starting Y just above the chart
+                let y = chartArea.top - (opts.offset ?? 6);
+                const lineHeight = font.lineHeight || font.size * 1.25;
+
+                // Draw upward stacked lines
+                for (let i = lines.length - 1; i >= 0; i--) {
+                    ctx.fillText(lines[i], x, y);
+                    y -= lineHeight;
+                }
+
+                ctx.restore();
+            }
+        };
+
+        // Chart data
         const chart_data = {
-        labels: [...time_series],
-        datasets: [{
-            label: stat_label,
-            data: [...values],
-            borderColor: "#00205b",
-            backgroundColor: "#00205b",
-            barPercentage: 0.4,
-            fill: false,
-            pointBackgroundColor: "#00205b",
-            tension: 0 // optional: straight lines
-        }]
+            labels: [...time_series],
+            datasets: [{
+                label: stat_label,
+                data: [...values],
+                borderColor: "#00205b",
+                backgroundColor: "#00205b",
+                barPercentage: 0.4,
+                fill: false,
+                pointBackgroundColor: "#00205b",
+                tension: 0
+            }]
         };
 
         // Decide chart type dynamically
-        const chartType = (values.length === 1) ? 'bar' : 'line';
+        const chart_type = (values.length === 1) ? "bar" : "line";
 
-        // Chart configuration
+        // Axis titles
+        const xAxisTitle = result.dimension[time_var].label || "";
+        const yAxisTitle = unit || "";
+
+        console.log(wrapLabel(yAxisTitle).length)
+
+        // Chart config
         const chart_config = {
-        type: chartType,
-        data: chart_data, 
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-            x: {
-                grid: { lineWidth: 0, drawTicks: true, tickWidth: 1 },
-                ticks: { minRotation: 0, maxRotation: 0 }
-            },
-            y: {
-                beginAtZero: true,
-                ticks: { minRotation: 0, maxRotation: 0 }
-            }
-            },
-            interaction: { intersect: false, mode: "index" },
-            plugins: {
-                legend: {
-                    display: false // disables legend 
+            type: chart_type,
+            data: chart_data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: { padding: { top: wrapLabel(yAxisTitle).length * 25, left: 30 } }, // space for Y label
+                interaction: { intersect: false, mode: "index" },
+                scales: {
+                    x: {
+                        grid: { lineWidth: 0, drawTicks: true, tickWidth: 1 },
+                        ticks: { minRotation: 0, maxRotation: 0, autoSkip: true, maxTicksLimit: 8 },
+                        title: {
+                            display: !!xAxisTitle,
+                            text: xAxisTitle,
+                            color: "#6c757d",
+                            padding: { top: 10 },
+                            font: { size: 14, weight: "500", family: "'Roboto', Arial, sans-serif" }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            minRotation: 0,
+                            maxRotation: 0,
+                            callback: (v) => {
+                                try { return Number(v).toLocaleString("en-GB"); }
+                                catch { return v; }
+                            }
+                        },
+                        title: { display: false } // plugin draws the label
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    yAxisLabel: {
+                        text: yAxisTitle,
+                        color: "#6c757d",
+                        offset: 10,
+                        font: { size: 14, weight: "500", family: "'Roboto', Arial, sans-serif" },
+                        maxChars: 12 // wrap threshold
+                    }
                 }
-            }
-        },
-        plugins: []
+            },
+            plugins: [yAxisLabelPlugin]
         };
+
+
 
         chart_title = document.getElementById("chart-title");
 
@@ -559,11 +627,11 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         const ctx = chart_canvas.getContext('2d');
         new Chart(ctx, chart_config);
 
-        x_axis_label = document.createElement("div");
-        x_axis_label.textContent = result.dimension[time_var].label;
-        x_axis_label.classList.add("text-secondary");
-        x_axis_label.classList.add("text-center");
-        chart_container.appendChild(x_axis_label);
+        // x_axis_label = document.createElement("div");
+        // x_axis_label.textContent = result.dimension[time_var].label;
+        // x_axis_label.classList.add("text-secondary");
+        // x_axis_label.classList.add("text-center");
+        // chart_container.appendChild(x_axis_label);
 
         if (unit.toLowerCase() == "number") {
             unit_fixed = "";
@@ -867,11 +935,12 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
          let headers = Object.keys(result.dimension);
 
          for (let i = 0; i < headers.length; i ++) {
-
-           th = document.createElement("th");
-           th.textContent = result.dimension[headers[i]].label;
-           
-           header_row.appendChild(th);
+            if (headers[i] != "NI") {
+                th = document.createElement("th");
+                th.textContent = result.dimension[headers[i]].label;
+                header_row.appendChild(th);
+            }
+          
 
          }
 
@@ -1358,4 +1427,22 @@ async function loadShapes(geog_type) {
 }
 
 const firstKey  = o => Object.keys(o)[0];
+
+// Helper: wrap text into lines ≤ maxChars (no mid-word breaks)
+function wrapLabel(text, maxChars = 12) {
+  const words = text.split(/\s+/);
+  const lines = [];
+  let current = "";
+
+  for (const word of words) {
+    if ((current + " " + word).trim().length <= maxChars) {
+      current = (current ? current + " " : "") + word;
+    } else {
+      if (current) lines.push(current);
+      current = word;
+    }
+  }
+  if (current) lines.push(current);
+  return lines;
+}
 
