@@ -85,7 +85,8 @@ for (i in seq_along(data_portal$label)) {
       "https://ws-data.nisra.gov.uk/public/api.restful/",
       "PxStat.Data.Cube_API.ReadDataset/",
       matrix,
-      "/JSON-stat/2.0/en"
+      "/JSON-stat/2.0/en?apiKey=",
+      api_key
     ))
 
     fetch_error <- "error" %in% names(json_data)
