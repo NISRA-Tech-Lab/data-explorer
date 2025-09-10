@@ -308,7 +308,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
     var other_headline = "";
     let id_vars;
 
-    if (geog_type == "none") {
+    if (["none", "NI"].includes(geog_type)) {
         document.getElementById("map-card").classList.add("d-none");
         document.getElementById("chart-card").classList.remove("col-xl-6");
         
@@ -587,7 +587,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         document.getElementById("title-card").classList.remove("col-xl-6");
     }
 
-    if (geog_type != "none") {
+    if (!["none", "NI"].includes(geog_type)) {
 
         if (result.dimension[geog_type].category.index.includes("0")) {
             u_position = result.dimension[geog_type].category.index.indexOf("0")
@@ -901,14 +901,14 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             tr.appendChild(stat_cell);
 
             year_cell = document.createElement("td");
-            if (geog_type == "none") {
+            if (["none", "NI"].includes(geog_type)) {
                 year_cell.textContent = time_series[i];
             } else {
                 year_cell.textContent = year;
             }
             tr.appendChild(year_cell);
 
-            if (geog_type != "none") {
+            if (!["none", "NI"].includes(geog_type)) {
                 geog_cell = document.createElement("td");
                 geog_cell.textContent = titleCase(Object.values(result.dimension[geog_type].category.label)[i]);
                 tr.appendChild(geog_cell);
@@ -1103,6 +1103,8 @@ function fillGeoMenu (structure) {
             option.textContent = "Country of Birth";
         } else if (themes_menu.value == "67" & categories.includes("EQUALGROUPS")) {
             option.textContent = "Equality Groups";
+        } else if (categories.includes("NI")) {
+            option.textContent = "Northern Ireland"
         }
         geo_menu.appendChild(option);
         if (option.textContent != "") num_options += 1;
@@ -1199,6 +1201,8 @@ function mapSelections () {
         geog_type = "ELB";
     } else if (categories.includes("COB_BASIC")) {
         geog_type = "COB_BASIC";
+    } else if (categories.includes("NI")) {
+        geog_type = "NI"
     } else {
         geog_type = "none";
     }
