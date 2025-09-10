@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     await createMenus();
 
     // Get the index produced during createMenus()
-    // (see small addition to createMenus.js below)
     if (typeof getSearchIndex === "function") {
       searchIndex = getSearchIndex() || [];
     }

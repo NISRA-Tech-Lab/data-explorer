@@ -1,3 +1,4 @@
+// Global fetch of html elements
 export const themes_menu = document.getElementById("theme");
 export const subjects_menu = document.getElementById("subject");
 export const products_menu = document.getElementById("product");
@@ -17,4 +18,3 @@ export const globalSearchResults = document.getElementById("global-search-result
 export const globalSearchWrap = document.querySelector(".sidebar-search");
 export const globalSearchInput = document.getElementById("global-search");
 export const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
-
