@@ -139,7 +139,7 @@ for (i in seq_along(data_portal$label)) {
       tables[[paste0(matrix, "_", j)]] <- list(
         name = name,
         updated = as.Date(substr(data_portal$updated[i], 1, 10)),
-        categories = unlist(data_portal$id[i]),
+        categories = json_data$dimension,
         statistics = json_data$dimension$STATISTIC$category$label,
         time = time_var,
         time_series = time_series,
