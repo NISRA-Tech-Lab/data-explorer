@@ -290,18 +290,12 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
     let map_container = document.getElementById("map-container");
 
-    let restful_url = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/" + matrix + "/JSON-stat/2.0/en";
-
-    const restful = await fetch(restful_url);
-    const fetched_restful = await restful.json();
-
-    let time_var = fetched_restful.id.filter(function (x) {return x.includes("TLIST")})[0];
-    let year = fetched_restful.dimension[time_var].category.index.slice(-1);
-
+    let time_var = tables[matrix].time;
+    let year = tables[matrix].time_series[tables[matrix].time_series.length - 1];
     
     normal_vars = ["STATISTIC", geog_type, time_var];
 
-    let other_vars = tables[matrix].categories;
+    let other_vars = Object.keys(tables[matrix].categories);
     other_vars = other_vars.filter(x => !normal_vars.includes(x));
 
     let other_selections = "";
@@ -330,10 +324,11 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             new_menu = document.createElement("div");
 
             if (other == "") {
-                new_menu.innerHTML = `<label for = "${other_vars[i]}" class = "form-label">${fetched_restful.dimension[other_vars[i]].label}</label><select id = "${other_vars[i]}" name = "${other_vars[i]}" class = "form-select"></select>`
 
-                options = Object.keys(fetched_restful.dimension[other_vars[i]].category.label);
-                labels = Object.values(fetched_restful.dimension[other_vars[i]].category.label);
+                new_menu.innerHTML = `<label for = "${other_vars[i]}" class = "form-label">${tables[matrix].categories[other_vars[i]].label}</label><select id = "${other_vars[i]}" name = "${other_vars[i]}" class = "form-select"></select>`
+
+                options = tables[matrix].categories[other_vars[i]].category.index;
+                labels = Object.values(tables[matrix].categories[other_vars[i]].category.label);
 
                 other_menu.appendChild(new_menu);
 
@@ -388,7 +383,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
                 map_subtitle.innerHTML = "";
             }
 
-            map_subtitle.innerHTML += `<strong>${fetched_restful.dimension[other_vars[i]].label}</strong>: ${fetched_restful.dimension[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}<br>`;
+            map_subtitle.innerHTML += `<strong>${tables[matrix].categories[other_vars[i]].label}</strong>: ${tables[matrix].categories[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}<br>`;
 
             if (i != 0) {
                 if (i == other_vars.length - 1) {
@@ -399,7 +394,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
             }
             
 
-            other_headline += `the <strong>${fetched_restful.dimension[other_vars[i]].label}</strong> category <em>"${fetched_restful.dimension[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}"</em>`
+            other_headline += `the <strong>${tables[matrix].categories[other_vars[i]].label}</strong> category <em>"${tables[matrix].categories[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}"</em>`
         }
         
     }  
@@ -859,7 +854,7 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
 
         document.getElementById("chart-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
-        let rows = fetched_restful.value.length;
+        let rows = tables[matrix].rows;
 
         document.getElementById("dp-link").innerHTML = `Showing rows 1-${Math.min(data.length, 10)} of ${rows.toLocaleString("en-GB")}. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal</a> or download it in <a href = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/${matrix}/CSV/1.0/en">CSV format</a>.`
 
@@ -1065,7 +1060,7 @@ function fillGeoMenu (structure) {
 
     for (let i = 0; i < geos.length; i ++) {
 
-        categories = tables[geos[i]].categories;
+        categories = Object.keys(tables[geos[i]].categories);
         
         option = document.createElement("option");
         option.value = geos[i];
@@ -1162,7 +1157,7 @@ function fillStatMenu () {
 
 function mapSelections () {
 
-    categories = tables[geo_menu.value].categories;
+    categories = Object.keys(tables[geo_menu.value].categories);
     
     if (categories.includes("LGD2014")) {
         geog_type = "LGD2014";
