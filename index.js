@@ -604,7 +604,6 @@ async function plotMap (matrix, statistic, geog_type, other = "") {
         }
 
         data = result.value;
-        data = data.map(item => item === '-' ? null : Number(item));
 
         // Useful for legend (keep as-is even for COB quintiles)
         let range_min = Math.floor(Math.min(...data.filter(v => v != null)));
