@@ -1,5 +1,6 @@
-import { createMenus, getSearchIndex } from "./utils/createMenus.js"; 
+import { createMenus, getSearchIndex } from "./utils/createMenus.js";
 import { wireSearch } from "./utils/wireSearch.js";
+import { initSidebarPersistence } from "./utils/initSideBarPersistence.js";
 
 let searchIndex = [];
 
@@ -14,6 +15,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     }
 
     wireSearch(searchIndex);
+    initSidebarPersistence();
   } catch (e) {
     console.error("Startup failed:", e);
   }

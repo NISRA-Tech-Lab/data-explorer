@@ -17,4 +17,5 @@ export const sidebarEl = document.getElementById("sidebar");
 export const globalSearchResults = document.getElementById("global-search-results");
 export const globalSearchWrap = document.querySelector(".sidebar-search");
 export const globalSearchInput = document.getElementById("global-search");
+
 export const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";

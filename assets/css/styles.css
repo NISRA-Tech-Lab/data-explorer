@@ -322,3 +322,12 @@ h4 {
   border-radius: 4px; /* optional: soft rounded corners */
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .offcanvas,
+  .offcanvas-backdrop {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
