@@ -66,7 +66,7 @@ data_portal <- jsonlite::fromJSON(
     )
 )$link$item
 
-associated_tables <- read.csv("associated-tables.csv")
+associated_tables <- read.csv("public/data/associated-tables.csv")
 
 tables <- list()
 
@@ -160,4 +160,4 @@ for (i in seq_along(data_portal$label)) {
 
 tables <- tables[order(names(tables))]
 
-write_json(tables, "data-portal-tables.json", auto_unbox = TRUE, pretty = TRUE)
+write_json(tables, "public/data/data-portal-tables.json", auto_unbox = TRUE, pretty = TRUE)

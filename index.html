@@ -37,7 +37,6 @@
   <!-- Top Navbar -->
   <nav class="navbar py-3" style="background-color:#00205b;">
   <div class="container-fluid d-flex align-items-center">
-   
 
     <!-- Logo (left) -->
     <a class="navbar-brand ps-2 d-flex align-items-center me-auto" href="#">
@@ -301,42 +300,40 @@
 
   <script type = "module" src="src/index.js"></script>
 
-<script>
-  (function () {
-    const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
+  <script>
+    (function () {
+      const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const sidebarEl = document.getElementById("sidebar");
-      if (!sidebarEl) return;
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarEl = document.getElementById("sidebar");
+        if (!sidebarEl) return;
 
-      // Persist user open/close actions (so manual close stops auto-open next time)
-      sidebarEl.addEventListener("shown.bs.offcanvas", () => {
-        localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+        // Persist user open/close actions (so manual close stops auto-open next time)
+        sidebarEl.addEventListener("shown.bs.offcanvas", () => {
+          localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+        });
+        sidebarEl.addEventListener("hidden.bs.offcanvas", () => {
+          localStorage.setItem(SIDEBAR_OPEN_KEY, "0");
+        });
+
+        // Only auto-open on mobile/tablet and only if last state was "open"
+        if (window.matchMedia("(max-width: 991.98px)").matches &&
+            localStorage.getItem(SIDEBAR_OPEN_KEY) === "1") {
+
+          const off = new bootstrap.Offcanvas(sidebarEl);
+
+          // Disable animation just for this programmatic show
+          document.body.classList.add("offcanvas-no-anim");
+          off.show();
+
+          // Remove the no-anim class once it's visible (and also via fallback)
+          const removeNoAnim = () => document.body.classList.remove("offcanvas-no-anim");
+          sidebarEl.addEventListener("shown.bs.offcanvas", removeNoAnim, { once: true });
+          setTimeout(removeNoAnim, 500); // safety in case the event doesn't fire
+        }
       });
-      sidebarEl.addEventListener("hidden.bs.offcanvas", () => {
-        localStorage.setItem(SIDEBAR_OPEN_KEY, "0");
-      });
-
-      // Only auto-open on mobile/tablet and only if last state was "open"
-      if (window.matchMedia("(max-width: 991.98px)").matches &&
-          localStorage.getItem(SIDEBAR_OPEN_KEY) === "1") {
-
-        const off = new bootstrap.Offcanvas(sidebarEl);
-
-        // Disable animation just for this programmatic show
-        document.body.classList.add("offcanvas-no-anim");
-        off.show();
-
-        // Remove the no-anim class once it's visible (and also via fallback)
-        const removeNoAnim = () => document.body.classList.remove("offcanvas-no-anim");
-        sidebarEl.addEventListener("shown.bs.offcanvas", removeNoAnim, { once: true });
-        setTimeout(removeNoAnim, 500); // safety in case the event doesn't fire
-      }
-    });
-  })();
-</script>
-
-
+    })();
+  </script>
 
 </body>
 </html>

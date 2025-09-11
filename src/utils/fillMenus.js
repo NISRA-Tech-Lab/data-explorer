@@ -152,8 +152,8 @@ export function fillGeoMenu (structure, tables) {
     }
 
     if (num_options > 0) {
-        document.getElementById("geo").parentElement.classList.add("d-block");
-        document.getElementById("geo").parentElement.classList.remove("d-none");
+        geo_menu.parentElement.classList.add("d-block");
+        geo_menu.parentElement.classList.remove("d-none");
     }
 
     let selected_geo;
