@@ -37,7 +37,6 @@ export function renderGlobalResults(items) {
       <div class="small text-secondary">${item.theme} &rsaquo; ${item.subject} &rsaquo; ${item.product}</div>
     `;
     a.addEventListener("click", () => {
-      const sidebarEl = document.getElementById("sidebar");
       const inst = sidebarEl ? bootstrap.Offcanvas.getInstance(sidebarEl) : null;
       if (inst) inst.hide();
       if (globalSearchWrap) globalSearchWrap.classList.remove("has-results");

@@ -5,9 +5,15 @@ import { syncDraggingToZoom } from "./syncDraggingToZoom.js";
 import { loadShapes } from "./loadShapes.js";
 import { titleCase } from "./titleCase.js";
 import { getColour } from "./getColour.js";
-import { themes_menu, map_container, stats_menu, other_menu, map_subtitle, page_title, chart_container, table_preview, metadata_text, search, geo_menu, SIDEBAR_OPEN_KEY } from "./elements.js";
+import { themes_menu, map_container, stats_menu,
+         other_menu, map_subtitle, page_title, chart_container, 
+         table_preview, metadata_text, search, geo_menu,
+         SIDEBAR_OPEN_KEY, map_card, chart_card, headline,
+         chart_title, chart_subtitle, headline_fig, dp_link,
+         chart_updated, nav_product, nav_subject, nav_theme,
+         table_title, map_updated, map_title, title_card, headline_stat } from "./elements.js";
 
-export async function plotMap (tables, matrix, statistic, geog_type, other = "") {   
+export async function plotMap (tables, matrix, statistic, geog_type) {   
 
     let time_var = tables[matrix].time;
     
@@ -27,8 +33,8 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
     let id_vars;
 
     if (["none", "NI"].includes(geog_type)) {
-        document.getElementById("map-card").classList.add("d-none");
-        document.getElementById("chart-card").classList.remove("col-xl-6");
+        map_card.classList.add("d-none");
+        chart_card.classList.remove("col-xl-6");
         
         id_vars = `["STATISTIC", "${time_var}"`;
 
@@ -36,8 +42,7 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
 
         id_vars = `["STATISTIC", "${time_var}", "${geog_type}"`;
 
-    }
-        
+    }        
 
     if (other_vars.length > 0) {
         other_headline = " for ";
@@ -47,65 +52,66 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
 
             let new_menu = document.createElement("div");
 
-            if (other == "") {
 
-                new_menu.innerHTML = `<label for = "${other_vars[i]}" class = "form-label">${tables[matrix].categories[other_vars[i]].label}</label><select id = "${other_vars[i]}" name = "${other_vars[i]}" class = "form-select"></select>`
+            new_menu.innerHTML = `<label for = "${other_vars[i]}" class = "form-label">${tables[matrix].categories[other_vars[i]].label}</label><select id = "${other_vars[i]}" name = "${other_vars[i]}" class = "form-select"></select>`
 
-                let options = Object.keys(tables[matrix].categories[other_vars[i]].category.label);
-                let labels = Object.values(tables[matrix].categories[other_vars[i]].category.label);
+            let options = Object.keys(tables[matrix].categories[other_vars[i]].category.label);
+            let labels = Object.values(tables[matrix].categories[other_vars[i]].category.label);
 
-                other_menu.appendChild(new_menu);
+            other_menu.appendChild(new_menu);
 
-                for (let j = 0; j < labels.length; j ++) {
-                    let option = document.createElement("option");
-                    option.value = options[j];
-                    option.textContent = labels[j];
-                    document.getElementById(other_vars[i]).appendChild(option);
-                }
+            const new_select = document.getElementById(other_vars[i]);
 
-                
-                let selected_option = options[0];
-
-                const other_defaults = ["All", "ALL", "N92000002"];
-                
-                for (let j = 0; j < other_defaults.length; j ++) {
-                    if (options.includes(other_defaults[j])) {
-                        selected_option = other_defaults[j];
-                    }
-                }                
-
-                for (let j = 0; j < search.length; j ++) {
-                    if (search[j].includes(`${other_vars[i]}=`)) {
-                        let search_split = search[j].split("=");
-                        selected_option = search_split[1];
-                        break;
-                    }
-                }
-
-                document.getElementById(other_vars[i]).value = selected_option;              
-
-                new_menu.onchange = function () {
-
-                    localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
-                    let search_string = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
-
-                    for (let j = 0; j < other_vars.length; j ++) {
-                        search_string += `&${other_vars[j]}=${document.getElementById(other_vars[j]).value}`;
-                    }                    
-
-                    window.location.search = search_string;
-                    
-                }
+            for (let j = 0; j < labels.length; j ++) {
+                let option = document.createElement("option");
+                option.value = options[j];
+                option.textContent = labels[j];
+                new_select.appendChild(option);
             }
 
             
-            other_selections += `,"${other_vars[i]}":{"category":{"index":["${document.getElementById(other_vars[i]).value}"]}}`;
+            let selected_option = options[0];
+
+            const other_defaults = ["All", "ALL", "N92000002"];
+            
+            for (let j = 0; j < other_defaults.length; j ++) {
+                if (options.includes(other_defaults[j])) {
+                    selected_option = other_defaults[j];
+                }
+            }                
+
+            for (let j = 0; j < search.length; j ++) {
+                if (search[j].includes(`${other_vars[i]}=`)) {
+                    let search_split = search[j].split("=");
+                    selected_option = search_split[1];
+                    break;
+                }
+            }
+
+            new_select.value = selected_option;              
+
+            new_menu.onchange = function () {
+
+                localStorage.setItem(SIDEBAR_OPEN_KEY, "1");
+                let search_string = `?table=${geo_menu.value}&stat=${stats_menu.value}`;
+
+                for (let j = 0; j < other_vars.length; j ++) {
+                    search_string += `&${other_vars[j]}=${document.getElementById(other_vars[j]).value}`;
+                }                    
+
+                window.location.search = search_string;
+                
+            }
+     
+
+            
+            other_selections += `,"${other_vars[i]}":{"category":{"index":["${new_select.value}"]}}`;
             
             if (i == 0) {
                 map_subtitle.innerHTML = "";
             }
 
-            map_subtitle.innerHTML += `<strong>${tables[matrix].categories[other_vars[i]].label}</strong>: ${tables[matrix].categories[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}<br>`;
+            map_subtitle.innerHTML += `<strong>${tables[matrix].categories[other_vars[i]].label}</strong>: ${tables[matrix].categories[other_vars[i]].category.label[new_select.value]}<br>`;
 
             if (i != 0) {
                 if (i == other_vars.length - 1) {
@@ -116,7 +122,7 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
             }
             
 
-            other_headline += `the <strong>${tables[matrix].categories[other_vars[i]].label}</strong> category <em>"${tables[matrix].categories[other_vars[i]].category.label[document.getElementById(other_vars[i]).value]}"</em>`
+            other_headline += `the <strong>${tables[matrix].categories[other_vars[i]].label}</strong> category <em>"${tables[matrix].categories[other_vars[i]].category.label[new_select.value]}"</em>`
         }
         
     }  
@@ -150,10 +156,10 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
 
     if (plot_ni) {
 
-        document.getElementById("chart-card").classList.remove("d-none");
-        document.getElementById("chart-card").classList.add("d-block");
-        document.getElementById("headline").classList.remove("d-none");
-        document.getElementById("headline").classList.add("d-block");
+        chart_card.classList.remove("d-none");
+        chart_card.classList.add("d-block");
+        headline.classList.remove("d-none");
+        headline.classList.add("d-block");
 
         if (themes_menu.value != "67" & geog_type != "none") {
             const NI_position = result.dimension[geog_type].category.index.indexOf("N92000002");
@@ -288,7 +294,7 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
 
 
 
-        let chart_title = document.getElementById("chart-title");
+        
 
         if (time_series.length == 1) {
             chart_title.textContent = `${stat_label} in Northern Ireland ${time_series[0]}`;
@@ -296,7 +302,6 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
             chart_title.textContent = `${stat_label} in Northern Ireland (${time_series[0]} to ${time_series[time_series.length - 1]})`;
         }
 
-        let chart_subtitle = document.getElementById("chart-subtitle");
         chart_subtitle.innerHTML = map_subtitle.innerHTML;
 
         // Create a new canvas and render
@@ -317,12 +322,12 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
         let headline_value = "Not available";
         if (values[values.length - 1] != null) headline_value = values[values.length - 1].toLocaleString();
 
-        document.getElementById("headline-fig").innerHTML = `<span class = "h1">${headline_value}</span> ${unit_fixed}`;
-        document.getElementById("headline-stat").innerHTML = `<strong>${stat_label}</strong> in Northern Ireland in <strong>${time_series[time_series.length - 1]}</strong>${other_headline}.`
+        headline_fig.innerHTML = `<span class = "h1">${headline_value}</span> ${unit_fixed}`;
+        headline_stat.innerHTML = `<strong>${stat_label}</strong> in Northern Ireland in <strong>${time_series[time_series.length - 1]}</strong>${other_headline}.`
 
     } else {
-        document.getElementById("map-card").classList.remove("col-xl-6")
-        document.getElementById("title-card").classList.remove("col-xl-6");
+        map_card.classList.remove("col-xl-6")
+        title_card.classList.remove("col-xl-6");
     }
 
     let data;
@@ -547,25 +552,25 @@ export async function plotMap (tables, matrix, statistic, geog_type, other = "")
             max_value.innerHTML = range_max.toLocaleString("en-GB"); 
             
 
-            document.getElementById("map-title").textContent = `${stat_label} by ${result.dimension[geog_type].label} (${year})` ;
-            document.getElementById("map-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
+            map_title.textContent = `${stat_label} by ${result.dimension[geog_type].label} (${year})` ;
+            map_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
         } else {
             data = data_series;
         }
 
-        document.getElementById("table-title").textContent = `${result.label}`;
+        table_title.textContent = `${result.label}`;
             page_title.textContent += ` - ${result.label}`;
 
-            document.getElementById("nav-theme").textContent = tables[geo_menu.value].theme;        
-            document.getElementById("nav-subject").textContent = tables[geo_menu.value].subject;    
-            document.getElementById("nav-product").textContent = tables[geo_menu.value].product;   
+            nav_theme.textContent = tables[geo_menu.value].theme;        
+            nav_subject.textContent = tables[geo_menu.value].subject;    
+            nav_product.textContent = tables[geo_menu.value].product;   
 
-        document.getElementById("chart-updated").innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
+        chart_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
 
         let rows = tables[matrix].rows;
 
-        document.getElementById("dp-link").innerHTML = `Showing rows 1-${Math.min(data.length, 10)} of ${rows.toLocaleString("en-GB")}. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal</a> or download it in <a href = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/${matrix}/CSV/1.0/en">CSV format</a>.`
+        dp_link.innerHTML = `Showing rows 1-${Math.min(data.length, 10)} of ${rows.toLocaleString("en-GB")}. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal</a> or download it in <a href = "https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/${matrix}/CSV/1.0/en">CSV format</a>.`
 
          while (table_preview.firstChild) {
             table_preview.removeChild(table_preview.firstChild)
