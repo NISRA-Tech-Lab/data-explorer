@@ -1,6 +1,7 @@
 import { mapSelections } from "./mapSelections.js";
-import { default_table } from "../config/config.js";
+import { default_table, GEOG_PROPS } from "../config/config.js";
 import {themes_menu, subjects_menu, search, products_menu, names_menu, geo_menu, stats_menu} from "./elements.js";
+import { sortObject } from "./sortObject.js";
 
 export function fillSubjectsMenu (structure, tables) {
 
@@ -95,10 +96,11 @@ export function fillGeoMenu (structure, tables) {
     let names = structure[themes_menu.options[themes_menu.selectedIndex].text].subjects[subjects_menu.options[subjects_menu.selectedIndex].text].products[products_menu.options[products_menu.selectedIndex].text].tables;
 
     let geos;
+    let geo_types = {};
 
     for (let i = 0; i < Object.keys(names).length; i ++) {
         if (Object.keys(names)[i].replaceAll(" ", "-") == names_menu.value) {
-            geos = Object.values(names)[i]
+            geos = Object.values(names)[i];
         }
     }
 
@@ -107,48 +109,65 @@ export function fillGeoMenu (structure, tables) {
     for (let i = 0; i < geos.length; i ++) {
 
         let categories = Object.keys(tables[geos[i]].categories);
-        
-        let option = document.createElement("option");
-        option.value = geos[i];
-        
-        if (categories.includes("AA") | categories.includes("AA2024")) {
-            option.textContent = "Assembly Area";
-        } else if (categories.includes("LGD2014") | categories.includes("LGD")) {
-            option.textContent = "Local Government District";
-        } else if (categories.includes("LGD1992")) {
-            option.textContent = "Local Government District (1992)"
-        } else if (categories.includes("HSCT")) {
-            option.textContent = "Health and Social Care Trust";
-        } else if (categories.includes("DEA2014")) {
-            option.textContent = "District Electoral Area";
-        } else if (categories.includes("SDZ2021")) {
-            option.textContent = "Super Data Zone";
-        } else if (categories.includes("DZ2021")) {
-            option.textContent = "Data Zone";
-        } else if (categories.includes("Ward2014")) {
-            option.textContent = "Ward";
-        } else if (categories.includes("SOA")) {
-            option.textContent = "Super Output Area";   
-        } else if (categories.includes("SA")) {
-            option.textContent = "Small Area";   
-        } else if (categories.includes("LCG")) {
-            option.textContent = "Local Commisioning Group";
-        } else if (categories.includes("UR2015") | categories.includes("SETTLEMENT")) {
-            option.textContent = "Urban/Rural";
-        } else if (categories.includes("NUTS3")) {
-            option.textContent = "NUTS3";
-        } else if (categories.includes("ELB")) {
-            option.textContent = "Education and Library Board";
-        } else if (categories.includes("COB_BASIC")) {
-            option.textContent = "Country of Birth";
-        } else if (themes_menu.value == "67" & categories.includes("EQUALGROUPS")) {
-            option.textContent = "Equality Groups";
-        } else if (categories.includes("NI")) {
-            option.textContent = "Northern Ireland"
+        categories = categories.filter(x => !["STATISTIC", tables[geos[i]].time].includes(x));
+        if (geos[i] == "C21003NI") {
+            categories = categories.filter(x => x != "NI");
         }
-        geo_menu.appendChild(option);
-        if (option.textContent != "") num_options += 1;
+
+        for (let j = 0; j < categories.length; j++) {
+            if (!Object.keys(geo_types).includes(categories[j])) {
+                geo_types[categories[j]] = [geos[i]];
+                break
+            } else {
+                geo_types[categories[j]].push(geos[i]);
+                break
+            }
+        }
+
+    }
+
+    geo_types = sortObject(geo_types);
+
+    for (let i = 0; i < Object.keys(geo_types).length; i ++) {
+
+        let geo_type = Object.keys(geo_types)[i];
         
+        if (geo_types[geo_type].length == 1) {
+            let option = document.createElement("option");
+            option.value = geo_types[geo_type];
+            if (Object.keys(GEOG_PROPS).includes(geo_type)) {
+                option.text = GEOG_PROPS[geo_type].label;
+                num_options += 1;
+            }
+            geo_menu.appendChild(option)
+            
+        } else {
+            for (let j = 0; j < geo_types[geo_type].length; j ++) {
+                let option = document.createElement("option");
+                option.value = geo_types[geo_type][j];
+                let categories = tables[geo_types[geo_type][j]].categories;
+                let category_names = Object.keys(categories);
+                category_names = category_names.filter(x => !["STATISTIC", geo_type, tables[geo_types[geo_type][j]].time].includes(x));
+                
+                let category_string = "";
+                for (let k = 0; k < category_names.length; k ++) {
+                    if (k == 0) {
+                        category_string += categories[category_names[k]].label;
+                    } else if (k == category_names.length - 1) {
+                        category_string += ` and ${categories[category_names[k]].label}`;
+                    } else {
+                        category_string += `, ${categories[category_names[k]].label}`;
+                    }
+                }
+                if (Object.keys(GEOG_PROPS).includes(geo_type)) {
+                    option.text = `${GEOG_PROPS[geo_type].label} by ${category_string}`;
+                    num_options += 1;
+                }
+                geo_menu.appendChild(option);
+            }
+        }        
+
+
     }
 
     if (num_options > 0) {

@@ -5,6 +5,7 @@ import { syncDraggingToZoom } from "./syncDraggingToZoom.js";
 import { loadShapes } from "./loadShapes.js";
 import { titleCase } from "./titleCase.js";
 import { getColour } from "./getColour.js";
+import { quantile} from "./quantile.js";
 import { themes_menu, map_container, stats_menu,
          other_menu, map_subtitle, page_title, chart_container, 
          table_preview, metadata_text, search, geo_menu,
@@ -24,6 +25,9 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
     }
     
     const normal_vars = ["STATISTIC", geog_type, time_var];
+    if (geog_type == "COB_BASIC") {
+        normal_vars.push("NI")
+    } 
 
     let other_vars = Object.keys(tables[matrix].categories);
     other_vars = other_vars.filter(x => !normal_vars.includes(x));
@@ -179,6 +183,8 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         if (themes_menu.value == "67") {
             if (categories.includes("NI")) {
                 ni_url = "https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.Data.Cube_API.ReadDataset%22,%22params%22:%7B%22class%22:%22query%22,%22id%22:%5B%5D,%22dimension%22:%7B%7D,%22extension%22:%7B%22pivot%22:null,%22codes%22:false,%22language%22:%7B%22code%22:%22en%22%7D,%22format%22:%7B%22type%22:%22JSON-stat%22,%22version%22:%222.0%22%7D,%22matrix%22:%22" + matrix + "%22%7D,%22version%22:%222.0%22%7D%7D";
+            } else if (matrix == "INDEXSALELGD") {
+                ni_url = "https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=%7B%22jsonrpc%22:%222.0%22,%22method%22:%22PxStat.Data.Cube_API.ReadDataset%22,%22params%22:%7B%22class%22:%22query%22,%22id%22:%5B%5D,%22dimension%22:%7B%7D,%22extension%22:%7B%22pivot%22:null,%22codes%22:false,%22language%22:%7B%22code%22:%22en%22%7D,%22format%22:%7B%22type%22:%22JSON-stat%22,%22version%22:%222.0%22%7D,%22matrix%22:%22INDEXSALENI%22%7D,%22version%22:%222.0%22%7D%7D";
             } else {
                 let eq_matrix = matrix;
                  if (geog_type == "LGD2014") {
@@ -326,7 +332,14 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         headline_stat.innerHTML = `<strong>${stat_label}</strong> in Northern Ireland in <strong>${time_series[time_series.length - 1]}</strong>${other_headline}.`
 
     } else {
-        map_card.classList.remove("col-xl-6")
+        if (geog_type != "COB_BASIC") {
+            map_card.classList.remove("col-xl-6")
+        } else {
+            const spacer = document.createElement("div");
+            spacer.classList.add("col-xl-3");
+            map_card.parentElement.insertBefore(spacer, map_card);
+        }
+        
         title_card.classList.remove("col-xl-6");
     }
 
@@ -359,18 +372,18 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         let colours = [];
 
         if (geog_type === "COB_BASIC") {
-        // Build evenly-sized quintile thresholds (20/40/60/80%)
-        const vals = data.filter(v => v != null).sort((a, b) => a - b);
-        const qs = [0.2, 0.4, 0.6, 0.8].map(p => quantile(vals, p));
+            // Build evenly-sized quintile thresholds (20/40/60/80%)
+            const vals = data.filter(v => v != null).sort((a, b) => a - b);
+            const qs = [0.2, 0.4, 0.6, 0.8].map(p => quantile(vals, p));
 
-        // Map each value to a bin 0..4, then normalize to 0..1 in steps of 0.25
-        const toBin = (v) => {
-            if (v == null) return -1;              // “no data”
-            if (v <= qs[0]) return 0;
-            if (v <= qs[1]) return 1;
-            if (v <= qs[2]) return 2;
-            if (v <= qs[3]) return 3;
-            return 4;
+            // Map each value to a bin 0..4, then normalize to 0..1 in steps of 0.25
+            const toBin = (v) => {
+                if (v == null) return -1;              // “no data”
+                if (v <= qs[0]) return 0;
+                if (v <= qs[1]) return 1;
+                if (v <= qs[2]) return 2;
+                if (v <= qs[3]) return 3;
+                return 4;
         };
 
         for (let i = 0; i < data.length; i++) {
@@ -506,7 +519,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
                 if (f.properties){
 
                     let geog_index = result.dimension[geog_type].category.index.indexOf(f.properties[GEOG_PROPS[geog_type].code_var].toString().replace(" ", ""));
-
+                    
                     let shape_label = titleCase(result.dimension[geog_type].category.label[f.properties[GEOG_PROPS[geog_type].code_var].toString().replace(" ", "")]);
                     
                     if (data[geog_index] != null) {
