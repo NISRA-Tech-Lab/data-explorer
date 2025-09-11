@@ -20,7 +20,7 @@ export function writeCachedTables(data) {
   } catch { /* storage may be full or blocked; ignore */ }
 }
 
-export async function loadTables(url = "data-portal-tables.json") {
+export async function loadTables(url = "public/data/data-portal-tables.json") {
   const fresh = readCachedTables(false);
   if (fresh) return fresh;
 
