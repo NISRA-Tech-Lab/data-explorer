@@ -135,7 +135,6 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         }
 
          // Add new tables
-        console.log()
          tables_title.textContent = `${tables[matrix].statistics[stats_menu.value]} in Northern Ireland (${year}) by:`;
 
         for (let i = 0; i < other_vars.length; i ++) {   
@@ -165,7 +164,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             let table_selections = other_selections.split(",");
             table_selections = table_selections.filter(x => x.indexOf(other_vars[i]) == -1)
             table_selections = table_selections.join(",");
-            table_selections += `,"${geog_type}":{"category":{"index":["N92000002"]}}`;
+            if (geog_type != "none") table_selections += `,"${geog_type}":{"category":{"index":["N92000002"]}}`;
 
             let table_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
                 encodeURIComponent('{"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":' +
@@ -220,7 +219,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
                     });
                 }
                 td_1.style = "text-align: right;"
-                if (Object.keys(result.dimension[other_vars[i]].category.label)[j].toLowerCase() == "all") {
+                if (["all", "ni", "n92000002"].includes(Object.keys(result.dimension[other_vars[i]].category.label)[j].toLowerCase())) {
                     td_0.style = "font-weight: bold;"
                     td_1.style = "text-align: right; font-weight: bold;"
                 }
