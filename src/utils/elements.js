@@ -33,5 +33,9 @@ export const table_title = document.getElementById("table-title");
 export const map_updated = document.getElementById("map-updated");
 export const map_title = document.getElementById("map-title");
 export const title_card = document.getElementById("title-card");
+export const additional_tables = document.getElementById("additional-tables");
+export const table_tabs = document.getElementById("table-tabs");
+export const table_tabs_content = document.getElementById("table-tabs-content");
+export const tables_title = document.getElementById("tables-title");
 
 export const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
