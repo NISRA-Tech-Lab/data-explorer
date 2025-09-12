@@ -180,12 +180,12 @@ path.leaflet-interactive:focus { outline: none; }
 }
 .footer a {
   color: #fff;
-  text-decoration: none;
+  text-underline-offset: 3px;
 }
 .footer a:hover,
 .footer a:focus {
   color: #fff;
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 .footer-links { list-style: none; padding-left: 0; }
 .footer-links .list-inline-item { margin: 0 .5rem; }
