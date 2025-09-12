@@ -1,7 +1,10 @@
 library(jsonlite)
 library(dplyr)
+library(here)
 
 api_key <- "801aaca4bcf0030599c019f4efa8b89032e5e6aa1de4a629a7f7e9a86db7fb8c"
+
+source(here("src/r/fetch_dataset.R"))
 
 # Get themes from data portal ####
 
@@ -77,27 +80,7 @@ for (i in seq_along(data_portal$label)) {
 
   matrix <- data_portal$extension$matrix[i]
 
-  fetch_error <- TRUE
-
-  while (fetch_error) {
-
-    json_data <- jsonlite::fromJSON(txt = paste0(
-      "https://ws-data.nisra.gov.uk/public/api.restful/",
-      "PxStat.Data.Cube_API.ReadDataset/",
-      matrix,
-      "/JSON-stat/2.0/en?apiKey=",
-      api_key
-    ))
-
-    fetch_error <- "error" %in% names(json_data)
-
-    if (fetch_error) {
-      print(paste0(
-        "Error fetching ", data_portal$label[i], ". Trying again..."
-      ))
-    }
-
-  }
+  json_data <- fetch_dataset(matrix, api_key, data_portal$label[i])
 
   subject <- json_data$extension$subject$value
   product_code <- json_data$extension$product$code
