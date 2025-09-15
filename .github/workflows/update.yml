@@ -16,7 +16,6 @@ jobs:
           packages: |
             any::dplyr
             any::jsonlite
-            any::here
 
       - name: Check out repository
         uses: actions/checkout@v4
