@@ -226,3 +226,7 @@ nav a[target="_blank"]::after {
   margin: 0 5px 0 5px;
   vertical-align: text-top;
 }
+
+table tr:not(:has(th)):hover {
+  background-color: #f2f2f2;
+}
