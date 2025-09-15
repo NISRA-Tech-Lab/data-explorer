@@ -3,7 +3,7 @@ library(dplyr)
 
 api_key <- "801aaca4bcf0030599c019f4efa8b89032e5e6aa1de4a629a7f7e9a86db7fb8c"
 
-source("src/r/fetch_dataset.R")
+source("fetch_dataset.R")
 
 # Get themes from data portal ####
 
