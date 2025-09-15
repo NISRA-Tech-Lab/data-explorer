@@ -16,14 +16,12 @@ jobs:
           packages: |
             any::dplyr
             any::jsonlite
-            any::here
 
       - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Run data portal structure
-        run: |
-          Rscript -e 'source("src/r/fetch_dataset.R")'; 'source("src/r/all-tables-from-portal.R")'
+        run: Rscript -e 'source("src/r/all-tables-from-portal.R")'
 
       - name: Commit results
         run: |
