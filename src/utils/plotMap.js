@@ -233,7 +233,99 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             table_tabs_content.appendChild(div);
         }
 
-    }  
+    }  else {
+
+        let statistic_categories = tables[matrix].categories.STATISTIC.category.index;
+
+        tables_title.textContent = `${tables[matrix].name} - Northern Ireland Summary (${year})`;
+
+        let div = document.createElement("div");
+        div.classList.add("tab-pane");
+        div.classList.add("fade");
+        div.classList.add("show");
+        div.classList.add("active");
+        div.role = "tabpanel";
+        div.id = `table-tab-statistic`;
+
+        let table_selections = "";
+        if (geog_type != "none") table_selections += `,"${geog_type}":{"category":{"index":["N92000002"]}}`;
+
+        
+
+        let table_url = 'https://ws-data.nisra.gov.uk/public/api.jsonrpc?data=' +
+            encodeURIComponent('{"jsonrpc":"2.0","method":"PxStat.Data.Cube_API.ReadDataset","params":{"class":"query","id":["' +
+                time_var + '", "' + geog_type + '"],"dimension":{"' + time_var + '":{"category":{"index":["' + year +
+                '"]}}' + table_selections + 
+                '},"extension":{"pivot":null,"codes":false,"language":{"code":"en"},"format":{"type":"JSON-stat","version":"2.0"},"matrix":"' +
+                matrix + '"},"version":"2.0"}}');
+
+
+        const response = await fetch(table_url);
+        const { result } = await response.json();
+            
+        let table_div = document.createElement("div");
+        table_div.classList.add("table-responsive");
+
+        let table = document.createElement("table");
+        table.classList.add("table");
+        table.classList.add("table-sm");
+        table.classList.add("table-bordered");
+        table.classList.add("mb-0");
+
+        let tr = document.createElement("tr");
+
+        let var_header = document.createElement("th");
+        var_header.textContent = "Statistic";
+        tr.appendChild(var_header);
+
+
+        let stat_header = document.createElement("th");
+        stat_header.textContent = `Northern Ireland`;
+        stat_header.style = "text-align: right;"
+        tr.appendChild(stat_header);
+
+        table.appendChild(tr);
+
+        let values = result.value;
+
+        for (let j = 0; j < values.length; j ++) {
+            let tr = document.createElement("tr");
+
+            let td_0 = document.createElement("td");
+            td_0.textContent = Object.values(result.dimension.STATISTIC.category.label)[j];
+            tr.appendChild(td_0);
+
+            let td_1 = document.createElement("td");
+            if (values[j] == null) {
+                td_1.textContent = "..";
+            } else {
+                let decimals = result.dimension.STATISTIC.category.unit[stats_menu.value].decimals;
+                td_1.textContent = values[j].toLocaleString("en-GB", {
+                    minimumFractionDigits: decimals,
+                    maximumFractionDigts: decimals
+                });
+            }
+            td_1.style = "text-align: right;"
+            if (["all", "ni", "n92000002"].includes(Object.keys(result.dimension.STATISTIC.category.label)[j].toLowerCase())) {
+                td_0.style = "font-weight: bold;"
+                td_1.style = "text-align: right; font-weight: bold;"
+            }
+            tr.appendChild(td_1);
+
+            table.appendChild(tr);
+        }
+
+            table_div.appendChild(table);
+            div.appendChild(table_div);
+            table_tabs_content.appendChild(div);
+        
+        console.log()
+        
+        if (Array.isArray(statistic_categories)) {
+            additional_tables.classList.remove("d-none");
+        }
+
+    }
     
     id_vars += `]`;   
 
