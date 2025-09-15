@@ -29,9 +29,17 @@ main {
 
 /* External link indicator (scope to main so footer links aren’t doubled) */
 main a[target="_blank"]::after {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-  margin: 0 3px 0 5px;
+  content: "";
+  width: 14px; height: 11px;
+  margin: 5px; vertical-align: text-bottom; display: inline-block;
+
+  /* Use the SVG as a mask; then color it with Bootstrap’s variable */
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"><g fill="none" stroke="%23000" stroke-width="1"><path d="M0 3h2V0h12v8h-2v3H0zm13-2H3v6h10zM2 4H1v4h1zm-1 6h10V8H1z"/></g></svg>') no-repeat center / contain;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"><g fill="none" stroke="%23000" stroke-width="1"><path d="M0 3h2V0h12v8h-2v3H0zm13-2H3v6h10zM2 4H1v4h1zm-1 6h10V8H1z"/></g></svg>') no-repeat center / contain;
+  background-color: var(--bs-secondary-color, #6c757d); /* follows Bootstrap’s text-secondary */
 }
+
+
 
 /* ===========================
    Sidebar / Offcanvas
@@ -204,4 +212,17 @@ path.leaflet-interactive:focus { outline: none; }
   border: 2px solid #fff;
   box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
   border-radius: 4px;
+}
+
+nav a {
+  color: #fff;
+}
+
+nav a[target="_blank"]::after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"><g fill="none" stroke="white" stroke-width="1"><path d="M0 3h2V0h12v8h-2v3H0zm13-2H3v6h10zM2 4H1v4h1zm-1 6h10V8H1z"/></g></svg>');
+  display: inline-block;
+  width: 14px;
+  height: 11px;
+  margin: 0 5px 0 5px;
+  vertical-align: text-top;
 }
