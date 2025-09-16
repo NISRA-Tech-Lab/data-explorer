@@ -15,6 +15,7 @@ import { themes_menu, map_container, stats_menu,
          table_title, map_updated, map_title, title_card, headline_stat,
          additional_tables, table_tabs, table_tabs_content,
          tables_title } from "./elements.js";
+import { addVectorBasemap } from "./addVectorBasemap.js";
 
 export async function plotMap (tables, matrix, statistic, geog_type) {   
 
@@ -725,14 +726,11 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         attributionControl: false,
         tap: false}).setView([54.67, -6.85], initialZoom); // Set initial co-ordinates and zoom
 
+        map.setMinZoom(initialZoom);
+        map.setMaxZoom(initialZoom + 3);
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-            subdomains: 'abcd',
-            minZoom: initialZoom,
-            maxZoom: initialZoom + 3,
-            attribution:
-                '&copy; OpenStreetMap contributors &copy; CARTO'
-            }).addTo(map);
+        addVectorBasemap(map, 'public/map/style-omt.json');
+
 
         // Run once and on every zoom change
         syncDraggingToZoom(map, initialZoom);
