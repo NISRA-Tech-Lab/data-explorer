@@ -881,14 +881,8 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
                 }
                 popup.remove();
             });
-            });
-
-
-
+            });          
             
-            
-            
-
             min_value.innerHTML = range_min.toLocaleString("en-GB");       
             max_value.innerHTML = range_max.toLocaleString("en-GB"); 
             

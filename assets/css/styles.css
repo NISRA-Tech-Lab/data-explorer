@@ -152,8 +152,6 @@ main a[target="_blank"]::after {
 }
 .colour-block:last-child { border-right: 1px #555555 solid; }
 
-path.leaflet-interactive:focus { outline: none; }
-
 /* Map container min height for small vs large screens */
 #map-container { min-height: 320px; }
 @media (min-width: 992px) { #map-container { min-height: 420px; } }
