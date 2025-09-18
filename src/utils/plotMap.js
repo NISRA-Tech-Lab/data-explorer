@@ -682,6 +682,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         for (let i = 0; i < palette.length; i++) {
             let colour_block = document.createElement("div");
             colour_block.style.backgroundColor = palette[i];
+            colour_block.style.opacity = "0.8";
             colour_block.classList.add("colour-block");
         
             if (i == palette.length - 1) {
