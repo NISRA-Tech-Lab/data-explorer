@@ -21,14 +21,14 @@ fetch_dataset <- function(matrix,
           "/JSON-stat/2.0/en?apiKey=",
           api_key
         )
-        
+
         json_data <- fromJSON(txt = url)
-        
+
         # Check if API itself returned "error" field
         if ("error" %in% names(json_data)) {
           stop("API returned error field")
         }
-        
+
         return(json_data)  # ✅ success, return immediately
       },
       error = function(e) {
@@ -38,16 +38,16 @@ fetch_dataset <- function(matrix,
         return(NULL)
       }
     )
-    
+
     if (!is.null(result)) {
       return(result)  # break loop if successful
     }
-    
+
     attempt <- attempt + 1
     if (attempt > max_attempts) {
       stop("Max attempts reached without success.")
     }
-    
+
     Sys.sleep(wait_seconds)  # backoff before retry
   }
 }
@@ -137,6 +137,8 @@ for (i in seq_along(data_portal$label)) {
 
   theme <- data_portal_structure %>%
     filter(Product_code == product_code)
+  
+  if (theme$theme %in% c("Wellbeing framework", "Making life better")) next
 
   tables[[matrix]] <- list(
     name = name,
@@ -166,6 +168,8 @@ for (i in seq_along(data_portal$label)) {
       associated_theme <- data_portal_structure %>%
         filter(Product_code == associated_product_code[j])
 
+      if (associated_theme$theme %in% c("Wellbeing framework", "Making life better")) next
+
       tables[[paste0(matrix, "_", j)]] <- list(
         name = name,
         updated = as.Date(substr(data_portal$updated[i], 1, 10)),
@@ -190,4 +194,7 @@ for (i in seq_along(data_portal$label)) {
 
 tables <- tables[order(names(tables))]
 
-write_json(tables, "public/data/data-portal-tables.json", auto_unbox = TRUE, pretty = TRUE)
+write_json(tables,
+           "public/data/data-portal-tables.json",
+           auto_unbox = TRUE,
+           pretty = TRUE)

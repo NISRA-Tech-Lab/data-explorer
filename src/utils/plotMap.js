@@ -682,6 +682,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         for (let i = 0; i < palette.length; i++) {
             let colour_block = document.createElement("div");
             colour_block.style.backgroundColor = palette[i];
+            colour_block.style.opacity = "0.8";
             colour_block.classList.add("colour-block");
         
             if (i == palette.length - 1) {
@@ -719,7 +720,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             center: [-6.85, 54.67],
             zoom: initialZoom,
             minZoom: initialZoom,
-            maxZoom: initialZoom + 3,
+            maxZoom: initialZoom + 7,
             maxBounds: [[-9.20, 53.58], [-4.53, 55.72]],
             attributionControl: false 
         });    
@@ -888,7 +889,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             
 
             map_title.textContent = `${stat_label} by ${result.dimension[geog_type].label} (${year})` ;
-            map_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
+            map_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal.</a>`;
 
         } else {
             data = data_series;
@@ -901,7 +902,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             nav_subject.textContent = tables[geo_menu.value].subject;    
             nav_product.textContent = tables[geo_menu.value].product;   
 
-        chart_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
+        chart_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal.</a>`;
 
         let rows = tables[matrix].rows;
 

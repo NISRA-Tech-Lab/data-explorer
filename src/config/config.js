@@ -15,7 +15,8 @@ export const GEOG_PROPS= {
   },
   LGD1992: {
     url: "public/map/LGD1992.geo.json",
-    code_var: "LGD_CODE" 
+    code_var: "LGD_CODE",
+    label: "Local Government District (1992)"
   },
   AA: { 
     url: "public/map/AA.geo.json",
