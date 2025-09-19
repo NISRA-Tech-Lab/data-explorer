@@ -13,7 +13,7 @@ import { themes_menu, map_container, stats_menu,
          chart_updated, nav_product, nav_subject, nav_theme,
          table_title, map_updated, map_title, title_card, headline_stat,
          additional_tables, table_tabs, table_tabs_content,
-         tables_title, table_updated } from "./elements.js";
+         tables_title, table_updated, save_map } from "./elements.js";
 
 export async function plotMap (tables, matrix, statistic, geog_type) {   
 
@@ -705,6 +705,9 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         map_div.id ="map";
         map_div.classList.add("map");
 
+        let map_title_text = `${stat_label} by ${result.dimension[geog_type].label} (${year})`;
+        map_title.textContent = map_title_text;
+
         
         map_container.classList.add("d-block");
         map_container.appendChild(map_div);
@@ -725,7 +728,18 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             maxZoom: initialZoom + 7,
             maxBounds: [[-9.20, 53.58], [-4.53, 55.72]],
             attributionControl: false 
-        });    
+        });  
+        
+        map.addControl(new MaplibreExportControl.MaplibreExportControl({
+					PageSize: MaplibreExportControl.Size.A4,
+					PageOrientation: MaplibreExportControl.PageOrientation.Landscape,
+					Format: MaplibreExportControl.Format.PNG,
+					DPI: MaplibreExportControl.DPI[300],
+					Crosshair: false,
+					PrintableArea: true,
+                    Filename: map_title_text,
+					Local: 'en'
+				}), 'bottom-right');
         
         // After creating `map`
         map.addControl(
@@ -740,7 +754,13 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             
         const geojsonData = await loadShapes(geog_type);
 
+
         map.on('load', async () => {
+
+            const generate_btn = document.querySelector('.generate-button');
+            save_map.onclick = function() {
+                generate_btn.click()
+            }
             // --- 1) Prepare a styled copy of your GeoJSON with props used by the map ---
             // Assumes these are already in scope: geojsonData, geog_type, result, year, unit,
             // data (array of values), colours (0..1 or bins), getColour(), GEOG_PROPS, titleCase()
@@ -889,8 +909,6 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             min_value.innerHTML = range_min.toLocaleString("en-GB");       
             max_value.innerHTML = range_max.toLocaleString("en-GB"); 
             
-
-            map_title.textContent = `${stat_label} by ${result.dimension[geog_type].label} (${year})` ;
             map_updated.innerHTML = table_updated.innerHTML;
 
         } else {

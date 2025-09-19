@@ -228,3 +228,7 @@ nav a[target="_blank"]::after {
 table tr:not(:has(th)):hover {
   background-color: #f2f2f2;
 }
+
+.maplibregl-export-control {
+  display: none !important;
+}
