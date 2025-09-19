@@ -720,7 +720,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             center: [-6.85, 54.67],
             zoom: initialZoom,
             minZoom: initialZoom,
-            maxZoom: initialZoom + 3,
+            maxZoom: initialZoom + 7,
             maxBounds: [[-9.20, 53.58], [-4.53, 55.72]],
             attributionControl: false 
         });    
