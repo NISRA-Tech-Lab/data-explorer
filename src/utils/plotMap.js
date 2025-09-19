@@ -13,7 +13,7 @@ import { themes_menu, map_container, stats_menu,
          chart_updated, nav_product, nav_subject, nav_theme,
          table_title, map_updated, map_title, title_card, headline_stat,
          additional_tables, table_tabs, table_tabs_content,
-         tables_title } from "./elements.js";
+         tables_title, table_updated } from "./elements.js";
 
 export async function plotMap (tables, matrix, statistic, geog_type) {   
 
@@ -581,6 +581,8 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
 
         }
 
+        table_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal.</a>`;
+
     } else {
         if (geog_type != "COB_BASIC") {
             map_card.classList.remove("col-xl-6")
@@ -889,18 +891,18 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             
 
             map_title.textContent = `${stat_label} by ${result.dimension[geog_type].label} (${year})` ;
-            map_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal.</a>`;
+            map_updated.innerHTML = table_updated.innerHTML;
 
         } else {
             data = data_series;
         }
 
         table_title.textContent = `${result.label}`;
-            page_title.textContent += ` - ${result.label}`;
+        page_title.textContent += ` - ${result.label}`;
 
-            nav_theme.textContent = tables[geo_menu.value].theme;        
-            nav_subject.textContent = tables[geo_menu.value].subject;    
-            nav_product.textContent = tables[geo_menu.value].product;   
+        nav_theme.textContent = tables[geo_menu.value].theme;        
+        nav_subject.textContent = tables[geo_menu.value].subject;    
+        nav_product.textContent = tables[geo_menu.value].product;   
 
         chart_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal.</a>`;
 
