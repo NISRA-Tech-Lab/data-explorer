@@ -195,8 +195,8 @@
                 </div>
                 <div class="card-body d-flex flex-column">
                   <p id="chart-subtitle" class="text-secondary mb-0"></p>
-                  <div id="chart-container" class="rounded-2 mt-auto">
-                  </div>
+                  <div id="chart-container" class="rounded-2 mt-auto"></div>
+                  <button class="btn btn-primary" onclick="downloadChart(overall_line_chart, yLabel = 'overall_y_label', title = 'overall_header')">Download chart as image</button>
                 </div>
                 <div class="card-footer d-flex justify-content-between small">
                   <span id="chart-updated" class="text-secondary"></span>
@@ -331,6 +331,7 @@
   </footer>
 
   <script type = "module" src="src/index.js"></script>
+  <script src="src/utils/downloadChart.js"></script>
 
 </body>
 </html>
