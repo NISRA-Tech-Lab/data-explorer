@@ -889,7 +889,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             
 
             map_title.textContent = `${stat_label} by ${result.dimension[geog_type].label} (${year})` ;
-            map_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
+            map_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal.</a>`;
 
         } else {
             data = data_series;
@@ -902,7 +902,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             nav_subject.textContent = tables[geo_menu.value].subject;    
             nav_product.textContent = tables[geo_menu.value].product;   
 
-        chart_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>`;
+        chart_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal.</a>`;
 
         let rows = tables[matrix].rows;
 
