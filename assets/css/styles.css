@@ -232,3 +232,7 @@ table tr:not(:has(th)):hover {
 .maplibregl-export-control {
   display: none !important;
 }
+
+.btn-primary {
+  background-color: #3878c5;
+}

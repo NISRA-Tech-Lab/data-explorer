@@ -47,11 +47,15 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
 
         id_vars = `["STATISTIC", "${time_var}", "${geog_type}"`;
 
-    }        
+    }
+
+    let subtitle_text = "";
 
     if (other_vars.length > 0) {
         other_headline = " for ";
         additional_tables.classList.remove("d-none");
+
+
         for (let i = 0; i < other_vars.length; i ++) {
             
             id_vars += `, "${other_vars[i]}"`;
@@ -108,16 +112,11 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
                 window.location.search = search_string;
                 
             }
-     
-
-            
+                 
             other_selections += `,"${other_vars[i]}":{"category":{"index":["${new_select.value}"]}}`;
-            
-            if (i == 0) {
-                map_subtitle.innerHTML = "";
-            }
 
-            map_subtitle.innerHTML += `<strong>${tables[matrix].categories[other_vars[i]].label}</strong>: ${tables[matrix].categories[other_vars[i]].category.label[new_select.value]}<br>`;
+
+            subtitle_text += `<strong>${tables[matrix].categories[other_vars[i]].label}</strong>: ${tables[matrix].categories[other_vars[i]].category.label[new_select.value]}<br>`;
 
             if (i != 0) {
                 if (i == other_vars.length - 1) {
@@ -132,6 +131,8 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             
 
         }
+
+        map_subtitle.innerHTML = subtitle_text;
 
          // Add new tables
          tables_title.textContent = `${tables[matrix].statistics[stats_menu.value]} in Northern Ireland (${year}) by:`;
@@ -502,7 +503,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             chart_title.textContent = `${stat_label} in Northern Ireland (${time_series[0]} to ${time_series[time_series.length - 1]})`;
         }
 
-        chart_subtitle.innerHTML = map_subtitle.innerHTML;
+        chart_subtitle.innerHTML = subtitle_text;
 
         // Create a new canvas and render
         const chart_canvas = document.createElement("canvas");
@@ -727,19 +728,42 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             minZoom: initialZoom,
             maxZoom: initialZoom + 7,
             maxBounds: [[-9.20, 53.58], [-4.53, 55.72]],
-            attributionControl: false 
-        });  
+            attributionControl: false
+        });         
         
-        map.addControl(new MaplibreExportControl.MaplibreExportControl({
-					PageSize: MaplibreExportControl.Size.A4,
-					PageOrientation: MaplibreExportControl.PageOrientation.Landscape,
-					Format: MaplibreExportControl.Format.PNG,
-					DPI: MaplibreExportControl.DPI[300],
-					Crosshair: false,
-					PrintableArea: true,
-                    Filename: map_title_text,
-					Local: 'en'
-				}), 'bottom-right');
+
+        const addExportControl = async () => {
+            const svg = await (await fetch('/assets/img/logo/nisra-logo-colour.svg')).text();
+
+            map.addControl(
+                new MaplibreExportControl.MaplibreExportControl({
+                PageSize: MaplibreExportControl.Size.A5,
+                PageOrientation: MaplibreExportControl.PageOrientation.Landscape, // <- must be Portrait to see north icon
+                Format: MaplibreExportControl.Format.PNG,
+                DPI: MaplibreExportControl.DPI[300],
+                Crosshair: false,
+                PrintableArea: true,
+                Filename: `${map_title_text} (${map_subtitle.textContent})`,
+                Local: 'en',
+                northIconOptions: {
+                    image: svg,    
+                    imageName: 'nisra-north',
+                    imageSizeFraction: 0.15,
+                    visibility: 'visible',
+                    position: 'bottom-right'
+                },
+                attributionOptions: {
+                    visibility: "none"
+                }
+                }),
+                'bottom-right'
+            );
+
+            const generate_btn = document.querySelector('.generate-button');
+            save_map.onclick = function() {
+                generate_btn.click()
+            }
+        };
         
         // After creating `map`
         map.addControl(
@@ -751,16 +775,17 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         'top-right'           // positions: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
         );
 
+
+
             
         const geojsonData = await loadShapes(geog_type);
 
 
         map.on('load', async () => {
 
-            const generate_btn = document.querySelector('.generate-button');
-            save_map.onclick = function() {
-                generate_btn.click()
-            }
+            addExportControl();
+
+            
             // --- 1) Prepare a styled copy of your GeoJSON with props used by the map ---
             // Assumes these are already in scope: geojsonData, geog_type, result, year, unit,
             // data (array of values), colours (0..1 or bins), getColour(), GEOG_PROPS, titleCase()
