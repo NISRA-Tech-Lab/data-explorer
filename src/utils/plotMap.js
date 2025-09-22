@@ -13,7 +13,8 @@ import { themes_menu, map_container, stats_menu,
          chart_updated, nav_product, nav_subject, nav_theme,
          table_title, map_updated, map_title, title_card, headline_stat,
          additional_tables, table_tabs, table_tabs_content,
-         tables_title, table_updated, save_map } from "./elements.js";
+         tables_title, table_updated } from "./elements.js";
+import { addExportControl } from "./addExportControl.js";
 
 export async function plotMap (tables, matrix, statistic, geog_type) {   
 
@@ -637,19 +638,19 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
                 if (v <= qs[2]) return 2;
                 if (v <= qs[3]) return 3;
                 return 4;
-        };
+            };
 
-        for (let i = 0; i < data.length; i++) {
-            const bin = toBin(data[i]);
-            colours.push(bin < 0 ? -1 : bin / 4);  // -1 marks NA; 0, .25, .5, .75, 1 for bins
-        }
+            for (let i = 0; i < data.length; i++) {
+                const bin = toBin(data[i]);
+                colours.push(bin < 0 ? -1 : bin / 4);  // -1 marks NA; 0, .25, .5, .75, 1 for bins
+            }
         } else {
-        // Original continuous scaling
-        const range = range_max - range_min || 1; // avoid divide-by-zero
-        for (let i = 0; i < data.length; i++) {
-            const v = data[i];
-            colours.push(v == null ? -1 : (v - range_min) / range);
-        }
+            // Original continuous scaling
+            const range = range_max - range_min || 1; // avoid divide-by-zero
+            for (let i = 0; i < data.length; i++) {
+                const v = data[i];
+                colours.push(v == null ? -1 : (v - range_min) / range);
+            }
         }
 
         let legend_div = document.createElement("div");
@@ -731,39 +732,6 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             attributionControl: false
         });         
         
-
-        const addExportControl = async () => {
-            const svg = await (await fetch('/assets/img/logo/nisra-logo-colour.svg')).text();
-
-            map.addControl(
-                new MaplibreExportControl.MaplibreExportControl({
-                PageSize: MaplibreExportControl.Size.A5,
-                PageOrientation: MaplibreExportControl.PageOrientation.Landscape, // <- must be Portrait to see north icon
-                Format: MaplibreExportControl.Format.PNG,
-                DPI: MaplibreExportControl.DPI[300],
-                Crosshair: false,
-                PrintableArea: true,
-                Filename: `${map_title_text} (${map_subtitle.textContent})`,
-                Local: 'en',
-                northIconOptions: {
-                    image: svg,    
-                    imageName: 'nisra-north',
-                    imageSizeFraction: 0.15,
-                    visibility: 'visible',
-                    position: 'bottom-right'
-                },
-                attributionOptions: {
-                    visibility: "none"
-                }
-                }),
-                'bottom-right'
-            );
-
-            const generate_btn = document.querySelector('.generate-button');
-            save_map.onclick = function() {
-                generate_btn.click()
-            }
-        };
         
         // After creating `map`
         map.addControl(
@@ -774,16 +742,13 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         }),
         'top-right'           // positions: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
         );
-
-
-
             
         const geojsonData = await loadShapes(geog_type);
 
 
         map.on('load', async () => {
 
-            addExportControl();
+            addExportControl(map, map_title_text);
 
             
             // --- 1) Prepare a styled copy of your GeoJSON with props used by the map ---
