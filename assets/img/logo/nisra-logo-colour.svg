@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.2"
+   viewBox="0 0 612.5 615.50001"
+   width="612.5"
+   height="615.5"
+   id="svg9"
+   sodipodi:docname="nisra-logo-colour.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.3968944"
+     inkscape:cx="1486.5415"
+     inkscape:cy="469.89829"
+     inkscape:window-width="3440"
+     inkscape:window-height="1369"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg9" />
+  <style
+     id="style1">.a{fill:#152b53}.b{fill:none;stroke:#152b53;stroke-width:.4}.c{fill:#3e7cbf}.d{fill:#c0d732}</style>
+  <g
+     id="g1"
+     transform="translate(0,211.4)">
+    <path
+       class="c"
+       d="m 0,140.1 c 9.6,16.7 21.7,28.8 38.5,38.5 16.6,9.6 34.6,14.1 52.5,14.1 24.9,0 49.3,-8.9 68.5,-25.3 q 1.7,-1.4 3.3,-2.9 c 7.5,-6.9 14.1,-15.1 19.4,-24.4 l -54.3,-31.4 -4.1,-2.4 -30.5,-17.6 -2.2,-1.3 -2,1.2 -66.3,38.3 -3.8,2.2 z"
+       id="path6" />
+    <path
+       class="a"
+       d="m 89,83.9 0.1,-0.1 V 19.2 15 h 4.2 c 11.1,0 22,1.7 32.5,4.9 V 0 C 106.4,0 89.9,4.4 73.1,14.1 34,36.6 14.9,80.5 21.9,122.6 Z"
+       id="path7" />
+    <path
+       class="d"
+       d="M 129.9,25.7 Q 127.8,25 125.8,24.3 C 115.5,21 104.6,19.2 93.3,19.2 v 64.7 l 32.5,18.8 4.1,2.4 54.4,31.4 3.6,2 -2.1,3.6 c -5.2,9.1 -11.8,17.4 -19.3,24.6 l 17.9,10.3 c 9.7,-16.7 14.1,-33.2 14.1,-52.6 0,-45.2 -28.5,-83.8 -68.6,-98.7 z"
+       id="path8" />
+    <path
+       fill-rule="evenodd"
+       class="a"
+       d="M 302,147.6 H 285.6 L 246.6,84 c -1,-1.6 -4.6,-9.2 -5.5,-11 v 74.6 H 226.7 V 48.1 h 19.9 l 34.9,58.6 c 0.3,0.8 2.7,5.1 6.1,11.7 V 48.1 H 302 Z m 17.3,0 V 48 h 17.9 v 99.6 z m 42.4,-27.8 c 0.9,3.6 2.7,10 11.6,12.8 5,1.7 9.1,2 12.4,2 16.6,0 19.9,-8.7 19.9,-13.2 0,-9.4 -7.8,-11.8 -12.3,-13 l -22.2,-5.6 C 356.6,99 349.6,88.9 349.6,76.2 c 0,-18.8 15.2,-29.7 35.2,-29.7 9.9,0 19.6,2.5 27.3,8.7 6,4.7 7.5,9.5 8.4,12.8 l -17,4.3 C 402.3,68.9 399.3,61 385.1,61 371.4,61 368,68.3 368,73.4 c 0,7.7 8.8,10.6 13.8,11.9 l 16.9,4.2 c 8.5,2.2 25.8,7 25.8,28.4 0,19.7 -16.8,31.1 -39.5,31.1 -12,0 -22.4,-2.8 -30.6,-9.4 -6.7,-5.3 -8.5,-11.5 -10,-16.1 z m 132.4,27.8 -15.6,-40.9 h -25.2 v 40.9 H 435.4 V 48 h 43.1 c 12.4,0 19.9,2.4 26,7.8 5.1,4.6 9,11.3 9,21.5 0,18.6 -12.9,24.2 -17.9,26.4 L 513,147.6 Z M 453.4,92.4 h 22.4 c 8.8,0 19.1,-3 19.1,-15.4 0,-7.5 -5,-14.6 -17.6,-14.6 h -23.9 z m 159.1,55.2 h -19.1 l -8.1,-23.7 h -38.2 l -7.8,23.7 H 524 L 557.1,48 H 579 Z m -31.9,-38 -14.5,-44.5 -14.4,44.5 z"
+       id="path9" />
+  </g>
+</svg>
