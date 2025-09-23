@@ -13,7 +13,7 @@ import { themes_menu, map_container, stats_menu,
          chart_updated, nav_product, nav_subject, nav_theme,
          table_title, map_updated, map_title, title_card, headline_stat,
          additional_tables, table_tabs, table_tabs_content,
-         tables_title, table_updated, download_chart } from "./elements.js";
+         tables_title, table_updated, save_chart } from "./elements.js";
 import { addExportControl } from "./addExportControl.js";
 import { downloadChart } from "./downloadChart.js";         
 
@@ -517,7 +517,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         const ctx = chart_canvas.getContext('2d');
         new Chart(ctx, chart_config);
 
-        download_chart.onclick = function () {
+        save_chart.onclick = function () {
             downloadChart(ctx);
         }
 
