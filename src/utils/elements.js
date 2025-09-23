@@ -39,5 +39,6 @@ export const table_tabs_content = document.getElementById("table-tabs-content");
 export const tables_title = document.getElementById("tables-title");
 export const table_updated = document.getElementById("table-updated");
 export const save_map = document.getElementById("save-map");
+export const download_chart = document.getElementById("download-chart");
 
 export const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";

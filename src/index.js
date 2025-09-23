@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     wireSearch(searchIndex);
     initSidebarPersistence();
+
   } catch (e) {
     console.error("Startup failed:", e);
   }
