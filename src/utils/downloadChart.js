@@ -1,4 +1,6 @@
-function downloadChart(chart, yLabel = null, title = null, btns = null) {
+import { chart_title, chart_subtitle } from "./elements.js";
+
+export function downloadChart(chart) {
   // Get the chart's canvas element.
   const sourceCanvas = chart.canvas || chart;
   const width = sourceCanvas.width;
@@ -9,82 +11,77 @@ function downloadChart(chart, yLabel = null, title = null, btns = null) {
   const topPadding = 65;    // top padding is increased to 45px (25 + 20)
   const bottomPadding = 15; // bottom padding remains 25px
 
-  // Retrieve label text if yLabel is provided (as an element id)
-  let labelText = null;
-  if (yLabel !== null) {
-    const labelElement = document.getElementById(yLabel);
+  // Retrieve label text if subtitle is provided (as an element id)
+  let labelText = [];
+  if (chart_subtitle.textContent !== "") {
+    const labelElement = chart_subtitle;
     if (labelElement) {
-      labelText = labelElement.textContent;
+      labelText = labelElement.innerHTML.split("<br>");
+      labelText = labelText.filter(x => x != "");
+    }
+  }
+  
+  for (let i = 0; i < labelText.length; i ++) {
+    labelText[i] = labelText[i].replace("<strong>", "")
+    labelText[i] = labelText[i].replace("</strong>", "")
+  }
+
+  // Retrieve title text 
+  let titleText = chart_title.textContent;;
+
+  let fileName = `${titleText.toLowerCase().replaceAll(" ", "-")}.png`
+
+  // Helper function to draw the title and label lines, then trigger the download.
+function drawTextAndDownload(ctx, canvasToDownload) {
+  // Layout + style
+  const titleFont = 'bold 1rem sans-serif';
+  const labelFont = '15px sans-serif';
+  const titleLineHeight = 22;   // px
+  const labelLineHeight = 18;   // px
+  const innerTopPadding = 10;   // top inset within the header band
+
+  const hasTitle = !!titleText;
+  const hasLabels = Array.isArray(labelText) && labelText.length > 0;
+
+  // Total vertical space needed for text block
+  const needed =
+    (hasTitle ? titleLineHeight : 0) +
+    (hasLabels ? labelText.length * labelLineHeight : 0);
+
+  // Start Y so that the block fits inside [0, topPadding)
+  // Leaves a small top inset and ensures the last line stays above chart top.
+  let y = Math.max(innerTopPadding, topPadding - needed - 5);
+
+  // Draw title (if any)
+  if (hasTitle) {
+    ctx.fillStyle = 'black';
+    ctx.font = titleFont;
+    ctx.textBaseline = 'top';
+    ctx.fillText(titleText, sidePadding, y);
+    y += titleLineHeight;
+  }
+
+  // Draw each label line (if any)
+  if (hasLabels) {
+    ctx.fillStyle = 'grey';
+    ctx.font = labelFont;
+    ctx.textBaseline = 'top';
+    for (const line of labelText) {
+      ctx.fillText(line, sidePadding, y);
+      y += labelLineHeight;
     }
   }
 
-  // Retrieve title text if title is provided (as an element id)
-  let titleText = null;
-  if (title !== null) {
-    const titleElement = document.getElementById(title);
-    if (titleElement) {
-      titleText = titleElement.textContent;
-    }
-  }
+  // Trigger download
+  const imageData = canvasToDownload.toDataURL('image/png');
+  const link = document.createElement('a');
+  link.href = imageData;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
-  // Retrieve button text if provided
-  let buttonText = null;
-  if (btns !== null) {
-    const btns_div = document.getElementById(btns);
-    const inputs = btns_div.getElementsByTagName("input");
-    for (let i = 0; i < inputs.length; i ++) {
-      if (inputs[i].checked) {
-        buttonText = inputs[i].id.slice(inputs[i].id.indexOf("-") + 1);
-        break;
-      }
-    }
-  }
-
-  if (buttonText !== null) {
-    titleText += ` ${buttonText}`;
-  }
-
-  if (titleText !== null) {
-    fileName = `${titleText.toLowerCase().replaceAll(" ", "-")}.png`
-  } else {
-    fileName = "ni-executive-spending-treemap.png"
-  }
-
-  // Helper function to draw the title and/or label text, then trigger the download.
-  function drawTextAndDownload(ctx, canvasToDownload) {
-    if (titleText && labelText) {
-      // Draw yLabel: 15px sans-serif, grey.
-      ctx.fillStyle = 'grey';
-      ctx.font = '15px sans-serif';
-      ctx.textBaseline = 'bottom';
-      // The bottom edge of yLabel aligns with the top edge of the chart (topPadding).
-      ctx.fillText(labelText, sidePadding, topPadding + 15);
-      
-      // Draw title: 1rem sans-serif, black, 10px above yLabel.
-      ctx.fillStyle = 'black';
-      ctx.font = 'bold 1rem sans-serif';
-      ctx.textBaseline = 'bottom';
-      ctx.fillText(titleText, sidePadding, topPadding - 25);
-    } else if (labelText) {
-      ctx.fillStyle = 'grey';
-      ctx.font = '15px sans-serif';
-      ctx.textBaseline = 'bottom';
-      ctx.fillText(labelText, sidePadding, topPadding + 15);
-    } else if (titleText) {
-      ctx.fillStyle = 'black';
-      ctx.font = 'bold 1rem sans-serif';
-      ctx.textBaseline = 'bottom';
-      ctx.fillText(titleText, sidePadding, topPadding - 25);
-    }
-    
-    const imageData = canvasToDownload.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = imageData;
-    link.download = fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
 
   // Load the watermark image.
   const watermark = new Image();
@@ -168,3 +165,4 @@ function downloadChart(chart, yLabel = null, title = null, btns = null) {
     document.body.removeChild(link);
   };
 }
+
