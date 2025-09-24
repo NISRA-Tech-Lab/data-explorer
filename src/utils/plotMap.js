@@ -592,11 +592,13 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         table_updated.innerHTML = `Last updated: <strong>${result.updated.substr(8, 2)}/${result.updated.substr(5, 2)}/${result.updated.substr(0, 4)}</strong>. See this full dataset on <a href = "https://data.nisra.gov.uk/table/${matrix}" target = "_blank">NISRA Data Portal.</a>`;
 
     } else {
-        if (geog_type != "COB_BASIC") {
-            map_card.classList.remove("col-xl-6")
-        } else {
+
+        map_card.classList.remove("col-xl-6")
+        if (geog_type == "COB_BASIC") {
             const spacer = document.createElement("div");
-            spacer.classList.add("col-xl-3");
+            spacer.classList.add("col-xl-2");
+            map_card.classList.remove("col-xl-6");
+            map_card.classList.add("col-xl-8");
             map_card.parentElement.insertBefore(spacer, map_card);
         }
         
@@ -721,9 +723,11 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
         map_container.appendChild(map_div);
 
         let initialZoom = window.innerWidth < 768 ? 6 : 7; 
+        let bounds = [[-9.20, 53.58], [-4.53, 55.72]];
 
         if (geog_type == "COB_BASIC") {
             initialZoom = 1;
+            bounds = null;
         }
 
         // Create a map
@@ -734,7 +738,7 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
             zoom: initialZoom,
             minZoom: initialZoom,
             maxZoom: initialZoom + 7,
-            maxBounds: [[-9.20, 53.58], [-4.53, 55.72]],
+            maxBounds: bounds,
             attributionControl: false
         });         
         
