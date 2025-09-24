@@ -204,6 +204,10 @@ export async function plotMap (tables, matrix, statistic, geog_type) {
 
             let values = result.value;
 
+            if (values.length == 0) {
+                additional_tables.classList.add("d-none");
+            }
+
             for (let j = 0; j < values.length; j ++) {
                 let tr = document.createElement("tr");
 
