@@ -99,11 +99,6 @@
 
           <div class="offcanvas-body">
 
-            <div class = "d-flex gap-2 justify-content-center mt-2">
-              <button class="btn btn-primary" type="button" alt="About this dashboard" onclick="window.location.href='./about.html'">About</button>
-              <button id = "share" class="btn btn-primary" type="share" alt="Share this page">Share</button>
-            </div>
-
             <div class="pt-3 px-1 sidebar-search">
               <label for="global-search" class="form-label mb-1 h5">Search by topic:</label>
               <div class="input-group">
@@ -175,6 +170,10 @@
             <div id="headline" class="col-12 col-xl-6 d-none">
               <div class="card h-100">
                 <div class="card-body">
+                  <div class = "d-flex gap-2 justify-content-end mt-2" style = "margin-bottom: -2em;">
+                  <button class="btn btn-primary" type="button" alt="About this dashboard" onclick="window.location.href='./about.html'">About</button>
+                  <button id = "share" class="btn btn-primary" type="share" alt="Share this page">Share</button>
+              </div>
                   <p id="headline-fig"></p>
                   <p class="text-secondary" id="headline-stat"></p>
                 </div>
