@@ -18,7 +18,10 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     wireSearch(searchIndex);
     initSidebarPersistence();
-    share_btn.onclick = sharePage;
+    
+    for (let i = 0; i < share_btn.length; i++) {
+      share_btn[i].onclick = sharePage;
+    }
 
   } catch (e) {
     console.error("Startup failed:", e);

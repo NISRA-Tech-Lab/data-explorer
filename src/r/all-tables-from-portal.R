@@ -118,7 +118,8 @@ data_portal <- jsonlite::fromJSON(
 
 associated_tables <- read.csv("public/data/associated-tables.csv")
 
-tables <- list()
+tables <- list(table_count = nrow(data_portal),
+               tables = list())
 
 for (i in seq_along(data_portal$label)) {
 
@@ -140,7 +141,7 @@ for (i in seq_along(data_portal$label)) {
   
   if (theme$theme %in% c("Wellbeing framework", "Making life better")) next
 
-  tables[[matrix]] <- list(
+  tables$tables[[matrix]] <- list(
     name = name,
     updated = as.Date(substr(data_portal$updated[i], 1, 10)),
     categories = json_data$dimension,
@@ -170,7 +171,7 @@ for (i in seq_along(data_portal$label)) {
 
       if (associated_theme$theme %in% c("Wellbeing framework", "Making life better")) next
 
-      tables[[paste0(matrix, "_", j)]] <- list(
+      tables$tables[[paste0(matrix, "_", j)]] <- list(
         name = name,
         updated = as.Date(substr(data_portal$updated[i], 1, 10)),
         categories = json_data$dimension,
@@ -192,7 +193,7 @@ for (i in seq_along(data_portal$label)) {
 
 }
 
-tables <- tables[order(names(tables))]
+tables$tables <- tables$tables[order(names(tables$tables))]
 
 write_json(tables,
            "public/data/data-portal-tables.json",

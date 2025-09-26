@@ -11,7 +11,8 @@ let _searchIndex = [];
 export async function createMenus () {
 
     try {
-    tables = await loadTables();  // ← cached load
+    let data = await loadTables();  // ← cached load
+    tables = data.tables;
     // Build global search index
     let searchIndex = Object.keys(tables).map(key => {
       const t = tables[key] || {};

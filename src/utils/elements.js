@@ -40,6 +40,6 @@ export const tables_title = document.getElementById("tables-title");
 export const table_updated = document.getElementById("table-updated");
 export const save_map = document.getElementById("save-map");
 export const save_chart = document.getElementById("save-chart");
-export const share_btn = document.getElementById("share");
+export const share_btn = document.querySelectorAll('button[type="share"]');
 
 export const SIDEBAR_OPEN_KEY = "nisra:data-explorer:sidebarOpen";
